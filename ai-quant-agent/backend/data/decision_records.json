@@ -1,0 +1,2434 @@
+{
+  "records": [
+    {
+      "ts_code": "000032.SZ",
+      "name": "深中华A",
+      "date": "20260601",
+      "score": 92.0,
+      "reason": "政策利好",
+      "reflected": true,
+      "t5_ret": -0.0832,
+      "hit": false
+    },
+    {
+      "ts_code": "002536.SZ",
+      "name": "飞龙股份",
+      "date": "20260812",
+      "score": 93.3,
+      "reason": "政策利好与技术形态共振，历史画像支持，虽部分兑现但综合确定性最高。",
+      "reflected": true,
+      "t5_ret": -0.0245,
+      "hit": false
+    },
+    {
+      "ts_code": "300105.SZ",
+      "name": "龙源技术",
+      "date": "20260812",
+      "score": 88.1,
+      "reason": "量化形态强，低位无风险，但缺乏催化，维持高概率。",
+      "reflected": true,
+      "t5_ret": -0.1571,
+      "hit": false
+    },
+    {
+      "ts_code": "300179.SZ",
+      "name": "四方达",
+      "date": "20260812",
+      "score": 86.0,
+      "reason": "形态强风险低，但无事件驱动，概率稳定。",
+      "reflected": true,
+      "t5_ret": -0.0229,
+      "hit": false
+    },
+    {
+      "ts_code": "002972.SZ",
+      "name": "科安达",
+      "date": "20260812",
+      "score": 84.2,
+      "reason": "形态与历史画像匹配，消息面中性，确定性尚可。",
+      "reflected": true,
+      "t5_ret": -0.0036,
+      "hit": false
+    },
+    {
+      "ts_code": "301373.SZ",
+      "name": "凌玮科技",
+      "date": "20260812",
+      "score": 83.6,
+      "reason": "政策利好部分兑现，形态强，但消息面平淡，概率略低。",
+      "reflected": true,
+      "t5_ret": -0.0276,
+      "hit": false
+    },
+    {
+      "ts_code": "600584.SH",
+      "name": "长电科技",
+      "date": "20260812",
+      "score": 90.6,
+      "reason": "政策万亿级支持集成电路，实质利好，股价未过度炒作，高换手高集中度，风险低，确定性高。",
+      "reflected": true,
+      "t5_ret": -0.0056,
+      "hit": false
+    },
+    {
+      "ts_code": "300105.SZ",
+      "name": "龙源技术",
+      "date": "20260812",
+      "score": 88.1,
+      "reason": "真实主营利好，涨幅不高，风险可控，符合成功画像，但无政策催化，上调有限。",
+      "reflected": true,
+      "t5_ret": -0.1571,
+      "hit": false
+    },
+    {
+      "ts_code": "002965.SZ",
+      "name": "祥鑫科技",
+      "date": "20260812",
+      "score": 87.7,
+      "reason": "政策利好部分兑现，消息面中性，量化形态佳，历史成功画像匹配，小幅上调。",
+      "reflected": true,
+      "t5_ret": -0.0395,
+      "hit": false
+    },
+    {
+      "ts_code": "300827.SZ",
+      "name": "上能电气",
+      "date": "20260812",
+      "score": 86.2,
+      "reason": "实控人增持属实质利好，量化形态强，符合成功画像，无出货或烟雾弹风险。",
+      "reflected": true,
+      "t5_ret": -0.0686,
+      "hit": false
+    },
+    {
+      "ts_code": "600179.SH",
+      "name": "安通控股",
+      "date": "20260814",
+      "score": 89.2,
+      "reason": "重大资产重组实质利好，股东增持，股价未大涨，规则概率84.2%叠加精筛上调5分，确定性高。",
+      "reflected": true,
+      "t5_ret": 0.014,
+      "hit": false
+    },
+    {
+      "ts_code": "600179.SH",
+      "name": "安通控股",
+      "date": "20260814",
+      "score": 89.2,
+      "reason": "控股股东增持+业绩大增实质利好，量化形态头肩底，风险低，确定性最高。",
+      "reflected": true,
+      "t5_ret": 0.014,
+      "hit": false
+    },
+    {
+      "ts_code": "300856.SZ",
+      "name": "科思股份",
+      "date": "20260814",
+      "score": 83.1,
+      "reason": "量化形态强，风险低，但无政策催化，维持原概率，确定性中等。",
+      "reflected": true,
+      "t5_ret": -0.0332,
+      "hit": false
+    },
+    {
+      "ts_code": "601208.SH",
+      "name": "东材科技",
+      "date": "20260814",
+      "score": 77.4,
+      "reason": "量化形态强但无消息催化，历史样本换手率低，谨慎参与，确定性中等偏低。",
+      "reflected": true,
+      "t5_ret": -0.1185,
+      "hit": false
+    },
+    {
+      "ts_code": "301680.SZ",
+      "name": "固德电材",
+      "date": "20260817",
+      "score": 93.6,
+      "reason": "基本面良好，筹码集中，历史成功画像匹配，真实扩产利好，无出货风险，政策催化缺失但小幅上调。",
+      "reflected": true,
+      "t5_ret": -0.0151,
+      "hit": false
+    },
+    {
+      "ts_code": "301599.SZ",
+      "name": "理奇智能",
+      "date": "20260817",
+      "score": 88.4,
+      "reason": "政策S级利好但部分兑现，板块涨幅需防追高，个股基本面一般但筹码集中、资金净流入，形态头肩底，综合概率高。",
+      "reflected": true,
+      "t5_ret": -0.1124,
+      "hit": false
+    },
+    {
+      "ts_code": "002876.SZ",
+      "name": "三利谱",
+      "date": "20260817",
+      "score": 81.3,
+      "reason": "政策利好部分兑现，消息面中性且股价已涨，终止定增有隐患，综合下调。",
+      "reflected": true,
+      "t5_ret": -0.0465,
+      "hit": false
+    },
+    {
+      "ts_code": "002056.SZ",
+      "name": "横店东磁",
+      "date": "20260817",
+      "score": 78.4,
+      "reason": "形态头肩底，筹码集中，人均持股高，历史上涨率佳，消息面中性无风险，但缺乏实质催化。",
+      "reflected": true,
+      "t5_ret": -0.0825,
+      "hit": false
+    },
+    {
+      "ts_code": "300779.SZ",
+      "name": "惠城环保",
+      "date": "20260817",
+      "score": 73.1,
+      "reason": "低位启动，利润增速高，筹码集中，符合历史成功画像，可转债中性，业务进展真实，无出货风险。",
+      "reflected": true,
+      "t5_ret": -0.0843,
+      "hit": false
+    },
+    {
+      "ts_code": "002062.SZ",
+      "name": "宏润建设",
+      "date": "20260818",
+      "score": 88.9,
+      "reason": "中标实质订单利好，筹码集中资金流入，符合成功画像，但利润增速为负，上调有限。",
+      "reflected": true,
+      "t5_ret": 0.0633,
+      "hit": true
+    },
+    {
+      "ts_code": "600428.SH",
+      "name": "中远海特",
+      "date": "20260818",
+      "score": 78.2,
+      "reason": "基本面与筹码符合成功画像，资金面中性，无政策催化，消息面中性，无风险。",
+      "reflected": true,
+      "t5_ret": -0.0646,
+      "hit": false
+    },
+    {
+      "ts_code": "002437.SZ",
+      "name": "誉衡药业",
+      "date": "20260819",
+      "score": 62.1,
+      "reason": "头肩底形态，历史上涨率61%，利润增速高、PE/PB低位，筹码集中，符合成功画像；但无政策催化，量比高需防追高。",
+      "reflected": true,
+      "t5_ret": -0.0655,
+      "hit": false
+    },
+    {
+      "ts_code": "003026.SZ",
+      "name": "中晶科技",
+      "date": "20260820",
+      "score": 70.3,
+      "reason": "低位形态，筹码集中，利润增速高，符合历史成功画像；消息面平淡无风险，但无实质催化，维持原概率。",
+      "reflected": true,
+      "t5_ret": -0.0054,
+      "hit": false
+    },
+    {
+      "ts_code": "603929.SH",
+      "name": "亚翔集成",
+      "date": "20260820",
+      "score": 89.0,
+      "reason": "业绩预增超两倍，低位启动，政策A级催化，筹码集中，符合成功画像，无出货风险。",
+      "reflected": true,
+      "t5_ret": -0.0138,
+      "hit": false
+    },
+    {
+      "ts_code": "001359.SZ",
+      "name": "平安电工",
+      "date": "20260820",
+      "score": 78.3,
+      "reason": "筹码集中，符合成功画像，但利润增速负、PE高位，无实质催化，维持原概率。",
+      "reflected": true,
+      "t5_ret": -0.0399,
+      "hit": false
+    },
+    {
+      "ts_code": "603929.SH",
+      "name": "亚翔集成",
+      "date": "20260821",
+      "score": 89.0,
+      "reason": "低位启动，业绩预增实质利好，政策催化未兑现，筹码集中，符合成功画像，无追高风险。",
+      "reflected": true,
+      "t5_ret": -0.0031,
+      "hit": false
+    },
+    {
+      "ts_code": "001359.SZ",
+      "name": "平安电工",
+      "date": "20260821",
+      "score": 78.3,
+      "reason": "筹码集中、历史上涨率高，但利润增速负、PE高，消息面平淡，无实质驱动，维持原概率。",
+      "reflected": true,
+      "t5_ret": 0.0164,
+      "hit": false
+    },
+    {
+      "ts_code": "001359.SZ",
+      "name": "平安电工",
+      "date": "20260821",
+      "score": 78.3,
+      "reason": "筹码集中，符合成功画像，但利润增速负、PE高，消息面中性，维持原概率。",
+      "reflected": true,
+      "t5_ret": 0.0164,
+      "hit": false
+    },
+    {
+      "ts_code": "603259.SH",
+      "name": "药明康德",
+      "date": "20260821",
+      "score": 74.2,
+      "reason": "政策A级利好未兑现，基本面优，筹码集中，小幅上调。",
+      "reflected": true,
+      "t5_ret": -0.0068,
+      "hit": false
+    },
+    {
+      "ts_code": "301080.SZ",
+      "name": "百普赛斯",
+      "date": "20260821",
+      "score": 68.0,
+      "reason": "基本面与筹码条件优，消息面缺失，无追高风险，维持原概率。",
+      "reflected": true,
+      "t5_ret": -0.1736,
+      "hit": false
+    },
+    {
+      "ts_code": "300313.SZ",
+      "name": "天山生物",
+      "date": "20260821",
+      "score": 62.1,
+      "reason": "Agent分析失败，按规则概率保留，谨慎对待。",
+      "reflected": true,
+      "t5_ret": -0.0579,
+      "hit": false
+    },
+    {
+      "ts_code": "600530.SH",
+      "name": "交大昂立",
+      "date": "20260821",
+      "score": 84.7,
+      "reason": "低位超跌筹码集中，政策利好未兑现，消息面中性，符合历史成功画像，但基本面弱，维持原概率。",
+      "reflected": true,
+      "t5_ret": 0.0831,
+      "hit": true
+    },
+    {
+      "ts_code": "600530.SH",
+      "name": "交大昂立",
+      "date": "20260824",
+      "score": 89.6,
+      "reason": "低位超跌，筹码集中，政策A级利好未兑现，无消息面风险，符合成功画像，上调有限。",
+      "reflected": true,
+      "t5_ret": 0.0607,
+      "hit": true
+    },
+    {
+      "ts_code": "300843.SZ",
+      "name": "胜蓝股份",
+      "date": "20260824",
+      "score": 77.3,
+      "reason": "政策利好且个股符合高胜率特征，但政策部分兑现且板块已涨，注意追高风险。",
+      "reflected": true,
+      "t5_ret": -0.0611,
+      "hit": false
+    },
+    {
+      "ts_code": "300313.SZ",
+      "name": "天山生物",
+      "date": "20260824",
+      "score": 62.5,
+      "reason": "利润增速高、筹码集中，但PB百分位高、量比大，短期涨幅大，有追高风险，消息面缺失。",
+      "reflected": true,
+      "t5_ret": -0.0896,
+      "hit": false
+    },
+    {
+      "ts_code": "000703.SZ",
+      "name": "恒逸石化",
+      "date": "20260824",
+      "score": 66.5,
+      "reason": "基本面优秀，利润增速高，筹码集中，符合历史成功画像；无政策催化，消息面中性，涨幅温和，无追高风险。",
+      "reflected": true,
+      "t5_ret": 0.0349,
+      "hit": false
+    },
+    {
+      "ts_code": "300473.SZ",
+      "name": "德尔股份",
+      "date": "20260825",
+      "score": 85.9,
+      "reason": "政策利好汽车后市场，基本面改善，利润增速高，筹码集中，但板块涨幅较大，小幅上调。",
+      "reflected": true,
+      "t5_ret": 0.0644,
+      "hit": true
+    },
+    {
+      "ts_code": "000703.SZ",
+      "name": "恒逸石化",
+      "date": "20260825",
+      "score": 71.5,
+      "reason": "基本面与筹码条件优，利润增速高，消息面实质利好，近期涨幅不大，无出货风险。",
+      "reflected": true,
+      "t5_ret": 0.0176,
+      "hit": false
+    },
+    {
+      "ts_code": "603135.SH",
+      "name": "中重科技",
+      "date": "20260826",
+      "score": 87.4,
+      "reason": "量化条件符合历史成功画像，政策兑现度部分反应，消息面平淡，无实质利好，维持原概率。",
+      "reflected": true,
+      "t5_ret": 0.0077,
+      "hit": false
+    },
+    {
+      "ts_code": "603588.SH",
+      "name": "高能环境",
+      "date": "20260826",
+      "score": 82.6,
+      "reason": "基本面与筹码条件符合历史成功画像，利润增速高，筹码集中，无政策催化，消息面中性，需防追高。",
+      "reflected": true,
+      "t5_ret": -0.0334,
+      "hit": false
+    },
+    {
+      "ts_code": "000823.SZ",
+      "name": "超声电子",
+      "date": "20260826",
+      "score": 80.3,
+      "reason": "形态头肩底，回测条件有利，政策正向但部分兑现，消息面中性，短期涨幅需关注。",
+      "reflected": true,
+      "t5_ret": -0.0459,
+      "hit": false
+    },
+    {
+      "ts_code": "301528.SZ",
+      "name": "多浦乐",
+      "date": "20260826",
+      "score": 79.2,
+      "reason": "形态金针探底+头肩底，筹码集中，回测上涨率高，消息面中性，无政策催化，可谨慎参与。",
+      "reflected": true,
+      "t5_ret": -0.0058,
+      "hit": false
+    },
+    {
+      "ts_code": "603588.SH",
+      "name": "高能环境",
+      "date": "20260826",
+      "score": 87.6,
+      "reason": "业绩预增+回购实质利好，筹码集中，利润增速高，低位无出货风险，政策催化未兑现但综合最优。",
+      "reflected": true,
+      "t5_ret": -0.0334,
+      "hit": false
+    },
+    {
+      "ts_code": "603135.SH",
+      "name": "中重科技",
+      "date": "20260826",
+      "score": 87.4,
+      "reason": "低位启动，筹码集中，利润增速高，政策利好半导体，但消息面中性，综合概率高。",
+      "reflected": true,
+      "t5_ret": 0.0077,
+      "hit": false
+    },
+    {
+      "ts_code": "002303.SZ",
+      "name": "美盈森",
+      "date": "20260826",
+      "score": 83.6,
+      "reason": "低位，政策温和利好，消息面中性无出货风险，但基本面弱，利润负增，综合概率合理。",
+      "reflected": true,
+      "t5_ret": 0.0374,
+      "hit": false
+    },
+    {
+      "ts_code": "301528.SZ",
+      "name": "多浦乐",
+      "date": "20260826",
+      "score": 79.2,
+      "reason": "形态与筹码条件优，历史成功画像匹配，无政策催化，消息面中性，但量能不足。",
+      "reflected": true,
+      "t5_ret": -0.0058,
+      "hit": false
+    },
+    {
+      "ts_code": "301392.SZ",
+      "name": "汇成真空",
+      "date": "20260826",
+      "score": 85.2,
+      "reason": "利润增速高，筹码优，政策利好但已部分兑现，消息中性，无出货风险，但需防追高，综合维持。",
+      "reflected": true,
+      "t5_ret": -0.0066,
+      "hit": false
+    },
+    {
+      "ts_code": "300607.SZ",
+      "name": "拓斯达",
+      "date": "20260826",
+      "score": 84.4,
+      "reason": "业绩预增263%实质利好，政策B级但板块已涨，近10日涨幅5.8%未超15%，筹码集中，上调。",
+      "reflected": true,
+      "t5_ret": -0.0025,
+      "hit": false
+    },
+    {
+      "ts_code": "600909.SH",
+      "name": "华安证券",
+      "date": "20260826",
+      "score": 84.3,
+      "reason": "业绩大增102.55%且回购，低位无追高风险，筹码集中，资金净流入，实质利好，确定性高。",
+      "reflected": true,
+      "t5_ret": -0.0309,
+      "hit": false
+    },
+    {
+      "ts_code": "000506.SZ",
+      "name": "招金黄金",
+      "date": "20260826",
+      "score": 84.1,
+      "reason": "业绩大增407%，营收增85%，筹码集中，ROE高，近10日涨幅6%未过热，无追高风险，确定性高。",
+      "reflected": true,
+      "t5_ret": -0.0494,
+      "hit": false
+    },
+    {
+      "ts_code": "301321.SZ",
+      "name": "翰博高新",
+      "date": "20260826",
+      "score": 83.4,
+      "reason": "基本面与筹码符合成功画像，利润增速高，筹码集中，无政策催化，消息中性，近期涨幅9.1%需防追高。",
+      "reflected": true,
+      "t5_ret": 0.0252,
+      "hit": false
+    },
+    {
+      "ts_code": "300209.SZ",
+      "name": "行云科技",
+      "date": "20260826",
+      "score": 81.5,
+      "reason": "利润增速540%且筹码集中，符合高胜率画像，但无政策催化，合同细节待观察，涨幅不大，小幅上调。",
+      "reflected": true,
+      "t5_ret": -0.0107,
+      "hit": false
+    },
+    {
+      "ts_code": "002303.SZ",
+      "name": "美盈森",
+      "date": "20260826",
+      "score": 81.2,
+      "reason": "低位近10日下跌，无出货风险；筹码集中、PB低，但利润增速负、担保增加，中性消息，维持。",
+      "reflected": true,
+      "t5_ret": 0.0374,
+      "hit": false
+    },
+    {
+      "ts_code": "603588.SH",
+      "name": "高能环境",
+      "date": "20260826",
+      "score": 78.1,
+      "reason": "基本面与筹码优，历史成功画像匹配，消息中性无出货风险，但无政策催化，近期涨幅小，维持。",
+      "reflected": true,
+      "t5_ret": -0.0334,
+      "hit": false
+    },
+    {
+      "ts_code": "301392.SZ",
+      "name": "汇成真空",
+      "date": "20260827",
+      "score": 85.2,
+      "reason": "基本面与筹码优，政策利好部分兑现，消息面中性，涨幅不大，符合成功画像，确定性高。",
+      "reflected": true,
+      "t5_ret": -0.0641,
+      "hit": false
+    },
+    {
+      "ts_code": "300607.SZ",
+      "name": "拓斯达",
+      "date": "20260827",
+      "score": 84.4,
+      "reason": "业绩高增+政策支持，但政策有脑补和落地风险，板块已涨，涨幅温和，综合上调。",
+      "reflected": true,
+      "t5_ret": -0.002,
+      "hit": false
+    },
+    {
+      "ts_code": "600909.SH",
+      "name": "华安证券",
+      "date": "20260827",
+      "score": 84.3,
+      "reason": "低位+业绩大增+回购利好，符合成功画像，但无政策催化，涨幅需警惕，综合上调。",
+      "reflected": true,
+      "t5_ret": -0.0096,
+      "hit": false
+    },
+    {
+      "ts_code": "002303.SZ",
+      "name": "美盈森",
+      "date": "20260827",
+      "score": 81.2,
+      "reason": "低位无追高风险，筹码集中，但利润下滑且消息面中性，无实质利好，维持原概率。",
+      "reflected": true,
+      "t5_ret": 0.0077,
+      "hit": false
+    },
+    {
+      "ts_code": "300873.SZ",
+      "name": "海晨股份",
+      "date": "20260828",
+      "score": 78.4,
+      "reason": "低位筹码集中，资金净流入，符合成功画像，但利润下滑，维持原概率。",
+      "reflected": true,
+      "t5_ret": 0.0143,
+      "hit": false
+    },
+    {
+      "ts_code": "301611.SZ",
+      "name": "珂玛科技",
+      "date": "20260828",
+      "score": 78.4,
+      "reason": "筹码集中，资金净流入，但利润负增长，无催化，维持原概率。",
+      "reflected": true,
+      "t5_ret": -0.0977,
+      "hit": false
+    },
+    {
+      "ts_code": "300592.SZ",
+      "name": "华凯易佰",
+      "date": "20260828",
+      "score": 78.0,
+      "reason": "基本面优秀，利润增速高，PE/PB低位，回购收购真实利好，小幅上调。",
+      "reflected": true,
+      "t5_ret": 0.0278,
+      "hit": false
+    },
+    {
+      "ts_code": "300260.SZ",
+      "name": "新莱应材",
+      "date": "20260828",
+      "score": 75.2,
+      "reason": "政策利好部分兑现，基本面符合画像，短期涨幅需警惕，维持原概率。",
+      "reflected": true,
+      "t5_ret": -0.0631,
+      "hit": false
+    },
+    {
+      "ts_code": "002303.SZ",
+      "name": "美盈森",
+      "date": "20260828",
+      "score": 72.6,
+      "reason": "低位无催化，筹码集中，大单净流入，符合画像，无追高风险。",
+      "reflected": true,
+      "t5_ret": -0.0773,
+      "hit": false
+    },
+    {
+      "ts_code": "300873.SZ",
+      "name": "海晨股份",
+      "date": "20260828",
+      "score": 78.4,
+      "reason": "低位筹码集中，资金流入，符合成功画像，但利润下滑且无催化，维持原概率。",
+      "reflected": true,
+      "t5_ret": 0.0143,
+      "hit": false
+    },
+    {
+      "ts_code": "002297.SZ",
+      "name": "博云新材",
+      "date": "20260828",
+      "score": 76.2,
+      "reason": "利润增速高、筹码集中，但无政策催化且涨幅已高，需防追高，维持原概率。",
+      "reflected": true,
+      "t5_ret": 0.1247,
+      "hit": true
+    },
+    {
+      "ts_code": "300592.SZ",
+      "name": "华凯易佰",
+      "date": "20260828",
+      "score": 73.0,
+      "reason": "基本面与筹码优，但收购估值隐患及无催化，维持原概率。",
+      "reflected": true,
+      "t5_ret": 0.0278,
+      "hit": false
+    },
+    {
+      "ts_code": "300504.SZ",
+      "name": "天邑股份",
+      "date": "20260828",
+      "score": 89.8,
+      "reason": "利润高增231.6%，中标实质订单，筹码集中，涨幅适中，无出货风险，确定性最高。",
+      "reflected": true,
+      "t5_ret": -0.0184,
+      "hit": false
+    },
+    {
+      "ts_code": "300401.SZ",
+      "name": "花园生物",
+      "date": "20260828",
+      "score": 88.7,
+      "reason": "政策利好未兑现，筹码集中，历史画像匹配，但利润下滑，综合概率高。",
+      "reflected": true,
+      "t5_ret": 0.0251,
+      "hit": false
+    },
+    {
+      "ts_code": "300606.SZ",
+      "name": "金太阳",
+      "date": "20260828",
+      "score": 88.0,
+      "reason": "量化条件优，PB低，筹码集中，政策利好部分兑现，但利润增速负，需谨慎。",
+      "reflected": true,
+      "t5_ret": -0.0462,
+      "hit": false
+    },
+    {
+      "ts_code": "300400.SZ",
+      "name": "劲拓股份",
+      "date": "20260828",
+      "score": 85.3,
+      "reason": "头肩底形态，筹码集中，资金流入，但无政策催化，涨幅较大，防追高。",
+      "reflected": true,
+      "t5_ret": 0.1431,
+      "hit": true
+    },
+    {
+      "ts_code": "301687.SZ",
+      "name": "新广益",
+      "date": "20260828",
+      "score": 82.5,
+      "reason": "低位形态，筹码集中，历史画像匹配，但消息面平淡，无实质催化。",
+      "reflected": true,
+      "t5_ret": -0.0072,
+      "hit": false
+    },
+    {
+      "ts_code": "000938.SZ",
+      "name": "紫光股份",
+      "date": "20260828",
+      "score": 81.2,
+      "reason": "头肩底，筹码集中，利润增速高，但定增摊薄，无政策催化，涨幅较大。",
+      "reflected": true,
+      "t5_ret": -0.0919,
+      "hit": false
+    },
+    {
+      "ts_code": "002303.SZ",
+      "name": "美盈森",
+      "date": "20260828",
+      "score": 81.0,
+      "reason": "低位无追高风险，筹码集中，PB极低，但业绩下滑，无实质催化。",
+      "reflected": true,
+      "t5_ret": -0.0773,
+      "hit": false
+    },
+    {
+      "ts_code": "002653.SZ",
+      "name": "海思科",
+      "date": "20260831",
+      "score": 90.9,
+      "reason": "低位实质利好，筹码集中，利润高增，无追高风险，确定性最高。",
+      "reflected": true,
+      "t5_ret": -0.015,
+      "hit": false
+    },
+    {
+      "ts_code": "300400.SZ",
+      "name": "劲拓股份",
+      "date": "20260831",
+      "score": 85.3,
+      "reason": "头肩底形态，筹码集中，资金流入，但无政策催化且涨幅较大，需防追高。",
+      "reflected": true,
+      "t5_ret": 0.1669,
+      "hit": true
+    },
+    {
+      "ts_code": "301151.SZ",
+      "name": "冠龙节能",
+      "date": "20260831",
+      "score": 85.1,
+      "reason": "头肩底形态，历史上涨率高，筹码集中，但利润负增且无政策催化，谨慎。",
+      "reflected": true,
+      "t5_ret": 0.0488,
+      "hit": false
+    },
+    {
+      "ts_code": "300504.SZ",
+      "name": "天邑股份",
+      "date": "20260831",
+      "score": 84.8,
+      "reason": "利润高增、PB低位、筹码集中，但毛利率低、现金流差，无政策催化。",
+      "reflected": true,
+      "t5_ret": -0.0432,
+      "hit": false
+    },
+    {
+      "ts_code": "300475.SZ",
+      "name": "香农芯创",
+      "date": "20260831",
+      "score": 84.5,
+      "reason": "基本面与筹码优，政策支持，但近期涨幅大，追高风险需警惕。",
+      "reflected": true,
+      "t5_ret": 0.059,
+      "hit": true
+    },
+    {
+      "ts_code": "300285.SZ",
+      "name": "国瓷材料",
+      "date": "20260831",
+      "score": 84.3,
+      "reason": "量化条件优，筹码集中，PB低位，但无政策催化且涨幅较大。",
+      "reflected": true,
+      "t5_ret": -0.0573,
+      "hit": false
+    },
+    {
+      "ts_code": "002636.SZ",
+      "name": "金安国纪",
+      "date": "20260831",
+      "score": 83.5,
+      "reason": "基本面与筹码优，政策利好但板块已涨，消息面缺失，注意追高。",
+      "reflected": true,
+      "t5_ret": -0.0586,
+      "hit": false
+    },
+    {
+      "ts_code": "600186.SH",
+      "name": "莲花控股",
+      "date": "20260831",
+      "score": 83.4,
+      "reason": "头肩底，PB低位，筹码集中，利润增速42%，但涨幅较大且无政策催化。",
+      "reflected": true,
+      "t5_ret": 0.0653,
+      "hit": true
+    },
+    {
+      "ts_code": "301687.SZ",
+      "name": "新广益",
+      "date": "20260831",
+      "score": 82.5,
+      "reason": "头肩底，条件符合成功画像，但无政策催化，需警惕追高。",
+      "reflected": true,
+      "t5_ret": 0.0028,
+      "hit": false
+    },
+    {
+      "ts_code": "003043.SZ",
+      "name": "华亚智能",
+      "date": "20260831",
+      "score": 82.5,
+      "reason": "头肩底，筹码集中，资金流入，但无政策催化且涨幅较大。",
+      "reflected": true,
+      "t5_ret": -0.1825,
+      "hit": false
+    },
+    {
+      "ts_code": "000962.SZ",
+      "name": "东方钽业",
+      "date": "20260831",
+      "score": 87.9,
+      "reason": "头肩底形态，筹码集中，资金净流入，但利润增速负，无政策催化，防追高。",
+      "reflected": true,
+      "t5_ret": -0.024,
+      "hit": false
+    },
+    {
+      "ts_code": "002440.SZ",
+      "name": "闰土股份",
+      "date": "20260831",
+      "score": 87.9,
+      "reason": "利润增速高、筹码集中、低PE/PB，符合成功画像，但涨幅较大需防追高。",
+      "reflected": true,
+      "t5_ret": -0.0992,
+      "hit": false
+    },
+    {
+      "ts_code": "603989.SH",
+      "name": "艾华集团",
+      "date": "20260831",
+      "score": 87.3,
+      "reason": "头肩底，筹码集中，bps高，但利润增速负、毛利率低，无政策催化，防追高。",
+      "reflected": true,
+      "t5_ret": 0.1487,
+      "hit": true
+    },
+    {
+      "ts_code": "603663.SH",
+      "name": "三祥新材",
+      "date": "20260831",
+      "score": 86.7,
+      "reason": "头肩底，筹码集中，利润增速高，但无政策催化，涨幅0.552防追高。",
+      "reflected": true,
+      "t5_ret": -0.0635,
+      "hit": false
+    },
+    {
+      "ts_code": "002653.SZ",
+      "name": "海思科",
+      "date": "20260831",
+      "score": 85.9,
+      "reason": "量化条件优，基本面强，但无政策催化，近期涨幅需警惕。",
+      "reflected": true,
+      "t5_ret": -0.015,
+      "hit": false
+    },
+    {
+      "ts_code": "300400.SZ",
+      "name": "劲拓股份",
+      "date": "20260831",
+      "score": 85.3,
+      "reason": "头肩底，筹码集中，资金净流入，但无政策催化，涨幅0.596防追高。",
+      "reflected": true,
+      "t5_ret": 0.1669,
+      "hit": true
+    },
+    {
+      "ts_code": "301151.SZ",
+      "name": "冠龙节能",
+      "date": "20260831",
+      "score": 85.1,
+      "reason": "头肩底，历史上涨率61%，但利润增速负，无政策催化。",
+      "reflected": true,
+      "t5_ret": 0.0488,
+      "hit": false
+    },
+    {
+      "ts_code": "300504.SZ",
+      "name": "天邑股份",
+      "date": "20260831",
+      "score": 84.8,
+      "reason": "利润增速高，bps符合画像，但毛利率低、现金流负，无政策催化，谨慎。",
+      "reflected": true,
+      "t5_ret": -0.0432,
+      "hit": false
+    },
+    {
+      "ts_code": "300475.SZ",
+      "name": "香农芯创",
+      "date": "20260831",
+      "score": 84.5,
+      "reason": "基本面优秀，筹码集中，历史上涨率高，但涨幅较大，无政策催化。",
+      "reflected": true,
+      "t5_ret": 0.059,
+      "hit": true
+    },
+    {
+      "ts_code": "300285.SZ",
+      "name": "国瓷材料",
+      "date": "20260831",
+      "score": 84.3,
+      "reason": "基本面与筹码符合画像，无政策催化，涨幅0.649防追高。",
+      "reflected": true,
+      "t5_ret": -0.0573,
+      "hit": false
+    },
+    {
+      "ts_code": "300655.SZ",
+      "name": "晶瑞电材",
+      "date": "20260831",
+      "score": 91.2,
+      "reason": "高概率，低PB，筹码集中，但利润负增，政策存疑，维持原判。",
+      "reflected": true,
+      "t5_ret": -0.0365,
+      "hit": false
+    },
+    {
+      "ts_code": "603983.SH",
+      "name": "丸美生物",
+      "date": "20260831",
+      "score": 91.0,
+      "reason": "量化条件优，筹码集中，但利润负增，无催化，防追高。",
+      "reflected": true,
+      "t5_ret": 0.1799,
+      "hit": true
+    },
+    {
+      "ts_code": "300592.SZ",
+      "name": "华凯易佰",
+      "date": "20260831",
+      "score": 89.3,
+      "reason": "基本面与筹码符合成功画像，政策正面未兑现，无消息，无追高陷阱。",
+      "reflected": true,
+      "t5_ret": 0.0798,
+      "hit": true
+    },
+    {
+      "ts_code": "002297.SZ",
+      "name": "博云新材",
+      "date": "20260831",
+      "score": 89.3,
+      "reason": "利润高增，筹码集中，但涨幅大，无催化，防追高。",
+      "reflected": true,
+      "t5_ret": 0.2277,
+      "hit": true
+    },
+    {
+      "ts_code": "300285.SZ",
+      "name": "国瓷材料",
+      "date": "20260831",
+      "score": 88.9,
+      "reason": "量化条件符合，筹码集中，资金流入，但无催化，涨幅大防追高。",
+      "reflected": true,
+      "t5_ret": -0.0573,
+      "hit": false
+    },
+    {
+      "ts_code": "600141.SH",
+      "name": "兴发集团",
+      "date": "20260831",
+      "score": 88.7,
+      "reason": "高概率，筹码集中，低PB，但毛利率低，现金流负，无催化。",
+      "reflected": true,
+      "t5_ret": 0.029,
+      "hit": false
+    },
+    {
+      "ts_code": "301588.SZ",
+      "name": "美新科技",
+      "date": "20260831",
+      "score": 87.6,
+      "reason": "量化条件优，筹码集中，但无催化，涨幅大防追高。",
+      "reflected": true,
+      "t5_ret": 0.0074,
+      "hit": false
+    },
+    {
+      "ts_code": "002407.SZ",
+      "name": "多氟多",
+      "date": "20260831",
+      "score": 87.5,
+      "reason": "利润高增，筹码集中，但涨幅大，无催化，谨慎。",
+      "reflected": true,
+      "t5_ret": -0.0384,
+      "hit": false
+    },
+    {
+      "ts_code": "000938.SZ",
+      "name": "紫光股份",
+      "date": "20260831",
+      "score": 87.4,
+      "reason": "量化优，筹码集中，利润高增，但无催化，涨幅大防追高。",
+      "reflected": true,
+      "t5_ret": -0.1156,
+      "hit": false
+    },
+    {
+      "ts_code": "601133.SH",
+      "name": "柏诚股份",
+      "date": "20260831",
+      "score": 87.1,
+      "reason": "形态强，筹码集中，但无催化，利润低，现金流负，谨慎。",
+      "reflected": true,
+      "t5_ret": -0.0132,
+      "hit": false
+    },
+    {
+      "ts_code": "603155.SH",
+      "name": "新亚强",
+      "date": "20260831",
+      "score": 86.8,
+      "reason": "量化优，筹码集中，资金流入，但无催化，涨幅大防追高。",
+      "reflected": true,
+      "t5_ret": 0.008,
+      "hit": false
+    },
+    {
+      "ts_code": "605198.SH",
+      "name": "安德利",
+      "date": "20260831",
+      "score": 86.3,
+      "reason": "筹码集中，人均持股高，但利润负增，PE高，无催化，谨慎。",
+      "reflected": true,
+      "t5_ret": 0.0378,
+      "hit": false
+    },
+    {
+      "ts_code": "301580.SZ",
+      "name": "爱迪特",
+      "date": "20260831",
+      "score": 85.7,
+      "reason": "量化符合，筹码集中，无催化，涨幅小，风险低，可参与。",
+      "reflected": true,
+      "t5_ret": -0.0123,
+      "hit": false
+    },
+    {
+      "ts_code": "600176.SH",
+      "name": "中国巨石",
+      "date": "20260831",
+      "score": 85.4,
+      "reason": "形态头肩底，筹码集中，利润高增，低PB，无催化，防追高。",
+      "reflected": true,
+      "t5_ret": -0.0379,
+      "hit": false
+    },
+    {
+      "ts_code": "300400.SZ",
+      "name": "劲拓股份",
+      "date": "20260831",
+      "score": 85.0,
+      "reason": "量化符合，筹码集中，资金流入，政策实质但已反应，涨幅适中，上调。",
+      "reflected": true,
+      "t5_ret": 0.1669,
+      "hit": true
+    },
+    {
+      "ts_code": "000962.SZ",
+      "name": "东方钽业",
+      "date": "20260831",
+      "score": 84.2,
+      "reason": "量化优，筹码集中，但利润负增，现金流差，无催化，涨幅大防追高。",
+      "reflected": true,
+      "t5_ret": -0.024,
+      "hit": false
+    },
+    {
+      "ts_code": "001258.SZ",
+      "name": "立新能源",
+      "date": "20260831",
+      "score": 84.1,
+      "reason": "利润高增，筹码集中，低PB，但涨幅大，无催化。",
+      "reflected": true,
+      "t5_ret": -0.1225,
+      "hit": false
+    },
+    {
+      "ts_code": "301176.SZ",
+      "name": "逸豪新材",
+      "date": "20260831",
+      "score": 83.9,
+      "reason": "基本面筹码优，利润高增，低PB，但无催化，消息存疑，涨幅大防追高。",
+      "reflected": true,
+      "t5_ret": 0.0186,
+      "hit": false
+    },
+    {
+      "ts_code": "301392.SZ",
+      "name": "汇成真空",
+      "date": "20260831",
+      "score": 83.8,
+      "reason": "量化符合，筹码集中，资金流入，但利润下滑，政策部分兑现，无消息。",
+      "reflected": true,
+      "t5_ret": 0.0139,
+      "hit": false
+    },
+    {
+      "ts_code": "300873.SZ",
+      "name": "海晨股份",
+      "date": "20260831",
+      "score": 83.4,
+      "reason": "筹码集中，资金流入，但利润大降，无催化，防追高。",
+      "reflected": true,
+      "t5_ret": -0.0025,
+      "hit": false
+    },
+    {
+      "ts_code": "300260.SZ",
+      "name": "新莱应材",
+      "date": "20260831",
+      "score": 82.9,
+      "reason": "形态头肩底，筹码集中，资金流入，但利润负增，PE高，无催化。",
+      "reflected": true,
+      "t5_ret": -0.0294,
+      "hit": false
+    },
+    {
+      "ts_code": "301150.SZ",
+      "name": "中一科技",
+      "date": "20260831",
+      "score": 82.1,
+      "reason": "基本面筹码优，利润高增，筹码集中，无催化，涨幅大防追高。",
+      "reflected": true,
+      "t5_ret": -0.0192,
+      "hit": false
+    },
+    {
+      "ts_code": "000703.SZ",
+      "name": "恒逸石化",
+      "date": "20260831",
+      "score": 81.5,
+      "reason": "基本面筹码优，利润高增，低PE/PB，无催化，涨幅大防追高。",
+      "reflected": true,
+      "t5_ret": -0.0047,
+      "hit": false
+    },
+    {
+      "ts_code": "601058.SH",
+      "name": "赛轮轮胎",
+      "date": "20260831",
+      "score": 80.8,
+      "reason": "形态头肩底，历史上涨率61%，基本面符合，无催化，无陷阱。",
+      "reflected": true,
+      "t5_ret": -0.0587,
+      "hit": false
+    },
+    {
+      "ts_code": "301591.SZ",
+      "name": "肯特股份",
+      "date": "20260831",
+      "score": 77.3,
+      "reason": "基本面筹码符合，低PB，筹码集中，资金流入，但利润负增，无催化。",
+      "reflected": true,
+      "t5_ret": -0.1231,
+      "hit": false
+    },
+    {
+      "ts_code": "603983.SH",
+      "name": "丸美生物",
+      "date": "20260901",
+      "score": 78.0,
+      "reason": "头肩底形态，筹码集中，bps高，历史上涨率佳；但利润增速负，无政策催化，涨幅0.528需防追高。",
+      "reflected": true,
+      "t5_ret": 0.0935,
+      "hit": true
+    },
+    {
+      "ts_code": "300285.SZ",
+      "name": "国瓷材料",
+      "date": "20260901",
+      "score": 77.3,
+      "reason": "量化条件符合历史成功画像，筹码集中、资金净流入；但无政策催化，涨幅0.619需警惕追高。",
+      "reflected": true,
+      "t5_ret": -0.0372,
+      "hit": false
+    },
+    {
+      "ts_code": "002297.SZ",
+      "name": "博云新材",
+      "date": "20260901",
+      "score": 76.9,
+      "reason": "利润增速高、ROE及毛利率良好，筹码集中；但涨幅0.647需防追高，无政策催化。",
+      "reflected": true,
+      "t5_ret": 0.125,
+      "hit": true
+    },
+    {
+      "ts_code": "301588.SZ",
+      "name": "美新科技",
+      "date": "20260901",
+      "score": 76.2,
+      "reason": "头肩底形态，筹码集中且bps高；但无政策催化，涨幅0.584需防追高。",
+      "reflected": true,
+      "t5_ret": -0.0056,
+      "hit": false
+    },
+    {
+      "ts_code": "002971.SZ",
+      "name": "和远气体",
+      "date": "20260901",
+      "score": 75.2,
+      "reason": "头肩底，bps、大单净占比等条件历史上涨率较高，筹码集中；但利润增速负，无政策催化，涨幅较大需防追高。",
+      "reflected": true,
+      "t5_ret": -0.1195,
+      "hit": false
+    },
+    {
+      "ts_code": "605198.SH",
+      "name": "安德利",
+      "date": "20260901",
+      "score": 74.8,
+      "reason": "筹码集中、人均持股高；但利润增速负，PE高，无政策催化，涨幅0.591需防追高。",
+      "reflected": true,
+      "t5_ret": 0.1653,
+      "hit": true
+    },
+    {
+      "ts_code": "000962.SZ",
+      "name": "东方钽业",
+      "date": "20260901",
+      "score": 74.7,
+      "reason": "筹码集中、资金净流入；但利润增速负，无政策催化，上涨概率高但需谨慎。",
+      "reflected": true,
+      "t5_ret": -0.014,
+      "hit": false
+    },
+    {
+      "ts_code": "000938.SZ",
+      "name": "紫光股份",
+      "date": "20260901",
+      "score": 74.4,
+      "reason": "量化条件优，基本面良好；但无政策催化，涨幅0.615需防追高。",
+      "reflected": true,
+      "t5_ret": -0.1163,
+      "hit": false
+    },
+    {
+      "ts_code": "601133.SH",
+      "name": "柏诚股份",
+      "date": "20260901",
+      "score": 74.2,
+      "reason": "基本面与筹码条件符合历史成功画像，无政策消息面信号，但需警惕追高风险。",
+      "reflected": true,
+      "t5_ret": -0.0042,
+      "hit": false
+    },
+    {
+      "ts_code": "301580.SZ",
+      "name": "爱迪特",
+      "date": "20260901",
+      "score": 73.5,
+      "reason": "筹码集中、人均持股高；无政策催化，涨幅1.139%不高，风险低。",
+      "reflected": true,
+      "t5_ret": -0.0229,
+      "hit": false
+    },
+    {
+      "ts_code": "002842.SZ",
+      "name": "翔鹭钨业",
+      "date": "20260901",
+      "score": 73.5,
+      "reason": "基本面强劲，利润增速高，筹码集中；但无政策催化，近期涨幅需警惕追高。",
+      "reflected": true,
+      "t5_ret": 0.0029,
+      "hit": false
+    },
+    {
+      "ts_code": "600176.SH",
+      "name": "中国巨石",
+      "date": "20260901",
+      "score": 73.5,
+      "reason": "量化条件优秀，基本面良好，无政策消息，但需警惕追高风险。",
+      "reflected": true,
+      "t5_ret": -0.0331,
+      "hit": false
+    },
+    {
+      "ts_code": "301150.SZ",
+      "name": "中一科技",
+      "date": "20260901",
+      "score": 73.2,
+      "reason": "头肩底，筹码集中，利润增速高，PB低位；无政策催化，涨幅0.691需防追高。",
+      "reflected": true,
+      "t5_ret": 0.0212,
+      "hit": false
+    },
+    {
+      "ts_code": "300873.SZ",
+      "name": "海晨股份",
+      "date": "20260901",
+      "score": 73.1,
+      "reason": "命中多项高胜率条件，筹码集中且资金净流入；但利润增速大幅下滑，无政策催化，谨慎参与。",
+      "reflected": true,
+      "t5_ret": -0.0165,
+      "hit": false
+    },
+    {
+      "ts_code": "000703.SZ",
+      "name": "恒逸石化",
+      "date": "20260901",
+      "score": 72.3,
+      "reason": "量化条件优秀，利润增速高，筹码集中；但无政策催化，涨幅0.565需防追高。",
+      "reflected": true,
+      "t5_ret": 0.007,
+      "hit": false
+    },
+    {
+      "ts_code": "300260.SZ",
+      "name": "新莱应材",
+      "date": "20260901",
+      "score": 72.1,
+      "reason": "头肩底，PB百分位低，筹码集中；但利润增速负，无政策催化，未现追高陷阱，谨慎看多。",
+      "reflected": true,
+      "t5_ret": -0.0298,
+      "hit": false
+    },
+    {
+      "ts_code": "300400.SZ",
+      "name": "劲拓股份",
+      "date": "20260901",
+      "score": 72.0,
+      "reason": "量化条件符合历史成功画像，筹码集中且资金净流入；但无政策催化，利润增速低，需警惕追高。",
+      "reflected": true,
+      "t5_ret": 0.2023,
+      "hit": true
+    },
+    {
+      "ts_code": "601058.SH",
+      "name": "赛轮轮胎",
+      "date": "20260901",
+      "score": 71.5,
+      "reason": "头肩底，上涨率61%，条件参数多命中高胜率区间；无政策消息，无明确陷阱，但需警惕追高。",
+      "reflected": true,
+      "t5_ret": -0.0586,
+      "hit": false
+    },
+    {
+      "ts_code": "301591.SZ",
+      "name": "肯特股份",
+      "date": "20260901",
+      "score": 70.4,
+      "reason": "量化条件符合历史成功画像，PB/BPS/筹码等指标上涨率较高；但利润增速负，无政策催化，风险低。",
+      "reflected": true,
+      "t5_ret": -0.137,
+      "hit": false
+    },
+    {
+      "ts_code": "002990.SZ",
+      "name": "盛视科技",
+      "date": "20260901",
+      "score": 70.0,
+      "reason": "基本面与筹码条件符合历史高胜率组合，利润增速高，筹码集中；但无政策催化，涨幅0.689需警惕追高。",
+      "reflected": true,
+      "t5_ret": 0.0004,
+      "hit": false
+    },
+    {
+      "ts_code": "605179.SH",
+      "name": "一鸣食品",
+      "date": "20260901",
+      "score": 69.1,
+      "reason": "基本面与筹码条件符合历史成功画像，资金流入；无政策消息，但需警惕追高风险。",
+      "reflected": true,
+      "t5_ret": -0.1522,
+      "hit": false
+    },
+    {
+      "ts_code": "002653.SZ",
+      "name": "海思科",
+      "date": "20260901",
+      "score": 68.7,
+      "reason": "量化条件优，筹码集中，利润高增；但无政策催化，近期涨幅需警惕。",
+      "reflected": true,
+      "t5_ret": -0.048,
+      "hit": false
+    },
+    {
+      "ts_code": "002430.SZ",
+      "name": "杭氧股份",
+      "date": "20260901",
+      "score": 68.5,
+      "reason": "量化条件优，筹码集中，PE/PB低位，风险低；但利润增速低，无政策催化，无追高陷阱。",
+      "reflected": true,
+      "t5_ret": 0.0161,
+      "hit": false
+    },
+    {
+      "ts_code": "300655.SZ",
+      "name": "晶瑞电材",
+      "date": "20260901",
+      "score": 82.8,
+      "reason": "低PB高PE筹码集中，资金净流入，政策催化未兑现，但利润增速负，追高风险需警惕。",
+      "reflected": true,
+      "t5_ret": 0.004,
+      "hit": false
+    },
+    {
+      "ts_code": "600176.SH",
+      "name": "中国巨石",
+      "date": "20260901",
+      "score": 78.5,
+      "reason": "低位业绩预增实质利好，筹码集中度高，符合成功画像，但投资金额大含贷款，需谨慎。",
+      "reflected": true,
+      "t5_ret": -0.0331,
+      "hit": false
+    },
+    {
+      "ts_code": "603983.SH",
+      "name": "丸美生物",
+      "date": "20260901",
+      "score": 78.0,
+      "reason": "量化条件符合历史成功画像，筹码集中且基本面稳健，政策正面但力度有限，消息面中性。",
+      "reflected": true,
+      "t5_ret": 0.0935,
+      "hit": true
+    },
+    {
+      "ts_code": "600141.SH",
+      "name": "兴发集团",
+      "date": "20260901",
+      "score": 77.3,
+      "reason": "基本面符合成功画像，政策利好未兑现，消息面中性，无出货风险，但涨幅不大。",
+      "reflected": true,
+      "t5_ret": 0.0019,
+      "hit": false
+    },
+    {
+      "ts_code": "002297.SZ",
+      "name": "博云新材",
+      "date": "20260901",
+      "score": 76.9,
+      "reason": "利润增速高、ROE及筹码集中度符合成功画像，PB低位，无政策催化但消息面中性，风险低。",
+      "reflected": true,
+      "t5_ret": 0.125,
+      "hit": true
+    },
+    {
+      "ts_code": "605198.SH",
+      "name": "安德利",
+      "date": "20260901",
+      "score": 74.8,
+      "reason": "筹码集中、人均持股高，符合成功画像，但利润增速负，消息面平淡，PE百分位高。",
+      "reflected": true,
+      "t5_ret": 0.1653,
+      "hit": true
+    },
+    {
+      "ts_code": "301150.SZ",
+      "name": "中一科技",
+      "date": "20260901",
+      "score": 73.2,
+      "reason": "基本面与筹码条件符合成功画像，利润增速高，PB百分位低，消息面中性，但近期涨幅大需防追高。",
+      "reflected": true,
+      "t5_ret": 0.0212,
+      "hit": false
+    },
+    {
+      "ts_code": "300873.SZ",
+      "name": "海晨股份",
+      "date": "20260901",
+      "score": 73.1,
+      "reason": "低位无实质利好，消息平淡，但筹码集中、资金流入，符合成功画像，风险低，可轻仓参与。",
+      "reflected": true,
+      "t5_ret": -0.0165,
+      "hit": false
+    },
+    {
+      "ts_code": "601058.SH",
+      "name": "赛轮轮胎",
+      "date": "20260901",
+      "score": 71.5,
+      "reason": "形态头肩底且上涨率61%，筹码集中、bps高，符合成功画像，但消息面平淡，无实质利好。",
+      "reflected": true,
+      "t5_ret": -0.0586,
+      "hit": false
+    },
+    {
+      "ts_code": "002990.SZ",
+      "name": "盛视科技",
+      "date": "20260901",
+      "score": 70.0,
+      "reason": "基本面与筹码条件符合成功画像，利润增速高，筹码集中，无政策消息面风险，但近期涨幅较大。",
+      "reflected": true,
+      "t5_ret": 0.0004,
+      "hit": false
+    },
+    {
+      "ts_code": "002687.SZ",
+      "name": "乔治白",
+      "date": "20260901",
+      "score": 81.3,
+      "reason": "低位启动，政策正面，筹码集中，符合成功画像，但利润增速负，上调有限。",
+      "reflected": true,
+      "t5_ret": 0.0191,
+      "hit": false
+    },
+    {
+      "ts_code": "002440.SZ",
+      "name": "闰土股份",
+      "date": "20260901",
+      "score": 74.6,
+      "reason": "利润增速高、PE/PB低位、筹码集中，但涨幅已大，无政策催化，维持原概率。",
+      "reflected": true,
+      "t5_ret": -0.0635,
+      "hit": false
+    },
+    {
+      "ts_code": "603995.SH",
+      "name": "甬金股份",
+      "date": "20260901",
+      "score": 70.8,
+      "reason": "基本面与筹码条件优，历史画像匹配，但无政策催化，消息面中性，无追高风险。",
+      "reflected": true,
+      "t5_ret": -0.0344,
+      "hit": false
+    },
+    {
+      "ts_code": "000962.SZ",
+      "name": "东方钽业",
+      "date": "20260901",
+      "score": 70.7,
+      "reason": "筹码集中、PB低位，但净利下滑、现金流差，定增摊薄，无政策催化，谨慎参与。",
+      "reflected": true,
+      "t5_ret": -0.014,
+      "hit": false
+    },
+    {
+      "ts_code": "301297.SZ",
+      "name": "富乐德",
+      "date": "20260901",
+      "score": 66.1,
+      "reason": "基本面与筹码符合画像，政策未兑现，消息面中性，注意短期涨幅。",
+      "reflected": true,
+      "t5_ret": 0.0359,
+      "hit": false
+    },
+    {
+      "ts_code": "300475.SZ",
+      "name": "香农芯创",
+      "date": "20260901",
+      "score": 65.9,
+      "reason": "基本面优秀，筹码集中，政策支持但板块已涨，消息面平淡，维持原概率。",
+      "reflected": true,
+      "t5_ret": 0.04,
+      "hit": false
+    },
+    {
+      "ts_code": "301310.SZ",
+      "name": "鑫宏业",
+      "date": "20260902",
+      "score": 68.5,
+      "reason": "基本面与筹码符合历史成功画像，资金面中性，无政策催化，涨幅温和，未现出货迹象，可关注。",
+      "reflected": true,
+      "t5_ret": 0.0349,
+      "hit": false
+    },
+    {
+      "ts_code": "301536.SZ",
+      "name": "星宸科技",
+      "date": "20260903",
+      "score": 76.4,
+      "reason": "基本面优异，利润增速高，筹码集中，符合成功画像；政策催化未兑现但消息面中性，解禁压力需警惕，小幅上调。",
+      "reflected": true,
+      "t5_ret": -0.0749,
+      "hit": false
+    },
+    {
+      "ts_code": "002860.SZ",
+      "name": "星帅尔",
+      "date": "20260903",
+      "score": 78.0,
+      "reason": "政策A级利好未兑现，家电催化；形态头肩底，筹码集中，bps高，符合成功画像；但利润增速负，毛利率低，近期涨幅大，防追高，小幅上调。",
+      "reflected": true,
+      "t5_ret": -0.1218,
+      "hit": false
+    },
+    {
+      "ts_code": "002972.SZ",
+      "name": "科安达",
+      "date": "20260903",
+      "score": 74.0,
+      "reason": "低位未大涨，政策利好未兑现，消息中性无出货风险，筹码集中且ROE高，符合成功画像；但利润增速负，上调谨慎。",
+      "reflected": true,
+      "t5_ret": 0.0442,
+      "hit": false
+    },
+    {
+      "ts_code": "301310.SZ",
+      "name": "鑫宏业",
+      "date": "20260903",
+      "score": 72.3,
+      "reason": "形态C，筹码集中且资金净流入，符合历史成功画像；政策C级但板块已涨，消息面存疑，无实质利好，维持原概率。",
+      "reflected": true,
+      "t5_ret": -0.0194,
+      "hit": false
+    },
+    {
+      "ts_code": "300943.SZ",
+      "name": "春晖智控",
+      "date": "20260905",
+      "score": 74.3,
+      "reason": "规则概率最高，但精筛分析失败，缺乏基本面确认，风险较高，仅作保守配置。",
+      "reflected": true,
+      "t5_ret": -0.1459,
+      "hit": false
+    },
+    {
+      "ts_code": "301008.SZ",
+      "name": "宏昌科技",
+      "date": "20260905",
+      "score": 73.0,
+      "reason": "利润增速高、筹码集中，符合成功画像，但近期涨幅大，追高风险，消息面缺失，维持原判。",
+      "reflected": true,
+      "t5_ret": -0.1243,
+      "hit": false
+    },
+    {
+      "ts_code": "300274.SZ",
+      "name": "阳光电源",
+      "date": "20260905",
+      "score": 71.8,
+      "reason": "低位超跌、筹码集中，基本面稳健，但利润增速下滑，政策中性，谨慎参与。",
+      "reflected": true,
+      "t5_ret": -0.0395,
+      "hit": false
+    },
+    {
+      "ts_code": "300274.SZ",
+      "name": "阳光电源",
+      "date": "20260907",
+      "score": 71.8,
+      "reason": "基本面与筹码优，历史上涨率高，但利润增速负且港股IPO摊薄，消息面中性，维持原概率。",
+      "reflected": true,
+      "t5_ret": -0.0395,
+      "hit": false
+    },
+    {
+      "ts_code": "300378.SZ",
+      "name": "鼎捷数智",
+      "date": "20260907",
+      "score": 59.9,
+      "reason": "利润增速高、bps高、筹码集中，符合成功画像；但无政策催化且近期涨幅需警惕，维持原概率。",
+      "reflected": true,
+      "t5_ret": -0.061,
+      "hit": false
+    },
+    {
+      "ts_code": "300274.SZ",
+      "name": "阳光电源",
+      "date": "20260908",
+      "score": 79.6,
+      "reason": "低位超跌筹码集中，政策利好未兑现，消息面中性，符合成功画像，但利润增速为负，上调有限。",
+      "reflected": false
+    },
+    {
+      "ts_code": "300939.SZ",
+      "name": "秋田微",
+      "date": "20260908",
+      "score": 75.8,
+      "reason": "Agent 分析失败，按规则概率保留",
+      "reflected": false
+    },
+    {
+      "ts_code": "300505.SZ",
+      "name": "川金诺",
+      "date": "20260908",
+      "score": 75.2,
+      "reason": "Agent 分析失败，按规则概率保留",
+      "reflected": false
+    },
+    {
+      "ts_code": "002821.SZ",
+      "name": "凯莱英",
+      "date": "20260908",
+      "score": 74.9,
+      "reason": "Agent 分析失败，按规则概率保留",
+      "reflected": false
+    },
+    {
+      "ts_code": "300363.SZ",
+      "name": "博腾股份",
+      "date": "20260908",
+      "score": 72.7,
+      "reason": "Agent 分析失败，按规则概率保留",
+      "reflected": false
+    },
+    {
+      "ts_code": "300607.SZ",
+      "name": "拓斯达",
+      "date": "20260908",
+      "score": 71.8,
+      "reason": "Agent 分析失败，按规则概率保留",
+      "reflected": false
+    },
+    {
+      "ts_code": "300313.SZ",
+      "name": "天山生物",
+      "date": "20260908",
+      "score": 70.8,
+      "reason": "Agent 分析失败，按规则概率保留",
+      "reflected": false
+    },
+    {
+      "ts_code": "600770.SH",
+      "name": "综艺股份",
+      "date": "20260908",
+      "score": 70.6,
+      "reason": "Agent 分析失败，按规则概率保留",
+      "reflected": false
+    },
+    {
+      "ts_code": "301257.SZ",
+      "name": "普蕊斯",
+      "date": "20260908",
+      "score": 70.0,
+      "reason": "Agent 分析失败，按规则概率保留",
+      "reflected": false
+    },
+    {
+      "ts_code": "301628.SZ",
+      "name": "强达电路",
+      "date": "20260908",
+      "score": 69.4,
+      "reason": "Agent 分析失败，按规则概率保留",
+      "reflected": false
+    },
+    {
+      "ts_code": "002859.SZ",
+      "name": "洁美科技",
+      "date": "20260908",
+      "score": 69.2,
+      "reason": "Agent 分析失败，按规则概率保留",
+      "reflected": false
+    },
+    {
+      "ts_code": "600869.SH",
+      "name": "远东股份",
+      "date": "20260908",
+      "score": 67.9,
+      "reason": "Agent 分析失败，按规则概率保留",
+      "reflected": false
+    },
+    {
+      "ts_code": "300720.SZ",
+      "name": "海川智能",
+      "date": "20260908",
+      "score": 66.8,
+      "reason": "Agent 分析失败，按规则概率保留",
+      "reflected": false
+    },
+    {
+      "ts_code": "603211.SH",
+      "name": "晋拓股份",
+      "date": "20260908",
+      "score": 66.3,
+      "reason": "Agent 分析失败，按规则概率保留",
+      "reflected": false
+    },
+    {
+      "ts_code": "300404.SZ",
+      "name": "博济医药",
+      "date": "20260908",
+      "score": 66.0,
+      "reason": "Agent 分析失败，按规则概率保留",
+      "reflected": false
+    },
+    {
+      "ts_code": "600714.SH",
+      "name": "金瑞矿业",
+      "date": "20260908",
+      "score": 64.9,
+      "reason": "Agent 分析失败，按规则概率保留",
+      "reflected": false
+    },
+    {
+      "ts_code": "600540.SH",
+      "name": "新赛股份",
+      "date": "20260908",
+      "score": 64.8,
+      "reason": "Agent 分析失败，按规则概率保留",
+      "reflected": false
+    },
+    {
+      "ts_code": "002457.SZ",
+      "name": "青龙管业",
+      "date": "20260908",
+      "score": 64.5,
+      "reason": "Agent 分析失败，按规则概率保留",
+      "reflected": false
+    },
+    {
+      "ts_code": "301122.SZ",
+      "name": "采纳股份",
+      "date": "20260908",
+      "score": 64.0,
+      "reason": "Agent 分析失败，按规则概率保留",
+      "reflected": false
+    },
+    {
+      "ts_code": "301526.SZ",
+      "name": "国际复材",
+      "date": "20260908",
+      "score": 64.0,
+      "reason": "Agent 分析失败，按规则概率保留",
+      "reflected": false
+    },
+    {
+      "ts_code": "603696.SH",
+      "name": "安记食品",
+      "date": "20260908",
+      "score": 63.1,
+      "reason": "Agent 分析失败，按规则概率保留",
+      "reflected": false
+    },
+    {
+      "ts_code": "300413.SZ",
+      "name": "芒果超媒",
+      "date": "20260908",
+      "score": 62.7,
+      "reason": "Agent 分析失败，按规则概率保留",
+      "reflected": false
+    },
+    {
+      "ts_code": "603150.SH",
+      "name": "万朗磁塑",
+      "date": "20260908",
+      "score": 62.6,
+      "reason": "Agent 分析失败，按规则概率保留",
+      "reflected": false
+    },
+    {
+      "ts_code": "301310.SZ",
+      "name": "鑫宏业",
+      "date": "20260908",
+      "score": 62.3,
+      "reason": "Agent 分析失败，按规则概率保留",
+      "reflected": false
+    },
+    {
+      "ts_code": "301151.SZ",
+      "name": "冠龙节能",
+      "date": "20260908",
+      "score": 62.2,
+      "reason": "Agent 分析失败，按规则概率保留",
+      "reflected": false
+    },
+    {
+      "ts_code": "605580.SH",
+      "name": "恒盛能源",
+      "date": "20260908",
+      "score": 61.0,
+      "reason": "Agent 分析失败，按规则概率保留",
+      "reflected": false
+    },
+    {
+      "ts_code": "603991.SH",
+      "name": "领先股份",
+      "date": "20260908",
+      "score": 61.0,
+      "reason": "Agent 分析失败，按规则概率保留",
+      "reflected": false
+    },
+    {
+      "ts_code": "603269.SH",
+      "name": "海鸥股份",
+      "date": "20260908",
+      "score": 60.8,
+      "reason": "Agent 分析失败，按规则概率保留",
+      "reflected": false
+    },
+    {
+      "ts_code": "300741.SZ",
+      "name": "华宝股份",
+      "date": "20260908",
+      "score": 60.5,
+      "reason": "Agent 分析失败，按规则概率保留",
+      "reflected": false
+    },
+    {
+      "ts_code": "301056.SZ",
+      "name": "森赫股份",
+      "date": "20260908",
+      "score": 59.1,
+      "reason": "Agent 分析失败，按规则概率保留",
+      "reflected": false
+    },
+    {
+      "ts_code": "002827.SZ",
+      "name": "高争民爆",
+      "date": "20260908",
+      "score": 58.6,
+      "reason": "Agent 分析失败，按规则概率保留",
+      "reflected": false
+    },
+    {
+      "ts_code": "002821.SZ",
+      "name": "凯莱英",
+      "date": "20260909",
+      "score": 74.9,
+      "reason": "低风险形态，筹码集中，资金流入，政策利好明确，估值低，综合概率最高，确定性较强。",
+      "reflected": false
+    },
+    {
+      "ts_code": "301628.SZ",
+      "name": "强达电路",
+      "date": "20260909",
+      "score": 74.4,
+      "reason": "低PB高bps，筹码集中，政策利好电子元器件，但板块涨幅已高且利润增速负，微调加分后仍具吸引力。",
+      "reflected": false
+    },
+    {
+      "ts_code": "600540.SH",
+      "name": "新赛股份",
+      "date": "20260909",
+      "score": 64.8,
+      "reason": "基本面强劲，利润增速高，筹码集中，PB低位，但无政策催化且量比高，维持原判。",
+      "reflected": false
+    },
+    {
+      "ts_code": "300313.SZ",
+      "name": "天山生物",
+      "date": "20260909",
+      "score": 69.5,
+      "reason": "基本面与筹码优，利润增速高，筹码集中，历史上涨率高，消息面中性，维持原概率。",
+      "reflected": false
+    },
+    {
+      "ts_code": "001229.SZ",
+      "name": "魅视科技",
+      "date": "20260909",
+      "score": 68.5,
+      "reason": "筹码集中、PB低位符合成功画像，但利润增速大降，消息面中性，无实质驱动。",
+      "reflected": false
+    },
+    {
+      "ts_code": "002687.SZ",
+      "name": "乔治白",
+      "date": "20260909",
+      "score": 67.0,
+      "reason": "筹码集中且低位，但利润下滑、现金流差，消息面平淡，无实质驱动，谨慎参与。",
+      "reflected": false
+    },
+    {
+      "ts_code": "002171.SZ",
+      "name": "楚江新材",
+      "date": "20260910",
+      "score": 73.0,
+      "reason": "中报净利增21%真实业绩催化，涨幅未过热筹码集中；但无政策催化、现金流负、应收偏高，小幅上调。",
+      "reflected": false
+    },
+    {
+      "ts_code": "300739.SZ",
+      "name": "明阳电路",
+      "date": "20260911",
+      "score": 71.8,
+      "reason": "量化条件优，政策利好部分兑现，无减持隐患，但消息面存疑需防追高，维持原判。",
+      "reflected": false
+    },
+    {
+      "ts_code": "301047.SZ",
+      "name": "义翘神州",
+      "date": "20260911",
+      "score": 69.9,
+      "reason": "低位回调无出货，筹码集中、每股净资产高，符合成功画像，但无政策催化，中性对待。",
+      "reflected": false
+    },
+    {
+      "ts_code": "002409.SZ",
+      "name": "雅克科技",
+      "date": "20260911",
+      "score": 69.2,
+      "reason": "基本面筹码优，消息面中性无出货风险，但政策催化弱且已涨59.6%，防追高维持原判。",
+      "reflected": false
+    },
+    {
+      "ts_code": "301053.SZ",
+      "name": "远信工业",
+      "date": "20260911",
+      "score": 65.3,
+      "reason": "低位回调无出货，筹码集中、人均持股高符合画像，但无政策催化且近期跌16.4%，维持原判。",
+      "reflected": false
+    },
+    {
+      "ts_code": "000722.SZ",
+      "name": "湖南发展",
+      "date": "20260911",
+      "score": 70.4,
+      "reason": "收购水电资产实质重组，涨幅温和无减持质押，基本面筹码符合成功画像，防追高。",
+      "reflected": false
+    },
+    {
+      "ts_code": "301047.SZ",
+      "name": "义翘神州",
+      "date": "20260911",
+      "score": 69.9,
+      "reason": "低位无实质利好，但筹码集中、高bps、低负债，符合历史成功画像，按规则执行。",
+      "reflected": false
+    },
+    {
+      "ts_code": "605376.SH",
+      "name": "博迁新材",
+      "date": "20260912",
+      "score": 73.9,
+      "reason": "低位回调非追高，MLCC涨价实质催化，筹码集中PB低，政策C级仅小幅上调。",
+      "reflected": false
+    },
+    {
+      "ts_code": "300772.SZ",
+      "name": "运达股份",
+      "date": "20260912",
+      "score": 70.3,
+      "reason": "Agent分析失败，按规则概率保留，确定性不足，降权处理。",
+      "reflected": false
+    },
+    {
+      "ts_code": "301526.SZ",
+      "name": "国际复材",
+      "date": "20260912",
+      "score": 69.9,
+      "reason": "低位超跌+PB分位13%+利润增速176%+筹码集中，无政策催化，防追高。",
+      "reflected": false
+    },
+    {
+      "ts_code": "600354.SH",
+      "name": "敦煌种业",
+      "date": "20260912",
+      "score": 63.1,
+      "reason": "PB分位6.8%低位，利润增速165%且ROE18.7%，筹码集中，无追高风险。",
+      "reflected": false
+    },
+    {
+      "ts_code": "605376.SH",
+      "name": "博迁新材",
+      "date": "20260914",
+      "score": 73.9,
+      "reason": "低位无出货+业绩扭亏+小金属S级政策催化，筹码集中PB低；政策降级无订单，轻仓防追高。",
+      "reflected": false
+    },
+    {
+      "ts_code": "301526.SZ",
+      "name": "国际复材",
+      "date": "20260914",
+      "score": 69.9,
+      "reason": "低位+利润增速176%+筹码集中，符合成功画像；政策含脑补、消息中性，维持原判。",
+      "reflected": false
+    },
+    {
+      "ts_code": "603127.SH",
+      "name": "昭衍新药",
+      "date": "20260914",
+      "score": 77.0,
+      "reason": "低位跌7.9%无出货基础，筹码集中、利润增速1126%、PB分位3.6%符合成功画像；量比偏弱无政策催化，维持原判。",
+      "reflected": false
+    },
+    {
+      "ts_code": "301047.SZ",
+      "name": "义翘神州",
+      "date": "20260914",
+      "score": 67.0,
+      "reason": "筹码集中、低负债、高毛利符合成功画像；无政策催化且近期涨幅1.31需防追高，维持原判。",
+      "reflected": false
+    },
+    {
+      "ts_code": "002025.SZ",
+      "name": "航天电器",
+      "date": "20260916",
+      "score": 78.1,
+      "reason": "Q2提速+AI算力催化，位置低无隐患，筹码集中，政策A级，确定性最高。",
+      "reflected": false
+    },
+    {
+      "ts_code": "002522.SZ",
+      "name": "浙江众成",
+      "date": "20260916",
+      "score": 70.7,
+      "reason": "筹码集中、ROE正、利润增速48%，无减持质押，涨幅温和无追高风险。",
+      "reflected": false
+    },
+    {
+      "ts_code": "300765.SZ",
+      "name": "石药创新",
+      "date": "20260916",
+      "score": 65.5,
+      "reason": "高ROE高增速高集中度低PB，消息面中性，短期涨幅小需防追高。",
+      "reflected": false
+    },
+    {
+      "ts_code": "300821.SZ",
+      "name": "东岳硅材",
+      "date": "20260917",
+      "score": 72.9,
+      "reason": "H1净利增916%真实业绩催化，PB百分位3.5极低、处低位非出货；股权激励调整存隐患，轻仓。",
+      "reflected": false
+    },
+    {
+      "ts_code": "300567.SZ",
+      "name": "精测电子",
+      "date": "20260917",
+      "score": 72.1,
+      "reason": "筹码集中、PB低位、利润增速171%符合成功画像；消息面中性无催化，无追高风险，维持原判。",
+      "reflected": false
+    },
+    {
+      "ts_code": "300684.SZ",
+      "name": "中石科技",
+      "date": "20260917",
+      "score": 78.7,
+      "reason": "低位实质利好：液冷批量供货、石墨专利、回购，筹码集中PB低，轻仓防PE高追高。",
+      "reflected": false
+    },
+    {
+      "ts_code": "301678.SZ",
+      "name": "新恒汇",
+      "date": "20260917",
+      "score": 76.6,
+      "reason": "筹码集中PB低，eSIM封测扩产实质利好，涨幅小位置低，无减持质押隐患。",
+      "reflected": false
+    },
+    {
+      "ts_code": "300684.SZ",
+      "name": "中石科技",
+      "date": "20260918",
+      "score": 78.7,
+      "reason": "低位+液冷批量供货、回购实质利好，筹码集中PB低，轻仓防板块追高。",
+      "reflected": false
+    },
+    {
+      "ts_code": "301678.SZ",
+      "name": "新恒汇",
+      "date": "20260918",
+      "score": 78.6,
+      "reason": "扩产与主营直接相关、无减持，筹码集中PB低；利润增速-62%政策弱，轻仓。",
+      "reflected": false
+    },
+    {
+      "ts_code": "300314.SZ",
+      "name": "戴维医疗",
+      "date": "20260918",
+      "score": 73.1,
+      "reason": "低位无出货基础，筹码集中ROE正无隐患，但缺实质利好催化，维持原判。",
+      "reflected": false
+    },
+    {
+      "ts_code": "301008.SZ",
+      "name": "宏昌科技",
+      "date": "20260918",
+      "score": 72.3,
+      "reason": "利润增速113%+高bps+筹码集中，回测条件优；无政策催化，维持原判。",
+      "reflected": false
+    },
+    {
+      "ts_code": "300454.SZ",
+      "name": "深信服",
+      "date": "20260921",
+      "score": 74.2,
+      "reason": "筹码集中+利润大增+低PB分位，回测条件优；消息面中性无出货风险，防追高维持原判。",
+      "reflected": false
+    },
+    {
+      "ts_code": "000603.SZ",
+      "name": "盛达资源",
+      "date": "20260921",
+      "score": 72.7,
+      "reason": "筹码集中、PB低分位、利润高增，回测胜率高；无政策催化，按规则概率持有不追高。",
+      "reflected": false
+    },
+    {
+      "ts_code": "300767.SZ",
+      "name": "震安科技",
+      "date": "20260921",
+      "score": 67.7,
+      "reason": "利润增速129%且PB百分位3.9%低位，头肩底形态，无消息面风险；无政策催化防追高。",
+      "reflected": false
+    },
+    {
+      "ts_code": "301633.SZ",
+      "name": "港迪技术",
+      "date": "20260922",
+      "score": 80.7,
+      "reason": "2.3亿订单占营收43%低位实质利好，筹码集中符合85%胜率；但ROE负、PE高分位，追高风险控仓",
+      "reflected": false
+    },
+    {
+      "ts_code": "301529.SZ",
+      "name": "福赛科技",
+      "date": "20260922",
+      "score": 77.8,
+      "reason": "筹码资金优、PB低位，汽车后市场政策催化已部分兑现，程序性公告无实质催化，防追高",
+      "reflected": false
+    },
+    {
+      "ts_code": "300759.SZ",
+      "name": "康龙化成",
+      "date": "20260922",
+      "score": 77.7,
+      "reason": "量化画像优、政策A级CXO利好，但涨幅0.79偏高叠可转债摊薄减持完成，轻仓防回调",
+      "reflected": false
+    },
+    {
+      "ts_code": "000626.SZ",
+      "name": "远大控股",
+      "date": "20260922",
+      "score": 74.9,
+      "reason": "量化概率高、利润资金条件命中，回调低位无出货压力；消息中性无催化，轻仓防追高",
+      "reflected": false
+    },
+    {
+      "ts_code": "301202.SZ",
+      "name": "朗威股份",
+      "date": "20260922",
+      "score": 69.2,
+      "reason": "头肩底低位、筹码资金达标、PB安全；但无催化、利润-19%、PE分位91，不追高",
+      "reflected": false
+    },
+    {
+      "ts_code": "300765.SZ",
+      "name": "石药创新",
+      "date": "20260923",
+      "score": 82.2,
+      "reason": "筹码集中、ROE38%、利润高增、PB低位，多项命中高胜率条件；ADC纳入突破性疗法属官方实质利好，板块回调未透支；但prior_rise偏高，需防追高。",
+      "reflected": false
+    },
+    {
+      "ts_code": "300865.SZ",
+      "name": "大宏立",
+      "date": "20260923",
+      "score": 75.1,
+      "reason": "Agent 分析失败，按规则概率保留",
+      "reflected": false
+    },
+    {
+      "ts_code": "002172.SZ",
+      "name": "澳洋健康",
+      "date": "20260923",
+      "score": 75.0,
+      "reason": "Agent 分析失败，按规则概率保留",
+      "reflected": false
+    },
+    {
+      "ts_code": "603236.SH",
+      "name": "移远通信",
+      "date": "20260923",
+      "score": 74.2,
+      "reason": "Agent 分析失败，按规则概率保留",
+      "reflected": false
+    },
+    {
+      "ts_code": "300927.SZ",
+      "name": "江天化学",
+      "date": "20260923",
+      "score": 74.1,
+      "reason": "Agent 分析失败，按规则概率保留",
+      "reflected": false
+    },
+    {
+      "ts_code": "301122.SZ",
+      "name": "采纳股份",
+      "date": "20260923",
+      "score": 74.1,
+      "reason": "Agent 分析失败，按规则概率保留",
+      "reflected": false
+    },
+    {
+      "ts_code": "300534.SZ",
+      "name": "陇神戎发",
+      "date": "20260923",
+      "score": 74.0,
+      "reason": "Agent 分析失败，按规则概率保留",
+      "reflected": false
+    },
+    {
+      "ts_code": "002942.SZ",
+      "name": "新农股份",
+      "date": "20260923",
+      "score": 71.8,
+      "reason": "Agent 分析失败，按规则概率保留",
+      "reflected": false
+    },
+    {
+      "ts_code": "001326.SZ",
+      "name": "联域股份",
+      "date": "20260923",
+      "score": 71.5,
+      "reason": "Agent 分析失败，按规则概率保留",
+      "reflected": false
+    },
+    {
+      "ts_code": "601886.SH",
+      "name": "江河集团",
+      "date": "20260923",
+      "score": 71.1,
+      "reason": "Agent 分析失败，按规则概率保留",
+      "reflected": false
+    },
+    {
+      "ts_code": "002696.SZ",
+      "name": "百洋股份",
+      "date": "20260923",
+      "score": 71.1,
+      "reason": "Agent 分析失败，按规则概率保留",
+      "reflected": false
+    },
+    {
+      "ts_code": "603330.SH",
+      "name": "天洋新材",
+      "date": "20260923",
+      "score": 70.5,
+      "reason": "Agent 分析失败，按规则概率保留",
+      "reflected": false
+    },
+    {
+      "ts_code": "300413.SZ",
+      "name": "芒果超媒",
+      "date": "20260923",
+      "score": 70.2,
+      "reason": "Agent 分析失败，按规则概率保留",
+      "reflected": false
+    },
+    {
+      "ts_code": "003001.SZ",
+      "name": "中岩大地",
+      "date": "20260923",
+      "score": 69.4,
+      "reason": "Agent 分析失败，按规则概率保留",
+      "reflected": false
+    },
+    {
+      "ts_code": "300741.SZ",
+      "name": "华宝股份",
+      "date": "20260923",
+      "score": 67.4,
+      "reason": "Agent 分析失败，按规则概率保留",
+      "reflected": false
+    },
+    {
+      "ts_code": "300939.SZ",
+      "name": "秋田微",
+      "date": "20260923",
+      "score": 66.6,
+      "reason": "Agent 分析失败，按规则概率保留",
+      "reflected": false
+    },
+    {
+      "ts_code": "605162.SH",
+      "name": "新中港",
+      "date": "20260923",
+      "score": 66.2,
+      "reason": "Agent 分析失败，按规则概率保留",
+      "reflected": false
+    },
+    {
+      "ts_code": "300765.SZ",
+      "name": "石药创新",
+      "date": "20260923",
+      "score": 75.0,
+      "reason": "量化极强且临床利好无减持，但前期涨幅过高，轻仓防回调。",
+      "reflected": false
+    },
+    {
+      "ts_code": "600829.SH",
+      "name": "人民同泰",
+      "date": "20260923",
+      "score": 74.8,
+      "reason": "规则概率高且筹码大单强，但消息真空、资金流出且板块回调，降权。",
+      "reflected": false
+    },
+    {
+      "ts_code": "601886.SH",
+      "name": "江河集团",
+      "date": "20260923",
+      "score": 74.1,
+      "reason": "筹码集中、估值低位且有订单利好，但涨幅偏高缩量，仅小幅上调。",
+      "reflected": false
+    },
+    {
+      "ts_code": "002612.SZ",
+      "name": "朗姿股份",
+      "date": "20260923",
+      "score": 73.5,
+      "reason": "头肩底与资金参数佳且低位，但无政策催化、利润大降和质押展期，降权。",
+      "reflected": false
+    },
+    {
+      "ts_code": "300163.SZ",
+      "name": "先锋新材",
+      "date": "20260924",
+      "score": 83.2,
+      "reason": "业绩预盈实质利好且位置低，轻上调；ROE负、无政策催化，防追高",
+      "reflected": false
+    },
+    {
+      "ts_code": "301130.SZ",
+      "name": "西点药业",
+      "date": "20260924",
+      "score": 75.8,
+      "reason": "LLM调用失败，仅按规则概率75.8%保留，确定性偏低",
+      "reflected": false
+    },
+    {
+      "ts_code": "300363.SZ",
+      "name": "博腾股份",
+      "date": "20260928",
+      "score": 74.7,
+      "reason": "资金条件命中、正分高风险低，但利润亏损、PB分位低；上涨为CRO板块联动非个股催化，政策利好但板块普跌，下调。",
+      "reflected": false
+    }
+  ]
+}

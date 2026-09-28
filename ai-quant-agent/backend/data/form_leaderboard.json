@@ -1,0 +1,285 @@
+{
+  "baseline_t1": 0.5857,
+  "min_hit_rate": 0.45,
+  "rules": [
+    {
+      "key": "zaochenzhixing",
+      "name": "早晨之星",
+      "source": "network",
+      "form_type": "B",
+      "lookback_days": 3,
+      "description": "长阴→小实体→长阳收复前阴1/2",
+      "bullish": true,
+      "hit_rate_t1": 0.6083,
+      "samples": 1537,
+      "verified": true,
+      "tradeable_ratio": 0.8119,
+      "avg_ret_t1": 0.0187,
+      "reason": "pass"
+    },
+    {
+      "key": "jinzhentandi",
+      "name": "金针探底",
+      "source": "network",
+      "form_type": "B",
+      "lookback_days": 5,
+      "description": "下影≥实体2倍+下跌末端",
+      "bullish": true,
+      "hit_rate_t1": 0.6246,
+      "samples": 1276,
+      "verified": true,
+      "tradeable_ratio": 0.9938,
+      "avg_ret_t1": 0.0192,
+      "reason": "pass"
+    },
+    {
+      "key": "toujianbe",
+      "name": "头肩底",
+      "source": "network",
+      "form_type": "A",
+      "lookback_days": 25,
+      "description": "左肩→头→右肩+突破颈线",
+      "bullish": true,
+      "hit_rate_t1": 0.6076,
+      "samples": 16257,
+      "verified": true,
+      "tradeable_ratio": 0.8618,
+      "avg_ret_t1": 0.0201,
+      "reason": "pass"
+    },
+    {
+      "key": "shangsanshi",
+      "name": "上升三法",
+      "source": "network",
+      "form_type": "D",
+      "lookback_days": 5,
+      "description": "阳后3小阴不破低点再收复",
+      "bullish": true,
+      "hit_rate_t1": 0.7119,
+      "samples": 59,
+      "verified": true,
+      "tradeable_ratio": 0.8429,
+      "avg_ret_t1": 0.0143,
+      "reason": "pass"
+    }
+  ],
+  "deleted": [
+    {
+      "key": "laoyatou",
+      "name": "老鸭头",
+      "source": "network",
+      "hit_rate_t1": 0.565694972539079,
+      "samples": 4734,
+      "reason": "below_baseline"
+    },
+    {
+      "key": "xianren",
+      "name": "仙人指路",
+      "source": "network",
+      "hit_rate_t1": 0.6066252587991718,
+      "samples": 483,
+      "reason": "not_significant"
+    },
+    {
+      "key": "chushuifurong",
+      "name": "出水芙蓉",
+      "source": "network",
+      "hit_rate_t1": 0.546742209631728,
+      "samples": 353,
+      "reason": "below_baseline"
+    },
+    {
+      "key": "hongsanbing",
+      "name": "红三兵",
+      "source": "network",
+      "hit_rate_t1": 0.5711387268577226,
+      "samples": 3943,
+      "reason": "below_baseline"
+    },
+    {
+      "key": "duofangpao",
+      "name": "多方炮",
+      "source": "network",
+      "hit_rate_t1": 0.5704596834966089,
+      "samples": 1327,
+      "reason": "below_baseline"
+    },
+    {
+      "key": "shuangdi",
+      "name": "双底/W底",
+      "source": "network",
+      "hit_rate_t1": 0.5813366960907944,
+      "samples": 8723,
+      "reason": "below_baseline"
+    },
+    {
+      "key": "duotoupailie",
+      "name": "均线多头排列",
+      "source": "network",
+      "hit_rate_t1": 0.5601554221123278,
+      "samples": 14155,
+      "reason": "below_baseline"
+    },
+    {
+      "key": "suolianghuicai",
+      "name": "缩量回踩",
+      "source": "network",
+      "hit_rate_t1": 0.5835605765485002,
+      "samples": 7701,
+      "reason": "below_baseline"
+    },
+    {
+      "key": "taxingdi",
+      "name": "塔形底",
+      "source": "network",
+      "hit_rate_t1": 0.528,
+      "samples": 125,
+      "reason": "below_baseline"
+    },
+    {
+      "key": "sanchongdi",
+      "name": "三重底",
+      "source": "network",
+      "hit_rate_t1": 0.6075581395348837,
+      "samples": 8256,
+      "reason": "oos_below_thr"
+    },
+    {
+      "key": "yuanhudi",
+      "name": "圆弧底",
+      "source": "network",
+      "hit_rate_t1": 0.5927018633540373,
+      "samples": 12880,
+      "reason": "oos_below_thr"
+    },
+    {
+      "key": "fangliangtupo",
+      "name": "放量突破",
+      "source": "network",
+      "hit_rate_t1": 0.5660818713450292,
+      "samples": 4275,
+      "reason": "below_baseline"
+    },
+    {
+      "key": "liangjiaqisheng",
+      "name": "量价齐升",
+      "source": "network",
+      "hit_rate_t1": 0.5792429792429793,
+      "samples": 4095,
+      "reason": "below_baseline"
+    },
+    {
+      "key": "jinshangu",
+      "name": "金山谷",
+      "source": "network",
+      "hit_rate_t1": 0.5956873315363881,
+      "samples": 3710,
+      "reason": "not_significant"
+    },
+    {
+      "key": "haidilaoyue",
+      "name": "海底捞月",
+      "source": "network",
+      "hit_rate_t1": 0.5833878351863964,
+      "samples": 1529,
+      "reason": "below_baseline"
+    },
+    {
+      "key": "daochuizhui",
+      "name": "倒锤头线",
+      "source": "network",
+      "hit_rate_t1": 0.6057298772169167,
+      "samples": 733,
+      "reason": "not_significant"
+    },
+    {
+      "key": "shuguang",
+      "name": "曙光初现",
+      "source": "network",
+      "hit_rate_t1": 0.5787461773700305,
+      "samples": 2616,
+      "reason": "below_baseline"
+    },
+    {
+      "key": "kantunmo",
+      "name": "看涨吞没",
+      "source": "network",
+      "hit_rate_t1": 0.5677308024158757,
+      "samples": 2318,
+      "reason": "below_baseline"
+    },
+    {
+      "key": "sanyangguan",
+      "name": "三阳开泰",
+      "source": "network",
+      "hit_rate_t1": 0.5881737310308739,
+      "samples": 1911,
+      "reason": "not_significant"
+    },
+    {
+      "key": "auto_body_ratio_452",
+      "name": "实体占比≥0.45",
+      "source": "auto",
+      "hit_rate_t1": 0.0,
+      "samples": 0,
+      "reason": "insufficient_samples"
+    },
+    {
+      "key": "auto_upper_shadow_600",
+      "name": "上影线≥0.60",
+      "source": "auto",
+      "hit_rate_t1": 0.0,
+      "samples": 0,
+      "reason": "insufficient_samples"
+    }
+  ],
+  "total_rules": 25,
+  "verified_count": 4,
+  "auto_mined": [
+    {
+      "key": "auto_body_ratio_452",
+      "name": "实体占比≥0.45",
+      "source": "auto",
+      "form_type": "D",
+      "lookback_days": 20,
+      "description": "系统自总结：实体占比 ≥ 0.45 时次日上涨率 62.0%",
+      "bullish": true,
+      "hit_rate_t1": 0.6201,
+      "samples": 22063,
+      "verified": false,
+      "tradeable_ratio": 0.0,
+      "avg_ret_t1": 0.0,
+      "conditions": [
+        {
+          "feature": "body_ratio",
+          "threshold": 0.4521276595744667,
+          "direction": "gte"
+        }
+      ]
+    },
+    {
+      "key": "auto_upper_shadow_600",
+      "name": "上影线≥0.60",
+      "source": "auto",
+      "form_type": "D",
+      "lookback_days": 20,
+      "description": "系统自总结：上影线 ≥ 0.60 时次日上涨率 61.7%",
+      "bullish": true,
+      "hit_rate_t1": 0.6172,
+      "samples": 21729,
+      "verified": false,
+      "tradeable_ratio": 0.0,
+      "avg_ret_t1": 0.0,
+      "conditions": [
+        {
+          "feature": "upper_shadow",
+          "threshold": 0.6000000000000224,
+          "direction": "gte"
+        }
+      ]
+    }
+  ],
+  "elapsed": 2116.48,
+  "fallback": false,
+  "generated_at": "2026-08-14 10:53:45"
+}

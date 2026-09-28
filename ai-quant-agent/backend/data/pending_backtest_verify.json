@@ -1,0 +1,7 @@
+{
+  "ts": "2026-08-28 12:50:02",
+  "files": [
+    "code_evolve:app/backtest/daily_scan.py"
+  ],
+  "reason": "回测逻辑被进化大脑修改，需重跑回测验证"
+}

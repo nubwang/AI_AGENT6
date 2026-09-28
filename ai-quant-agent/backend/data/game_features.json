@@ -1,0 +1,758 @@
+{
+ "ok": true,
+ "range": [
+  "20240101",
+  "20260918"
+ ],
+ "horizon": 5,
+ "n_rows": 3565118,
+ "n_days": 659,
+ "min_spread": 0.005,
+ "alpha": 0.05,
+ "fdr": {
+  "m": 16,
+  "n_raw": 2,
+  "n_usable": 2,
+  "threshold": 0.00336
+ },
+ "results": [
+  {
+   "feature": "main_ratio",
+   "plan": "",
+   "horizon": 5,
+   "type": "cont",
+   "n_days": 652,
+   "spread": -0.0002,
+   "t": -0.44,
+   "p": 0.659815,
+   "t_hac": -0.348,
+   "hac_lag": 4,
+   "t_shrink": 0.79,
+   "monotonic_spearman": -0.4,
+   "hit_rate_when_on": null,
+   "groups": [
+    {
+     "q": 0,
+     "n_days": 652,
+     "fwd_mean": 0.00261
+    },
+    {
+     "q": 1,
+     "n_days": 652,
+     "fwd_mean": 0.00379
+    },
+    {
+     "q": 2,
+     "n_days": 652,
+     "fwd_mean": 0.00354
+    },
+    {
+     "q": 3,
+     "n_days": 652,
+     "fwd_mean": 0.00321
+    },
+    {
+     "q": 4,
+     "n_days": 652,
+     "fwd_mean": 0.00241
+    }
+   ],
+   "verdict": "FDR 后不显著",
+   "q": 0.754074,
+   "fdr_pass": false,
+   "meaningful": false,
+   "usable": false,
+   "hac_pass": false
+  },
+  {
+   "feature": "main_ratio_5",
+   "plan": "反客为主",
+   "horizon": 5,
+   "type": "cont",
+   "n_days": 651,
+   "spread": -0.00043,
+   "t": -0.889,
+   "p": 0.374177,
+   "t_hac": -0.532,
+   "hac_lag": 4,
+   "t_shrink": 0.598,
+   "monotonic_spearman": -0.4,
+   "hit_rate_when_on": null,
+   "groups": [
+    {
+     "q": 0,
+     "n_days": 651,
+     "fwd_mean": 0.00272
+    },
+    {
+     "q": 1,
+     "n_days": 651,
+     "fwd_mean": 0.00389
+    },
+    {
+     "q": 2,
+     "n_days": 651,
+     "fwd_mean": 0.00382
+    },
+    {
+     "q": 3,
+     "n_days": 651,
+     "fwd_mean": 0.00357
+    },
+    {
+     "q": 4,
+     "n_days": 651,
+     "fwd_mean": 0.00229
+    }
+   ],
+   "verdict": "FDR 后不显著",
+   "q": 0.544257,
+   "fdr_pass": false,
+   "meaningful": false,
+   "usable": false,
+   "hac_pass": false
+  },
+  {
+   "feature": "upper_shadow",
+   "plan": "调虎离山",
+   "horizon": 5,
+   "type": "cont",
+   "n_days": 653,
+   "spread": 0.00132,
+   "t": 1.63,
+   "p": 0.103178,
+   "t_hac": 1.11,
+   "hac_lag": 4,
+   "t_shrink": 0.681,
+   "monotonic_spearman": 0.4,
+   "hit_rate_when_on": null,
+   "groups": [
+    {
+     "q": 0,
+     "n_days": 653,
+     "fwd_mean": 0.00119
+    },
+    {
+     "q": 1,
+     "n_days": 653,
+     "fwd_mean": 0.00371
+    },
+    {
+     "q": 2,
+     "n_days": 653,
+     "fwd_mean": 0.0041
+    },
+    {
+     "q": 3,
+     "n_days": 653,
+     "fwd_mean": 0.00415
+    },
+    {
+     "q": 4,
+     "n_days": 653,
+     "fwd_mean": 0.00252
+    }
+   ],
+   "verdict": "FDR 后不显著",
+   "q": 0.206356,
+   "fdr_pass": false,
+   "meaningful": false,
+   "usable": false,
+   "hac_pass": false
+  },
+  {
+   "feature": "lower_shadow",
+   "plan": "以逸待劳",
+   "horizon": 5,
+   "type": "cont",
+   "n_days": 653,
+   "spread": -0.00021,
+   "t": -0.267,
+   "p": 0.789454,
+   "t_hac": -0.208,
+   "hac_lag": 4,
+   "t_shrink": 0.779,
+   "monotonic_spearman": 0.0,
+   "hit_rate_when_on": null,
+   "groups": [
+    {
+     "q": 0,
+     "n_days": 653,
+     "fwd_mean": 0.00222
+    },
+    {
+     "q": 1,
+     "n_days": 653,
+     "fwd_mean": 0.00341
+    },
+    {
+     "q": 2,
+     "n_days": 653,
+     "fwd_mean": 0.00396
+    },
+    {
+     "q": 3,
+     "n_days": 653,
+     "fwd_mean": 0.00406
+    },
+    {
+     "q": 4,
+     "n_days": 653,
+     "fwd_mean": 0.00201
+    }
+   ],
+   "verdict": "FDR 后不显著",
+   "q": 0.842084,
+   "fdr_pass": false,
+   "meaningful": false,
+   "usable": false,
+   "hac_pass": false
+  },
+  {
+   "feature": "gap",
+   "plan": "",
+   "horizon": 5,
+   "type": "cont",
+   "n_days": 653,
+   "spread": 0.00205,
+   "t": 2.933,
+   "p": 0.00336,
+   "t_hac": 2.969,
+   "hac_lag": 4,
+   "t_shrink": 1.012,
+   "monotonic_spearman": 0.0,
+   "hit_rate_when_on": null,
+   "groups": [
+    {
+     "q": 0,
+     "n_days": 653,
+     "fwd_mean": 0.00104
+    },
+    {
+     "q": 1,
+     "n_days": 653,
+     "fwd_mean": 0.00391
+    },
+    {
+     "q": 2,
+     "n_days": 653,
+     "fwd_mean": 0.00386
+    },
+    {
+     "q": 3,
+     "n_days": 653,
+     "fwd_mean": 0.00377
+    },
+    {
+     "q": 4,
+     "n_days": 653,
+     "fwd_mean": 0.00309
+    }
+   ],
+   "verdict": "显著但幅度不足（会被成本吃掉）",
+   "q": 0.010752,
+   "fdr_pass": true,
+   "meaningful": false,
+   "usable": false,
+   "hac_pass": true
+  },
+  {
+   "feature": "churn",
+   "plan": "偷梁换柱",
+   "horizon": 5,
+   "type": "cont",
+   "n_days": 653,
+   "spread": -0.00189,
+   "t": -2.084,
+   "p": 0.037143,
+   "t_hac": -1.196,
+   "hac_lag": 4,
+   "t_shrink": 0.574,
+   "monotonic_spearman": -0.3,
+   "hit_rate_when_on": null,
+   "groups": [
+    {
+     "q": 0,
+     "n_days": 653,
+     "fwd_mean": 0.0028
+    },
+    {
+     "q": 1,
+     "n_days": 653,
+     "fwd_mean": 0.0041
+    },
+    {
+     "q": 2,
+     "n_days": 653,
+     "fwd_mean": 0.00428
+    },
+    {
+     "q": 3,
+     "n_days": 653,
+     "fwd_mean": 0.00357
+    },
+    {
+     "q": 4,
+     "n_days": 653,
+     "fwd_mean": 0.00091
+    }
+   ],
+   "verdict": "FDR 后不显著",
+   "q": 0.084898,
+   "fdr_pass": false,
+   "meaningful": false,
+   "usable": false,
+   "hac_pass": false
+  },
+  {
+   "feature": "turnover_pos60",
+   "plan": "",
+   "horizon": 5,
+   "type": "cont",
+   "n_days": 634,
+   "spread": -9e-05,
+   "t": -0.704,
+   "p": 0.481287,
+   "t_hac": -0.557,
+   "hac_lag": 4,
+   "t_shrink": 0.79,
+   "monotonic_spearman": -0.6,
+   "hit_rate_when_on": null,
+   "groups": [
+    {
+     "q": 0,
+     "n_days": 634,
+     "fwd_mean": 0.00483
+    },
+    {
+     "q": 1,
+     "n_days": 634,
+     "fwd_mean": 0.00485
+    },
+    {
+     "q": 2,
+     "n_days": 634,
+     "fwd_mean": 0.00462
+    },
+    {
+     "q": 3,
+     "n_days": 634,
+     "fwd_mean": 0.00477
+    },
+    {
+     "q": 4,
+     "n_days": 634,
+     "fwd_mean": 0.00474
+    }
+   ],
+   "verdict": "FDR 后不显著",
+   "q": 0.641716,
+   "fdr_pass": false,
+   "meaningful": false,
+   "usable": false,
+   "hac_pass": false
+  },
+  {
+   "feature": "pos60",
+   "plan": "",
+   "horizon": 5,
+   "type": "cont",
+   "n_days": 634,
+   "spread": -0.00019,
+   "t": -1.074,
+   "p": 0.28287,
+   "t_hac": -0.669,
+   "hac_lag": 4,
+   "t_shrink": 0.623,
+   "monotonic_spearman": -0.9,
+   "hit_rate_when_on": null,
+   "groups": [
+    {
+     "q": 0,
+     "n_days": 634,
+     "fwd_mean": 0.00488
+    },
+    {
+     "q": 1,
+     "n_days": 634,
+     "fwd_mean": 0.00477
+    },
+    {
+     "q": 2,
+     "n_days": 634,
+     "fwd_mean": 0.00471
+    },
+    {
+     "q": 3,
+     "n_days": 634,
+     "fwd_mean": 0.00475
+    },
+    {
+     "q": 4,
+     "n_days": 634,
+     "fwd_mean": 0.00469
+    }
+   ],
+   "verdict": "FDR 后不显著",
+   "q": 0.452592,
+   "fdr_pass": false,
+   "meaningful": false,
+   "usable": false,
+   "hac_pass": false
+  },
+  {
+   "feature": "vol_ratio20",
+   "plan": "",
+   "horizon": 5,
+   "type": "cont",
+   "n_days": 644,
+   "spread": -0.00221,
+   "t": -3.367,
+   "p": 0.000761,
+   "t_hac": -2.043,
+   "hac_lag": 4,
+   "t_shrink": 0.607,
+   "monotonic_spearman": -0.3,
+   "hit_rate_when_on": null,
+   "groups": [
+    {
+     "q": 0,
+     "n_days": 644,
+     "fwd_mean": 0.00345
+    },
+    {
+     "q": 1,
+     "n_days": 644,
+     "fwd_mean": 0.0045
+    },
+    {
+     "q": 2,
+     "n_days": 644,
+     "fwd_mean": 0.00462
+    },
+    {
+     "q": 3,
+     "n_days": 644,
+     "fwd_mean": 0.00428
+    },
+    {
+     "q": 4,
+     "n_days": 644,
+     "fwd_mean": 0.00124
+    }
+   ],
+   "verdict": "显著但幅度不足（会被成本吃掉）",
+   "q": 0.004059,
+   "fdr_pass": true,
+   "meaningful": false,
+   "usable": false,
+   "hac_pass": true
+  },
+  {
+   "feature": "pain_dist",
+   "plan": "笑里藏刀",
+   "horizon": 5,
+   "type": "event",
+   "n_days": 652,
+   "spread": -0.00093,
+   "t": -1.388,
+   "p": 0.165047,
+   "t_hac": -1.144,
+   "hac_lag": 4,
+   "t_shrink": 0.824,
+   "monotonic_spearman": null,
+   "hit_rate_when_on": 0.4904024907612527,
+   "groups": [
+    {
+     "q": 0,
+     "n_days": 653,
+     "fwd_mean": 0.00309
+    },
+    {
+     "q": 1,
+     "n_days": 652,
+     "fwd_mean": 0.00217
+    }
+   ],
+   "verdict": "FDR 后不显著",
+   "q": 0.293417,
+   "fdr_pass": false,
+   "meaningful": false,
+   "usable": false,
+   "hac_pass": false
+  },
+  {
+   "feature": "kuru_ji",
+   "plan": "苦肉计",
+   "horizon": 5,
+   "type": "event",
+   "n_days": 652,
+   "spread": -7e-05,
+   "t": -0.133,
+   "p": 0.893968,
+   "t_hac": -0.129,
+   "hac_lag": 4,
+   "t_shrink": 0.969,
+   "monotonic_spearman": null,
+   "hit_rate_when_on": 0.4826086420311363,
+   "groups": [
+    {
+     "q": 0,
+     "n_days": 653,
+     "fwd_mean": 0.003
+    },
+    {
+     "q": 1,
+     "n_days": 652,
+     "fwd_mean": 0.00315
+    }
+   ],
+   "verdict": "FDR 后不显著",
+   "q": 0.893968,
+   "fdr_pass": false,
+   "meaningful": false,
+   "usable": false,
+   "hac_pass": false
+  },
+  {
+   "feature": "chenhuo",
+   "plan": "趁火打劫",
+   "horizon": 5,
+   "type": "event",
+   "n_days": 635,
+   "spread": -0.0075,
+   "t": -4.403,
+   "p": 1.1e-05,
+   "t_hac": -3.943,
+   "hac_lag": 4,
+   "t_shrink": 0.895,
+   "monotonic_spearman": null,
+   "hit_rate_when_on": 0.5428882412836628,
+   "groups": [
+    {
+     "q": 0,
+     "n_days": 653,
+     "fwd_mean": 0.00313
+    },
+    {
+     "q": 1,
+     "n_days": 635,
+     "fwd_mean": -0.00455
+    }
+   ],
+   "verdict": "有依据",
+   "q": 0.000176,
+   "fdr_pass": true,
+   "meaningful": true,
+   "usable": true,
+   "hac_pass": true
+  },
+  {
+   "feature": "kongcheng",
+   "plan": "空城计",
+   "horizon": 5,
+   "type": "event",
+   "n_days": 57,
+   "spread": -0.04357,
+   "t": -3.131,
+   "p": 0.001742,
+   "t_hac": -3.027,
+   "hac_lag": 4,
+   "t_shrink": 0.967,
+   "monotonic_spearman": null,
+   "hit_rate_when_on": 0.3548387096774194,
+   "groups": [
+    {
+     "q": 0,
+     "n_days": 653,
+     "fwd_mean": 0.00313
+    },
+    {
+     "q": 1,
+     "n_days": 57,
+     "fwd_mean": -0.04299
+    }
+   ],
+   "verdict": "有依据",
+   "q": 0.006968,
+   "fdr_pass": true,
+   "meaningful": true,
+   "usable": true,
+   "hac_pass": true
+  },
+  {
+   "feature": "dacao",
+   "plan": "打草惊蛇",
+   "horizon": 5,
+   "type": "event",
+   "n_days": 653,
+   "spread": -0.00323,
+   "t": -3.965,
+   "p": 7.3e-05,
+   "t_hac": -2.531,
+   "hac_lag": 4,
+   "t_shrink": 0.638,
+   "monotonic_spearman": null,
+   "hit_rate_when_on": 0.45860325218535575,
+   "groups": [
+    {
+     "q": 0,
+     "n_days": 653,
+     "fwd_mean": 0.00331
+    },
+    {
+     "q": 1,
+     "n_days": 653,
+     "fwd_mean": 8e-05
+    }
+   ],
+   "verdict": "显著但幅度不足（会被成本吃掉）",
+   "q": 0.000584,
+   "fdr_pass": true,
+   "meaningful": false,
+   "usable": false,
+   "hac_pass": true
+  },
+  {
+   "feature": "shushang",
+   "plan": "树上开花",
+   "horizon": 5,
+   "type": "event",
+   "n_days": 628,
+   "spread": -0.00253,
+   "t": -2.259,
+   "p": 0.023875,
+   "t_hac": -2.06,
+   "hac_lag": 4,
+   "t_shrink": 0.912,
+   "monotonic_spearman": null,
+   "hit_rate_when_on": 0.4684116226532679,
+   "groups": [
+    {
+     "q": 0,
+     "n_days": 653,
+     "fwd_mean": 0.00314
+    },
+    {
+     "q": 1,
+     "n_days": 628,
+     "fwd_mean": 0.00073
+    }
+   ],
+   "verdict": "FDR 后不显著",
+   "q": 0.063667,
+   "fdr_pass": false,
+   "meaningful": false,
+   "usable": false,
+   "hac_pass": true
+  },
+  {
+   "feature": "andu",
+   "plan": "暗度陈仓",
+   "horizon": 5,
+   "type": "event",
+   "n_days": 620,
+   "spread": -0.00057,
+   "t": -0.631,
+   "p": 0.528236,
+   "t_hac": -0.359,
+   "hac_lag": 4,
+   "t_shrink": 0.569,
+   "monotonic_spearman": null,
+   "hit_rate_when_on": 0.48743153774482495,
+   "groups": [
+    {
+     "q": 0,
+     "n_days": 653,
+     "fwd_mean": 0.00314
+    },
+    {
+     "q": 1,
+     "n_days": 620,
+     "fwd_mean": 0.00337
+    }
+   ],
+   "verdict": "FDR 后不显著",
+   "q": 0.650137,
+   "fdr_pass": false,
+   "meaningful": false,
+   "usable": false,
+   "hac_pass": false
+  }
+ ],
+ "usable": [
+  {
+   "feature": "chenhuo",
+   "plan": "趁火打劫",
+   "horizon": 5,
+   "type": "event",
+   "n_days": 635,
+   "spread": -0.0075,
+   "t": -4.403,
+   "p": 1.1e-05,
+   "t_hac": -3.943,
+   "hac_lag": 4,
+   "t_shrink": 0.895,
+   "monotonic_spearman": null,
+   "hit_rate_when_on": 0.5428882412836628,
+   "groups": [
+    {
+     "q": 0,
+     "n_days": 653,
+     "fwd_mean": 0.00313
+    },
+    {
+     "q": 1,
+     "n_days": 635,
+     "fwd_mean": -0.00455
+    }
+   ],
+   "verdict": "有依据",
+   "q": 0.000176,
+   "fdr_pass": true,
+   "meaningful": true,
+   "usable": true,
+   "hac_pass": true
+  },
+  {
+   "feature": "kongcheng",
+   "plan": "空城计",
+   "horizon": 5,
+   "type": "event",
+   "n_days": 57,
+   "spread": -0.04357,
+   "t": -3.131,
+   "p": 0.001742,
+   "t_hac": -3.027,
+   "hac_lag": 4,
+   "t_shrink": 0.967,
+   "monotonic_spearman": null,
+   "hit_rate_when_on": 0.3548387096774194,
+   "groups": [
+    {
+     "q": 0,
+     "n_days": 653,
+     "fwd_mean": 0.00313
+    },
+    {
+     "q": 1,
+     "n_days": 57,
+     "fwd_mean": -0.04299
+    }
+   ],
+   "verdict": "有依据",
+   "q": 0.006968,
+   "fdr_pass": true,
+   "meaningful": true,
+   "usable": true,
+   "hac_pass": true
+  }
+ ],
+ "t_basis": "`t` = naive（日度差值序列直接 t 检验，**判定用**）；`t_hac` = Newey-West（lag = 持有期 − 1，**仅披露、不参与判定**）",
+ "n_hac_robust": 6,
+ "verdict": "存在可用博弈特征",
+ "generated_at": "2026-09-21 13:04:04",
+ "elapsed_sec": 587.2,
+ "method": "Fama-MacBeth 式：按日截面分组 → 日度高减低差 → 时序 t 检验（有效样本量 = 天数，不是 (日,股) 个数）",
+ "entry": "T+1 开盘买入（与 H2 同口径，天然无未来函数）"
+}

@@ -1,0 +1,54 @@
+{
+  "by_form": {
+    "B": {
+      "strategy": "t1_open",
+      "desc": "T+1 开盘买入（次日竞价追入）",
+      "win_rate_t5": 0.95,
+      "avg_ret_t20": 0.4811,
+      "avg_ret_t5": 0.1734,
+      "count": 20
+    },
+    "E": {
+      "strategy": "t1_open",
+      "desc": "T+1 开盘买入（次日竞价追入）",
+      "win_rate_t5": 1.0,
+      "avg_ret_t20": 1.4643,
+      "avg_ret_t5": 0.2519,
+      "count": 4
+    },
+    "U": {
+      "strategy": "t1_open",
+      "desc": "T+1 开盘买入（次日竞价追入）",
+      "win_rate_t5": 0.6172,
+      "avg_ret_t20": 0.3056,
+      "avg_ret_t5": 0.071,
+      "count": 128
+    },
+    "D": {
+      "strategy": "t1_open",
+      "desc": "T+1 开盘买入（次日竞价追入）",
+      "win_rate_t5": 0.9195,
+      "avg_ret_t20": 0.6754,
+      "avg_ret_t5": 0.2055,
+      "count": 87
+    },
+    "A": {
+      "strategy": "t1_open",
+      "desc": "T+1 开盘买入（次日竞价追入）",
+      "win_rate_t5": 0.9375,
+      "avg_ret_t20": 0.6039,
+      "avg_ret_t5": 0.1707,
+      "count": 32
+    },
+    "C": {
+      "strategy": "t1_open",
+      "desc": "T+1 开盘买入（次日竞价追入）",
+      "win_rate_t5": 0.9655,
+      "avg_ret_t20": 0.4634,
+      "avg_ret_t5": 0.1618,
+      "count": 29
+    }
+  },
+  "note": "最佳入场仅从无后视偏差策略（t1_open/t1_close/pullback_t0）中选取",
+  "generated_at": "2026-09-20 11:05:38"
+}

@@ -1,0 +1,160 @@
+{
+  "version": "0.1.0",
+  "eval_window": 5,
+  "main_metric": {
+    "hit_window": 5,
+    "hit_definition": "excess_vs_market",
+    "immutable": true
+  },
+  "thresholds": {
+    "proposal_evidence_min": 30,
+    "shadow_min_samples": 150,
+    "shadow_min_gain_pp": 5,
+    "shadow_p_value": 0.1
+  },
+  "approval_mode": "manual",
+  "approval_timeout_days": 7,
+  "token_budget": 15000,
+  "shadow_days": 10,
+  "cooldown_days": 10,
+  "params": {
+    "policy_priced_threshold": {
+      "file": "app/agents/policy_agent.py",
+      "anchor_old": "if gain_r >= 0.15:",
+      "default": 0.15,
+      "current": 0.15,
+      "min": 0.05,
+      "max": 0.4,
+      "step": 0.01,
+      "tier": 1,
+      "hot_reload": true,
+      "shadow_eligible": true,
+      "desc": "兑现度阈值：板块近10日涨幅≥此值判利好出尽（反向避雷）"
+    },
+    "policy_partial_threshold": {
+      "file": "app/agents/policy_agent.py",
+      "anchor_old": "elif gain_r >= 0.05:",
+      "default": 0.05,
+      "current": 0.05,
+      "min": 0.0,
+      "max": 0.3,
+      "step": 0.01,
+      "tier": 1,
+      "hot_reload": true,
+      "shadow_eligible": true,
+      "desc": "部分反应阈值：板块近10日涨幅≥此值判部分反应"
+    },
+    "policy_reversal_threshold": {
+      "file": "app/agents/policy_agent.py",
+      "anchor_old": "elif gain_r <= -0.03:",
+      "default": -0.03,
+      "current": -0.03,
+      "min": -0.2,
+      "max": 0.0,
+      "step": 0.01,
+      "tier": 1,
+      "hot_reload": true,
+      "shadow_eligible": true,
+      "desc": "板块回调阈值：近10日涨幅≤此值判回调（催化未反应）"
+    },
+    "policy_max_age_days": {
+      "file": "app/agents/policy_agent.py",
+      "anchor_old": "max_age_days=1095",
+      "default": 1095,
+      "current": 1095,
+      "min": 90,
+      "max": 3650,
+      "step": 30,
+      "tier": 1,
+      "hot_reload": true,
+      "shadow_eligible": true,
+      "desc": "政策检索时效窗口（天）：排除发布时间超过 N 天的政策"
+    },
+    "policy_kb_chunk_size": {
+      "file": "app/data/policy_kb.py",
+      "anchor_old": "CHUNK_SIZE = 400",
+      "default": 400,
+      "current": 400,
+      "min": 200,
+      "max": 800,
+      "step": 20,
+      "tier": 1,
+      "hot_reload": true,
+      "shadow_eligible": true,
+      "desc": "政策知识库分块字符数（建库时生效）"
+    },
+    "policy_kb_decay_halflife": {
+      "file": "app/data/policy_kb.py",
+      "anchor_old": "d / 180.0",
+      "default": 180,
+      "current": 180,
+      "min": 30,
+      "max": 720,
+      "step": 15,
+      "tier": 1,
+      "hot_reload": true,
+      "shadow_eligible": true,
+      "desc": "政策时效衰减半衰期（天）"
+    },
+    "news_gain_window": {
+      "file": "app/agents/news_agent.py",
+      "anchor_old": "n: int = 10",
+      "default": 10,
+      "current": 10,
+      "min": 3,
+      "max": 30,
+      "step": 1,
+      "tier": 1,
+      "hot_reload": true,
+      "shadow_eligible": true,
+      "desc": "消息面利好出货检测的近期涨幅窗口（交易日）"
+    },
+    "hit_threshold": {
+      "file": "app/agents/learning_runner.py",
+      "anchor_old": "HIT_THRESHOLD = 0.05",
+      "default": 0.05,
+      "current": 0.05,
+      "min": 0.01,
+      "max": 0.2,
+      "step": 0.005,
+      "tier": 1,
+      "hot_reload": true,
+      "shadow_eligible": true,
+      "desc": "推荐命中阈值：T+5 涨幅>此值判兑现（对齐 monitor HIT_RET_THRESHOLD）"
+    },
+    "lesson_min_count": {
+      "file": "app/agents/learning_runner.py",
+      "anchor_old": "MIN_COUNT_TO_FEEDBACK = 2",
+      "default": 2,
+      "current": 2,
+      "min": 1,
+      "max": 5,
+      "step": 1,
+      "tier": 1,
+      "hot_reload": true,
+      "shadow_eligible": true,
+      "desc": "教训出现最少次数才进入反馈（学习层）"
+    },
+    "policy_max_sectors": {
+      "file": "app/agents/__init__.py",
+      "anchor_old": "MAX_POLICY_SECTORS = 5",
+      "anchor_tmpl": "MAX_POLICY_SECTORS = {value}",
+      "default": 5,
+      "current": 5,
+      "min": 1,
+      "max": 10,
+      "step": 1,
+      "tier": 2,
+      "hot_reload": false,
+      "shadow_eligible": false,
+      "desc": "政策解读覆盖行业数上限（Tier2：改代码锚点 + 独立进程重启生效，LLM 流程，不影子）"
+    }
+  },
+  "protected_files": [
+    "app/agents/evolution_agent.py",
+    "app/agents/self_improver.py",
+    "app/agents/evolution_events.py",
+    "app/agents/evolution_summarizer.py",
+    "app/agents/evolution_config.py"
+  ]
+}

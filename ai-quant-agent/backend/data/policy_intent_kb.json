@@ -1,0 +1,152 @@
+{
+  "version": 1,
+  "intents": [
+    {
+      "phrase": "大力发展",
+      "intent": "强利好",
+      "strength": 0.59,
+      "note": "财政+税收+考核多重保障",
+      "count": 11,
+      "last_actual": -0.05
+    },
+    {
+      "phrase": "加快",
+      "intent": "强利好",
+      "strength": 0.526,
+      "note": "自上而下推动，落地快",
+      "count": 25,
+      "last_actual": -0.06
+    },
+    {
+      "phrase": "强力支持",
+      "intent": "强利好",
+      "strength": 0.9,
+      "note": "明确资金/资源倾斜"
+    },
+    {
+      "phrase": "重点支持",
+      "intent": "利好",
+      "strength": 0.8,
+      "note": "方向明确但力度视细节"
+    },
+    {
+      "phrase": "鼓励",
+      "intent": "利好",
+      "strength": 0.537,
+      "note": "引导性支持",
+      "count": 32,
+      "last_actual": -0.097
+    },
+    {
+      "phrase": "稳妥推进",
+      "intent": "中性偏谨慎",
+      "strength": 0.399,
+      "note": "试点先行，非全面铺开",
+      "count": 7,
+      "last_actual": -0.188
+    },
+    {
+      "phrase": "有序开展",
+      "intent": "中性",
+      "strength": 0.5,
+      "note": "按节奏推进"
+    },
+    {
+      "phrase": "研究制定",
+      "intent": "中性偏谨慎",
+      "strength": 0.338,
+      "note": "尚在酝酿，落地待观察",
+      "count": 2,
+      "last_actual": 0.007
+    },
+    {
+      "phrase": "适时出台",
+      "intent": "预期管理",
+      "strength": 0.5,
+      "note": "情绪催化，落地待观察"
+    },
+    {
+      "phrase": "预期引导",
+      "intent": "预期管理",
+      "strength": 0.5,
+      "note": "政策吹风，先行情绪"
+    },
+    {
+      "phrase": "规范发展",
+      "intent": "收紧利空",
+      "strength": 0.25,
+      "note": "行业出清，龙头受益"
+    },
+    {
+      "phrase": "严控",
+      "intent": "收紧利空",
+      "strength": 0.185,
+      "note": "限制扩张，利空供给端",
+      "count": 1,
+      "last_actual": -0.009
+    },
+    {
+      "phrase": "坚决遏制",
+      "intent": "收紧利空",
+      "strength": 0.255,
+      "note": "强监管，重大利空",
+      "count": 7,
+      "last_actual": -0.188
+    },
+    {
+      "phrase": "防止过度",
+      "intent": "收紧利空",
+      "strength": 0.2,
+      "note": "防过热，边际收紧"
+    },
+    {
+      "phrase": "万亿",
+      "intent": "量化资金利好",
+      "strength": 0.587,
+      "note": "体量巨大，景气强",
+      "count": 12,
+      "last_actual": -0.097
+    },
+    {
+      "phrase": "千亿",
+      "intent": "量化资金利好",
+      "strength": 0.815,
+      "note": "大额资金，明确景气",
+      "count": 1,
+      "last_actual": 0.004
+    },
+    {
+      "phrase": "中央财政",
+      "intent": "量化资金利好",
+      "strength": 0.578,
+      "note": "中央出资，信用背书",
+      "count": 8,
+      "last_actual": -0.066
+    },
+    {
+      "phrase": "试点",
+      "intent": "中性偏谨慎",
+      "strength": 0.481,
+      "note": "局部试验，全面推广待验证",
+      "count": 14,
+      "last_actual": -0.028
+    },
+    {
+      "phrase": "补贴",
+      "intent": "利好",
+      "strength": 0.619,
+      "note": "直接补贴，盈利弹性",
+      "count": 7,
+      "last_actual": -0.097
+    },
+    {
+      "phrase": "退出机制",
+      "intent": "收紧利空",
+      "strength": 0.2,
+      "note": "补贴退坡，盈利承压"
+    }
+  ],
+  "stats": {
+    "calibrated": 127
+  }
+}

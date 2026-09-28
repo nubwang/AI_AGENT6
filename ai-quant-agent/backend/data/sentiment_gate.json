@@ -1,0 +1,718 @@
+{
+ "ok": true,
+ "range": [
+  "20240101",
+  "20260918"
+ ],
+ "n_days_with_panel": 659,
+ "horizon_main": 5,
+ "min_edge": 0.005,
+ "alpha": 0.05,
+ "overall_market_fwd": {
+  "fwd1": 0.00062,
+  "fwd5": 0.00313,
+  "fwd10": 0.00634
+ },
+ "results": [
+  {
+   "feature": "seal_ratio",
+   "horizon": 5,
+   "n": 653,
+   "overall_fwd": 0.00313,
+   "groups": [
+    {
+     "q": 0,
+     "n": 131,
+     "x_mean": 0.4836,
+     "fwd_mean": 0.0037
+    },
+    {
+     "q": 1,
+     "n": 130,
+     "x_mean": 0.5725,
+     "fwd_mean": -0.00208
+    },
+    {
+     "q": 2,
+     "n": 131,
+     "x_mean": 0.6187,
+     "fwd_mean": -0.00162
+    },
+    {
+     "q": 3,
+     "n": 130,
+     "x_mean": 0.6677,
+     "fwd_mean": 0.00906
+    },
+    {
+     "q": 4,
+     "n": 131,
+     "x_mean": 0.7392,
+     "fwd_mean": 0.00662
+    }
+   ],
+   "low": {
+    "side": "低值组",
+    "significant": false,
+    "edge": 0.00192,
+    "p": 0.699749,
+    "n": 131,
+    "verdict": "无依据",
+    "reason": "不显著",
+    "t_naive": 0.415,
+    "t_hac": 0.407,
+    "hac_lag": 4,
+    "hac_note": "t_hac = Newey-West 回归系数 t（仅披露）；t_naive 为同方差 OLS（合并两样本口径）"
+   },
+   "high": {
+    "side": "高值组",
+    "significant": false,
+    "edge": 0.00484,
+    "p": 0.254091,
+    "n": 131,
+    "verdict": "无依据",
+    "reason": "不显著",
+    "t_naive": 1.104,
+    "t_hac": 1.351,
+    "hac_lag": 4,
+    "hac_note": "t_hac = Newey-West 回归系数 t（仅披露）；t_naive 为同方差 OLS（合并两样本口径）"
+   },
+   "spread_hi_minus_lo": 0.00292,
+   "verdict": "无依据"
+  },
+  {
+   "feature": "zha_rate",
+   "horizon": 5,
+   "n": 653,
+   "overall_fwd": 0.00313,
+   "groups": [
+    {
+     "q": 0,
+     "n": 131,
+     "x_mean": 0.2608,
+     "fwd_mean": 0.00662
+    },
+    {
+     "q": 1,
+     "n": 130,
+     "x_mean": 0.3323,
+     "fwd_mean": 0.00906
+    },
+    {
+     "q": 2,
+     "n": 131,
+     "x_mean": 0.3813,
+     "fwd_mean": -0.00162
+    },
+    {
+     "q": 3,
+     "n": 130,
+     "x_mean": 0.4275,
+     "fwd_mean": -0.00208
+    },
+    {
+     "q": 4,
+     "n": 131,
+     "x_mean": 0.5164,
+     "fwd_mean": 0.0037
+    }
+   ],
+   "low": {
+    "side": "低值组",
+    "significant": false,
+    "edge": 0.00484,
+    "p": 0.254091,
+    "n": 131,
+    "verdict": "无依据",
+    "reason": "不显著",
+    "t_naive": 1.104,
+    "t_hac": 1.351,
+    "hac_lag": 4,
+    "hac_note": "t_hac = Newey-West 回归系数 t（仅披露）；t_naive 为同方差 OLS（合并两样本口径）"
+   },
+   "high": {
+    "side": "高值组",
+    "significant": false,
+    "edge": 0.00192,
+    "p": 0.699749,
+    "n": 131,
+    "verdict": "无依据",
+    "reason": "不显著",
+    "t_naive": 0.415,
+    "t_hac": 0.407,
+    "hac_lag": 4,
+    "hac_note": "t_hac = Newey-West 回归系数 t（仅披露）；t_naive 为同方差 OLS（合并两样本口径）"
+   },
+   "spread_hi_minus_lo": -0.00292,
+   "verdict": "无依据"
+  },
+  {
+   "feature": "money_effect",
+   "horizon": 5,
+   "n": 652,
+   "overall_fwd": 0.0032,
+   "groups": [
+    {
+     "q": 0,
+     "n": 131,
+     "x_mean": -1.3252,
+     "fwd_mean": 0.00055
+    },
+    {
+     "q": 1,
+     "n": 130,
+     "x_mean": 0.6314,
+     "fwd_mean": 0.00282
+    },
+    {
+     "q": 2,
+     "n": 130,
+     "x_mean": 1.6291,
+     "fwd_mean": -8e-05
+    },
+    {
+     "q": 3,
+     "n": 130,
+     "x_mean": 2.6115,
+     "fwd_mean": 0.00442
+    },
+    {
+     "q": 4,
+     "n": 131,
+     "x_mean": 4.651,
+     "fwd_mean": 0.00828
+    }
+   ],
+   "low": {
+    "side": "低值组",
+    "significant": false,
+    "edge": -0.00184,
+    "p": 0.69668,
+    "n": 131,
+    "verdict": "无依据",
+    "reason": "不显著",
+    "t_naive": -0.412,
+    "t_hac": -0.368,
+    "hac_lag": 4,
+    "hac_note": "t_hac = Newey-West 回归系数 t（仅披露）；t_naive 为同方差 OLS（合并两样本口径）"
+   },
+   "high": {
+    "side": "高值组",
+    "significant": false,
+    "edge": 0.00589,
+    "p": 0.214023,
+    "n": 131,
+    "verdict": "无依据",
+    "reason": "不显著",
+    "t_naive": 1.318,
+    "t_hac": 1.265,
+    "hac_lag": 4,
+    "hac_note": "t_hac = Newey-West 回归系数 t（仅披露）；t_naive 为同方差 OLS（合并两样本口径）"
+   },
+   "spread_hi_minus_lo": 0.00773,
+   "verdict": "无依据"
+  },
+  {
+   "feature": "max_board",
+   "horizon": 5,
+   "n": 653,
+   "overall_fwd": 0.00313,
+   "groups": [
+    {
+     "q": 0,
+     "n": 207,
+     "x_mean": 3.6618,
+     "fwd_mean": -0.00241
+    },
+    {
+     "q": 1,
+     "n": 148,
+     "x_mean": 5.0,
+     "fwd_mean": 6e-05
+    },
+    {
+     "q": 2,
+     "n": 107,
+     "x_mean": 6.0,
+     "fwd_mean": 0.00682
+    },
+    {
+     "q": 3,
+     "n": 75,
+     "x_mean": 7.0,
+     "fwd_mean": 0.00624
+    },
+    {
+     "q": 4,
+     "n": 116,
+     "x_mean": 9.6293,
+     "fwd_mean": 0.01154
+    }
+   ],
+   "low": {
+    "side": "低值组",
+    "significant": false,
+    "edge": -0.00607,
+    "p": 0.096837,
+    "n": 207,
+    "verdict": "无依据",
+    "reason": "不显著",
+    "t_naive": -1.575,
+    "t_hac": -1.4,
+    "hac_lag": 4,
+    "hac_note": "t_hac = Newey-West 回归系数 t（仅披露）；t_naive 为同方差 OLS（合并两样本口径）"
+   },
+   "high": {
+    "side": "高值组",
+    "significant": false,
+    "edge": 0.00788,
+    "p": 0.143242,
+    "n": 116,
+    "verdict": "无依据",
+    "reason": "不显著",
+    "t_naive": 1.522,
+    "t_hac": 1.284,
+    "hac_lag": 4,
+    "hac_note": "t_hac = Newey-West 回归系数 t（仅披露）；t_naive 为同方差 OLS（合并两样本口径）"
+   },
+   "spread_hi_minus_lo": 0.01395,
+   "verdict": "无依据"
+  },
+  {
+   "feature": "n_up",
+   "horizon": 5,
+   "n": 653,
+   "overall_fwd": 0.00313,
+   "groups": [
+    {
+     "q": 0,
+     "n": 133,
+     "x_mean": 36.8045,
+     "fwd_mean": -0.00564
+    },
+    {
+     "q": 1,
+     "n": 144,
+     "x_mean": 53.9583,
+     "fwd_mean": 0.00809
+    },
+    {
+     "q": 2,
+     "n": 117,
+     "x_mean": 66.7949,
+     "fwd_mean": 0.00314
+    },
+    {
+     "q": 3,
+     "n": 129,
+     "x_mean": 84.7597,
+     "fwd_mean": -0.0012
+    },
+    {
+     "q": 4,
+     "n": 130,
+     "x_mean": 157.1846,
+     "fwd_mean": 0.01091
+    }
+   ],
+   "low": {
+    "side": "低值组",
+    "significant": true,
+    "edge": -0.00917,
+    "p": 0.04033,
+    "n": 133,
+    "verdict": "有依据",
+    "reason": "显著且有幅度",
+    "t_naive": -2.16,
+    "t_hac": -1.786,
+    "hac_lag": 4,
+    "hac_note": "t_hac = Newey-West 回归系数 t（仅披露）；t_naive 为同方差 OLS（合并两样本口径）"
+   },
+   "high": {
+    "side": "高值组",
+    "significant": false,
+    "edge": 0.00738,
+    "p": 0.152475,
+    "n": 130,
+    "verdict": "无依据",
+    "reason": "不显著",
+    "t_naive": 1.634,
+    "t_hac": 1.192,
+    "hac_lag": 4,
+    "hac_note": "t_hac = Newey-West 回归系数 t（仅披露）；t_naive 为同方差 OLS（合并两样本口径）"
+   },
+   "spread_hi_minus_lo": 0.01654,
+   "verdict": "有依据"
+  },
+  {
+   "feature": "n_lb2",
+   "horizon": 5,
+   "n": 653,
+   "overall_fwd": 0.00313,
+   "groups": [
+    {
+     "q": 0,
+     "n": 163,
+     "x_mean": 7.0368,
+     "fwd_mean": -0.0037
+    },
+    {
+     "q": 1,
+     "n": 102,
+     "x_mean": 10.549,
+     "fwd_mean": -0.00432
+    },
+    {
+     "q": 2,
+     "n": 144,
+     "x_mean": 13.4583,
+     "fwd_mean": 0.00987
+    },
+    {
+     "q": 3,
+     "n": 121,
+     "x_mean": 17.7521,
+     "fwd_mean": 0.00319
+    },
+    {
+     "q": 4,
+     "n": 123,
+     "x_mean": 41.0407,
+     "fwd_mean": 0.01042
+    }
+   ],
+   "low": {
+    "side": "低值组",
+    "significant": false,
+    "edge": -0.00743,
+    "p": 0.067481,
+    "n": 163,
+    "verdict": "无依据",
+    "reason": "不显著",
+    "t_naive": -1.835,
+    "t_hac": -1.566,
+    "hac_lag": 4,
+    "hac_note": "t_hac = Newey-West 回归系数 t（仅披露）；t_naive 为同方差 OLS（合并两样本口径）"
+   },
+   "high": {
+    "side": "高值组",
+    "significant": false,
+    "edge": 0.00669,
+    "p": 0.198378,
+    "n": 123,
+    "verdict": "无依据",
+    "reason": "不显著",
+    "t_naive": 1.416,
+    "t_hac": 1.116,
+    "hac_lag": 4,
+    "hac_note": "t_hac = Newey-West 回归系数 t（仅披露）；t_naive 为同方差 OLS（合并两样本口径）"
+   },
+   "spread_hi_minus_lo": 0.01412,
+   "verdict": "无依据"
+  },
+  {
+   "feature": "main_net",
+   "horizon": 5,
+   "n": 653,
+   "overall_fwd": 0.00313,
+   "groups": [
+    {
+     "q": 0,
+     "n": 131,
+     "x_mean": -7114391.3092,
+     "fwd_mean": 0.00626
+    },
+    {
+     "q": 1,
+     "n": 130,
+     "x_mean": -3399086.0785,
+     "fwd_mean": -0.00011
+    },
+    {
+     "q": 2,
+     "n": 131,
+     "x_mean": -1984186.7534,
+     "fwd_mean": -0.00152
+    },
+    {
+     "q": 3,
+     "n": 130,
+     "x_mean": -773762.5077,
+     "fwd_mean": 0.002
+    },
+    {
+     "q": 4,
+     "n": 131,
+     "x_mean": 1144628.5458,
+     "fwd_mean": 0.009
+    }
+   ],
+   "low": {
+    "side": "低值组",
+    "significant": false,
+    "edge": 0.00614,
+    "p": 0.120551,
+    "n": 131,
+    "verdict": "无依据",
+    "reason": "不显著",
+    "t_naive": 1.337,
+    "t_hac": 1.245,
+    "hac_lag": 4,
+    "hac_note": "t_hac = Newey-West 回归系数 t（仅披露）；t_naive 为同方差 OLS（合并两样本口径）"
+   },
+   "high": {
+    "side": "高值组",
+    "significant": true,
+    "edge": 0.00888,
+    "p": 0.045668,
+    "n": 131,
+    "verdict": "有依据",
+    "reason": "显著且有幅度",
+    "t_naive": 1.873,
+    "t_hac": 2.448,
+    "hac_lag": 4,
+    "hac_note": "t_hac = Newey-West 回归系数 t（仅披露）；t_naive 为同方差 OLS（合并两样本口径）"
+   },
+   "spread_hi_minus_lo": 0.00274,
+   "verdict": "有依据"
+  },
+  {
+   "feature": "up_down_ratio",
+   "horizon": 5,
+   "n": 620,
+   "overall_fwd": 0.00302,
+   "groups": [
+    {
+     "q": 0,
+     "n": 124,
+     "x_mean": 1.2202,
+     "fwd_mean": 0.00709
+    },
+    {
+     "q": 1,
+     "n": 124,
+     "x_mean": 3.5008,
+     "fwd_mean": -0.00237
+    },
+    {
+     "q": 2,
+     "n": 124,
+     "x_mean": 6.6968,
+     "fwd_mean": -0.00198
+    },
+    {
+     "q": 3,
+     "n": 125,
+     "x_mean": 13.1417,
+     "fwd_mean": 0.00389
+    },
+    {
+     "q": 4,
+     "n": 123,
+     "x_mean": 54.7266,
+     "fwd_mean": 0.0085
+    }
+   ],
+   "low": {
+    "side": "低值组",
+    "significant": false,
+    "edge": 0.00723,
+    "p": 0.165738,
+    "n": 124,
+    "verdict": "无依据",
+    "reason": "不显著",
+    "t_naive": 1.607,
+    "t_hac": 1.128,
+    "hac_lag": 4,
+    "hac_note": "t_hac = Newey-West 回归系数 t（仅披露）；t_naive 为同方差 OLS（合并两样本口径）"
+   },
+   "high": {
+    "side": "高值组",
+    "significant": false,
+    "edge": 0.00864,
+    "p": 0.078241,
+    "n": 123,
+    "verdict": "无依据",
+    "reason": "不显著",
+    "t_naive": 1.969,
+    "t_hac": 1.397,
+    "hac_lag": 4,
+    "hac_note": "t_hac = Newey-West 回归系数 t（仅披露）；t_naive 为同方差 OLS（合并两样本口径）"
+   },
+   "spread_hi_minus_lo": 0.00141,
+   "verdict": "无依据"
+  },
+  {
+   "feature": "n_yizi",
+   "horizon": 5,
+   "n": 653,
+   "overall_fwd": 0.00313,
+   "groups": [
+    {
+     "q": 0,
+     "n": 160,
+     "x_mean": 2.3062,
+     "fwd_mean": -0.00326
+    },
+    {
+     "q": 1,
+     "n": 178,
+     "x_mean": 4.573,
+     "fwd_mean": 0.00642
+    },
+    {
+     "q": 2,
+     "n": 77,
+     "x_mean": 6.0,
+     "fwd_mean": -0.00202
+    },
+    {
+     "q": 3,
+     "n": 138,
+     "x_mean": 7.8188,
+     "fwd_mean": 0.00427
+    },
+    {
+     "q": 4,
+     "n": 100,
+     "x_mean": 15.92,
+     "fwd_mean": 0.00991
+    }
+   ],
+   "low": {
+    "side": "低值组",
+    "significant": false,
+    "edge": -0.00727,
+    "p": 0.058326,
+    "n": 160,
+    "verdict": "无依据",
+    "reason": "不显著",
+    "t_naive": -1.78,
+    "t_hac": -1.489,
+    "hac_lag": 4,
+    "hac_note": "t_hac = Newey-West 回归系数 t（仅披露）；t_naive 为同方差 OLS（合并两样本口径）"
+   },
+   "high": {
+    "side": "高值组",
+    "significant": false,
+    "edge": 0.0059,
+    "p": 0.29597,
+    "n": 100,
+    "verdict": "无依据",
+    "reason": "不显著",
+    "t_naive": 1.129,
+    "t_hac": 0.874,
+    "hac_lag": 4,
+    "hac_note": "t_hac = Newey-West 回归系数 t（仅披露）；t_naive 为同方差 OLS（合并两样本口径）"
+   },
+   "spread_hi_minus_lo": 0.01317,
+   "verdict": "无依据"
+  }
+ ],
+ "fdr": {
+  "method": "BH",
+  "alpha": 0.05,
+  "m": 54,
+  "n_reject_raw": 5,
+  "n_reject_q": 0,
+  "threshold": null
+ },
+ "raw_significant": [
+  {
+   "feature": "n_up",
+   "horizon": 5,
+   "side": "low",
+   "p": 0.04033,
+   "edge": -0.00917,
+   "n": 133,
+   "q": 0.291157,
+   "fdr_pass": false,
+   "meaningful": true,
+   "usable": false,
+   "t_naive": -2.16,
+   "t_hac": -1.786,
+   "hac_lag": 4,
+   "hac_pass": false
+  },
+  {
+   "feature": "main_net",
+   "horizon": 5,
+   "side": "high",
+   "p": 0.045668,
+   "edge": 0.00888,
+   "n": 131,
+   "q": 0.291157,
+   "fdr_pass": false,
+   "meaningful": true,
+   "usable": false,
+   "t_naive": 1.873,
+   "t_hac": 2.448,
+   "hac_lag": 4,
+   "hac_pass": true
+  },
+  {
+   "feature": "n_lb2",
+   "horizon": 10,
+   "side": "high",
+   "p": 0.009086,
+   "edge": 0.01549,
+   "n": 123,
+   "q": 0.245322,
+   "fdr_pass": false,
+   "meaningful": true,
+   "usable": false,
+   "t_naive": 2.754,
+   "t_hac": 1.855,
+   "hac_lag": 9,
+   "hac_pass": false
+  },
+  {
+   "feature": "up_down_ratio",
+   "horizon": 10,
+   "side": "high",
+   "p": 0.006852,
+   "edge": 0.01614,
+   "n": 121,
+   "q": 0.245322,
+   "fdr_pass": false,
+   "meaningful": true,
+   "usable": false,
+   "t_naive": 2.711,
+   "t_hac": 2.014,
+   "hac_lag": 9,
+   "hac_pass": true
+  },
+  {
+   "feature": "n_yizi",
+   "horizon": 10,
+   "side": "low",
+   "p": 0.043362,
+   "edge": -0.01083,
+   "n": 159,
+   "q": 0.291157,
+   "fdr_pass": false,
+   "meaningful": true,
+   "usable": false,
+   "t_naive": -1.87,
+   "t_hac": -1.26,
+   "hac_lag": 9,
+   "hac_pass": false
+  }
+ ],
+ "usable_tests": [],
+ "n_usable": 0,
+ "t_basis": "`t_naive` = 同方差 OLS 回归系数 t（合并两样本口径，**与判定同方向**）；`t_hac` = Newey-West 回归系数 t（lag = 持有期 − 1，**仅披露、不参与判定**）",
+ "n_hac_robust": 3,
+ "verdict": "无可采纳的情绪闸门（FDR 校正后无依据）",
+ "generated_at": "2026-09-21 13:05:34",
+ "elapsed_sec": 78.1,
+ "note": "全市场等权面板，T+1 开盘买入；情绪与收益天然无未来函数。判据：**BH-FDR 校正后** q<0.05 且 |优势|>=0.5%",
+ "recent_window": {
+  "n": 30,
+  "from": "20260810",
+  "to": "20260918",
+  "fwd1": 0.0,
+  "fwd5": -0.00353,
+  "fwd10": -0.00091
+ }
+}

@@ -1,0 +1,291 @@
+{
+ "k": 5,
+ "h": 5,
+ "hac_lag": 4,
+ "folds": [
+  {
+   "fold": 1,
+   "train": [
+    "20231215",
+    "20250120"
+   ],
+   "test": [
+    "20250121",
+    "20250523"
+   ],
+   "picked": "只留 illiq 高1/3",
+   "n": 79,
+   "mean": 0.007319734765463632,
+   "t": 10.316519096339524,
+   "t_hac": 6.518728165855259,
+   "coverage": {
+    "have": [
+     "2025H1"
+    ],
+    "missing": [
+     "2024",
+     "2025H2",
+     "2026"
+    ],
+    "decidable_d": false
+   },
+   "judgment": {
+    "name": "只留 illiq 高1/3",
+    "gross": 0.007319734765463632,
+    "net": 0.36891463217936704,
+    "t": 10.316519096339524,
+    "t_hac": 6.518728165855259,
+    "fee": 0.0,
+    "slip_bp": 0.0,
+    "cost": 0.0,
+    "a": true,
+    "b": true,
+    "b_hac": true,
+    "c": null,
+    "d": false,
+    "d_required": true,
+    "seg_net": {
+     "2025H1": 0.36891463217936704
+    },
+    "seg_ex": {},
+    "verdict": "reject",
+    "reasons": [
+     "d 不过：分段净收益有非正值 → （缺段数据）"
+    ]
+   },
+   "usable_default_d": false,
+   "usable_nod": true
+  },
+  {
+   "fold": 2,
+   "train": [
+    "20231215",
+    "20250523"
+   ],
+   "test": [
+    "20250526",
+    "20250915"
+   ],
+   "picked": "只留 illiq 高1/3",
+   "n": 80,
+   "mean": 0.0009831363616142463,
+   "t": 1.332927460486444,
+   "t_hac": 0.7426525161853957,
+   "coverage": {
+    "have": [
+     "2025H1",
+     "2025H2"
+    ],
+    "missing": [
+     "2024",
+     "2026"
+    ],
+    "decidable_d": false
+   },
+   "judgment": {
+    "name": "只留 illiq 高1/3",
+    "gross": 0.0009831363616142463,
+    "net": 0.04955007262535801,
+    "t": 1.332927460486444,
+    "t_hac": 0.7426525161853957,
+    "fee": 0.0,
+    "slip_bp": 0.0,
+    "cost": 0.0,
+    "a": true,
+    "b": false,
+    "b_hac": false,
+    "c": null,
+    "d": false,
+    "d_required": true,
+    "seg_net": {
+     "2025H1": 0.17646240915150826,
+     "2025H2": -0.008137353068346634
+    },
+    "seg_ex": {},
+    "verdict": "reject",
+    "reasons": [
+     "b 不过：t = +1.33 ≤ 2",
+     "b_hac 不过：HAC t = +0.74 ≤ 2（未修正重叠的第二档，§11.28）",
+     "d 不过：分段净收益有非正值 → 2025H2 -0.8%"
+    ]
+   },
+   "usable_default_d": false,
+   "usable_nod": false
+  },
+  {
+   "fold": 3,
+   "train": [
+    "20231215",
+    "20250915"
+   ],
+   "test": [
+    "20250916",
+    "20260115"
+   ],
+   "picked": "只留 illiq 高1/3",
+   "n": 80,
+   "mean": 0.00038633738745145996,
+   "t": 0.4960210140472433,
+   "t_hac": 0.27180550613619914,
+   "coverage": {
+    "have": [
+     "2025H2",
+     "2026"
+    ],
+    "missing": [
+     "2024",
+     "2025H1"
+    ],
+    "decidable_d": false
+   },
+   "judgment": {
+    "name": "只留 illiq 高1/3",
+    "gross": 0.00038633738745145996,
+    "net": 0.019471404327553583,
+    "t": 0.4960210140472433,
+    "t_hac": 0.27180550613619914,
+    "fee": 0.0,
+    "slip_bp": 0.0,
+    "cost": 0.0,
+    "a": true,
+    "b": false,
+    "b_hac": false,
+    "c": null,
+    "d": false,
+    "d_required": true,
+    "seg_net": {
+     "2025H2": 6.217545611192862e-05,
+     "2026": 0.17258865431337111
+    },
+    "seg_ex": {},
+    "verdict": "reject",
+    "reasons": [
+     "b 不过：t = +0.50 ≤ 2",
+     "b_hac 不过：HAC t = +0.27 ≤ 2（未修正重叠的第二档，§11.28）",
+     "d 不过：分段净收益有非正值 → （缺段数据）"
+    ]
+   },
+   "usable_default_d": false,
+   "usable_nod": false
+  },
+  {
+   "fold": 4,
+   "train": [
+    "20231215",
+    "20260115"
+   ],
+   "test": [
+    "20260116",
+    "20260521"
+   ],
+   "picked": "只留 illiq 高1/3",
+   "n": 80,
+   "mean": -0.0013884130469334183,
+   "t": -1.9247274343756582,
+   "t_hac": -1.1819310713971536,
+   "coverage": {
+    "have": [
+     "2026"
+    ],
+    "missing": [
+     "2024",
+     "2025H1",
+     "2025H2"
+    ],
+    "decidable_d": false
+   },
+   "judgment": {
+    "name": "只留 illiq 高1/3",
+    "gross": -0.0013884130469334183,
+    "net": -0.06997601756544428,
+    "t": -1.9247274343756582,
+    "t_hac": -1.1819310713971536,
+    "fee": 0.0,
+    "slip_bp": 0.0,
+    "cost": 0.0,
+    "a": false,
+    "b": false,
+    "b_hac": false,
+    "c": null,
+    "d": false,
+    "d_required": true,
+    "seg_net": {
+     "2026": -0.06997601756544428
+    },
+    "seg_ex": {},
+    "verdict": "reject",
+    "reasons": [
+     "a 不过：扣成本（费率 0.00% + 滑点 0bp）后年化 -7.0% ≤ 0",
+     "b 不过：t = -1.92 ≤ 2",
+     "b_hac 不过：HAC t = -1.18 ≤ 2（未修正重叠的第二档，§11.28）",
+     "d 不过：分段净收益有非正值 → 2026 -7.0%"
+    ]
+   },
+   "usable_default_d": false,
+   "usable_nod": false
+  },
+  {
+   "fold": 5,
+   "train": [
+    "20231215",
+    "20260521"
+   ],
+   "test": [
+    "20260522",
+    "20260911"
+   ],
+   "picked": "只留 illiq 高1/3",
+   "n": 80,
+   "mean": 0.002463630813735248,
+   "t": 1.441191622980378,
+   "t_hac": 0.7965784216306897,
+   "coverage": {
+    "have": [
+     "2026"
+    ],
+    "missing": [
+     "2024",
+     "2025H1",
+     "2025H2"
+    ],
+    "decidable_d": false
+   },
+   "judgment": {
+    "name": "只留 illiq 高1/3",
+    "gross": 0.002463630813735248,
+    "net": 0.1241669930122565,
+    "t": 1.441191622980378,
+    "t_hac": 0.7965784216306897,
+    "fee": 0.0,
+    "slip_bp": 0.0,
+    "cost": 0.0,
+    "a": true,
+    "b": false,
+    "b_hac": false,
+    "c": null,
+    "d": false,
+    "d_required": true,
+    "seg_net": {
+     "2026": 0.1241669930122565
+    },
+    "seg_ex": {},
+    "verdict": "reject",
+    "reasons": [
+     "b 不过：t = +1.44 ≤ 2",
+     "b_hac 不过：HAC t = +0.80 ≤ 2（未修正重叠的第二档，§11.28）",
+     "d 不过：分段净收益有非正值 → （缺段数据）"
+    ]
+   },
+   "usable_default_d": false,
+   "usable_nod": false
+  }
+ ],
+ "summary": {
+  "n_pos": 4,
+  "n_folds": 5,
+  "n_hac_sig": 1,
+  "n_decidable_d": 0,
+  "n_usable_default_d": 0,
+  "n_usable_nod": 1
+ }
+}

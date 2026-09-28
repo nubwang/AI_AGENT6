@@ -1,0 +1,23 @@
+{
+  "records": [
+    {
+      "ts": "2026-09-17 11:30:55",
+      "param": "smoke_p",
+      "value": 2,
+      "baseline_hit_rate": 0.0,
+      "baseline_composite": 0.0,
+      "baseline_t1_hit_rate": 0.0,
+      "baseline_wave_hit_rate": 0.0,
+      "baseline_samples": 0,
+      "status": "tracking",
+      "current_hit_rate": 0.0,
+      "current_composite": 0.6,
+      "current_t1_hit_rate": 1.0,
+      "current_wave_hit_rate": 0.0,
+      "current_samples": 0,
+      "delta_hit_rate": 0.0,
+      "delta_composite": 0.6,
+      "tracked_at": "2026-09-21 18:30:10"
+    }
+  ]
+}

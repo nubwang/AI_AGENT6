@@ -1,0 +1,3625 @@
+{
+  "version": 1,
+  "currency": "CNY",
+  "enabled": true,
+  "limits": {
+    "per_task_cny": 2.0,
+    "per_day_cny": 8.0,
+    "total_cny": 10.0
+  },
+  "spent": {
+    "total_cny": 7.52739044,
+    "day": {
+      "20260922": 1.04813216,
+      "20260923": 3.6094796,
+      "20260924": 1.097313,
+      "20260928": 1.77246568
+    },
+    "task": {
+      "realtest": 0.0,
+      "realtest2": 0.000266
+    }
+  },
+  "ledger": [
+    {
+      "ts": "2026-09-22 13:33:32",
+      "amount_cny": 0.000209,
+      "run_id": "realtest2",
+      "source": "selfcheck2/default"
+    },
+    {
+      "ts": "2026-09-22 13:33:33",
+      "amount_cny": 5.7e-05,
+      "run_id": "realtest2",
+      "source": "selfcheck2/off"
+    },
+    {
+      "ts": "2026-09-22 13:57:33",
+      "amount_cny": 0.007659,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-22 13:57:39",
+      "amount_cny": 0.006001,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-22 13:57:59",
+      "amount_cny": 0.018268,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-22 13:58:04",
+      "amount_cny": 0.005109,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-22 13:58:23",
+      "amount_cny": 0.018026,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-22 13:58:27",
+      "amount_cny": 0.003735,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-22 13:58:38",
+      "amount_cny": 0.011496,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-22 13:58:41",
+      "amount_cny": 0.003221,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-22 13:58:48",
+      "amount_cny": 0.006848,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-22 13:58:53",
+      "amount_cny": 0.004809,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-22 13:58:58",
+      "amount_cny": 0.004807,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-22 13:59:10",
+      "amount_cny": 0.009693,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-22 13:59:16",
+      "amount_cny": 0.007139,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-22 13:59:19",
+      "amount_cny": 0.003283,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-22 13:59:39",
+      "amount_cny": 0.018041,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-22 13:59:46",
+      "amount_cny": 0.007718,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-22 13:59:58",
+      "amount_cny": 0.011487,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-22 14:00:03",
+      "amount_cny": 0.00846,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-22 14:00:25",
+      "amount_cny": 0.03417,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-22 14:00:46",
+      "amount_cny": 0.035516,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-22 14:01:10",
+      "amount_cny": 0.034456,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-22 14:01:16",
+      "amount_cny": 0.014552,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-22 14:01:34",
+      "amount_cny": 0.033464,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-22 14:01:43",
+      "amount_cny": 0.014004,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-22 14:01:54",
+      "amount_cny": 0.013442,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-22 14:01:56",
+      "amount_cny": 0.003258,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-22 14:02:01",
+      "amount_cny": 0.007834,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-22 14:02:06",
+      "amount_cny": 0.009592,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-22 14:02:09",
+      "amount_cny": 0.00566,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-22 14:02:25",
+      "amount_cny": 0.023834,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-22 14:02:46",
+      "amount_cny": 0.035202,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-22 14:02:59",
+      "amount_cny": 0.018832,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-22 14:03:07",
+      "amount_cny": 0.014966,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-22 14:03:15",
+      "amount_cny": 0.017524,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-22 14:03:20",
+      "amount_cny": 0.010274,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-22 14:03:41",
+      "amount_cny": 0.030344,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-22 14:04:02",
+      "amount_cny": 0.035266,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-22 14:04:15",
+      "amount_cny": 0.019114,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-22 14:04:25",
+      "amount_cny": 0.020872,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-22 14:04:45",
+      "amount_cny": 0.036796,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-22 14:04:50",
+      "amount_cny": 0.010536,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-22 14:05:07",
+      "amount_cny": 0.02227,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-22 14:05:32",
+      "amount_cny": 0.035088,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-22 14:05:45",
+      "amount_cny": 0.019582,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-22 14:05:54",
+      "amount_cny": 0.01868,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-22 14:06:07",
+      "amount_cny": 0.022346,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-22 14:06:19",
+      "amount_cny": 0.019904,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-22 14:06:26",
+      "amount_cny": 0.006882,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-22 14:06:32",
+      "amount_cny": 0.006682,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-22 14:06:39",
+      "amount_cny": 0.007722,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-22 14:06:43",
+      "amount_cny": 0.009728,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-22 14:06:53",
+      "amount_cny": 0.008318,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-22 14:06:58",
+      "amount_cny": 0.005204,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-22 14:07:03",
+      "amount_cny": 0.00985424,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-22 14:07:11",
+      "amount_cny": 0.008156,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-22 14:07:21",
+      "amount_cny": 0.006998,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-22 14:07:27",
+      "amount_cny": 0.006264,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-22 14:07:32",
+      "amount_cny": 0.01006424,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-22 14:07:38",
+      "amount_cny": 0.006712,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-22 14:07:46",
+      "amount_cny": 0.008382,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-22 14:07:55",
+      "amount_cny": 0.008996,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-22 14:08:13",
+      "amount_cny": 0.02970824,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-22 14:08:18",
+      "amount_cny": 0.004006,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-22 14:08:23",
+      "amount_cny": 0.01054624,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-22 14:08:29",
+      "amount_cny": 0.005722,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-22 14:08:37",
+      "amount_cny": 0.01431424,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-22 14:08:43",
+      "amount_cny": 0.004582,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-22 14:08:49",
+      "amount_cny": 0.006754,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-22 14:08:54",
+      "amount_cny": 0.00917624,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-22 14:09:01",
+      "amount_cny": 0.007514,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-22 14:09:08",
+      "amount_cny": 0.01229824,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-22 14:09:14",
+      "amount_cny": 0.007306,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-22 14:09:23",
+      "amount_cny": 0.009624,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-22 14:09:31",
+      "amount_cny": 0.008756,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-22 14:09:41",
+      "amount_cny": 0.00997424,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-22 14:09:49",
+      "amount_cny": 0.00619824,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-22 14:09:57",
+      "amount_cny": 0.006016,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-22 14:10:03",
+      "amount_cny": 0.006192,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-22 14:10:05",
+      "amount_cny": 0.006038,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 09:37:16",
+      "amount_cny": 0.00475,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 09:37:20",
+      "amount_cny": 0.00947,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 09:37:27",
+      "amount_cny": 0.01303,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 09:37:32",
+      "amount_cny": 0.009774,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 09:37:36",
+      "amount_cny": 0.00891,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 09:37:40",
+      "amount_cny": 0.010786,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 09:37:44",
+      "amount_cny": 0.00803,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 09:38:03",
+      "amount_cny": 0.034508,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 09:38:08",
+      "amount_cny": 0.012316,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 09:38:14",
+      "amount_cny": 0.010106,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 09:38:33",
+      "amount_cny": 0.035588,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 09:38:35",
+      "amount_cny": 0.005078,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 09:38:41",
+      "amount_cny": 0.00988,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 09:38:45",
+      "amount_cny": 0.00877,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 09:38:47",
+      "amount_cny": 0.0047,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 09:38:52",
+      "amount_cny": 0.010314,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 09:39:13",
+      "amount_cny": 0.036138,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 09:39:24",
+      "amount_cny": 0.020574,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 09:39:39",
+      "amount_cny": 0.025628,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 09:39:59",
+      "amount_cny": 0.03564,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 09:40:06",
+      "amount_cny": 0.012772,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 09:40:25",
+      "amount_cny": 0.030186,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 09:40:31",
+      "amount_cny": 0.013262,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 09:40:50",
+      "amount_cny": 0.030984,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 09:41:07",
+      "amount_cny": 0.035176,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 09:41:21",
+      "amount_cny": 0.021292,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 09:41:25",
+      "amount_cny": 0.006982,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 09:41:44",
+      "amount_cny": 0.036736,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 09:41:48",
+      "amount_cny": 0.008368,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 09:42:06",
+      "amount_cny": 0.034366,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 09:42:08",
+      "amount_cny": 0.00225708,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 09:42:20",
+      "amount_cny": 0.01961916,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 09:42:29",
+      "amount_cny": 0.016012,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 09:42:33",
+      "amount_cny": 0.007768,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 09:42:45",
+      "amount_cny": 0.015794,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 09:43:06",
+      "amount_cny": 0.035128,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 09:43:10",
+      "amount_cny": 0.005614,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 09:43:31",
+      "amount_cny": 0.03386,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 09:43:47",
+      "amount_cny": 0.034712,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 09:43:57",
+      "amount_cny": 0.016662,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 09:44:08",
+      "amount_cny": 0.01485,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 09:44:30",
+      "amount_cny": 0.035398,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 09:44:55",
+      "amount_cny": 0.033884,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 09:45:04",
+      "amount_cny": 0.019842,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 09:45:24",
+      "amount_cny": 0.03678,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 09:45:27",
+      "amount_cny": 0.006244,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 09:45:41",
+      "amount_cny": 0.022622,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 09:45:59",
+      "amount_cny": 0.035214,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 09:46:10",
+      "amount_cny": 0.016206,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 09:46:18",
+      "amount_cny": 0.016606,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 09:46:35",
+      "amount_cny": 0.03526,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 09:46:42",
+      "amount_cny": 0.011684,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 09:46:56",
+      "amount_cny": 0.01509024,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 09:47:04",
+      "amount_cny": 0.007264,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 09:47:11",
+      "amount_cny": 0.01312824,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 10:42:23",
+      "amount_cny": 0.00526808,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 10:42:44",
+      "amount_cny": 0.03203108,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 10:42:51",
+      "amount_cny": 0.01206808,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 10:43:01",
+      "amount_cny": 0.01450232,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 10:43:08",
+      "amount_cny": 0.01178232,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 10:43:09",
+      "amount_cny": 0.0008292,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 10:43:15",
+      "amount_cny": 0.00948408,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 10:43:16",
+      "amount_cny": 0.00138032,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 10:43:20",
+      "amount_cny": 0.0052088,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 10:43:25",
+      "amount_cny": 0.00858408,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 10:43:32",
+      "amount_cny": 0.01123104,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 10:43:35",
+      "amount_cny": 0.00490808,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 10:43:40",
+      "amount_cny": 0.00683808,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 10:43:46",
+      "amount_cny": 0.00904808,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 10:43:51",
+      "amount_cny": 0.00920208,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 10:44:06",
+      "amount_cny": 0.0235972,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 10:44:11",
+      "amount_cny": 0.00675144,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 10:44:16",
+      "amount_cny": 0.0082252,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 10:44:33",
+      "amount_cny": 0.02642304,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 10:44:42",
+      "amount_cny": 0.0137792,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 10:44:53",
+      "amount_cny": 0.01771408,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 10:45:14",
+      "amount_cny": 0.0331092,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 10:45:16",
+      "amount_cny": 0.00339608,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 10:45:33",
+      "amount_cny": 0.0321916,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 10:45:54",
+      "amount_cny": 0.034506,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 10:45:59",
+      "amount_cny": 0.007498,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 10:46:08",
+      "amount_cny": 0.018546,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 10:46:19",
+      "amount_cny": 0.0203316,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 10:46:29",
+      "amount_cny": 0.0185296,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 10:46:51",
+      "amount_cny": 0.034954,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 10:47:13",
+      "amount_cny": 0.035098,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 10:47:22",
+      "amount_cny": 0.014526,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 10:47:30",
+      "amount_cny": 0.01391,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 10:47:38",
+      "amount_cny": 0.016598,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 10:47:44",
+      "amount_cny": 0.010096,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 10:48:02",
+      "amount_cny": 0.029336,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 10:48:22",
+      "amount_cny": 0.035246,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 10:48:29",
+      "amount_cny": 0.011056,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 10:48:35",
+      "amount_cny": 0.009076,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 10:48:52",
+      "amount_cny": 0.036226,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 10:48:55",
+      "amount_cny": 0.005958,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 10:49:03",
+      "amount_cny": 0.01068,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 10:49:24",
+      "amount_cny": 0.035288,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 10:49:42",
+      "amount_cny": 0.028928,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 10:49:51",
+      "amount_cny": 0.017374,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 10:50:03",
+      "amount_cny": 0.02365,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 10:50:06",
+      "amount_cny": 0.006168,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 10:50:20",
+      "amount_cny": 0.02389,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 10:50:27",
+      "amount_cny": 0.013098,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 10:50:30",
+      "amount_cny": 0.005886,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 10:50:43",
+      "amount_cny": 0.025782,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 10:50:55",
+      "amount_cny": 0.024842,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 10:50:58",
+      "amount_cny": 0.005536,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 10:51:01",
+      "amount_cny": 0.005216,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 10:51:05",
+      "amount_cny": 0.0075532,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 10:51:10",
+      "amount_cny": 0.00600712,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 10:51:16",
+      "amount_cny": 0.01133232,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 10:51:22",
+      "amount_cny": 0.007732,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 10:51:30",
+      "amount_cny": 0.01685624,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 10:51:36",
+      "amount_cny": 0.00682712,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 10:51:39",
+      "amount_cny": 0.00765824,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 10:51:44",
+      "amount_cny": 0.00707,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 10:51:50",
+      "amount_cny": 0.00744,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 10:51:57",
+      "amount_cny": 0.01405224,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 10:52:05",
+      "amount_cny": 0.0109,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 11:13:13",
+      "amount_cny": 0.00516408,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 11:13:20",
+      "amount_cny": 0.01115108,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 11:13:25",
+      "amount_cny": 0.00772408,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 11:13:34",
+      "amount_cny": 0.01391832,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 11:13:41",
+      "amount_cny": 0.01253432,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 11:13:45",
+      "amount_cny": 0.0056132,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 11:13:52",
+      "amount_cny": 0.01173208,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 11:13:56",
+      "amount_cny": 0.00586032,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 11:14:16",
+      "amount_cny": 0.0332008,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 11:14:19",
+      "amount_cny": 0.00488808,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 11:14:28",
+      "amount_cny": 0.01407104,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 11:14:34",
+      "amount_cny": 0.00987608,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 11:14:39",
+      "amount_cny": 0.00673408,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 11:14:42",
+      "amount_cny": 0.00497608,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 11:14:48",
+      "amount_cny": 0.00949808,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 11:14:52",
+      "amount_cny": 0.0064292,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 11:14:59",
+      "amount_cny": 0.01161544,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 11:15:06",
+      "amount_cny": 0.0093372,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 11:15:08",
+      "amount_cny": 0.00485504,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 11:15:29",
+      "amount_cny": 0.0331312,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 11:15:34",
+      "amount_cny": 0.00705808,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 11:15:45",
+      "amount_cny": 0.0175252,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 11:15:49",
+      "amount_cny": 0.00521208,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 11:15:55",
+      "amount_cny": 0.00699296,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 11:16:17",
+      "amount_cny": 0.03525,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 11:16:33",
+      "amount_cny": 0.023264,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 11:16:42",
+      "amount_cny": 0.019272,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 11:17:03",
+      "amount_cny": 0.03477096,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 11:17:06",
+      "amount_cny": 0.00416808,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 11:17:36",
+      "amount_cny": 0.034366,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 11:17:37",
+      "amount_cny": 0.00255308,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 11:17:43",
+      "amount_cny": 0.00990716,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 11:17:52",
+      "amount_cny": 0.014156,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 11:17:58",
+      "amount_cny": 0.009976,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 11:18:10",
+      "amount_cny": 0.01883784,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 11:18:33",
+      "amount_cny": 0.035062,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 11:18:47",
+      "amount_cny": 0.0204,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 11:18:53",
+      "amount_cny": 0.011154,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 11:19:04",
+      "amount_cny": 0.01797784,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 11:19:09",
+      "amount_cny": 0.00644784,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 11:19:27",
+      "amount_cny": 0.02936096,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 11:19:48",
+      "amount_cny": 0.035208,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 11:20:10",
+      "amount_cny": 0.034144,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 11:20:24",
+      "amount_cny": 0.02967,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 11:20:45",
+      "amount_cny": 0.03462896,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 11:20:48",
+      "amount_cny": 0.00391296,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 11:21:02",
+      "amount_cny": 0.02573096,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 11:21:22",
+      "amount_cny": 0.035276,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 11:21:29",
+      "amount_cny": 0.009414,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 11:21:39",
+      "amount_cny": 0.016984,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 11:21:56",
+      "amount_cny": 0.03578296,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 11:21:58",
+      "amount_cny": 0.00411208,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 11:22:00",
+      "amount_cny": 0.00237696,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 11:22:04",
+      "amount_cny": 0.0070892,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 11:22:08",
+      "amount_cny": 0.00547208,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 11:22:11",
+      "amount_cny": 0.00628632,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 11:22:14",
+      "amount_cny": 0.00364992,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 11:22:19",
+      "amount_cny": 0.00916632,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 11:22:23",
+      "amount_cny": 0.00502596,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 11:22:29",
+      "amount_cny": 0.00830808,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 11:22:34",
+      "amount_cny": 0.00599,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 11:22:37",
+      "amount_cny": 0.00418888,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 11:22:46",
+      "amount_cny": 0.0157032,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 11:22:50",
+      "amount_cny": 0.00419408,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 11:22:55",
+      "amount_cny": 0.00468312,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 11:22:58",
+      "amount_cny": 0.00752224,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 11:23:05",
+      "amount_cny": 0.006292,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 11:23:10",
+      "amount_cny": 0.00968624,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 11:23:14",
+      "amount_cny": 0.004746,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 13:40:02",
+      "amount_cny": 0.00187404,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 13:40:24",
+      "amount_cny": 0.01654354,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 13:40:35",
+      "amount_cny": 0.00845004,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 13:40:36",
+      "amount_cny": 0.00064316,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 13:40:57",
+      "amount_cny": 0.01661116,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 13:41:00",
+      "amount_cny": 0.0016306,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 13:41:05",
+      "amount_cny": 0.00432204,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 13:41:27",
+      "amount_cny": 0.01663816,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 13:41:44",
+      "amount_cny": 0.0133884,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 13:42:02",
+      "amount_cny": 0.01346404,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 13:42:05",
+      "amount_cny": 0.00202752,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 13:42:12",
+      "amount_cny": 0.00439804,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 13:42:18",
+      "amount_cny": 0.00491904,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 13:42:39",
+      "amount_cny": 0.01590404,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 13:42:53",
+      "amount_cny": 0.01136504,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 13:43:13",
+      "amount_cny": 0.0138746,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 13:43:20",
+      "amount_cny": 0.00546372,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 13:43:27",
+      "amount_cny": 0.0054206,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 13:43:31",
+      "amount_cny": 0.00326752,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 13:43:44",
+      "amount_cny": 0.0089176,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 13:43:47",
+      "amount_cny": 0.00238504,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 13:43:55",
+      "amount_cny": 0.0057746,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 13:43:57",
+      "amount_cny": 0.00155004,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 13:44:04",
+      "amount_cny": 0.00470048,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 13:44:26",
+      "amount_cny": 0.017613,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 13:44:31",
+      "amount_cny": 0.004254,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 13:44:36",
+      "amount_cny": 0.005336,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 13:44:47",
+      "amount_cny": 0.00951248,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 13:44:50",
+      "amount_cny": 0.00202404,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 13:45:11",
+      "amount_cny": 0.016041,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 13:45:33",
+      "amount_cny": 0.017679,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 13:45:48",
+      "amount_cny": 0.010881,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 13:45:56",
+      "amount_cny": 0.006753,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 13:46:18",
+      "amount_cny": 0.01852,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 13:46:26",
+      "amount_cny": 0.006806,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 13:46:41",
+      "amount_cny": 0.012694,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 13:47:01",
+      "amount_cny": 0.017534,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 13:47:12",
+      "amount_cny": 0.007962,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 13:47:18",
+      "amount_cny": 0.006067,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 13:47:33",
+      "amount_cny": 0.01459,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 13:47:40",
+      "amount_cny": 0.00659,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 13:48:21",
+      "amount_cny": 0.0165558,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 13:48:23",
+      "amount_cny": 0.00142854,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 13:48:33",
+      "amount_cny": 0.00748158,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 13:48:38",
+      "amount_cny": 0.0038958,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 13:48:40",
+      "amount_cny": 0.00143536,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 13:48:54",
+      "amount_cny": 0.01149892,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 13:49:16",
+      "amount_cny": 0.017544,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 13:49:26",
+      "amount_cny": 0.00724,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 13:49:34",
+      "amount_cny": 0.00935,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 13:49:55",
+      "amount_cny": 0.01741392,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 13:50:00",
+      "amount_cny": 0.00296092,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 13:50:02",
+      "amount_cny": 0.00137648,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 13:50:09",
+      "amount_cny": 0.0055576,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 13:50:12",
+      "amount_cny": 0.00216004,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 13:50:16",
+      "amount_cny": 0.00320716,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 13:50:19",
+      "amount_cny": 0.00185296,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 13:50:24",
+      "amount_cny": 0.00320316,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 13:50:26",
+      "amount_cny": 0.00139298,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 13:50:30",
+      "amount_cny": 0.00305404,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 13:50:35",
+      "amount_cny": 0.00259456,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 13:50:40",
+      "amount_cny": 0.00593212,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 13:50:44",
+      "amount_cny": 0.00249804,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 13:50:47",
+      "amount_cny": 0.00209044,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 13:50:53",
+      "amount_cny": 0.0046846,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 13:50:58",
+      "amount_cny": 0.00353304,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 13:51:01",
+      "amount_cny": 0.00166348,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 13:51:07",
+      "amount_cny": 0.0051526,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 13:51:12",
+      "amount_cny": 0.00303704,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 13:51:18",
+      "amount_cny": 0.00502316,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 13:51:20",
+      "amount_cny": 0.00118004,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 13:51:26",
+      "amount_cny": 0.00535812,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 13:51:27",
+      "amount_cny": 0.002366,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 13:51:29",
+      "amount_cny": 0.002457,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 13:51:42",
+      "amount_cny": 0.01072312,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 13:51:44",
+      "amount_cny": 0.002572,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 13:51:48",
+      "amount_cny": 0.00416712,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 13:51:52",
+      "amount_cny": 0.004253,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 13:51:58",
+      "amount_cny": 0.00616112,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 13:52:02",
+      "amount_cny": 0.00339556,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 13:52:05",
+      "amount_cny": 0.00289156,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 13:52:09",
+      "amount_cny": 0.00462512,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 13:52:11",
+      "amount_cny": 0.002723,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 13:52:14",
+      "amount_cny": 0.00349312,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 13:52:17",
+      "amount_cny": 0.003138,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 13:52:21",
+      "amount_cny": 0.00359512,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 13:52:23",
+      "amount_cny": 0.002658,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 13:52:25",
+      "amount_cny": 0.00305512,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 13:52:28",
+      "amount_cny": 0.003687,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 13:52:31",
+      "amount_cny": 0.002688,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 13:52:34",
+      "amount_cny": 0.002992,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 13:52:37",
+      "amount_cny": 0.003292,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 13:52:42",
+      "amount_cny": 0.002783,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-23 13:52:47",
+      "amount_cny": 0.004328,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-24 09:51:02",
+      "amount_cny": 0.014094,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-24 09:51:13",
+      "amount_cny": 0.020512,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-24 09:51:25",
+      "amount_cny": 0.020738,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-24 09:51:26",
+      "amount_cny": 0.004728,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-24 09:51:33",
+      "amount_cny": 0.01548,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-24 09:51:35",
+      "amount_cny": 0.004994,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-24 09:51:42",
+      "amount_cny": 0.013804,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-24 09:51:47",
+      "amount_cny": 0.01043,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-24 09:51:49",
+      "amount_cny": 0.004946,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-24 09:51:51",
+      "amount_cny": 0.00488,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-24 09:51:53",
+      "amount_cny": 0.00612,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-24 09:51:58",
+      "amount_cny": 0.012044,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-24 09:52:17",
+      "amount_cny": 0.034506,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-24 09:52:26",
+      "amount_cny": 0.018308,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-24 09:52:29",
+      "amount_cny": 0.006132,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-24 09:52:37",
+      "amount_cny": 0.01496,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-24 09:52:45",
+      "amount_cny": 0.013202,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-24 09:52:49",
+      "amount_cny": 0.00961,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-24 09:52:54",
+      "amount_cny": 0.011494,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-24 09:53:25",
+      "amount_cny": 0.035114,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-24 09:53:27",
+      "amount_cny": 0.00316108,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-24 09:53:32",
+      "amount_cny": 0.00873116,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-24 09:53:42",
+      "amount_cny": 0.019452,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-24 09:53:45",
+      "amount_cny": 0.005654,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-24 09:53:54",
+      "amount_cny": 0.012286,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-24 09:54:14",
+      "amount_cny": 0.035296,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-24 09:54:26",
+      "amount_cny": 0.016966,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-24 09:54:33",
+      "amount_cny": 0.012384,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-24 09:54:54",
+      "amount_cny": 0.037114,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-24 09:54:56",
+      "amount_cny": 0.006264,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-24 09:55:14",
+      "amount_cny": 0.03031,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-24 09:55:33",
+      "amount_cny": 0.03537,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-24 09:55:56",
+      "amount_cny": 0.033738,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-24 09:56:01",
+      "amount_cny": 0.01053,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-24 09:56:18",
+      "amount_cny": 0.036438,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-24 09:56:24",
+      "amount_cny": 0.013102,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-24 09:57:17",
+      "amount_cny": 0.034364,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-24 09:57:25",
+      "amount_cny": 0.01178508,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-24 09:57:32",
+      "amount_cny": 0.01056316,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-24 09:57:41",
+      "amount_cny": 0.01622,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-24 09:57:51",
+      "amount_cny": 0.016642,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-24 09:58:09",
+      "amount_cny": 0.025768,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-24 09:58:30",
+      "amount_cny": 0.034258,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-24 09:58:37",
+      "amount_cny": 0.012132,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-24 09:58:47",
+      "amount_cny": 0.019648,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-24 09:58:59",
+      "amount_cny": 0.023278,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-24 09:59:02",
+      "amount_cny": 0.006478,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-24 09:59:13",
+      "amount_cny": 0.01261712,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-24 09:59:19",
+      "amount_cny": 0.00604,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-24 09:59:24",
+      "amount_cny": 0.00627512,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-24 09:59:44",
+      "amount_cny": 0.03339224,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-24 09:59:52",
+      "amount_cny": 0.00707,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-24 10:00:00",
+      "amount_cny": 0.005692,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-24 10:00:12",
+      "amount_cny": 0.01883624,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-24 10:00:17",
+      "amount_cny": 0.006712,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-24 10:00:23",
+      "amount_cny": 0.00728112,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-24 10:00:30",
+      "amount_cny": 0.006744,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-24 10:00:36",
+      "amount_cny": 0.00506512,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-24 10:00:43",
+      "amount_cny": 0.01159224,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-24 10:00:47",
+      "amount_cny": 0.00508712,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-24 10:00:56",
+      "amount_cny": 0.01231912,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-24 10:01:00",
+      "amount_cny": 0.00428112,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-24 10:01:05",
+      "amount_cny": 0.005724,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-24 10:01:28",
+      "amount_cny": 0.03575824,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-24 10:01:33",
+      "amount_cny": 0.007186,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-24 10:01:38",
+      "amount_cny": 0.00971224,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-24 10:01:42",
+      "amount_cny": 0.00615,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-24 10:01:48",
+      "amount_cny": 0.005822,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-24 10:01:53",
+      "amount_cny": 0.006464,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-24 10:02:02",
+      "amount_cny": 0.00726512,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-24 10:02:07",
+      "amount_cny": 0.006656,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-24 10:02:09",
+      "amount_cny": 0.00487824,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-24 10:02:19",
+      "amount_cny": 0.012556,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-24 10:02:33",
+      "amount_cny": 0.01917312,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-24 10:02:36",
+      "amount_cny": 0.006126,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-24 13:50:01",
+      "amount_cny": 0.010809,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-28 09:37:39",
+      "amount_cny": 0.018198,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-28 09:37:42",
+      "amount_cny": 0.007812,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-28 09:37:52",
+      "amount_cny": 0.020426,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-28 09:37:53",
+      "amount_cny": 0.004888,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-28 09:37:55",
+      "amount_cny": 0.006074,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-28 09:38:06",
+      "amount_cny": 0.02073,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-28 09:38:10",
+      "amount_cny": 0.008554,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-28 09:38:15",
+      "amount_cny": 0.010122,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-28 09:38:22",
+      "amount_cny": 0.013914,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-28 09:38:29",
+      "amount_cny": 0.013634,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-28 09:38:32",
+      "amount_cny": 0.00631,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-28 09:38:50",
+      "amount_cny": 0.034166,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-28 09:38:54",
+      "amount_cny": 0.008898,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-28 09:39:03",
+      "amount_cny": 0.017918,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-28 09:39:13",
+      "amount_cny": 0.01914,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-28 09:39:20",
+      "amount_cny": 0.013366,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-28 09:39:26",
+      "amount_cny": 0.014058,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-28 09:39:38",
+      "amount_cny": 0.019362,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-28 09:39:47",
+      "amount_cny": 0.014594,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-28 09:40:12",
+      "amount_cny": 0.035026,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-28 09:40:14",
+      "amount_cny": 0.00218508,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-28 09:40:22",
+      "amount_cny": 0.01256316,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-28 09:40:28",
+      "amount_cny": 0.011444,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-28 09:40:35",
+      "amount_cny": 0.011994,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-28 09:40:56",
+      "amount_cny": 0.034658,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-28 09:41:15",
+      "amount_cny": 0.035316,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-28 09:41:29",
+      "amount_cny": 0.020356,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-28 09:41:39",
+      "amount_cny": 0.01748,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-28 09:41:48",
+      "amount_cny": 0.01894,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-28 09:41:55",
+      "amount_cny": 0.01465,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-28 09:42:17",
+      "amount_cny": 0.03506,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-28 09:42:19",
+      "amount_cny": 0.00309708,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-28 09:42:22",
+      "amount_cny": 0.00668316,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-28 09:42:28",
+      "amount_cny": 0.010866,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-28 09:42:32",
+      "amount_cny": 0.008632,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-28 09:42:47",
+      "amount_cny": 0.023682,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-28 09:43:06",
+      "amount_cny": 0.032962,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-28 09:43:17",
+      "amount_cny": 0.018976,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-28 09:43:26",
+      "amount_cny": 0.018238,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-28 09:43:37",
+      "amount_cny": 0.025036,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-28 09:43:45",
+      "amount_cny": 0.012684,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-28 09:44:05",
+      "amount_cny": 0.034928,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-28 09:44:26",
+      "amount_cny": 0.035334,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-28 09:44:47",
+      "amount_cny": 0.033702,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-28 09:44:57",
+      "amount_cny": 0.017484,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-28 09:45:05",
+      "amount_cny": 0.016996,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-28 09:45:10",
+      "amount_cny": 0.009974,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-28 09:45:18",
+      "amount_cny": 0.00798112,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-28 09:45:24",
+      "amount_cny": 0.01165424,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-28 09:45:30",
+      "amount_cny": 0.00674912,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-28 09:45:34",
+      "amount_cny": 0.005532,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-28 09:45:40",
+      "amount_cny": 0.007268,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-28 09:45:46",
+      "amount_cny": 0.007256,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-28 09:45:51",
+      "amount_cny": 0.006382,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-28 09:45:57",
+      "amount_cny": 0.00680512,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-28 09:46:04",
+      "amount_cny": 0.00757,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-28 09:46:07",
+      "amount_cny": 0.00325712,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-28 09:46:13",
+      "amount_cny": 0.00773912,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-28 09:46:22",
+      "amount_cny": 0.01129912,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-28 09:46:29",
+      "amount_cny": 0.007684,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-28 09:46:35",
+      "amount_cny": 0.01213424,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-28 09:46:41",
+      "amount_cny": 0.006378,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-28 09:46:45",
+      "amount_cny": 0.00424312,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-28 09:46:50",
+      "amount_cny": 0.00649712,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-28 09:46:56",
+      "amount_cny": 0.00653512,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-28 09:47:00",
+      "amount_cny": 0.00485512,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-28 09:47:06",
+      "amount_cny": 0.005476,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-28 09:47:10",
+      "amount_cny": 0.005496,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-28 09:47:15",
+      "amount_cny": 0.00531912,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-28 09:47:19",
+      "amount_cny": 0.006152,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-28 12:05:18",
+      "amount_cny": 0.023421,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-28 12:20:01",
+      "amount_cny": 0.01076468,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-28 12:50:43",
+      "amount_cny": 0.006599,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-28 12:51:06",
+      "amount_cny": 0.01726756,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-28 12:51:19",
+      "amount_cny": 0.01038756,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-28 12:51:28",
+      "amount_cny": 0.00759156,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-28 12:51:49",
+      "amount_cny": 0.01729556,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-28 12:51:57",
+      "amount_cny": 0.00563456,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-28 12:52:07",
+      "amount_cny": 0.00621256,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-28 12:52:15",
+      "amount_cny": 0.00549656,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-28 12:52:21",
+      "amount_cny": 0.00442856,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-28 12:52:42",
+      "amount_cny": 0.01725656,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-28 12:52:50",
+      "amount_cny": 0.00635256,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-28 12:53:05",
+      "amount_cny": 0.01265256,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-28 12:53:19",
+      "amount_cny": 0.01140856,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-28 12:53:33",
+      "amount_cny": 0.01240056,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-28 12:53:41",
+      "amount_cny": 0.00475956,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-28 12:53:48",
+      "amount_cny": 0.00542556,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-28 12:53:57",
+      "amount_cny": 0.00614556,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-28 12:54:16",
+      "amount_cny": 0.01708956,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-28 12:54:37",
+      "amount_cny": 0.01725856,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-28 12:54:52",
+      "amount_cny": 0.01172056,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-28 12:55:07",
+      "amount_cny": 0.01170056,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-28 12:55:14",
+      "amount_cny": 0.00436956,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-28 12:55:24",
+      "amount_cny": 0.00741556,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-28 12:55:31",
+      "amount_cny": 0.00455356,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-28 12:55:38",
+      "amount_cny": 0.00414356,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-28 12:55:44",
+      "amount_cny": 0.00507756,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-28 12:55:51",
+      "amount_cny": 0.00580556,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-28 12:56:07",
+      "amount_cny": 0.01279056,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-28 12:56:14",
+      "amount_cny": 0.00605656,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-28 12:56:23",
+      "amount_cny": 0.00642356,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-28 12:56:42",
+      "amount_cny": 0.01448256,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-28 12:56:47",
+      "amount_cny": 0.00393656,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-28 12:56:57",
+      "amount_cny": 0.00632856,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-28 12:57:10",
+      "amount_cny": 0.01055956,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-28 12:57:16",
+      "amount_cny": 0.00459556,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-28 12:57:21",
+      "amount_cny": 0.00414556,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-28 12:57:34",
+      "amount_cny": 0.01029256,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-28 12:57:42",
+      "amount_cny": 0.00447656,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-28 12:57:54",
+      "amount_cny": 0.00973456,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-28 12:58:03",
+      "amount_cny": 0.00608456,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-28 12:58:12",
+      "amount_cny": 0.00671956,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-28 12:58:23",
+      "amount_cny": 0.00955956,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-28 12:58:40",
+      "amount_cny": 0.01224156,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-28 12:58:51",
+      "amount_cny": 0.00944456,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-28 12:59:09",
+      "amount_cny": 0.01247056,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-28 12:59:23",
+      "amount_cny": 0.01206756,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-28 12:59:43",
+      "amount_cny": 0.01437256,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-28 12:59:52",
+      "amount_cny": 0.00753156,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-28 12:59:59",
+      "amount_cny": 0.00612456,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-28 13:00:10",
+      "amount_cny": 0.00943856,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-28 13:00:16",
+      "amount_cny": 0.00379356,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-28 13:00:23",
+      "amount_cny": 0.00635056,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-28 13:00:33",
+      "amount_cny": 0.00661656,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-28 13:00:43",
+      "amount_cny": 0.00790156,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-28 13:00:50",
+      "amount_cny": 0.00505056,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-28 13:00:59",
+      "amount_cny": 0.00579956,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-28 13:01:15",
+      "amount_cny": 0.01330056,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-28 13:01:23",
+      "amount_cny": 0.00723756,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-28 13:01:34",
+      "amount_cny": 0.00776056,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-28 13:01:46",
+      "amount_cny": 0.00886356,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-28 13:01:59",
+      "amount_cny": 0.00964056,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-28 13:02:08",
+      "amount_cny": 0.00632056,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-28 13:02:17",
+      "amount_cny": 0.00648356,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-28 13:02:27",
+      "amount_cny": 0.00803456,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-28 13:02:39",
+      "amount_cny": 0.00901556,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-28 13:02:53",
+      "amount_cny": 0.01293156,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-28 13:03:05",
+      "amount_cny": 0.00797856,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-28 13:03:17",
+      "amount_cny": 0.00938156,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-28 13:03:21",
+      "amount_cny": 0.00343656,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-28 13:03:32",
+      "amount_cny": 0.00874556,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-28 13:03:43",
+      "amount_cny": 0.00915556,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-28 13:03:55",
+      "amount_cny": 0.00823156,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-28 13:04:03",
+      "amount_cny": 0.00696956,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-28 13:04:12",
+      "amount_cny": 0.00511656,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-28 13:04:19",
+      "amount_cny": 0.00468456,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-28 13:04:34",
+      "amount_cny": 0.01232756,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-28 13:04:45",
+      "amount_cny": 0.00859156,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-28 13:04:57",
+      "amount_cny": 0.00980956,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-28 13:05:11",
+      "amount_cny": 0.01053556,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-28 13:05:22",
+      "amount_cny": 0.00872956,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-28 13:05:30",
+      "amount_cny": 0.00497556,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-28 13:05:37",
+      "amount_cny": 0.00530856,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-28 13:05:48",
+      "amount_cny": 0.00714256,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-28 13:06:11",
+      "amount_cny": 0.01728856,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-28 13:06:20",
+      "amount_cny": 0.00489656,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-28 13:06:39",
+      "amount_cny": 0.01317356,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-28 13:06:44",
+      "amount_cny": 0.00435756,
+      "run_id": "",
+      "source": "llm"
+    },
+    {
+      "ts": "2026-09-28 13:06:52",
+      "amount_cny": 0.00464156,
+      "run_id": "",
+      "source": "llm"
+    }
+  ]
+}

@@ -1,0 +1,84 @@
+{
+ "generated_at": "2026-09-21 16:07:30",
+ "h": 5,
+ "hac_lag": 4,
+ "cost_rt": 0.005,
+ "top_n": 30,
+ "n_records": 2004,
+ "n_days": 23,
+ "market_base": -0.0014618906887631773,
+ "size": {
+  "rules_top": 27.782608695652176,
+  "kept": 2.6956521739130435,
+  "dropped": 25.08695652173913,
+  "added": 0.8260869565217391,
+  "days_dropped_empty": 1,
+  "n_days": 23,
+  "n_days_agent_empty": 3,
+  "empty_days": [
+   "20260818",
+   "20260819",
+   "20260824"
+  ]
+ },
+ "agent_only_traded": {
+  "n": 20,
+  "mean": -0.015211482350076477,
+  "t": NaN,
+  "t_hac": NaN
+ },
+ "agent_incl_cash": {
+  "n": 23,
+  "mean": -0.01322737595658824,
+  "t": NaN,
+  "t_hac": NaN
+ },
+ "subsets": {
+  "rules_top": {
+   "n": 22,
+   "mean": -0.026022495907669786,
+   "t": NaN,
+   "t_hac": NaN
+  },
+  "kept": {
+   "n": 17,
+   "mean": -0.007171828526252222,
+   "t": NaN,
+   "t_hac": NaN
+  },
+  "dropped": {
+   "n": 22,
+   "mean": -0.02984242290619624,
+   "t": NaN,
+   "t_hac": NaN
+  },
+  "added": {
+   "n": 5,
+   "mean": -0.03663570709469212,
+   "t": NaN,
+   "t_hac": NaN
+  },
+  "agent_all": {
+   "n": 20,
+   "mean": -0.015211482350076477,
+   "t": NaN,
+   "t_hac": NaN
+  }
+ },
+ "kept_minus_dropped": {
+  "n": 17,
+  "mean": 0.020874262884289337,
+  "t": NaN,
+  "t_hac": NaN
+ },
+ "agent_minus_rules": {
+  "n": 19,
+  "mean": 0.012137837008900218,
+  "t": NaN,
+  "t_hac": NaN
+ },
+ "verdict": "方向对，但**功效不足 ⇒ 不可判定**",
+ "selection_effect": 0.01081101355759331,
+ "cash_effect": 0.001984106393488236,
+ "kept_minus_dropped_sig": false
+}

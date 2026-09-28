@@ -1,0 +1,16 @@
+{
+  "table_query": {
+    "calls": 102,
+    "mysql_s": 18.57,
+    "mirror_s": 8.766,
+    "mysql_ms_per": 182.0,
+    "mirror_ms_per": 85.9,
+    "speedup": 2.1
+  },
+  "build_extra_map": {
+    "stocks": 4,
+    "mirror_off_s": 24.01,
+    "mirror_on_s": 6.11,
+    "speedup": 3.9
+  }
+}

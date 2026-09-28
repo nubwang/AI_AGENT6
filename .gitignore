@@ -1,0 +1,49 @@
+# ===== 依赖与虚拟环境 =====
+ai-quant-agent/backend/venv/
+venv/
+.venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+dist/
+build/
+ai-quant-agent/frontend/node_modules/
+node_modules/
+
+# ===== 密钥与环境变量（务必不要提交） =====
+.env
+*.env
+.env.local
+!.env.example
+
+# ===== 数据库 / 大数据运行产物 =====
+ai-quant-agent/data/mysql/
+ai-quant-agent/data/raw/
+ai-quant-agent/data/chroma_db/
+ai-quant-agent/backend/data/chroma_db/
+ai-quant-agent/backend/data/*.db
+ai-quant-agent/backend/data/*.db-shm
+ai-quant-agent/backend/data/*.db-wal
+ai-quant-agent/backend/data/*.sqlite
+ai-quant-agent/backend/data/*.sqlite-shm
+ai-quant-agent/backend/data/*.sqlite-wal
+ai-quant-agent/backend/data/daily_recommend/
+ai-quant-agent/backend/data/backtest_results/
+ai-quant-agent/backend/data/baseline_sampling_daily.json
+ai-quant-agent/backend/data/buy_type_samples.json
+ai-quant-agent/backend/data/washout_samples.json
+
+# ===== 日志与备份 =====
+logs/
+ai-quant-agent/logs/
+ai-quant-agent/backend/logs/
+backups/
+ai-quant-agent/backups/
+
+# ===== IDE / 系统 =====
+.idea/
+.vscode/
+*.swp
+.DS_Store
+Thumbs.db

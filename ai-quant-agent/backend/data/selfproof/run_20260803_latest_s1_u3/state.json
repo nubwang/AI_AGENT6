@@ -1,0 +1,24 @@
+{
+  "run_id": "run_20260803_latest_s1_u3",
+  "start": "20260803",
+  "end": "",
+  "step": 1,
+  "universe": 3,
+  "max_days": 1,
+  "llm": false,
+  "top_k": 0,
+  "universe_seed": 20260922,
+  "workers": 1,
+  "status": "done",
+  "llm_metering_note": "规则档（未调 LLM）",
+  "created_at": "2026-09-22 14:51:35",
+  "updated_at": "2026-09-22 14:51:36",
+  "done": [
+    "20260803"
+  ],
+  "next_date": "20260803",
+  "picks_total": 0,
+  "elapsed_sec": 1.03,
+  "dates_total": 1,
+  "dates_left": 0
+}

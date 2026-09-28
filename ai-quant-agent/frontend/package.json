@@ -1,0 +1,31 @@
+{
+  "name": "frontend",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "pids=$(lsof -ti tcp:5173 || true); if [ -n \"$pids\" ]; then echo \"[dev] port 5173 occupied by PID: $pids -> kill it, then start\"; kill -9 $pids 2>/dev/null || true; sleep 1; fi; vite",
+    "dev:kill": "pids=$(lsof -ti tcp:5173 || true); if [ -n \"$pids\" ]; then kill -9 $pids 2>/dev/null || true; echo \"[dev:kill] killed PID: $pids\"; else echo \"[dev:kill] port 5173 is free\"; fi",
+    "dev:restart": "bash ../scripts/start_all.sh --restart",
+    "dev:status": "bash ../scripts/start_all.sh --status",
+    "build": "vue-tsc -b && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "axios": "^1.18.1",
+    "echarts": "^6.1.0",
+    "element-plus": "^2.14.3",
+    "pinia": "^4.0.2",
+    "vue": "^3.5.39",
+    "vue-echarts": "^8.0.1",
+    "vue-router": "^4.6.4"
+  },
+  "devDependencies": {
+    "@types/node": "^24.13.2",
+    "@vitejs/plugin-vue": "^6.0.7",
+    "@vue/tsconfig": "^0.9.1",
+    "typescript": "~6.0.2",
+    "vite": "^8.1.1",
+    "vue-tsc": "^3.3.5"
+  }
+}

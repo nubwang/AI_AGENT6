@@ -1,0 +1,67 @@
+{
+  "version": 1,
+  "key_features": [
+    {
+      "feature": "market_env",
+      "auc": 0.635,
+      "info_gain": 0.0181,
+      "direction": "high",
+      "success_mean": -0.009299338530338886,
+      "failure_mean": -0.04423043655634798
+    },
+    {
+      "feature": "avg_hold_amount",
+      "auc": 0.6055,
+      "info_gain": 0.0175,
+      "direction": "high",
+      "success_mean": 142.9357131734985,
+      "failure_mean": 79.13360342221227
+    },
+    {
+      "feature": "wk_trend",
+      "auc": 0.5821,
+      "info_gain": 0.0043,
+      "direction": "high",
+      "success_mean": -0.04135904932745989,
+      "failure_mean": -0.05137797425083366
+    }
+  ],
+  "success_profile": {
+    "market_env": -0.0093,
+    "avg_hold_amount": 142.9357,
+    "wk_trend": -0.0414
+  },
+  "combo_rules": [
+    {
+      "features": [
+        "market_env",
+        "avg_hold_amount"
+      ],
+      "sample_count": 110,
+      "up_prob": 0.8818,
+      "baseline": 0.7465
+    },
+    {
+      "features": [
+        "avg_hold_amount",
+        "wk_trend"
+      ],
+      "sample_count": 110,
+      "up_prob": 0.8545,
+      "baseline": 0.7465
+    },
+    {
+      "features": [
+        "market_env",
+        "wk_trend"
+      ],
+      "sample_count": 131,
+      "up_prob": 0.8168,
+      "baseline": 0.7465
+    }
+  ],
+  "cluster_stats": {
+    "success": 321,
+    "failure": 109
+  }
+}

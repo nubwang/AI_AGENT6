@@ -1,0 +1,20 @@
+{
+  "date": "20260803",
+  "generated_at": "2026-09-22 14:49:29",
+  "total_scanned": 10,
+  "confirmed_count": 1,
+  "candidate_pool": 0,
+  "top_picks": [],
+  "elapsed": 15.4,
+  "as_of": "20260803",
+  "universe": 10,
+  "persist": false,
+  "mode": "replay",
+  "universe_seed": 20260922,
+  "_selfproof": {
+    "as_of": "20260803",
+    "run_id": "run_20260803_latest_s1_u10",
+    "llm": false,
+    "written_at": "2026-09-22 14:49:29"
+  }
+}

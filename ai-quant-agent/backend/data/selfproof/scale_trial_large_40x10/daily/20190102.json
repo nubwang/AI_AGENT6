@@ -1,0 +1,20 @@
+{
+  "date": "20190102",
+  "generated_at": "2026-09-22 14:10:09",
+  "total_scanned": 40,
+  "confirmed_count": 0,
+  "candidate_pool": 0,
+  "top_picks": [],
+  "elapsed": 5.4,
+  "as_of": "20190102",
+  "universe": 40,
+  "persist": false,
+  "mode": "replay",
+  "universe_seed": 20260922,
+  "_selfproof": {
+    "as_of": "20190102",
+    "run_id": "scale_trial_large_40x10",
+    "llm": false,
+    "written_at": "2026-09-22 14:10:09"
+  }
+}

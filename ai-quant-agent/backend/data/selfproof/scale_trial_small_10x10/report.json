@@ -1,0 +1,402 @@
+{
+  "run_id": "scale_trial_small_10x10",
+  "config": {
+    "start": "20190102",
+    "end": "",
+    "step": 1,
+    "universe": 10,
+    "max_days": 10,
+    "llm": false,
+    "top_k": 0,
+    "universe_seed": 20260922
+  },
+  "flags": {
+    "as_of": "20190102~20190115",
+    "metric_name": "重演口径胜率",
+    "main_metric": {
+      "hit_window": 5,
+      "hit_definition": "excess_vs_market",
+      "immutable": true,
+      "note": "主指标=超额（vs 市场基准），绝对胜率仅作辅 —— 防止被市场 beta 主导"
+    },
+    "forward_look": {
+      "as_of": "20190102~20190115",
+      "items": [
+        {
+          "key": "tavily",
+          "name": "Tavily 实时搜索（消息面）",
+          "filterable": false,
+          "field": "",
+          "action": "forbid",
+          "note": "返回的是**今天**的新闻；历史回放必须关闭，否则消息面静默穿越（原规划 G5）",
+          "effective": "forbidden"
+        },
+        {
+          "key": "policy_kb",
+          "name": "政策库 policy_kb（含时效衰减）",
+          "filterable": true,
+          "field": "发布日",
+          "action": "filter",
+          "note": "按 发布日 <= as_of 裁剪；否则会引用未来政策",
+          "effective": "filter"
+        },
+        {
+          "key": "reflect_kb",
+          "name": "反思教训库 reflect_kb",
+          "filterable": true,
+          "field": "教训产生日",
+          "action": "filter",
+          "note": "F2 核心：把 as_of 之后的教训注入 prompt = 真未来函数",
+          "effective": "filter"
+        },
+        {
+          "key": "verify_kb",
+          "name": "次日验证结论 verify_kb",
+          "filterable": true,
+          "field": "验证日期",
+          "action": "filter",
+          "note": "同上；回放按 as_of 过滤",
+          "effective": "filter"
+        },
+        {
+          "key": "ekb",
+          "name": "进化私有域知识库 EKB（案例/教训/实验卡）",
+          "filterable": true,
+          "field": "date / created_at",
+          "action": "filter",
+          "note": "EKB 是长期记忆，含未来案例，必须按日期切",
+          "effective": "filter"
+        },
+        {
+          "key": "news_kb",
+          "name": "消息面教训库 news_lesson_kb / news_verdicts",
+          "filterable": true,
+          "field": "日期",
+          "action": "filter",
+          "note": "同上",
+          "effective": "filter"
+        },
+        {
+          "key": "attribution_kb",
+          "name": "回测归因知识 attribution_kb",
+          "filterable": false,
+          "field": "",
+          "action": "badge",
+          "note": "由整段回测产出，含全样本信息 → 报告打徽标（后续可做 as-of 重建）",
+          "effective": "badge"
+        },
+        {
+          "key": "condition_table",
+          "name": "条件概率表 condition_table",
+          "filterable": true,
+          "field": "统计样本区间",
+          "action": "asof_rebuild",
+          "note": "纯统计产物，**可低成本 as-of 重建**（优先做）",
+          "effective": "asof_rebuild"
+        },
+        {
+          "key": "probability_table",
+          "name": "条件概率表 probability_table",
+          "filterable": true,
+          "field": "统计样本区间",
+          "action": "asof_rebuild",
+          "note": "同上",
+          "effective": "asof_rebuild"
+        },
+        {
+          "key": "feature_normalizer",
+          "name": "归一化参数 feature_normalizer",
+          "filterable": true,
+          "field": "拟合样本区间",
+          "action": "asof_rebuild",
+          "note": "尺度参数，前视影响相对小，但可重建",
+          "effective": "asof_rebuild"
+        },
+        {
+          "key": "form_leaderboard",
+          "name": "规则形态排行榜 form_leaderboard",
+          "filterable": true,
+          "field": "验证区间",
+          "action": "filter",
+          "note": "按验证区间 <= as_of 过滤",
+          "effective": "filter"
+        },
+        {
+          "key": "entry_guidance",
+          "name": "入场指引 entry_guidance",
+          "filterable": false,
+          "field": "",
+          "action": "badge",
+          "note": "成功组统计产物 → 徽标",
+          "effective": "badge"
+        },
+        {
+          "key": "pattern_library",
+          "name": "ChromaDB 形态模式库",
+          "filterable": false,
+          "field": "",
+          "action": "badge",
+          "note": "全样本构建，回放历史时含样本外成分 → 徽标；后续可选'时间切分重建'（贵）",
+          "effective": "badge"
+        }
+      ],
+      "filtered": [
+        "policy_kb",
+        "reflect_kb",
+        "verify_kb",
+        "ekb",
+        "news_kb",
+        "condition_table",
+        "probability_table",
+        "feature_normalizer",
+        "form_leaderboard"
+      ],
+      "badged": [
+        "attribution_kb",
+        "entry_guidance",
+        "pattern_library"
+      ],
+      "forbidden": [
+        "tavily"
+      ],
+      "unresolved": [
+        "attribution_kb",
+        "entry_guidance",
+        "pattern_library"
+      ],
+      "ok": false,
+      "note": "unresolved = 无法 as-of 过滤、只能打徽标的项（报告必须显式声明）"
+    },
+    "model": "",
+    "knowledge_cutoff": "20190102~20190115",
+    "statement": "本次结果为『用今天的模型与知识库，在当年数据上重演每日推荐』的表现，**不等于**当年那套系统的历史成绩；亦非实盘承诺。",
+    "history_note": "历史数据边界与幸存者偏差见 data_gate / survivorship（P0.5 产出）",
+    "is_oos": {
+      "mode": "year_kfold",
+      "ratio": 0.8,
+      "frozen_oos_years": [],
+      "note": "验收集（OOS）与实盘反馈**解耦**：实盘结果只做监控存证，不进自证验收判据 —— 否则'进化影响实盘、实盘又当验收'会形成污染闭环（F4）"
+    },
+    "data_gate": {
+      "as_of": "20260921",
+      "earliest_full_as_of": "20100104",
+      "latest_as_of": "20260921",
+      "critical": [
+        {
+          "table": "daily",
+          "min": "20100104",
+          "max": "20260921",
+          "rows": 14118207,
+          "date_col": "trade_date"
+        },
+        {
+          "table": "adj_factor",
+          "min": "20011108",
+          "max": "20260922",
+          "rows": 14892258,
+          "date_col": "trade_date"
+        },
+        {
+          "table": "stk_limit",
+          "min": "20100104",
+          "max": "20260922",
+          "rows": 16943074,
+          "date_col": "trade_date"
+        },
+        {
+          "table": "daily_basic",
+          "min": "20100104",
+          "max": "20260921",
+          "rows": 13969720,
+          "date_col": "trade_date"
+        },
+        {
+          "table": "trade_cal",
+          "min": "20100101",
+          "max": "20261231",
+          "rows": 6209,
+          "date_col": "cal_date"
+        },
+        {
+          "table": "index_daily",
+          "min": "20100104",
+          "max": "20260921",
+          "rows": 27318584,
+          "date_col": "trade_date"
+        },
+        {
+          "table": "stock_basic",
+          "min": "19901219",
+          "max": "20260922",
+          "rows": 5420,
+          "date_col": "list_date"
+        }
+      ],
+      "optional": [
+        {
+          "table": "moneyflow",
+          "min": "20100104",
+          "max": "20260921",
+          "rows": 13670824,
+          "date_col": "trade_date"
+        },
+        {
+          "table": "weekly",
+          "min": "19901221",
+          "max": "20260918",
+          "rows": 2993171,
+          "date_col": "trade_date"
+        },
+        {
+          "table": "monthly",
+          "min": "19910731",
+          "max": "20260831",
+          "rows": 229453,
+          "date_col": "trade_date"
+        },
+        {
+          "table": "block_trade",
+          "min": "20100104",
+          "max": "20260921",
+          "rows": 643417,
+          "date_col": "trade_date"
+        },
+        {
+          "table": "fina_indicator",
+          "min": "20060615",
+          "max": "20260907",
+          "rows": 381593,
+          "date_col": "ann_date"
+        },
+        {
+          "table": "income",
+          "min": "19950105",
+          "max": "20260902",
+          "rows": 364071,
+          "date_col": "ann_date"
+        },
+        {
+          "table": "balancesheet",
+          "min": "20031029",
+          "max": "20260901",
+          "rows": 317160,
+          "date_col": "ann_date"
+        },
+        {
+          "table": "stk_holdernumber",
+          "min": "19911230",
+          "max": "20260921",
+          "rows": 557155,
+          "date_col": "ann_date"
+        },
+        {
+          "table": "top10_holders",
+          "min": "20050129",
+          "max": "20260921",
+          "rows": 1607278,
+          "date_col": "ann_date"
+        },
+        {
+          "table": "pledge_stat",
+          "min": "20140307",
+          "max": "20260911",
+          "rows": 1560308,
+          "date_col": "end_date"
+        },
+        {
+          "table": "namechange",
+          "min": "19901219",
+          "max": "20260922",
+          "rows": 12053,
+          "date_col": "start_date"
+        }
+      ],
+      "missing": [],
+      "verdict": "ok",
+      "notes": [],
+      "rows_approx": true,
+      "howto": "回放 as_of < earliest_full_as_of 时应拒绝或降级（并在报告里写明缺哪些特征）"
+    },
+    "survivorship": {
+      "as_of": "20260921",
+      "pool_size": 5567,
+      "listed_after_as_of": 2,
+      "hist_codes_all": 5839,
+      "gap_estimate": 272,
+      "gap_pct": 4.66,
+      "deep": false,
+      "warning": "股票池 = 当前存续股票（stock_basic）→ 回放历史存在幸存者偏差：已退市公司不会被选出，结论偏乐观。",
+      "mitigation": [
+        "回放时剔除 list_date > as_of 的股票（避免'未来上市'混入）",
+        "报告强制标注缺口数量与占比；结论里避免与'当年真实榜单'直接比较",
+        "根治：补采退市股（Tushare stock_basic list_status='D'/'P'）+ 给表加 list_status/delist_date 列，再用 as-of 股票池回放（当前为已知限制，见 structural_warning）"
+      ],
+      "stock_basic_columns": [
+        "act_ent_type",
+        "act_name",
+        "area",
+        "cnspell",
+        "industry",
+        "list_date",
+        "market",
+        "name",
+        "symbol",
+        "ts_code"
+      ],
+      "has_list_status": false,
+      "has_delist_date": false,
+      "structural_warning": "stock_basic **没有 delist_date/list_status 列**（ORM 模型声明了 delist_date，但表里不存在）→ 退市股从未被采集 ⇒ 幸存者偏差是**结构性**的，无法靠报告标注消除，只能靠补数据根治。"
+    },
+    "usage": {}
+  },
+  "dates": {
+    "total": 10,
+    "done": 10,
+    "first": "20190102",
+    "last": "20190115",
+    "completed": [
+      "20190102",
+      "20190103",
+      "20190104",
+      "20190107",
+      "20190108",
+      "20190109",
+      "20190110",
+      "20190111",
+      "20190114",
+      "20190115"
+    ]
+  },
+  "daily_stats": {
+    "picks_total": 0,
+    "avg_picks_per_day": 0.0
+  },
+  "metrics": {
+    "note": "P4 填充：重演口径胜率（主指标=超额 excess_vs_market）",
+    "filled": false
+  },
+  "attribution": {
+    "note": "P4 填充：失效归因聚合",
+    "filled": false
+  },
+  "usage": {
+    "wall_sec": 28.32,
+    "llm_calls": 0,
+    "cost_note": "规则档零 API 费用"
+  },
+  "created_at": "2026-09-22 14:09:36",
+  "updated_at": "2026-09-22 14:10:04",
+  "schema_keys": [
+    "run_id",
+    "config",
+    "flags",
+    "dates",
+    "daily_stats",
+    "metrics",
+    "attribution",
+    "usage",
+    "created_at",
+    "updated_at"
+  ],
+  "paused_for_budget": false
+}

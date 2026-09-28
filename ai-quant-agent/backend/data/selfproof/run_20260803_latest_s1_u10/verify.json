@@ -1,0 +1,12 @@
+{
+  "run_id": "run_20260803_latest_s1_u10",
+  "dates": [
+    "20260803"
+  ],
+  "n_picks": 0,
+  "n_settled_t5": 0,
+  "n_pending_t5": 0,
+  "cost_pct": 0.0015,
+  "rows": [],
+  "note": "结算口径 = D+1 买入口径（复用 daily_verify._calc_multi），零 LLM 费用"
+}

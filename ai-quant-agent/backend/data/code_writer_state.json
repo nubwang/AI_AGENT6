@@ -1,0 +1,374 @@
+{
+  "history": [
+    {
+      "ts": "2026-08-18 13:35:05",
+      "status": "applied",
+      "file": "_evolve_smoke_tmp.py",
+      "target": "smoke",
+      "note": "已应用（锚点替换），待重启生效（_evolve_smoke_tmp.py）",
+      "backup": "/Users/wangzhenjie/AI_AGENT6/ai-quant-agent/backend/_evolve_smoke_tmp.py.bak.20260818_133505_368042"
+    },
+    {
+      "ts": "2026-08-19 12:50:02",
+      "status": "applied",
+      "file": "app/backtest/threshold_analyzer.py",
+      "target": "code_evolve:app/backtest/threshold_analyzer.py",
+      "note": "已应用（锚点替换），待重启生效（app/backtest/threshold_analyzer.py）",
+      "backup": "/Users/wangzhenjie/AI_AGENT6/ai-quant-agent/backend/app/backtest/threshold_analyzer.py.bak.20260819_125002_253260"
+    },
+    {
+      "ts": "2026-08-20 12:50:01",
+      "status": "applied",
+      "file": "app/backtest/form_classifier.py",
+      "target": "code_evolve:app/backtest/form_classifier.py",
+      "note": "已应用（锚点替换），待重启生效（app/backtest/form_classifier.py）",
+      "backup": "/Users/wangzhenjie/AI_AGENT6/ai-quant-agent/backend/app/backtest/form_classifier.py.bak.20260820_125001_787192"
+    },
+    {
+      "ts": "2026-08-21 11:03:11",
+      "status": "applied",
+      "file": "app/backtest/daily_scan.py",
+      "target": "",
+      "note": "参数热生效 daily_lambda_exclude=0.6",
+      "backup": ""
+    },
+    {
+      "ts": "2026-08-21 11:03:11",
+      "status": "applied",
+      "file": "",
+      "target": "",
+      "note": "参数热生效 daily_lambda_exclude=0.5",
+      "backup": ""
+    },
+    {
+      "ts": "2026-08-21 12:50:02",
+      "status": "rejected",
+      "file": "app/backtest/daily_scan.py",
+      "target": "code_evolve:app/backtest/daily_scan.py",
+      "note": "语法错误: 语法错误: unmatched ')' (<unknown>, line 369)",
+      "backup": ""
+    },
+    {
+      "ts": "2026-08-24 12:50:07",
+      "status": "rolled_back",
+      "file": "app/backtest/form_classifier.py",
+      "target": "code_evolve_func:app/backtest/form_classifier.py:classify_current",
+      "note": "已回滚（函数替换:classify_current 破坏了函数签名/返回类型，导致每日扫描全线失败，恢复备份正确实现）",
+      "backup": "/Users/wangzhenjie/AI_AGENT6/ai-quant-agent/backend/app/backtest/form_classifier.py.bak.20260824_125007_355319",
+      "rolled_back_at": "2026-08-24 13:15:00"
+    },
+    {
+      "ts": "2026-08-27 12:50:04",
+      "status": "rejected",
+      "file": "app/backtest/form_classifier.py",
+      "target": "code_evolve_func:app/backtest/form_classifier.py:classify_current",
+      "note": "函数签名不兼容拒绝: 函数签名不兼容：位置参数数 3 → 1，禁止改签名（会破坏调用方），请保持原签名",
+      "backup": ""
+    },
+    {
+      "ts": "2026-08-28 12:50:02",
+      "status": "applied",
+      "file": "app/backtest/daily_scan.py",
+      "target": "code_evolve:app/backtest/daily_scan.py",
+      "note": "已应用（锚点替换），待重启生效（app/backtest/daily_scan.py）",
+      "backup": "/Users/wangzhenjie/AI_AGENT6/ai-quant-agent/backend/app/backtest/daily_scan.py.bak.20260828_125002_172662"
+    },
+    {
+      "ts": "2026-08-31 12:50:05",
+      "status": "rejected",
+      "file": "app/backtest/threshold_analyzer.py",
+      "target": "code_evolve_func:app/backtest/threshold_analyzer.py:build_condition_table",
+      "note": "函数签名不兼容拒绝: 函数签名不兼容：位置参数数 3 → 5，禁止改签名（会破坏调用方），请保持原签名",
+      "backup": ""
+    },
+    {
+      "ts": "2026-09-03 12:50:05",
+      "status": "rejected",
+      "file": "app/backtest/threshold_analyzer.py",
+      "target": "code_evolve_func:app/backtest/threshold_analyzer.py:build_condition_table",
+      "note": "函数签名不兼容拒绝: 函数签名不兼容：参数名 ['condition_matrix', 'labels', 'min_sample'] → ['self', 'samples', 'market_env']，禁止改签名（会破坏调用方），请保持原签名",
+      "backup": ""
+    },
+    {
+      "ts": "2026-09-07 12:50:11",
+      "status": "rejected",
+      "file": "app/backtest/threshold_analyzer.py",
+      "target": "code_evolve_func:app/backtest/threshold_analyzer.py:build_condition_table",
+      "note": "函数签名不兼容拒绝: 函数签名不兼容：参数名 ['condition_matrix', 'labels', 'min_sample'] → ['conditions', 'outcomes', 'market_envs']，禁止改签名（会破坏调用方），请保持原签名",
+      "backup": ""
+    },
+    {
+      "ts": "2026-09-08 12:50:06",
+      "status": "rejected",
+      "file": "app/backtest/threshold_analyzer.py",
+      "target": "code_evolve_func:app/backtest/threshold_analyzer.py:build_condition_table",
+      "note": "函数签名不兼容拒绝: 函数签名不兼容：参数名 ['condition_matrix', 'labels', 'min_sample'] → ['self', 'samples', 'market_regime']，禁止改签名（会破坏调用方），请保持原签名",
+      "backup": ""
+    },
+    {
+      "ts": "2026-09-09 12:50:06",
+      "status": "rejected",
+      "file": "app/backtest/threshold_analyzer.py",
+      "target": "code_evolve_func:app/backtest/threshold_analyzer.py:build_condition_table",
+      "note": "函数签名不兼容拒绝: 函数签名不兼容：位置参数数 3 → 5，禁止改签名（会破坏调用方），请保持原签名",
+      "backup": ""
+    },
+    {
+      "ts": "2026-09-11 12:50:04",
+      "status": "rejected",
+      "file": "app/backtest/threshold_analyzer.py",
+      "target": "code_evolve_func:app/backtest/threshold_analyzer.py:build_condition_table",
+      "note": "函数签名不兼容拒绝: 函数签名不兼容：参数名 ['condition_matrix', 'labels', 'min_sample'] → ['samples', 'feature_names', 'min_sample']，禁止改签名（会破坏调用方），请保持原签名",
+      "backup": ""
+    },
+    {
+      "ts": "2026-09-23 14:47:26",
+      "status": "applied",
+      "file": "app/backtest/_scope_probe_tmp.py",
+      "target": "code_evolve:app/backtest/_scope_probe_tmp.py",
+      "note": "已应用（新建文件），待重启生效（app/backtest/_scope_probe_tmp.py）",
+      "backup": ""
+    },
+    {
+      "ts": "2026-09-23 14:47:26",
+      "status": "rejected",
+      "file": "app/agents/daily_verify.py",
+      "target": "code_evolve_func:app/agents/daily_verify.py:_calc_multi",
+      "note": "度量核心函数不可替换: app/agents/daily_verify.py:_calc_multi",
+      "backup": ""
+    },
+    {
+      "ts": "2026-09-23 14:47:26",
+      "status": "rejected",
+      "file": "app/agents/evolution_guard.py",
+      "target": "code_evolve:app/agents/evolution_guard.py",
+      "note": "权限拒绝: app/agents/evolution_guard.py 是唯一原则的守护文件（度量/守护/执行链本体），不可介入",
+      "backup": ""
+    },
+    {
+      "ts": "2026-09-23 14:48:58",
+      "status": "applied",
+      "file": "app/backtest/_scope_probe_tmp.py",
+      "target": "code_evolve:app/backtest/_scope_probe_tmp.py",
+      "note": "已应用（新建文件），待重启生效（app/backtest/_scope_probe_tmp.py）",
+      "backup": ""
+    },
+    {
+      "ts": "2026-09-23 14:48:58",
+      "status": "rejected",
+      "file": "app/agents/daily_verify.py",
+      "target": "code_evolve_func:app/agents/daily_verify.py:_calc_multi",
+      "note": "度量核心函数不可替换: app/agents/daily_verify.py:_calc_multi",
+      "backup": ""
+    },
+    {
+      "ts": "2026-09-23 14:48:58",
+      "status": "rejected",
+      "file": "app/agents/evolution_guard.py",
+      "target": "code_evolve:app/agents/evolution_guard.py",
+      "note": "权限拒绝: app/agents/evolution_guard.py 是唯一原则的守护文件（度量/守护/执行链本体），不可介入",
+      "backup": ""
+    },
+    {
+      "ts": "2026-09-23 14:50:45",
+      "status": "applied",
+      "file": "app/backtest/_scope_probe_tmp.py",
+      "target": "code_evolve:app/backtest/_scope_probe_tmp.py",
+      "note": "已应用（新建文件），待重启生效（app/backtest/_scope_probe_tmp.py）",
+      "backup": ""
+    },
+    {
+      "ts": "2026-09-23 14:50:46",
+      "status": "rejected",
+      "file": "app/agents/daily_verify.py",
+      "target": "code_evolve_func:app/agents/daily_verify.py:_calc_multi",
+      "note": "度量核心函数不可替换: app/agents/daily_verify.py:_calc_multi",
+      "backup": ""
+    },
+    {
+      "ts": "2026-09-23 14:50:46",
+      "status": "rejected",
+      "file": "app/agents/evolution_guard.py",
+      "target": "code_evolve:app/agents/evolution_guard.py",
+      "note": "权限拒绝: app/agents/evolution_guard.py 是唯一原则的守护文件（度量/守护/执行链本体），不可介入",
+      "backup": ""
+    },
+    {
+      "ts": "2026-09-23 14:59:30",
+      "status": "applied",
+      "file": "app/backtest/_scope_probe_tmp.py",
+      "target": "code_evolve:app/backtest/_scope_probe_tmp.py",
+      "note": "已应用（新建文件），待重启生效（app/backtest/_scope_probe_tmp.py）",
+      "backup": ""
+    },
+    {
+      "ts": "2026-09-23 14:59:30",
+      "status": "rejected",
+      "file": "app/agents/daily_verify.py",
+      "target": "code_evolve_func:app/agents/daily_verify.py:_calc_multi",
+      "note": "度量核心函数不可替换: app/agents/daily_verify.py:_calc_multi",
+      "backup": ""
+    },
+    {
+      "ts": "2026-09-23 14:59:31",
+      "status": "rejected",
+      "file": "app/agents/evolution_guard.py",
+      "target": "code_evolve:app/agents/evolution_guard.py",
+      "note": "权限拒绝: app/agents/evolution_guard.py 是唯一原则的守护文件（度量/守护/执行链本体），不可介入",
+      "backup": ""
+    },
+    {
+      "ts": "2026-09-23 15:02:58",
+      "status": "applied",
+      "file": "app/backtest/_scope_probe_tmp.py",
+      "target": "code_evolve:app/backtest/_scope_probe_tmp.py",
+      "note": "已应用（新建文件），待重启生效（app/backtest/_scope_probe_tmp.py）",
+      "backup": ""
+    },
+    {
+      "ts": "2026-09-23 15:02:58",
+      "status": "rejected",
+      "file": "app/agents/daily_verify.py",
+      "target": "code_evolve_func:app/agents/daily_verify.py:_calc_multi",
+      "note": "度量核心函数不可替换: app/agents/daily_verify.py:_calc_multi",
+      "backup": ""
+    },
+    {
+      "ts": "2026-09-23 15:02:58",
+      "status": "rejected",
+      "file": "app/agents/evolution_guard.py",
+      "target": "code_evolve:app/agents/evolution_guard.py",
+      "note": "权限拒绝: app/agents/evolution_guard.py 是唯一原则的守护文件（度量/守护/执行链本体），不可介入",
+      "backup": ""
+    },
+    {
+      "ts": "2026-09-23 16:49:14",
+      "status": "applied",
+      "file": "app/backtest/_scope_probe_tmp.py",
+      "target": "code_evolve:app/backtest/_scope_probe_tmp.py",
+      "note": "已应用（新建文件），待重启生效（app/backtest/_scope_probe_tmp.py）",
+      "backup": ""
+    },
+    {
+      "ts": "2026-09-23 16:49:14",
+      "status": "rejected",
+      "file": "app/agents/daily_verify.py",
+      "target": "code_evolve_func:app/agents/daily_verify.py:_calc_multi",
+      "note": "度量核心函数不可替换: app/agents/daily_verify.py:_calc_multi",
+      "backup": ""
+    },
+    {
+      "ts": "2026-09-23 16:49:14",
+      "status": "rejected",
+      "file": "app/agents/evolution_guard.py",
+      "target": "code_evolve:app/agents/evolution_guard.py",
+      "note": "权限拒绝: app/agents/evolution_guard.py 是唯一原则的守护文件（度量/守护/执行链本体），不可介入",
+      "backup": ""
+    },
+    {
+      "ts": "2026-09-28 12:05:18",
+      "status": "applied",
+      "file": "app/backtest/threshold_analyzer.py",
+      "target": "param:bt_cond_min_edge",
+      "note": "参数热生效 bt_cond_min_edge=0.08",
+      "backup": ""
+    }
+  ],
+  "stats": {
+    "applied": 14,
+    "rejected": 20
+  },
+  "pending_patches": [],
+  "regression": [
+    {
+      "target": "code_evolve_func:app/backtest/form_classifier.py:classify_current",
+      "file": "app/backtest/form_classifier.py",
+      "backup": "/Users/wangzhenjie/AI_AGENT6/ai-quant-agent/backend/app/backtest/form_classifier.py.bak.20260824_125007_355319",
+      "baseline_composite": 0.5011,
+      "baseline_t1": 0.635,
+      "baseline_wave": 0.3003,
+      "applied_at": "2026-08-24 12:50:07",
+      "low_count": 0,
+      "rolled_back": true,
+      "rolled_back_at": "2026-08-24 13:15:00",
+      "reason": "补丁破坏 classify_current 函数签名/返回类型，导致 daily_scan 全市场处理失败，已恢复正确实现"
+    },
+    {
+      "target": "code_evolve:app/backtest/daily_scan.py",
+      "file": "app/backtest/daily_scan.py",
+      "backup": "/Users/wangzhenjie/AI_AGENT6/ai-quant-agent/backend/app/backtest/daily_scan.py.bak.20260828_125002_172662",
+      "baseline_composite": 0.4724,
+      "baseline_t1": 0.627,
+      "baseline_wave": 0.2405,
+      "applied_at": "2026-08-28 12:50:02",
+      "low_count": 2,
+      "rolled_back": false
+    },
+    {
+      "target": "code_evolve:app/backtest/_scope_probe_tmp.py",
+      "file": "app/backtest/_scope_probe_tmp.py",
+      "backup": "",
+      "baseline_composite": 0.4412,
+      "baseline_t1": 0.64,
+      "baseline_wave": 0.1429,
+      "applied_at": "2026-09-23 14:47:26",
+      "low_count": 0,
+      "rolled_back": false
+    },
+    {
+      "target": "code_evolve:app/backtest/_scope_probe_tmp.py",
+      "file": "app/backtest/_scope_probe_tmp.py",
+      "backup": "",
+      "baseline_composite": 0.4412,
+      "baseline_t1": 0.64,
+      "baseline_wave": 0.1429,
+      "applied_at": "2026-09-23 14:48:58",
+      "low_count": 0,
+      "rolled_back": false
+    },
+    {
+      "target": "code_evolve:app/backtest/_scope_probe_tmp.py",
+      "file": "app/backtest/_scope_probe_tmp.py",
+      "backup": "",
+      "baseline_composite": 0.4412,
+      "baseline_t1": 0.64,
+      "baseline_wave": 0.1429,
+      "applied_at": "2026-09-23 14:50:45",
+      "low_count": 0,
+      "rolled_back": false
+    },
+    {
+      "target": "code_evolve:app/backtest/_scope_probe_tmp.py",
+      "file": "app/backtest/_scope_probe_tmp.py",
+      "backup": "",
+      "baseline_composite": 0.4412,
+      "baseline_t1": 0.64,
+      "baseline_wave": 0.1429,
+      "applied_at": "2026-09-23 14:59:30",
+      "low_count": 0,
+      "rolled_back": false
+    },
+    {
+      "target": "code_evolve:app/backtest/_scope_probe_tmp.py",
+      "file": "app/backtest/_scope_probe_tmp.py",
+      "backup": "",
+      "baseline_composite": 0.4412,
+      "baseline_t1": 0.64,
+      "baseline_wave": 0.1429,
+      "applied_at": "2026-09-23 15:02:58",
+      "low_count": 0,
+      "rolled_back": false
+    },
+    {
+      "target": "code_evolve:app/backtest/_scope_probe_tmp.py",
+      "file": "app/backtest/_scope_probe_tmp.py",
+      "backup": "",
+      "baseline_composite": 0.4412,
+      "baseline_t1": 0.64,
+      "baseline_wave": 0.1429,
+      "applied_at": "2026-09-23 16:49:14",
+      "low_count": 0,
+      "rolled_back": false
+    }
+  ]
+}

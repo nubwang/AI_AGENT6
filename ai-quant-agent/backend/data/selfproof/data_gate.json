@@ -1,0 +1,174 @@
+{
+  "as_of": "20260921",
+  "data_gate": {
+    "as_of": "20260921",
+    "earliest_full_as_of": "20100104",
+    "latest_as_of": "20260921",
+    "critical": [
+      {
+        "table": "daily",
+        "min": "20100104",
+        "max": "20260921",
+        "rows": 14118207,
+        "date_col": "trade_date"
+      },
+      {
+        "table": "adj_factor",
+        "min": "20011108",
+        "max": "20260922",
+        "rows": 14892258,
+        "date_col": "trade_date"
+      },
+      {
+        "table": "stk_limit",
+        "min": "20100104",
+        "max": "20260922",
+        "rows": 16943074,
+        "date_col": "trade_date"
+      },
+      {
+        "table": "daily_basic",
+        "min": "20100104",
+        "max": "20260921",
+        "rows": 13969720,
+        "date_col": "trade_date"
+      },
+      {
+        "table": "trade_cal",
+        "min": "20100101",
+        "max": "20261231",
+        "rows": 6209,
+        "date_col": "cal_date"
+      },
+      {
+        "table": "index_daily",
+        "min": "20100104",
+        "max": "20260921",
+        "rows": 27318584,
+        "date_col": "trade_date"
+      },
+      {
+        "table": "stock_basic",
+        "min": "19901219",
+        "max": "20260922",
+        "rows": 5420,
+        "date_col": "list_date"
+      }
+    ],
+    "optional": [
+      {
+        "table": "moneyflow",
+        "min": "20100104",
+        "max": "20260921",
+        "rows": 13670824,
+        "date_col": "trade_date"
+      },
+      {
+        "table": "weekly",
+        "min": "19901221",
+        "max": "20260918",
+        "rows": 2993171,
+        "date_col": "trade_date"
+      },
+      {
+        "table": "monthly",
+        "min": "19910731",
+        "max": "20260831",
+        "rows": 229453,
+        "date_col": "trade_date"
+      },
+      {
+        "table": "block_trade",
+        "min": "20100104",
+        "max": "20260921",
+        "rows": 643417,
+        "date_col": "trade_date"
+      },
+      {
+        "table": "fina_indicator",
+        "min": "20060615",
+        "max": "20260907",
+        "rows": 381593,
+        "date_col": "ann_date"
+      },
+      {
+        "table": "income",
+        "min": "19950105",
+        "max": "20260902",
+        "rows": 364071,
+        "date_col": "ann_date"
+      },
+      {
+        "table": "balancesheet",
+        "min": "20031029",
+        "max": "20260901",
+        "rows": 317160,
+        "date_col": "ann_date"
+      },
+      {
+        "table": "stk_holdernumber",
+        "min": "19911230",
+        "max": "20260921",
+        "rows": 557155,
+        "date_col": "ann_date"
+      },
+      {
+        "table": "top10_holders",
+        "min": "20050129",
+        "max": "20260921",
+        "rows": 1607278,
+        "date_col": "ann_date"
+      },
+      {
+        "table": "pledge_stat",
+        "min": "20140307",
+        "max": "20260911",
+        "rows": 1560308,
+        "date_col": "end_date"
+      },
+      {
+        "table": "namechange",
+        "min": "19901219",
+        "max": "20260922",
+        "rows": 12053,
+        "date_col": "start_date"
+      }
+    ],
+    "missing": [],
+    "verdict": "ok",
+    "notes": [],
+    "rows_approx": true,
+    "howto": "回放 as_of < earliest_full_as_of 时应拒绝或降级（并在报告里写明缺哪些特征）"
+  },
+  "survivorship": {
+    "as_of": "20260921",
+    "pool_size": 5567,
+    "listed_after_as_of": 2,
+    "hist_codes_all": 5839,
+    "gap_estimate": 272,
+    "gap_pct": 4.66,
+    "deep": false,
+    "warning": "股票池 = 当前存续股票（stock_basic）→ 回放历史存在幸存者偏差：已退市公司不会被选出，结论偏乐观。",
+    "mitigation": [
+      "回放时剔除 list_date > as_of 的股票（避免'未来上市'混入）",
+      "报告强制标注缺口数量与占比；结论里避免与'当年真实榜单'直接比较",
+      "根治：补采退市股（Tushare stock_basic list_status='D'/'P'）+ 给表加 list_status/delist_date 列，再用 as-of 股票池回放（当前为已知限制，见 structural_warning）"
+    ],
+    "stock_basic_columns": [
+      "act_ent_type",
+      "act_name",
+      "area",
+      "cnspell",
+      "industry",
+      "list_date",
+      "market",
+      "name",
+      "symbol",
+      "ts_code"
+    ],
+    "has_list_status": false,
+    "has_delist_date": false,
+    "structural_warning": "stock_basic **没有 delist_date/list_status 列**（ORM 模型声明了 delist_date，但表里不存在）→ 退市股从未被采集 ⇒ 幸存者偏差是**结构性**的，无法靠报告标注消除，只能靠补数据根治。"
+  },
+  "usage_hint": "报告请把本结果塞进 selfproof_policy.report_flags(data_gate=..., survivorship=...)"
+}

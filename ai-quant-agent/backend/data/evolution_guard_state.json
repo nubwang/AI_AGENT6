@@ -1,0 +1,74 @@
+{
+  "constitution_hash": "7f3f49efb414c7529e5630ea",
+  "paused": false,
+  "intercepts": 0,
+  "applied_log": [
+    {
+      "ts": "2026-08-11 13:50:32",
+      "param": "policy_priced_threshold",
+      "status": "failed"
+    },
+    {
+      "ts": "2026-08-11 13:57:22",
+      "param": "policy_priced_threshold",
+      "status": "ok"
+    },
+    {
+      "ts": "2026-08-11 13:57:33",
+      "param": "policy_reversal_threshold",
+      "status": "ok"
+    },
+    {
+      "ts": "2026-08-11 14:18:18",
+      "param": "policy_priced_threshold",
+      "status": "ok"
+    },
+    {
+      "ts": "2026-09-17 11:30:26",
+      "param": "smoke_p",
+      "status": "failed"
+    },
+    {
+      "ts": "2026-09-20 13:37:24",
+      "param": "plan_max_chase_pct",
+      "status": "failed"
+    },
+    {
+      "ts": "2026-09-20 13:38:54",
+      "param": "plan_max_chase_pct",
+      "status": "failed"
+    },
+    {
+      "ts": "2026-09-20 13:50:02",
+      "param": "plan_max_chase_pct",
+      "status": "failed"
+    },
+    {
+      "ts": "2026-09-20 13:50:44",
+      "param": "plan_max_chase_pct",
+      "status": "failed"
+    },
+    {
+      "ts": "2026-09-20 14:27:19",
+      "param": "plan_max_chase_pct",
+      "status": "failed"
+    },
+    {
+      "ts": "2026-09-20 14:44:26",
+      "param": "plan_max_chase_pct",
+      "status": "failed"
+    }
+  ],
+  "fail_log": [
+    "2026-08-11 13:50:32",
+    "2026-09-17 11:30:26",
+    "2026-09-20 13:37:24",
+    "2026-09-20 13:38:54",
+    "2026-09-20 13:50:02",
+    "2026-09-20 13:50:44",
+    "2026-09-20 14:27:19",
+    "2026-09-20 14:44:26"
+  ],
+  "pause_reason": "endtoend_test",
+  "paused_at": null
+}

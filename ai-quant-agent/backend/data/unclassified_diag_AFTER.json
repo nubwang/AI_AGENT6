@@ -1,0 +1,106 @@
+{
+  "sampled_stocks": 220,
+  "segments": 44,
+  "U_segments": 9,
+  "form_dist": {
+    "D": 14,
+    "A": 7,
+    "B": 2,
+    "U": 17,
+    "C": 4
+  },
+  "U_by_label": {
+    "success": 6,
+    "failure_A": 3
+  },
+  "reason_top": [
+    [
+      "no_prior_rise(C)|no_pre_drop(B)|no_platform(A)",
+      6
+    ],
+    [
+      "no_prior_rise(C)|no_pre_drop(B)|no_fast_rise(D)",
+      3
+    ]
+  ],
+  "features_by_label": {
+    "success": {
+      "n": 6,
+      "features": {
+        "pre_range": 0.3399,
+        "pre_slope": 0.082,
+        "prior_rise": 0.2416,
+        "pre20_drop": 0.0257,
+        "vol_shrink": 0.7775,
+        "post5_rise": 0.0469,
+        "post10_rise": 0.0977,
+        "post20_rise": 0.2426,
+        "post5_vol_ratio": 1.1077,
+        "plat_before": 0.3333,
+        "plat_before_flat": 0.3333,
+        "plat_at_low": 0.3333
+      }
+    },
+    "failure_A": {
+      "n": 3,
+      "features": {
+        "pre_range": 0.2914,
+        "pre_slope": -0.0822,
+        "prior_rise": 0.1627,
+        "pre20_drop": 0.1146,
+        "vol_shrink": 0.7745,
+        "post5_rise": 0.0575,
+        "post10_rise": 0.1324,
+        "post20_rise": 0.4696,
+        "post5_vol_ratio": 1.4814,
+        "plat_before": 0.3333,
+        "plat_before_flat": 0.3333,
+        "plat_at_low": 0.3333
+      }
+    },
+    "failure_B": {
+      "n": 0,
+      "features": {
+        "pre_range": NaN,
+        "pre_slope": NaN,
+        "prior_rise": NaN,
+        "pre20_drop": NaN,
+        "vol_shrink": NaN,
+        "post5_rise": NaN,
+        "post10_rise": NaN,
+        "post20_rise": NaN,
+        "post5_vol_ratio": NaN,
+        "plat_before": NaN,
+        "plat_before_flat": NaN,
+        "plat_at_low": NaN
+      }
+    }
+  },
+  "success_minus_failure": {
+    "pre_range": 0.0485,
+    "pre_slope": 0.1641,
+    "prior_rise": 0.0788,
+    "pre20_drop": -0.0889,
+    "vol_shrink": 0.003,
+    "post5_rise": -0.0106,
+    "post10_rise": -0.0348,
+    "post20_rise": -0.227,
+    "post5_vol_ratio": -0.3737,
+    "plat_before": 0.0,
+    "plat_before_flat": 0.0,
+    "plat_at_low": 0.0
+  },
+  "F_candidate": {
+    "thresholds": {
+      "pre_range_max": 0.5,
+      "vol_shrink_max": 0.9,
+      "post20_rise_min": 0.15
+    },
+    "hit": 3,
+    "miss": 6,
+    "coverage_of_U": 0.333,
+    "success_in_rule": 1,
+    "success_rate_in_rule": 0.333,
+    "success_rate_outside": 0.833
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "version": 2,
+  "currency": "CNY",
+  "unit": "per_1m_tokens",
+  "verified": true,
+  "as_of_date": "2026-09-22",
+  "source": "https://api-docs.deepseek.com/zh-cn/quick_start/pricing",
+  "note": "单价抓取自 DeepSeek 官方定价页（2026-09-22，curl 实抓）。峰谷定价：北京时间周一至周五 09:00-12:00、14:00-18:00 为高峰，其余时段（含周末与中国法定节假日全天）为空闲；空闲价 = 高峰价的一半。价格属于钱的范畴，只允许人工修改，禁止进化大脑自动改价。",
+  "peak_windows_bj": [
+    ["09:00", "12:00"],
+    ["14:00", "18:00"]
+  ],
+  "peak_weekdays_only": true,
+  "default_model": "deepseek-flash",
+  "aliases": {
+    "deepseek-chat": "deepseek-flash",
+    "deepseek-reasoner": "deepseek-v4-pro"
+  },
+  "thinking_mode": {
+    "default_on_official": true,
+    "note": "deepseek-flash / deepseek-v4-pro 官方默认开启思考模式，会产生 reasoning_tokens 并按『输出』计费（实测同一 prompt：别名 deepseek-chat 走非思考，prompt_tokens=5；显式 deepseek-flash 走思考，prompt_tokens=31 + reasoning_tokens>0）。做成本预估时必须显式声明思考模式，否则严重低估。",
+    "observed": "2026-09-22 实测：model=deepseek-chat → 返回 model=deepseek-flash、无 reasoning_content；model=deepseek-flash → 有 reasoning_content 且 completion_tokens 含 reasoning_tokens"
+  },
+  "models": {
+    "deepseek-flash": {
+      "version": "DeepSeek-V4.1-Flash",
+      "off_peak": {
+        "input_cache_hit_per_m": 0.02,
+        "input_cache_miss_per_m": 1.0,
+        "output_per_m": 4.0
+      },
+      "peak": {
+        "input_cache_hit_per_m": 0.04,
+        "input_cache_miss_per_m": 2.0,
+        "output_per_m": 8.0
+      }
+    },
+    "deepseek-v4-pro": {
+      "version": "DeepSeek-V4-Pro-0813",
+      "off_peak": {
+        "input_cache_hit_per_m": 0.15,
+        "input_cache_miss_per_m": 4.5,
+        "output_per_m": 13.5
+      },
+      "peak": {
+        "input_cache_hit_per_m": 0.3,
+        "input_cache_miss_per_m": 9.0,
+        "output_per_m": 27.0
+      }
+    }
+  }
+}

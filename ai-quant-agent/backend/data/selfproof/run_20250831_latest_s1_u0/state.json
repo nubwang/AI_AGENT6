@@ -1,0 +1,21 @@
+{
+  "run_id": "run_20250831_latest_s1_u0",
+  "start": "20250831",
+  "end": "",
+  "step": 1,
+  "universe": 0,
+  "max_days": 250,
+  "llm": false,
+  "top_k": 0,
+  "universe_seed": 20260922,
+  "workers": 1,
+  "status": "stopped",
+  "llm_metering_note": "规则档（未调 LLM）",
+  "created_at": "2026-09-22 15:09:47",
+  "updated_at": "2026-09-22 15:11:01",
+  "done": [],
+  "elapsed_sec": 74.14,
+  "picks_total": 0,
+  "dates_total": 250,
+  "dates_left": 250
+}

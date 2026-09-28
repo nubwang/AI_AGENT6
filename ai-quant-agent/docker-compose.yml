@@ -1,0 +1,82 @@
+services:
+  api:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    environment:
+      - DB_HOST=mysql
+      - DB_PORT=3306
+      - DB_USER=quant_user
+      - DB_PASSWORD=quant_pass_2024
+      - DB_NAME=quant_db
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+      - TUSHARE_TOKEN=${TUSHARE_TOKEN}
+      - DEEPSEEK_API_KEY=${DEEPSEEK_API_KEY}
+    dns:
+      - 8.8.8.8
+      - 114.114.114.114
+    volumes:
+      - ./data:/app/data
+      - ./logs:/app/logs
+    depends_on:
+      mysql:
+        condition: service_healthy
+      redis:
+        condition: service_started
+    restart: always
+
+  mysql:
+    image: mysql:8.0
+    # ports:
+    #   - "3306:3306"  # 宿主机已有MySQL，移除端口映射避免冲突
+    environment:
+      MYSQL_ROOT_PASSWORD: root_pass_2024
+      MYSQL_DATABASE: quant_db
+      MYSQL_USER: quant_user
+      MYSQL_PASSWORD: quant_pass_2024
+    volumes:
+      # 关键: 数据直接存放在 macOS 宿主机目录, 与 Docker 虚拟磁盘解耦
+      # Docker 崩溃/重置 VM 不会影响宿主机上的数据库文件
+      - ./data/mysql:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 5s
+      timeout: 10s
+      retries: 20
+      start_period: 30s
+    restart: always
+
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    restart: always
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - "80:80"
+    depends_on:
+      - api
+    restart: always
+
+  frontend-dev:
+    image: node:20-alpine
+    working_dir: /app
+    ports:
+      - "5173:5173"
+    volumes:
+      - ./frontend:/app
+    command: sh -c "npm install && npm run dev -- --host 0.0.0.0"
+    depends_on:
+      - api
+
+volumes:
+  redis_data:

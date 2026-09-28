@@ -1,0 +1,534 @@
+{
+  "date": "20260918",
+  "n": 50,
+  "hold_days": 20,
+  "note": "对照基准，不是推荐；口径与 plans/24 §11.16/§11.18 一致",
+  "items": {
+    "market_ew": {
+      "date": "20260918",
+      "mode": "market_ew",
+      "label": "B1 全市场等权（索引化等距取样）",
+      "hold_days": 20,
+      "fee_rt": 0.005,
+      "pool_size": 5371,
+      "n_picks": 50,
+      "n_picked": 50,
+      "picks": [
+        {
+          "ts_code": "000007.SZ",
+          "close": 11.33,
+          "circ_mv": 392525.584
+        },
+        {
+          "ts_code": "000545.SZ",
+          "close": 2.2,
+          "circ_mv": 216788.682
+        },
+        {
+          "ts_code": "000596.SZ",
+          "close": 93.78,
+          "circ_mv": 3831850.8
+        },
+        {
+          "ts_code": "000887.SZ",
+          "close": 19.54,
+          "circ_mv": 2568280.1524
+        },
+        {
+          "ts_code": "002053.SZ",
+          "close": 9.63,
+          "circ_mv": 886654.1304
+        },
+        {
+          "ts_code": "002091.SZ",
+          "close": 7.62,
+          "circ_mv": 1221007.5402
+        },
+        {
+          "ts_code": "002135.SZ",
+          "close": 6.1,
+          "circ_mv": 636763.079
+        },
+        {
+          "ts_code": "002158.SZ",
+          "close": 28.37,
+          "circ_mv": 1513786.6027
+        },
+        {
+          "ts_code": "002169.SZ",
+          "close": 13.65,
+          "circ_mv": 1038661.26
+        },
+        {
+          "ts_code": "002334.SZ",
+          "close": 6.56,
+          "circ_mv": 482167.9376
+        },
+        {
+          "ts_code": "002489.SZ",
+          "close": 3.13,
+          "circ_mv": 598782.459
+        },
+        {
+          "ts_code": "002722.SZ",
+          "close": 12.97,
+          "circ_mv": 288397.029
+        },
+        {
+          "ts_code": "002785.SZ",
+          "close": 39.39,
+          "circ_mv": 765299.6442
+        },
+        {
+          "ts_code": "002843.SZ",
+          "close": 16.41,
+          "circ_mv": 410960.3889
+        },
+        {
+          "ts_code": "002852.SZ",
+          "close": 8.14,
+          "circ_mv": 232656.4218
+        },
+        {
+          "ts_code": "300119.SZ",
+          "close": 16.76,
+          "circ_mv": 567376.1124
+        },
+        {
+          "ts_code": "300125.SZ",
+          "close": 9.31,
+          "circ_mv": 335867.56
+        },
+        {
+          "ts_code": "300196.SZ",
+          "close": 20.51,
+          "circ_mv": 506935.8252
+        },
+        {
+          "ts_code": "300259.SZ",
+          "close": 3.97,
+          "circ_mv": 458470.1898
+        },
+        {
+          "ts_code": "300397.SZ",
+          "close": 10.7,
+          "circ_mv": 436734.196
+        },
+        {
+          "ts_code": "300412.SZ",
+          "close": 4.34,
+          "circ_mv": 203051.9344
+        },
+        {
+          "ts_code": "300456.SZ",
+          "close": 36.58,
+          "circ_mv": 2185884.7224
+        },
+        {
+          "ts_code": "300501.SZ",
+          "close": 9.43,
+          "circ_mv": 261421.1004
+        },
+        {
+          "ts_code": "300775.SZ",
+          "close": 21.06,
+          "circ_mv": 1119641.0025
+        },
+        {
+          "ts_code": "300781.SZ",
+          "close": 26.45,
+          "circ_mv": 320406.836
+        },
+        {
+          "ts_code": "300823.SZ",
+          "close": 13.97,
+          "circ_mv": 121195.6174
+        },
+        {
+          "ts_code": "301098.SZ",
+          "close": 8.63,
+          "circ_mv": 166547.5221
+        },
+        {
+          "ts_code": "301102.SZ",
+          "close": 9.2,
+          "circ_mv": 373520.0
+        },
+        {
+          "ts_code": "301599.SZ",
+          "close": 33.77,
+          "circ_mv": 184723.5885
+        },
+        {
+          "ts_code": "600109.SH",
+          "close": 8.25,
+          "circ_mv": 3038691.8925
+        },
+        {
+          "ts_code": "600118.SH",
+          "close": 59.6,
+          "circ_mv": 7047635.036
+        },
+        {
+          "ts_code": "600131.SH",
+          "close": 14.3,
+          "circ_mv": 1710144.293
+        },
+        {
+          "ts_code": "600169.SH",
+          "close": 2.15,
+          "circ_mv": 716625.4225
+        },
+        {
+          "ts_code": "600579.SH",
+          "close": 7.17,
+          "circ_mv": 353911.7736
+        },
+        {
+          "ts_code": "600610.SH",
+          "close": 7.59,
+          "circ_mv": 537923.5653
+        },
+        {
+          "ts_code": "600708.SH",
+          "close": 3.04,
+          "circ_mv": 676484.4512
+        },
+        {
+          "ts_code": "600760.SH",
+          "close": 43.9,
+          "circ_mv": 12421736.353
+        },
+        {
+          "ts_code": "600773.SH",
+          "close": 10.05,
+          "circ_mv": 956344.8345
+        },
+        {
+          "ts_code": "601330.SH",
+          "close": 8.37,
+          "circ_mv": 827872.8498
+        },
+        {
+          "ts_code": "601398.SH",
+          "close": 8.07,
+          "circ_mv": 217577055.4875
+        },
+        {
+          "ts_code": "603011.SH",
+          "close": 27.38,
+          "circ_mv": 1353706.6272
+        },
+        {
+          "ts_code": "603500.SH",
+          "close": 9.18,
+          "circ_mv": 305335.1538
+        },
+        {
+          "ts_code": "688080.SH",
+          "close": 37.29,
+          "circ_mv": 274663.5969
+        },
+        {
+          "ts_code": "688141.SH",
+          "close": 113.17,
+          "circ_mv": 5096289.5472
+        },
+        {
+          "ts_code": "688700.SH",
+          "close": 65.18,
+          "circ_mv": 1944980.3252
+        },
+        {
+          "ts_code": "688718.SH",
+          "close": 14.11,
+          "circ_mv": 245167.4584
+        },
+        {
+          "ts_code": "920005.BJ",
+          "close": 23.79,
+          "circ_mv": 91143.589
+        },
+        {
+          "ts_code": "920083.BJ",
+          "close": 38.36,
+          "circ_mv": 145857.0796
+        },
+        {
+          "ts_code": "920478.BJ",
+          "close": 9.53,
+          "circ_mv": 63854.994
+        },
+        {
+          "ts_code": "920931.BJ",
+          "close": 10.11,
+          "circ_mv": 29092.3338
+        }
+      ],
+      "note": ""
+    },
+    "size_q1": {
+      "date": "20260918",
+      "mode": "size_q1",
+      "label": "B2 Q1 最小市值 20% 等权（索引化等距取样）",
+      "hold_days": 20,
+      "fee_rt": 0.005,
+      "pool_size": 1075,
+      "n_picks": 50,
+      "n_picked": 50,
+      "picks": [
+        {
+          "ts_code": "000545.SZ",
+          "close": 2.2,
+          "circ_mv": 216788.682
+        },
+        {
+          "ts_code": "000619.SZ",
+          "close": 4.98,
+          "circ_mv": 179280.0
+        },
+        {
+          "ts_code": "000952.SZ",
+          "close": 6.4,
+          "circ_mv": 220156.48
+        },
+        {
+          "ts_code": "001230.SZ",
+          "close": 18.76,
+          "circ_mv": 206322.8552
+        },
+        {
+          "ts_code": "001400.SZ",
+          "close": 75.41,
+          "circ_mv": 242925.774
+        },
+        {
+          "ts_code": "002615.SZ",
+          "close": 6.25,
+          "circ_mv": 188885.625
+        },
+        {
+          "ts_code": "002852.SZ",
+          "close": 8.14,
+          "circ_mv": 232656.4218
+        },
+        {
+          "ts_code": "002918.SZ",
+          "close": 11.1,
+          "circ_mv": 237767.55
+        },
+        {
+          "ts_code": "003005.SZ",
+          "close": 14.68,
+          "circ_mv": 196997.8196
+        },
+        {
+          "ts_code": "003028.SZ",
+          "close": 23.2,
+          "circ_mv": 164009.152
+        },
+        {
+          "ts_code": "300412.SZ",
+          "close": 4.34,
+          "circ_mv": 203051.9344
+        },
+        {
+          "ts_code": "300616.SZ",
+          "close": 10.03,
+          "circ_mv": 155666.7033
+        },
+        {
+          "ts_code": "300778.SZ",
+          "close": 10.38,
+          "circ_mv": 211338.876
+        },
+        {
+          "ts_code": "300787.SZ",
+          "close": 10.64,
+          "circ_mv": 209110.7928
+        },
+        {
+          "ts_code": "300789.SZ",
+          "close": 15.34,
+          "circ_mv": 214114.4928
+        },
+        {
+          "ts_code": "300823.SZ",
+          "close": 13.97,
+          "circ_mv": 121195.6174
+        },
+        {
+          "ts_code": "300961.SZ",
+          "close": 11.9,
+          "circ_mv": 182196.497
+        },
+        {
+          "ts_code": "301098.SZ",
+          "close": 8.63,
+          "circ_mv": 166547.5221
+        },
+        {
+          "ts_code": "301105.SZ",
+          "close": 48.74,
+          "circ_mv": 96566.125
+        },
+        {
+          "ts_code": "301107.SZ",
+          "close": 23.67,
+          "circ_mv": 192107.3769
+        },
+        {
+          "ts_code": "301130.SZ",
+          "close": 27.02,
+          "circ_mv": 159465.0148
+        },
+        {
+          "ts_code": "301295.SZ",
+          "close": 36.78,
+          "circ_mv": 108133.2
+        },
+        {
+          "ts_code": "301361.SZ",
+          "close": 26.89,
+          "circ_mv": 151487.504
+        },
+        {
+          "ts_code": "301559.SZ",
+          "close": 12.82,
+          "circ_mv": 115380.0
+        },
+        {
+          "ts_code": "301599.SZ",
+          "close": 33.77,
+          "circ_mv": 184723.5885
+        },
+        {
+          "ts_code": "301683.SZ",
+          "close": 98.61,
+          "circ_mv": 140674.0677
+        },
+        {
+          "ts_code": "600289.SH",
+          "close": 4.24,
+          "circ_mv": 239951.2248
+        },
+        {
+          "ts_code": "600493.SH",
+          "close": 6.26,
+          "circ_mv": 170272.0
+        },
+        {
+          "ts_code": "603117.SH",
+          "close": 3.92,
+          "circ_mv": 234885.4984
+        },
+        {
+          "ts_code": "603293.SH",
+          "close": 37.57,
+          "circ_mv": 131857.5505
+        },
+        {
+          "ts_code": "603326.SH",
+          "close": 7.21,
+          "circ_mv": 230126.5449
+        },
+        {
+          "ts_code": "603709.SH",
+          "close": 12.27,
+          "circ_mv": 199561.8567
+        },
+        {
+          "ts_code": "605180.SH",
+          "close": 13.26,
+          "circ_mv": 224094.0
+        },
+        {
+          "ts_code": "688092.SH",
+          "close": 21.33,
+          "circ_mv": 176321.6721
+        },
+        {
+          "ts_code": "688581.SH",
+          "close": 55.13,
+          "circ_mv": 227015.9679
+        },
+        {
+          "ts_code": "920005.BJ",
+          "close": 23.79,
+          "circ_mv": 91143.589
+        },
+        {
+          "ts_code": "920014.BJ",
+          "close": 8.64,
+          "circ_mv": 57928.8655
+        },
+        {
+          "ts_code": "920055.BJ",
+          "close": 25.81,
+          "circ_mv": 39489.3
+        },
+        {
+          "ts_code": "920083.BJ",
+          "close": 38.36,
+          "circ_mv": 145857.0796
+        },
+        {
+          "ts_code": "920096.BJ",
+          "close": 31.97,
+          "circ_mv": 51791.4
+        },
+        {
+          "ts_code": "920304.BJ",
+          "close": 9.24,
+          "circ_mv": 125137.1796
+        },
+        {
+          "ts_code": "920478.BJ",
+          "close": 9.53,
+          "circ_mv": 63854.994
+        },
+        {
+          "ts_code": "920508.BJ",
+          "close": 14.64,
+          "circ_mv": 46710.2742
+        },
+        {
+          "ts_code": "920547.BJ",
+          "close": 18.52,
+          "circ_mv": 69940.5948
+        },
+        {
+          "ts_code": "920566.BJ",
+          "close": 9.25,
+          "circ_mv": 103920.5689
+        },
+        {
+          "ts_code": "920770.BJ",
+          "close": 10.38,
+          "circ_mv": 85005.7644
+        },
+        {
+          "ts_code": "920866.BJ",
+          "close": 6.57,
+          "circ_mv": 74971.7804
+        },
+        {
+          "ts_code": "920926.BJ",
+          "close": 9.98,
+          "circ_mv": 80022.0142
+        },
+        {
+          "ts_code": "920931.BJ",
+          "close": 10.11,
+          "circ_mv": 29092.3338
+        },
+        {
+          "ts_code": "920953.BJ",
+          "close": 22.63,
+          "circ_mv": 135521.459
+        }
+      ],
+      "note": ""
+    }
+  }
+}

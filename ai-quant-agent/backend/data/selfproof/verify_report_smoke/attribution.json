@@ -1,0 +1,32 @@
+{
+  "ok": true,
+  "run_id": "verify_report_smoke",
+  "llm": false,
+  "n_failures": 1,
+  "error_type_counts": {
+    "个股走弱": 1
+  },
+  "failures": [
+    {
+      "as_of": "20260804",
+      "ts_code": "301127.SZ",
+      "name": "武汉天源",
+      "form_type": "B",
+      "rank": 3,
+      "up_probability": 0.7214,
+      "similarity": 0.428,
+      "t1": -0.006675567423231055,
+      "t5": -0.01468624833110821,
+      "t20": 0.1448598130841121,
+      "t5_net": -0.0162,
+      "bench_t5": 0.04134693246895723,
+      "excess_t5": -0.056,
+      "error_type": "个股走弱",
+      "reason": "基准为正但个股下跌（个股层面问题）"
+    }
+  ],
+  "form_avg_t5": {
+    "B": 0.0676,
+    "C": 0.1345
+  }
+}

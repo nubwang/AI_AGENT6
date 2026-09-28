@@ -1,0 +1,11 @@
+{
+  "ok": true,
+  "run_id": "run_20260803_latest_s1_u60",
+  "llm": false,
+  "n_failures": 0,
+  "error_type_counts": {},
+  "failures": [],
+  "form_avg_t5": {
+    "B": 0.0874
+  }
+}

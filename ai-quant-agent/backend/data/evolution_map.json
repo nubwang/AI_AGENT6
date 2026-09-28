@@ -1,0 +1,1848 @@
+{
+  "generated_at": "2026-09-23 17:49:48",
+  "goal": "唯一宪法：提高每日推荐股票之后的上涨概率（次日大涨 + 后续主升浪）",
+  "daily_recommend_pipeline": [
+    {
+      "stage": "stock_pool",
+      "name": "股票池",
+      "file": "app/backtest/daily_scan.py / loader.py",
+      "logic": "加载全市场股票池，粗筛剔除科创板/北交所；逐股 prepare_stock_data（前复权 adj_close），停牌检测跳过",
+      "detail": "load_stock_pool() → 剔除 688/689.SH 与 .BJ；prepare_stock_data() 前复权+涨跌停标记；停牌 gap>5 自然日跳过；次新过滤 MIN_LIST_TRADING_DAYS=60",
+      "key_params": [],
+      "tunable": "可改：股票池过滤规则 / 停牌阈值 / 复权口径 / 次新天数",
+      "params_now": {}
+    },
+    {
+      "stage": "form_identify",
+      "name": "形态识别",
+      "file": "app/backtest/form_classifier.py / surge_scanner.py",
+      "logic": "classify_current 识别当前启动形态（A/B/C/D），须 confirmed 才进候选；E 连板（难买入）剔除",
+      "detail": "判定优先级 E→C→B→A→D；A平台突破/B V型反转/C中继加速/D直接拉升/E连板/U无法归类；阈值见 FORM_TYPES",
+      "key_params": [],
+      "tunable": "可改：形态判定阈值（平台窗口/波动/缩量/突破/放量/前涨/前跌）",
+      "params_now": {}
+    },
+    {
+      "stage": "feature_extract",
+      "name": "特征提取",
+      "file": "app/backtest/feature_extractor.py",
+      "logic": "提取 59+ 维特征；VECTOR_FEATURES(33 维) 用固化 normalizer 归一化；CONDITION_FEATURES(~30 维) 保留原始值供条件打分",
+      "detail": "extract_features(df, end_idx, ts_code, form_type, extra)；FEATURE_WINDOW=20；extra 由 build_extra_map() 从 21 张关联表加载 25 个增强特征（bps/股东人数/质押/事件/周月动量/大盘等，严格 t0 前已披露，无未来函数）",
+      "key_params": [],
+      "tunable": "可改：特征集 / 归一化 / 窗口",
+      "params_now": {}
+    },
+    {
+      "stage": "pattern_match",
+      "name": "正模式库相似度",
+      "file": "app/backtest/vector_store.py (ChromaDB)",
+      "logic": "归一化向量 query 同形态正模式库 top1 → pos_sim（主排序依据 similarity）",
+      "detail": "store.query('success', form_type, vec_vec, top_k=1) → pos_sim；排序 key=-similarity；模式库集合 short_term_patterns_success/failure_A~D，33 维余弦相似度",
+      "key_params": [],
+      "tunable": "可改：相似度计算 / 模式库构建 / 召回 top_k",
+      "params_now": {}
+    },
+    {
+      "stage": "neg_exclude",
+      "name": "负向抑制",
+      "file": "app/backtest/daily_scan.py",
+      "logic": "query 失败模式库 top1 → neg_sim；综合概率 final_prob = prob * (1 - lambda * neg_sim)",
+      "detail": "LAMBDA_EXCLUDE=daily_lambda_exclude(0.5)（可进化）；risk_level 按 neg_sim 分档",
+      "key_params": [
+        "daily_lambda_exclude"
+      ],
+      "tunable": "可改：负向抑制强度 daily_lambda_exclude",
+      "params_now": {
+        "daily_lambda_exclude": 0.5
+      }
+    },
+    {
+      "stage": "condition_score",
+      "name": "条件概率打分",
+      "file": "app/backtest/threshold_analyzer.py / condition_table.json",
+      "logic": "CONDITION_FEATURES 原始值查条件概率表 → prob（历史统计参考分）+ 命中条件 hit_conditions",
+      "detail": "score_by_probability_table：单特征命中(high/low方向) → 组合概率 1-Π(1-p_i)（独立条件近似，取前10条命中）→ 组合规则修正(取更高 up_prob) → 上限 min(prob,0.99)；未命中任何高胜率条件返回中性基线 NEUTRAL_BASELINE=0.5；条件表由 threshold_analyzer 按 MIN_SAMPLE=30 / 分位 / 信息增益切分构建",
+      "key_params": [],
+      "tunable": "可改：条件表重算 / 分位切分 / 命中阈值",
+      "params_now": {}
+    },
+    {
+      "stage": "rule_signal",
+      "name": "规则信号",
+      "file": "app/backtest/rule_verifier.py / form_leaderboard.json",
+      "logic": "detect_all 命中已验证看涨规则 → rule_prob（按 lift 加权 + 看跌抑制），hit_rules 供 Agent 精筛保送",
+      "detail": "rule_pos = Σ(w_i*hit_rate_i)/Σw_i（w=lift）；看跌抑制 (1 - daily_rule_lambda*fail)；baseline=form_leaderboard.baseline_t1；23 条看涨规则见 RULE_FORMS（验证门槛：≥45% 且 ≥段内基线）",
+      "key_params": [
+        "daily_rule_lambda"
+      ],
+      "tunable": "可改：规则验证门槛 / 看跌抑制 daily_rule_lambda",
+      "params_now": {
+        "daily_rule_lambda": 0.3
+      }
+    },
+    {
+      "stage": "risk_filter",
+      "name": "风险过滤",
+      "file": "app/backtest/risk_filter.py",
+      "logic": "check_risk：ST / 涨停封死 / 高质押(>risk_pledge_max) / 流动性不足 / 次新 / 即将*ST → 剔除",
+      "detail": "MIN_AVG_AMOUNT=50000千元(5000万)；MIN_LIST_TRADING_DAYS=60；PLEDGE_RISK_RATIO=risk_pledge_max(0.5)；st_risk_flag 剔除",
+      "key_params": [
+        "risk_pledge_max"
+      ],
+      "tunable": "可改：质押上限 risk_pledge_max / 流动性下限 / 涨停剔除规则",
+      "params_now": {
+        "risk_pledge_max": 0.5
+      }
+    },
+    {
+      "stage": "rank_select",
+      "name": "排序TOP-K",
+      "file": "app/backtest/daily_scan.py",
+      "logic": "候选按 综合排序分（上涨概率为主，相似度加权）降序 → 取 TOP-K（daily_top_k）落盘 + 命中登记",
+      "detail": "rank_score = up_probability×(1-α) + similarity×α（α=daily_rank_alpha，默认 0.3）；落盘 daily_YYYYMMDD_vN.json + record_hits(pred_prob, t5=None)",
+      "key_params": [
+        "daily_top_k",
+        "daily_rank_alpha"
+      ],
+      "tunable": "可改：榜单条数 daily_top_k / 上涨概率与相似度权重 daily_rank_alpha",
+      "params_now": {
+        "daily_top_k": 30,
+        "daily_rank_alpha": 0.3
+      }
+    },
+    {
+      "stage": "agent_refine",
+      "name": "Agent精筛",
+      "file": "app/agents/refine_agent.py / decision_agent.py",
+      "logic": "三层漏斗（批量/深度/select）精筛最终榜单，结合政策/消息面/历史教训，可改序/删股",
+      "detail": "run_agent_refine() 三层漏斗参数：批量粗筛 BATCH_SIZE=25(每批)/PER_INDUSTRY=10(每行业最多保留)→ 深度精筛(RefineAgent select/skip+score_adjust；含形态规则保送 locked)→ decision_agent 排序→ build_final_report；政策只解读频次最高 MAX_POLICY_SECTORS=5 行业；硬性兜底(利好出货→skip score_adjust=-20 / 烟雾弹→≤-5)；最终 decision_agent 排序（LLM final_ranks 或确定性降级 final = up_probability × (1 + score_adjust%)，select 优先，截取 Top-N）；三大信号：①量化画像 candidate_profiler(纯规则, 30+条件参数中文名+板块概念 concept/ths_member) ②政策催化 policy_agent(4子Agent: 要素抽取/产业链映射/利好分级/历史对标; Tavily 搜索板块政策 + policy_history 历史案例) ③消息面 news_agent(Tavily 实时搜索个股新闻/公告; 识别利好出货/烟雾弹/超跌反抽, news_gain_window 近N日涨幅) + attribution_kb / reflect_kb / condition_stat；产出 daily_YYYYMMDD_agent_vN.json",
+      "key_params": [],
+      "tunable": "可改：精筛逻辑 / 评分权重 / Prompt / 候选保送",
+      "params_now": {}
+    },
+    {
+      "stage": "market",
+      "name": "市场环境",
+      "file": "-",
+      "logic": "系统性风险（大盘普跌）导致推荐普跌，需对照指数过滤 / 择时",
+      "detail": "环节归因 'market' 提示大盘拖累；当前无指数过滤，可新增",
+      "key_params": [],
+      "tunable": "可改：大盘过滤 / 择时 / 指数对照",
+      "params_now": {}
+    }
+  ],
+  "backtest_pipeline": [
+    {
+      "step": "data_clean",
+      "name": "数据清洗",
+      "file": "app/backtest/loader.py / data_validator.py",
+      "logic": "数据完整性校验 + 股票池 / 前复权 / 涨跌停标记 / 停牌处理；prepare_stock_data 供回测与每日推荐共用",
+      "detail": "run_data_validation()；前复权 adj_close；SEAL_RATIO=0.997 封板判定(is_sealed_up/down)；停牌容忍 MAX_SUSPEND_RATIO=0.20；次新 MIN_LIST_TRADING_DAYS=60；流动性 MIN_AVG_AMOUNT=50000千元",
+      "key_params": [],
+      "params_now": {}
+    },
+    {
+      "step": "form_surge",
+      "name": "形态识别+启动段",
+      "file": "app/backtest/surge_scanner.py / form_classifier.py / pattern_miner.py / failure_miner.py",
+      "logic": "识别 3 倍启动段（与每日推荐同源），形态 A-E 分类；挖掘正/负模式；条件概率表在此采样",
+      "detail": "scan_market（CANDIDATE_GAIN=2.5 预标记 / MAX_WINDOW=90 / NEIGHBOR=3 波谷）→ 3倍启动段；classify_batch → A-E；mine_positive_patterns / mine_failure_patterns",
+      "key_params": [],
+      "params_now": {}
+    },
+    {
+      "step": "outcome_split",
+      "name": "结局分流",
+      "file": "app/backtest/outcome_tracker.py",
+      "logic": "success = 启动后最高涨幅 ≥ outcome_success_gain 倍；failure_A/B、near、discard；过滤涨跌停/结局不完整等噪音",
+      "detail": "SUCCESS_GAIN=outcome_success_gain(3.0)；NEAR=2.5；failure_A∈[0.5,1.5)且回撤>30%；failure_B=T+20<20%；filter_noisy_samples 噪音剔除：⑲T0封死不可买 / ⑬结局窗口截断未达3倍 / ⑥长期停牌后复牌跳空(>30自然日) / ⑨停牌过多(>20自然日) / ⑧复权异常(单日|涨跌幅|>25%)",
+      "key_params": [
+        "outcome_success_gain"
+      ],
+      "params_now": {
+        "outcome_success_gain": 3.0
+      }
+    },
+    {
+      "step": "feature_fit",
+      "name": "特征提取拟合",
+      "file": "app/backtest/feature_extractor.py",
+      "logic": "59+ 维特征；拟合 FeatureNormalizer（固化 feature_normalizer.json）供每日推荐归一化",
+      "detail": "extract_features + FeatureNormalizer(zscore/分位)；save_normalizer → feature_normalizer.json",
+      "key_params": [],
+      "params_now": {}
+    },
+    {
+      "step": "pattern_lib",
+      "name": "模式库构建",
+      "file": "app/backtest/vector_store.py",
+      "logic": "正/负模式向量写入 ChromaDB（short_term_patterns），每日推荐召回相似度",
+      "detail": "build_vector_store()：正样本(3倍成功)与同形态失败样本分别建库 short_term_patterns_success/failure_A~D（33 维余弦）",
+      "key_params": [],
+      "params_now": {}
+    },
+    {
+      "step": "condition_table",
+      "name": "条件概率表",
+      "file": "app/backtest/threshold_analyzer.py",
+      "logic": "条件参数按分位切分统计 → T+5 上涨率，产出 probability_table.json / condition_table.json",
+      "detail": "build_probability_table / build_condition_table（未归一化原始值分位 / 信息增益切分；MIN_SAMPLE=30；未命中中性基线 NEUTRAL_BASELINE=0.5；UP_THRESHOLD=0.05 上涨判定）",
+      "key_params": [],
+      "params_now": {}
+    },
+    {
+      "step": "backtest_ab",
+      "name": "回测打分与A/B",
+      "file": "app/backtest/runner.py / recommender.py / validator.py / metrics.py / attribution.py / cluster.py",
+      "logic": "组合打分、T+5 收益与命中、A/B 决策门、归因、聚类；产出 baseline 供 monitor 月度漂移",
+      "detail": "run_backtest 完整编排：run_data_validation → scan_market(3倍段) → classify_batch(A-E) → outcome 分流 → _build_feature_matrix(向量归一化 + 条件原始值) → build_condition_table / build_vector_store → mine_positive_patterns(POSITIVE_LABELS=success) → analyze_attribution(同形态簇内成功vs失败对比：连续特征 AUC/均值差异、离散特征信息增益；MIN_CLUSTER_SAMPLES=10；产出 attribution_kb: 特征判别力排行/成功画像/失败画像/组合规则) → compute_metrics(T+5命中/收益/盈亏比) → run_ab_validation(Walk-Forward 样本外 + A/B/C 三方案[A基线/B负模式库/C完整] + McNemar/配对t 显著性 + Go/No-Go 上线决策门；指标 hit_rate[T+5>0]/accuracy[T+5>5%]/t20_cont/double_confirm/avg_t5/max_drawdown) → cluster_by_form → entry_analyze；产出 BacktestResult(含 data_validation / ab_validation / clusters / entry_analysis)",
+      "key_params": [],
+      "params_now": {}
+    },
+    {
+      "step": "rule_verify",
+      "name": "规则形态验证",
+      "file": "app/backtest/rule_verifier.py / rule_forms.py",
+      "logic": "3 倍启动段内验证看涨形态规则 → form_leaderboard.json（每日推荐规则信号用）",
+      "detail": "run_rule_verification(sample_mode='surge')；段内基线 T+1≈0.56~0.64；看涨规则需 ≥45% 且 ≥段内基线；规则清单见 RULE_FORMS（23 条网络经典形态）",
+      "key_params": [],
+      "params_now": {}
+    },
+    {
+      "step": "entry_guide",
+      "name": "入场指引",
+      "file": "app/backtest/entry_analyzer.py",
+      "logic": "成功组各形态最佳入场方式 → entry_guidance.json",
+      "detail": "analyze_batch / aggregate_entry_results / save_entry_guidance",
+      "key_params": [],
+      "params_now": {}
+    }
+  ],
+  "evolution_params": [
+    {
+      "name": "policy_priced_threshold",
+      "current": 0.15,
+      "min": 0.05,
+      "max": 0.4,
+      "step": 0.01,
+      "tier": 1,
+      "hot_reload": true,
+      "file": "app/agents/policy_agent.py",
+      "anchor_old": "if gain_r >= 0.15:",
+      "desc": "兑现度阈值：板块近10日涨幅≥此值判利好出尽（反向避雷）"
+    },
+    {
+      "name": "policy_partial_threshold",
+      "current": 0.05,
+      "min": 0.0,
+      "max": 0.3,
+      "step": 0.01,
+      "tier": 1,
+      "hot_reload": true,
+      "file": "app/agents/policy_agent.py",
+      "anchor_old": "elif gain_r >= 0.05:",
+      "desc": "部分反应阈值：板块近10日涨幅≥此值判部分反应"
+    },
+    {
+      "name": "policy_reversal_threshold",
+      "current": -0.03,
+      "min": -0.2,
+      "max": 0.0,
+      "step": 0.01,
+      "tier": 1,
+      "hot_reload": true,
+      "file": "app/agents/policy_agent.py",
+      "anchor_old": "elif gain_r <= -0.03:",
+      "desc": "板块回调阈值：近10日涨幅≤此值判回调（催化未反应）"
+    },
+    {
+      "name": "policy_max_age_days",
+      "current": 1095,
+      "min": 90,
+      "max": 3650,
+      "step": 30,
+      "tier": 1,
+      "hot_reload": true,
+      "file": "app/agents/policy_agent.py",
+      "anchor_old": "max_age_days=1095",
+      "desc": "政策检索时效窗口（天）：排除发布时间超过 N 天的政策"
+    },
+    {
+      "name": "policy_kb_chunk_size",
+      "current": 400,
+      "min": 200,
+      "max": 800,
+      "step": 20,
+      "tier": 1,
+      "hot_reload": true,
+      "file": "app/data/policy_kb.py",
+      "anchor_old": "CHUNK_SIZE = 400",
+      "desc": "政策知识库分块字符数（建库时生效）"
+    },
+    {
+      "name": "policy_kb_decay_halflife",
+      "current": 180,
+      "min": 30,
+      "max": 720,
+      "step": 15,
+      "tier": 1,
+      "hot_reload": true,
+      "file": "app/data/policy_kb.py",
+      "anchor_old": "d / 180.0",
+      "desc": "政策时效衰减半衰期（天）"
+    },
+    {
+      "name": "news_gain_window",
+      "current": 10,
+      "min": 3,
+      "max": 30,
+      "step": 1,
+      "tier": 1,
+      "hot_reload": true,
+      "file": "app/agents/news_agent.py",
+      "anchor_old": "n: int = 10",
+      "desc": "消息面利好出货检测的近期涨幅窗口（交易日）"
+    },
+    {
+      "name": "hit_threshold",
+      "current": 0.05,
+      "min": 0.01,
+      "max": 0.2,
+      "step": 0.005,
+      "tier": 1,
+      "hot_reload": true,
+      "file": "app/agents/learning_runner.py",
+      "anchor_old": "HIT_THRESHOLD = 0.05",
+      "desc": "推荐命中阈值：T+5 涨幅>此值判兑现（对齐 monitor HIT_RET_THRESHOLD）"
+    },
+    {
+      "name": "lesson_min_count",
+      "current": 2,
+      "min": 1,
+      "max": 5,
+      "step": 1,
+      "tier": 1,
+      "hot_reload": true,
+      "file": "app/agents/learning_runner.py",
+      "anchor_old": "MIN_COUNT_TO_FEEDBACK = 2",
+      "desc": "教训出现最少次数才进入反馈（学习层）"
+    },
+    {
+      "name": "policy_max_sectors",
+      "current": 5,
+      "min": 1,
+      "max": 10,
+      "step": 1,
+      "tier": 2,
+      "hot_reload": false,
+      "file": "app/agents/__init__.py",
+      "anchor_old": "MAX_POLICY_SECTORS = 5",
+      "desc": "政策解读覆盖行业数上限（Tier2：改代码锚点 + 独立进程重启生效，LLM 流程，不影子）"
+    },
+    {
+      "name": "daily_lambda_exclude",
+      "current": 0.5,
+      "min": 0.0,
+      "max": 1.0,
+      "step": 0.05,
+      "tier": 1,
+      "hot_reload": true,
+      "file": "app/backtest/daily_scan.py",
+      "anchor_old": null,
+      "desc": "每日推荐负向抑制强度（负模式相似度对综合概率的抑制权重，越小越宽松）"
+    },
+    {
+      "name": "daily_top_k",
+      "current": 30,
+      "min": 5,
+      "max": 50,
+      "step": 1,
+      "tier": 1,
+      "hot_reload": true,
+      "file": "app/backtest/daily_scan.py",
+      "anchor_old": null,
+      "desc": "每日推荐榜单条数 TOP-K（缩小聚焦高概率、放大增加覆盖）"
+    },
+    {
+      "name": "daily_rule_lambda",
+      "current": 0.3,
+      "min": 0.0,
+      "max": 1.0,
+      "step": 0.05,
+      "tier": 1,
+      "hot_reload": true,
+      "file": "app/backtest/daily_scan.py",
+      "anchor_old": null,
+      "desc": "看跌规则负向抑制强度（规则信号负向抑制，保留兼容）"
+    },
+    {
+      "name": "daily_rank_alpha",
+      "current": 0.3,
+      "min": 0.0,
+      "max": 1.0,
+      "step": 0.05,
+      "tier": 1,
+      "hot_reload": true,
+      "file": "app/backtest/daily_scan.py",
+      "anchor_old": null,
+      "desc": "每日推荐主排序的相似度权重（0=纯上涨概率，1=纯形态相似度，默认 0.3 上涨概率为主）"
+    },
+    {
+      "name": "daily_target_wave_w",
+      "current": 0.4,
+      "min": 0.0,
+      "max": 1.0,
+      "step": 0.05,
+      "tier": 1,
+      "hot_reload": true,
+      "file": "app/agents/evolution_summarizer.py",
+      "anchor_old": null,
+      "desc": "进化综合目标中主升浪(T+5)权重（0=只看次日大涨，1=只看主升浪；综合分=t1×(1-w)+wave×w）"
+    },
+    {
+      "name": "t1_hit_threshold",
+      "current": 0.0,
+      "min": -0.02,
+      "max": 0.05,
+      "step": 0.005,
+      "tier": 1,
+      "hot_reload": true,
+      "file": "app/agents/daily_verify.py",
+      "anchor_old": null,
+      "desc": "次日自我验证命中阈值：推荐次日前复权涨幅 > 此值计为'次日上涨命中'"
+    },
+    {
+      "name": "verify_lookback_days",
+      "current": 1,
+      "min": 1,
+      "max": 7,
+      "step": 1,
+      "tier": 1,
+      "hot_reload": true,
+      "file": "app/agents/daily_verify.py",
+      "anchor_old": null,
+      "desc": "次日自我验证回看最近 N 个交易日榜单"
+    },
+    {
+      "name": "risk_pledge_max",
+      "current": 0.5,
+      "min": 0.3,
+      "max": 0.8,
+      "step": 0.05,
+      "tier": 2,
+      "hot_reload": false,
+      "file": "app/backtest/risk_filter.py",
+      "anchor_old": "PLEDGE_RISK_RATIO = 0.50",
+      "desc": "回测与每日推荐共用：高质押风控上限（质押比例 > 此值剔除，Tier2 锚点补丁+重启）"
+    },
+    {
+      "name": "outcome_success_gain",
+      "current": 3.0,
+      "min": 2.0,
+      "max": 5.0,
+      "step": 0.5,
+      "tier": 2,
+      "hot_reload": false,
+      "file": "app/backtest/outcome_tracker.py",
+      "anchor_old": "SUCCESS_GAIN = 3.0",
+      "desc": "回测结局分流：'成功=启动后最高涨幅≥N 倍'判定门槛（Tier2 锚点补丁+重启）"
+    },
+    {
+      "name": "wave_hit_threshold",
+      "current": 0.05,
+      "min": 0.0,
+      "max": 0.3,
+      "step": 0.01,
+      "tier": 1,
+      "hot_reload": true,
+      "file": "app/agents/daily_verify.py",
+      "anchor_old": null,
+      "desc": "主升浪命中阈值：推荐后 T+5 前复权涨幅 ≥ 此值判走出主升浪（次日大涨+主升浪目标）"
+    },
+    {
+      "name": "plan_max_chase_pct",
+      "current": 0.03,
+      "min": 0.0,
+      "max": 0.1,
+      "step": 0.005,
+      "tier": 1,
+      "hot_reload": true,
+      "file": "app/backtest/trade_plan.py",
+      "anchor_old": null,
+      "desc": "操作计划：追高上限——T+1 开盘高于 T0 收盘×(1+此值) 则放弃买入（防高开接盘）"
+    },
+    {
+      "name": "plan_pullback_pct",
+      "current": 0.03,
+      "min": 0.01,
+      "max": 0.1,
+      "step": 0.005,
+      "tier": 1,
+      "hot_reload": true,
+      "file": "app/backtest/trade_plan.py",
+      "anchor_old": null,
+      "desc": "操作计划：回踩低吸幅度——回踩至 T0 收盘×(1-此值) 附近挂单低吸"
+    },
+    {
+      "name": "plan_stop_loss_pct",
+      "current": 0.05,
+      "min": 0.02,
+      "max": 0.15,
+      "step": 0.005,
+      "tier": 1,
+      "hot_reload": true,
+      "file": "app/backtest/trade_plan.py",
+      "anchor_old": null,
+      "desc": "操作计划：止损幅度——收盘跌破 T0 收盘×(1-此值) 则次日离场"
+    },
+    {
+      "name": "plan_tp1_ratio",
+      "current": 0.6,
+      "min": 0.2,
+      "max": 1.0,
+      "step": 0.05,
+      "tier": 1,
+      "hot_reload": true,
+      "file": "app/backtest/trade_plan.py",
+      "anchor_old": null,
+      "desc": "操作计划：T+5 止盈目标折扣（对形态历史平均 T+5 收益打折，防过度承诺）"
+    },
+    {
+      "name": "plan_tp2_ratio",
+      "current": 0.4,
+      "min": 0.1,
+      "max": 1.0,
+      "step": 0.05,
+      "tier": 1,
+      "hot_reload": true,
+      "file": "app/backtest/trade_plan.py",
+      "anchor_old": null,
+      "desc": "操作计划：T+20 主升浪止盈目标折扣（对形态历史平均 T+20 收益打折）"
+    },
+    {
+      "name": "plan_hold_days",
+      "current": 5,
+      "min": 1,
+      "max": 20,
+      "step": 1,
+      "tier": 1,
+      "hot_reload": true,
+      "file": "app/backtest/trade_plan.py",
+      "anchor_old": null,
+      "desc": "操作计划：建议持有交易日（到期未达目标按收盘离场）"
+    },
+    {
+      "name": "plan_cost_pct",
+      "current": 0.0025,
+      "min": 0.0,
+      "max": 0.01,
+      "step": 0.0005,
+      "tier": 1,
+      "hot_reload": true,
+      "file": "app/backtest/plan_tracker.py",
+      "anchor_old": null,
+      "desc": "交易纪律评估成本口径：双边佣金+印花税+滑点合计 0.25%（评估计划净收益必须扣除）"
+    },
+    {
+      "name": "plan_max_stop_loss_pct",
+      "current": 0.1,
+      "min": 0.05,
+      "max": 0.1,
+      "step": 0.01,
+      "tier": 1,
+      "hot_reload": true,
+      "file": "app/backtest/trade_plan.py",
+      "anchor_old": null,
+      "desc": "红线（plans/22 §五）：止损幅度上限 10%，防止纪律被进化成扛单不止损（仅人工审批可改）"
+    },
+    {
+      "name": "plan_use_grid",
+      "current": 1,
+      "min": 0,
+      "max": 1,
+      "step": 1,
+      "tier": 1,
+      "hot_reload": true,
+      "file": "app/backtest/discipline_grid.py",
+      "anchor_old": null,
+      "desc": "操作计划是否采用纪律网格（discipline_grid.json）反事实择优的纪律参数：1=启用（证据驱动）/0=关闭（退回参数表默认值）"
+    },
+    {
+      "name": "plan_min_samples",
+      "current": 30,
+      "min": 10,
+      "max": 200,
+      "step": 10,
+      "tier": 1,
+      "hot_reload": true,
+      "file": "app/backtest/discipline_grid.py",
+      "anchor_old": null,
+      "desc": "纪律网格分层收缩阈值：某形态样本成交数不足此值 → 直接采用全局最优纪律（防过拟合）"
+    },
+    {
+      "name": "plan_min_fill_rate",
+      "current": 0.3,
+      "min": 0.1,
+      "max": 0.8,
+      "step": 0.05,
+      "tier": 1,
+      "hot_reload": true,
+      "file": "app/backtest/discipline_grid.py",
+      "anchor_old": null,
+      "desc": "纪律网格可部署下限：可成交率低于此值的组合不参与择优（防'只买得到的少数'虚高期望）"
+    },
+    {
+      "name": "plan_max_washout",
+      "current": 0.85,
+      "min": 0.5,
+      "max": 0.95,
+      "step": 0.05,
+      "tier": 1,
+      "hot_reload": true,
+      "file": "app/backtest/discipline_grid.py",
+      "anchor_old": null,
+      "desc": "纪律网格可部署上限：被止损洗出率高于此值说明止损贴太紧（一进就被打）→ 该组合不参与择优"
+    },
+    {
+      "name": "plan_grid_min_improvement",
+      "current": 0.002,
+      "min": 0.0,
+      "max": 0.05,
+      "step": 0.001,
+      "tier": 1,
+      "hot_reload": true,
+      "file": "app/backtest/discipline_grid.py",
+      "anchor_old": null,
+      "desc": "采纳纪律网格结论的门槛：相对当前参数的期望改进需超过此值（默认 0.2pct），否则保持原参数（防越改越差）"
+    },
+    {
+      "name": "plan_adopt_min_samples",
+      "current": 30,
+      "min": 10,
+      "max": 200,
+      "step": 10,
+      "tier": 1,
+      "hot_reload": true,
+      "file": "app/backtest/discipline_grid.py",
+      "anchor_old": null,
+      "desc": "采纳网格结论的最小证据量（成交样本数，默认 30）：择优可放宽给方向，但采纳必须够样本，防小样本过拟合"
+    },
+    {
+      "name": "bt_c_target_coverage",
+      "current": 0.3,
+      "min": 0.05,
+      "max": 0.5,
+      "step": 0.05,
+      "tier": 1,
+      "hot_reload": true,
+      "file": "app/backtest/runner.py",
+      "anchor_old": null,
+      "desc": "A/B 方案 C（采样条件表）选取覆盖率：按综合概率取前 N 比例，与线上『排序取 TOP』口径一致（plans/23 T2）"
+    },
+    {
+      "name": "bt_min_prob_gap",
+      "current": 0.02,
+      "min": 0.0,
+      "max": 0.2,
+      "step": 0.005,
+      "tier": 1,
+      "hot_reload": true,
+      "file": "app/backtest/runner.py",
+      "anchor_old": null,
+      "desc": "A/B 有效性下限：C 组与其余样本平均概率差低于此值 → 判『概率无区分度』、A/B 无效（防假的『提升 0.0』）"
+    },
+    {
+      "name": "bt_cond_min_edge",
+      "current": 0.05,
+      "min": 0.0,
+      "max": 0.3,
+      "step": 0.01,
+      "tier": 1,
+      "hot_reload": true,
+      "file": "app/backtest/threshold_analyzer.py",
+      "anchor_old": null,
+      "desc": "条件表规则准入：up_prob 必须比基线高出的幅度（低于此不算『高胜率条件』，防伪规则）"
+    },
+    {
+      "name": "bt_cond_max_coverage",
+      "current": 0.5,
+      "min": 0.1,
+      "max": 1.0,
+      "step": 0.05,
+      "tier": 1,
+      "hot_reload": true,
+      "file": "app/backtest/threshold_analyzer.py",
+      "anchor_old": null,
+      "desc": "条件表规则覆盖率上限（超过即『宽规则』无筛选力，会让 A/B 的 C ≡ A）"
+    },
+    {
+      "name": "bt_key_auc",
+      "current": 0.55,
+      "min": 0.5,
+      "max": 0.9,
+      "step": 0.01,
+      "tier": 1,
+      "hot_reload": true,
+      "file": "app/backtest/attribution.py",
+      "anchor_old": null,
+      "desc": "归因『关键特征』AUC 门槛（另需置换检验 p<0.05、方差非零），防常数列/噪音污染 LLM 精筛"
+    },
+    {
+      "name": "bt_discrimination_min_gap",
+      "current": 0.08,
+      "min": 0.02,
+      "max": 0.5,
+      "step": 0.01,
+      "tier": 1,
+      "hot_reload": true,
+      "file": "app/backtest/metrics.py",
+      "anchor_old": null,
+      "desc": "正负样本区分度门槛：success 与 failure 的 T+5 正收益率差 ≥ 此值且 p<0.05 才算『标签有效』（plans/23 T3）"
+    },
+    {
+      "name": "data_gate_strict",
+      "current": true,
+      "min": 0,
+      "max": 1,
+      "step": 1,
+      "tier": 1,
+      "hot_reload": true,
+      "file": "app/backtest/runner.py",
+      "anchor_old": null,
+      "desc": "数据门禁：核心表（daily/adj_factor/stk_limit/daily_basic）日期不一致时是否中止回测（1=中止，0=仅告警）"
+    },
+    {
+      "name": "data_gate_use_effective",
+      "current": true,
+      "min": 0,
+      "max": 1,
+      "step": 1,
+      "tier": 1,
+      "hot_reload": true,
+      "file": "app/backtest/runner.py",
+      "anchor_old": null,
+      "desc": "数据门禁是否按「**有效交易日**」比较（plans/24 §11.34.5）：1=**默认**，只用「行数 ≥ 自然基数下限（5000）」的最近日期参与比较；0=回退为旧的 MAX(trade_date)。为什么必须改：实测 adj_factor 20260921 只有 **443 行**（Tushare 侧同日 5565 行），而门禁只看 MAX ⇒ 一个「半截日」就足以把该表判成『领先 daily』，导致门禁**永不通过**且报错原因（领先/落后）**误导排查方向**。采集端（ws.py stage3）同时用同一个有效日定义获得**自愈**能力（半截表不再被『已到最新』跳过）——这是修正，不是放松：锚定表**真落后**时仍照常拦下（守卫见 scripts/verify_effective_trade_day.py）"
+    },
+    {
+      "name": "collect_retry_max",
+      "current": 3,
+      "min": 0,
+      "max": 8,
+      "step": 1,
+      "tier": 1,
+      "hot_reload": true,
+      "file": "app/main.py",
+      "anchor_old": null,
+      "desc": "每日采集『数据未就绪』自动重试次数上限（配合重试间隔 + 21:00 兜底任务）"
+    },
+    {
+      "name": "collect_retry_delay_min",
+      "current": 30,
+      "min": 5,
+      "max": 90,
+      "step": 5,
+      "tier": 1,
+      "hot_reload": true,
+      "file": "app/main.py",
+      "anchor_old": null,
+      "desc": "每日采集就绪重试间隔（分钟）：Tushare 日频通常 17:00 后就绪，未就绪则按此间隔重试"
+    },
+    {
+      "name": "bt_control_sample_n",
+      "current": 400,
+      "min": 100,
+      "max": 1500,
+      "step": 100,
+      "tier": 1,
+      "hot_reload": true,
+      "file": "app/backtest/control_sampler.py",
+      "anchor_old": null,
+      "desc": "T4 第二步同口径对照组：每个交易日抽样候选数（抽完再过滤『有启动迹象』者），越大对照越稳但越慢"
+    },
+    {
+      "name": "bt_control_warmup_pct",
+      "current": 0.15,
+      "min": 0.0,
+      "max": 0.5,
+      "step": 0.01,
+      "tier": 1,
+      "hot_reload": true,
+      "file": "app/backtest/control_sampler.py",
+      "anchor_old": null,
+      "desc": "『有启动迹象』判定阈值：t0 前 20 日累计涨幅超过此值即从对照组剔除（保证对照组确实未启动）"
+    },
+    {
+      "name": "extra_mirror_enabled",
+      "current": 1,
+      "min": 0,
+      "max": 1,
+      "step": 1,
+      "tier": 1,
+      "hot_reload": true,
+      "file": "app/backtest/mirror_cache.py",
+      "anchor_old": null,
+      "desc": "回测提速开关：逐股查大表（daily_basic/moneyflow）走本地 SQLite 镜像（1=开，0=回退 MySQL 冷读）；实测单股 ~4s → ~20ms"
+    },
+    {
+      "name": "data_gate_max_lag_td",
+      "current": 0,
+      "min": 0,
+      "max": 5,
+      "step": 1,
+      "tier": 1,
+      "hot_reload": true,
+      "file": "app/backtest/runner.py",
+      "anchor_old": null,
+      "desc": "数据门禁：锚定表（daily/adj_factor/daily_basic）允许落后『最近交易日』多少个**交易日**（0=必须是最新交易日；周末/节假日不计入）"
+    },
+    {
+      "name": "data_gate_allow_ahead_td",
+      "current": 1,
+      "min": 0,
+      "max": 3,
+      "step": 1,
+      "tier": 1,
+      "hot_reload": true,
+      "file": "app/backtest/runner.py",
+      "anchor_old": null,
+      "desc": "数据门禁：stk_limit 允许领先锚定表多少个交易日（涨跌停价按次日披露 → 默认 1）"
+    },
+    {
+      "name": "auto_scan_after_collect",
+      "current": "confirm",
+      "min": null,
+      "max": null,
+      "step": null,
+      "tier": 1,
+      "hot_reload": true,
+      "file": "app/api/predictions.py",
+      "anchor_old": null,
+      "desc": "采集完成后的每日推荐行为：confirm=弹窗询问（默认，用户控制）/ auto=旧行为直接自动扫 / off=不自动扫（纯手动）"
+    },
+    {
+      "name": "verify_evidence_enabled",
+      "current": 1,
+      "min": 0,
+      "max": 1,
+      "step": 1,
+      "tier": 1,
+      "hot_reload": true,
+      "file": "app/agents/failure_context.py",
+      "anchor_old": null,
+      "desc": "失败归因是否附带**外部证据包**（大盘指数/个股日线/个股资料）——像回测一样去历史数据里找原因（1=开，0=关）"
+    },
+    {
+      "name": "verify_evidence_days",
+      "current": 5,
+      "min": 1,
+      "max": 20,
+      "step": 1,
+      "tier": 1,
+      "hot_reload": true,
+      "file": "app/agents/failure_context.py",
+      "anchor_old": null,
+      "desc": "失败归因证据包的复盘窗口（交易日）：推荐后个股/大盘走多少天纳入证据（窗口未走完会在证据里显式标注，不假装完整）"
+    },
+    {
+      "name": "washout_score_threshold",
+      "current": 0.6,
+      "min": 0.4,
+      "max": 0.9,
+      "step": 0.01,
+      "tier": 1,
+      "hot_reload": true,
+      "file": "app/backtest/washout_detector.py",
+      "anchor_old": null,
+      "desc": "洗盘判定分阈值（九维加权分 ≥ 此值判为洗盘；越高越保守，需与命中率+样本量一起权衡）"
+    },
+    {
+      "name": "washout_callback_threshold",
+      "current": 0.35,
+      "min": 0.1,
+      "max": 0.6,
+      "step": 0.01,
+      "tier": 1,
+      "hot_reload": true,
+      "file": "app/backtest/washout_detector.py",
+      "anchor_old": null,
+      "desc": "最低回调分阈值（≥ 此值算『回调中/洗盘中』，低于则判无洗盘特征）"
+    },
+    {
+      "name": "washout_vol_shrink_best",
+      "current": 0.5,
+      "min": 0.2,
+      "max": 0.9,
+      "step": 0.01,
+      "tier": 1,
+      "hot_reload": true,
+      "file": "app/backtest/washout_detector.py",
+      "anchor_old": null,
+      "desc": "量能收缩满分线：回调期均量 / 起涨前均量 ≤ 此值给满分（越小越严格）"
+    },
+    {
+      "name": "washout_vol_shrink_worst",
+      "current": 1.3,
+      "min": 0.8,
+      "max": 2.5,
+      "step": 0.05,
+      "tier": 1,
+      "hot_reload": true,
+      "file": "app/backtest/washout_detector.py",
+      "anchor_old": null,
+      "desc": "量能零分线：回调期量比 ≥ 此值判『放量』= 出货特征（0 分 + 可能触发硬否决）"
+    },
+    {
+      "name": "washout_retrace_good",
+      "current": 0.34,
+      "min": 0.1,
+      "max": 0.6,
+      "step": 0.01,
+      "tier": 1,
+      "hot_reload": true,
+      "file": "app/backtest/washout_detector.py",
+      "anchor_old": null,
+      "desc": "回撤满分线：回撤 ≤ 前一波涨幅的此比例给满分（规划建议 1/3）"
+    },
+    {
+      "name": "washout_retrace_bad",
+      "current": 0.67,
+      "min": 0.4,
+      "max": 1.0,
+      "step": 0.01,
+      "tier": 1,
+      "hot_reload": true,
+      "file": "app/backtest/washout_detector.py",
+      "anchor_old": null,
+      "desc": "回撤红线：回撤 > 此比例（2/3）判结构已破 → 硬否决为『疑似出货』"
+    },
+    {
+      "name": "washout_end_vol_ratio",
+      "current": 0.6,
+      "min": 0.2,
+      "max": 1.0,
+      "step": 0.01,
+      "tier": 1,
+      "hot_reload": true,
+      "file": "app/backtest/washout_detector.py",
+      "anchor_old": null,
+      "desc": "washout_end 确认日『地量』口径：当日量 ≤ 回调期均量 × 此值 + 收阳 + 站上 MA5"
+    },
+    {
+      "name": "rule_fdr_mode",
+      "current": "observe",
+      "min": null,
+      "max": null,
+      "step": null,
+      "tier": 1,
+      "hot_reload": true,
+      "file": "app/backtest/rule_verifier.py",
+      "anchor_old": null,
+      "desc": "规则验证的多重检验校正模式：off / observe（默认，仅记录 q 值不改 verified 集合）/ enforce（真正降级未过 FDR 的规则）——默认 observe 是为了避免静默削弱每日推荐规则信号（verified_count<3 会触发回退）（plans/23 §4.3）"
+    },
+    {
+      "name": "rule_fdr_alpha",
+      "current": 0.05,
+      "min": 0.0,
+      "max": 0.2,
+      "step": 0.01,
+      "tier": 1,
+      "hot_reload": true,
+      "file": "app/backtest/rule_verifier.py",
+      "anchor_old": null,
+      "desc": "规则验证的 FDR 目标（Benjamini-Hochberg q 阈值；≤0 视为关闭校正）（plans/23 §4.3）"
+    },
+    {
+      "name": "rule_fdr_hac",
+      "current": "observe",
+      "min": null,
+      "max": null,
+      "step": null,
+      "tier": 1,
+      "hot_reload": true,
+      "file": "app/backtest/rule_verifier.py",
+      "anchor_old": null,
+      "desc": "规则验证的 **HAC 复核**模式（plans/24 §11.28 / D5）：FDR 管『多重比较』，HAC 管『**重叠样本**』，两件事必须分开做。口径=把每条规则的**可交易样本**按日期聚合成『日均 T+1 收益』序列 → Newey-West(lag=rule_hac_lag) 的 t，**t_hac > 2 才算过**。off=不做 / **observe（默认）**=只记录 t_hac 与 hac_pass（可审计，**不改 verified 集合**）/ enforce=未过 HAC 的规则降级为 hac_rejected。默认 observe 的理由与 `rule_fdr_mode` 一致：直接 enforce 会静默削弱每日推荐的规则信号，先拿真实数字再决定"
+    },
+    {
+      "name": "rule_hac_lag",
+      "current": 4,
+      "min": 0,
+      "max": 20,
+      "step": 1,
+      "tier": 2,
+      "hot_reload": true,
+      "file": "app/backtest/rule_verifier.py",
+      "anchor_old": null,
+      "desc": "规则验证 HAC 复核的滞后阶数：应取『持有期 − 1』。T+1 口径 ⇒ 默认 4（与 baseline_gate 的 `b_hac` 同档，便于交叉对照）"
+    },
+    {
+      "name": "plan_tp_basis",
+      "current": "legacy",
+      "min": null,
+      "max": null,
+      "step": null,
+      "tier": 1,
+      "hot_reload": true,
+      "file": "app/backtest/target_price.py",
+      "anchor_old": null,
+      "desc": "止盈目标位口径：legacy=沿用 entry_guidance 的成功组均值（§15.4 实测命中率仅 9.1%）/ atr=按波动率 ATR 倍数的可达性口径（默认 legacy，验证通过再切）（plans/23 §15.4）"
+    },
+    {
+      "name": "plan_tp_atr_mult",
+      "current": 1.5,
+      "min": 0.5,
+      "max": 4.0,
+      "step": 0.25,
+      "tier": 1,
+      "hot_reload": true,
+      "file": "app/backtest/target_price.py",
+      "anchor_old": null,
+      "desc": "止盈目标位（atr 口径）：tp = T0×（1 + 倍数 × ATR%）。倍数越大目标越远、命中率越低（plans/23 §15.4）"
+    },
+    {
+      "name": "plan_stop_anchor",
+      "current": "close_t0",
+      "min": null,
+      "max": null,
+      "step": null,
+      "tier": 1,
+      "hot_reload": true,
+      "file": "app/backtest/discipline_grid.py",
+      "anchor_old": null,
+      "desc": "止损锚点（plans/23 §15.3.2 / P2-7）：close_t0=锚在 T0 收盘（**默认，与历史回放逐字节一致**）/ fill=锚在**实际成交价**（T+1 开盘或回踩价）。原实现锚在 T0 收盘而成交在 T+1 开盘，隔夜跳空就会产生「入门即止损」的假信号（5% 止损时占成交单 29.3%、3% 时 57.5%）。§15.3.2 已实测：只改锚点，洗出率平均降约 2.7pp、期望变化 ≈ 0（**不是根因，但是口径错误**）。默认 close_t0 的理由：改口径会改变全部网格结论，必须先过 A/B（项目纪律：先验证后生效）"
+    },
+    {
+      "name": "baseline_slip_bp",
+      "current": 20.0,
+      "min": 0.0,
+      "max": 100.0,
+      "step": 5.0,
+      "tier": 1,
+      "hot_reload": true,
+      "file": "app/backtest/baseline_gate.py",
+      "anchor_old": null,
+      "desc": "基准门槛 `judge_default()` 使用的**单边滑点**（bp）：总成本 = 双边费率 0.5% + 2×该值。默认 20bp 来自 plans/24 §11.24 按成交额分档的**中间档**（**结构性假设，非实测**——我们没有盘口数据）；§11.24 实测的「归零滑点」：持 5 日 −8bp（已死）/ 持 10 日 **+8.5bp**（基本堵死）/ 持 20 日 **+44bp**，故门槛必须带滑点，否则是「假过闸」"
+    },
+    {
+      "name": "daily_baseline_mode",
+      "current": "off",
+      "min": null,
+      "max": null,
+      "step": null,
+      "tier": 1,
+      "hot_reload": true,
+      "file": "app/backtest/baseline_shadow.py",
+      "anchor_old": null,
+      "desc": "推荐榜单是否附加「基准影子对照」（plans/24 §11.18/§11.19）：off=完全不变（默认 ⇒ 输出逐字节不变）/ shadow=仅在榜单里**附加** baseline_shadow 字段（B1/B2 索引化名单 + §11.17 四条件门槛判定 + §11.18 同窗口差距），**不影响 top_picks**。默认 off 的理由：§11.18 已证明我们的打分选股是「负 alpha」（比随机抽 30 只每年少 6.8pp），但「改持仓权重」必须先有独立 A/B 与样本外验证（项目纪律：先验证后生效）"
+    },
+    {
+      "name": "baseline_gate_require_d",
+      "current": true,
+      "min": null,
+      "max": null,
+      "step": null,
+      "tier": 1,
+      "hot_reload": true,
+      "file": "app/backtest/baseline_gate.py",
+      "anchor_old": null,
+      "desc": "基准门槛的 d 条件（四段净收益全正）是否为**必需**（plans/24 §11.36.6 → §11.36.9）：true=与 §11.17 契约一致（**默认，逐字节不变**）/ false=判定退化为 `a ∧ b ∧ b_hac`。为什么要有这个开关：F3 滚动前推实测证明「样本外评估」与「四段全正(d)」在**定义上互斥** —— 样本外窗按时间切在后半段，天然缺前几段，d 恒为「不可判定」，5 折里 **0 折可判**；此时用 d 判定等于「用没有数据当不通过」。**仅在样本外/滚动前推验证时置 false**，全样本判定仍必须用 d"
+    },
+    {
+      "name": "selfproof_default_step",
+      "current": 1,
+      "min": 1,
+      "max": 20,
+      "step": 1,
+      "tier": 1,
+      "hot_reload": true,
+      "file": "app/backtest/selfproof_policy.py",
+      "anchor_old": "\"selfproof_default_step\"",
+      "desc": "自证回放默认步长（交易日）：1=逐日，N=每 N 日取一个 as_of 点"
+    },
+    {
+      "name": "selfproof_universe_sample",
+      "current": 0,
+      "min": 0,
+      "max": 5000,
+      "step": 50,
+      "tier": 1,
+      "hot_reload": true,
+      "file": "app/backtest/selfproof_policy.py",
+      "anchor_old": "\"selfproof_universe_sample\"",
+      "desc": "回放 universe 抽样只数（0=全市场；>0 随机抽样，主要省钱包）"
+    },
+    {
+      "name": "selfproof_deep_top_n",
+      "current": 50,
+      "min": 10,
+      "max": 200,
+      "step": 10,
+      "tier": 1,
+      "hot_reload": true,
+      "file": "app/backtest/selfproof_policy.py",
+      "anchor_old": "\"selfproof_deep_top_n\"",
+      "desc": "回放时 L2 逐只精筛只数（成本次旋钮）"
+    },
+    {
+      "name": "selfproof_max_days",
+      "current": 250,
+      "min": 1,
+      "max": 2000,
+      "step": 10,
+      "tier": 1,
+      "hot_reload": true,
+      "file": "app/backtest/selfproof_policy.py",
+      "anchor_old": "\"selfproof_max_days\"",
+      "desc": "单次自证任务最大回放交易日数"
+    },
+    {
+      "name": "selfproof_budget_default_cny",
+      "current": 5.0,
+      "min": 0.5,
+      "max": 1000.0,
+      "step": 0.5,
+      "tier": 1,
+      "hot_reload": true,
+      "file": "app/backtest/selfproof_policy.py",
+      "anchor_old": "\"selfproof_budget_default_cny\"",
+      "desc": "自证任务默认预算上限（元）；默认对齐账户余额量级"
+    },
+    {
+      "name": "selfproof_regime_topk",
+      "current": 5,
+      "min": 1,
+      "max": 20,
+      "step": 1,
+      "tier": 1,
+      "hot_reload": true,
+      "file": "app/backtest/selfproof_policy.py",
+      "anchor_old": "\"selfproof_regime_topk\"",
+      "desc": "大盘相似波段返回 Top-K 条数（K 固定，禁人工挑选）"
+    },
+    {
+      "name": "selfproof_similarity_metric",
+      "current": "zscore_euclid_corr",
+      "min": null,
+      "max": null,
+      "step": null,
+      "tier": 1,
+      "hot_reload": true,
+      "file": "app/backtest/selfproof_policy.py",
+      "anchor_old": "\"selfproof_similarity_metric\"",
+      "desc": "相似波段相似度口径（zscore_euclid_corr / dtw）"
+    },
+    {
+      "name": "regime_sim_window",
+      "current": 60,
+      "min": 20,
+      "max": 250,
+      "step": 5,
+      "tier": 1,
+      "hot_reload": true,
+      "file": "app/backtest/selfproof_policy.py",
+      "anchor_old": "\"regime_sim_window\"",
+      "desc": "相似波段窗口长度（交易日）"
+    },
+    {
+      "name": "selfproof_tavily_enabled",
+      "current": false,
+      "min": null,
+      "max": null,
+      "step": null,
+      "tier": 1,
+      "hot_reload": true,
+      "file": "app/backtest/selfproof_policy.py",
+      "anchor_old": "\"selfproof_tavily_enabled\"",
+      "desc": "回放是否允许 Tavily 搜索：**必须 False**（实时搜索会穿越，见 plans/25 G5）"
+    },
+    {
+      "name": "selfproof_is_ratio",
+      "current": 0.8,
+      "min": 0.5,
+      "max": 0.95,
+      "step": 0.05,
+      "tier": 0,
+      "hot_reload": false,
+      "file": "app/backtest/selfproof_policy.py",
+      "anchor_old": "\"selfproof_is_ratio\"",
+      "desc": "【护栏】自证集占比；IS/OOS 切分比例，改动需人工确认（plans/25 F4）"
+    },
+    {
+      "name": "selfproof_oos_mode",
+      "current": "year_kfold",
+      "min": null,
+      "max": null,
+      "step": null,
+      "tier": 0,
+      "hot_reload": false,
+      "file": "app/backtest/selfproof_policy.py",
+      "anchor_old": "\"selfproof_oos_mode\"",
+      "desc": "【护栏】OOS 切分模式：year_kfold（年份滚动留出，默认）/ time_tail（旧口径）"
+    },
+    {
+      "name": "selfproof_oos_years",
+      "current": [],
+      "min": null,
+      "max": null,
+      "step": null,
+      "tier": 0,
+      "hot_reload": false,
+      "file": "app/backtest/selfproof_policy.py",
+      "anchor_old": "\"selfproof_oos_years\"",
+      "desc": "【护栏】冻结的留出年份集合，如 [2019, 2022]；空=由 year_kfold 轮换"
+    },
+    {
+      "name": "selfproof_workers",
+      "current": 1,
+      "min": 1,
+      "max": 16,
+      "step": 1,
+      "tier": 1,
+      "hot_reload": true,
+      "file": "app/backtest/selfproof_policy.py",
+      "anchor_old": "\"selfproof_workers\"",
+      "desc": "【实验性】回放并行度（按日并行；**默认 1=串行**）。实测并行尚未达标：多进程 6 天规模 0.91×（根因=ChromaDB/sqlite 并读争锁），线程池更糟（慢一个数量级，GIL 互踩）；LLM 档一律强制串行。未达标前不许默认开启，见 plans/25 §16"
+    }
+  ],
+  "stage_file_map": {
+    "stock_pool": "股票池/数据",
+    "form_identify": "形态识别（form_classifier/surge_scanner）",
+    "feature_extract": "特征提取（feature_extractor）",
+    "pattern_match": "正模式库相似度（vector_store）",
+    "neg_exclude": "负向抑制（daily_lambda_exclude）",
+    "condition_score": "条件概率打分（threshold_analyzer/condition_table）",
+    "rule_signal": "规则信号（rule_verifier/form_leaderboard）",
+    "risk_filter": "风险过滤（risk_filter）",
+    "rank_select": "排序TOP-K（daily_top_k/daily_scan）",
+    "agent_refine": "Agent精筛（refine_agent/decision_agent）",
+    "backtest_outcome": "回测结局分流（outcome_tracker 正负判定/OUTCOME_WIN）",
+    "backtest_feature": "回测特征拟合（feature_extractor 训练侧）",
+    "backtest_pattern": "回测模式库构建（pattern_miner/vector_store 训练侧）",
+    "backtest_condition": "回测条件概率表（threshold_analyzer 训练侧）",
+    "backtest_normalizer": "回测归一化参数（FeatureNormalizer 训练侧）",
+    "backtest_product": "回测产物与每日推荐脱节（normalizer/probability_table/模式库加载口径）",
+    "market": "市场环境（系统性）",
+    "other": "其他"
+  },
+  "evolvable_files": [
+    "app/__init__.py",
+    "app/agents/__init__.py",
+    "app/agents/backtest_ctl.py",
+    "app/agents/candidate_profiler.py",
+    "app/agents/code_writer.py",
+    "app/agents/daily_verify.py",
+    "app/agents/decision_agent.py",
+    "app/agents/evolution_ledger.py",
+    "app/agents/evolution_shadow.py",
+    "app/agents/failure_context.py",
+    "app/agents/improve_effect.py",
+    "app/agents/learning_runner.py",
+    "app/agents/llm_client.py",
+    "app/agents/llm_metering.py",
+    "app/agents/news_agent.py",
+    "app/agents/policy_agent.py",
+    "app/agents/policy_learning.py",
+    "app/agents/prompts.py",
+    "app/agents/refine_agent.py",
+    "app/agents/reflect_agent.py",
+    "app/agents/selfproof_report.py",
+    "app/agents/selfproof_verify.py",
+    "app/agents/success_attrib.py",
+    "app/agents/system_map.py",
+    "app/api/__init__.py",
+    "app/api/agent.py",
+    "app/api/backtest.py",
+    "app/api/data.py",
+    "app/api/predictions.py",
+    "app/api/selfproof.py",
+    "app/api/system.py",
+    "app/api/ws.py",
+    "app/backtest/__init__.py",
+    "app/backtest/ablation.py",
+    "app/backtest/attribution.py",
+    "app/backtest/baseline_gate.py",
+    "app/backtest/baseline_portfolio.py",
+    "app/backtest/baseline_shadow.py",
+    "app/backtest/benchmark.py",
+    "app/backtest/buy_types.py",
+    "app/backtest/cluster.py",
+    "app/backtest/control_sampler.py",
+    "app/backtest/daily_scan.py",
+    "app/backtest/data_validator.py",
+    "app/backtest/discipline_grid.py",
+    "app/backtest/entry_analyzer.py",
+    "app/backtest/extra_feature_loader.py",
+    "app/backtest/failure_miner.py",
+    "app/backtest/feature_extractor.py",
+    "app/backtest/form_classifier.py",
+    "app/backtest/game_features.py",
+    "app/backtest/loader.py",
+    "app/backtest/metrics.py",
+    "app/backtest/mirror_cache.py",
+    "app/backtest/monitor.py",
+    "app/backtest/outcome_tracker.py",
+    "app/backtest/param_sweep.py",
+    "app/backtest/pattern_miner.py",
+    "app/backtest/plan_tracker.py",
+    "app/backtest/recommender.py",
+    "app/backtest/regime_split.py",
+    "app/backtest/risk_filter.py",
+    "app/backtest/rule_forms.py",
+    "app/backtest/rule_miner.py",
+    "app/backtest/rule_verifier.py",
+    "app/backtest/runner.py",
+    "app/backtest/selfproof.py",
+    "app/backtest/selfproof_data_gate.py",
+    "app/backtest/selfproof_existing.py",
+    "app/backtest/selfproof_policy.py",
+    "app/backtest/sentiment.py",
+    "app/backtest/sentiment_gate.py",
+    "app/backtest/stats_correction.py",
+    "app/backtest/surge_scanner.py",
+    "app/backtest/target_price.py",
+    "app/backtest/threshold_analyzer.py",
+    "app/backtest/trade_plan.py",
+    "app/backtest/validator.py",
+    "app/backtest/vector_store.py",
+    "app/backtest/washout_detector.py",
+    "app/backtest/washout_samples.py",
+    "app/core/__init__.py",
+    "app/core/config.py",
+    "app/core/logger.py",
+    "app/data/__init__.py",
+    "app/data/adjust.py",
+    "app/data/collector.py",
+    "app/data/news_collector.py",
+    "app/data/policy_kb.py",
+    "app/data/rate_limiter.py",
+    "app/data/tushare_api.py",
+    "app/kb/__init__.py",
+    "app/kb/kb_context.py",
+    "app/kb/kb_distiller.py",
+    "app/kb/kb_evidence.py",
+    "app/kb/kb_index.py",
+    "app/kb/kb_ingest.py",
+    "app/kb/kb_store.py",
+    "app/kb/kb_writer.py",
+    "app/main.py",
+    "app/models/__init__.py",
+    "app/models/stock.py",
+    "app/rag/__init__.py",
+    "app/schemas/__init__.py",
+    "app/schemas/prediction.py",
+    "scripts/add_plan23_params.py",
+    "scripts/add_selfproof_params.py",
+    "scripts/analyze_form_coverage.py",
+    "scripts/audit_early_data_quality.py",
+    "scripts/audit_evolution_kb.py",
+    "scripts/audit_heart_data.py",
+    "scripts/backfill_backtest_history.py",
+    "scripts/backfill_evolution_kb.py",
+    "scripts/backfill_history.py",
+    "scripts/build_buy_type_samples.py",
+    "scripts/build_mirror.py",
+    "scripts/build_washout_samples.py",
+    "scripts/cleanup_stage3_incremental.py",
+    "scripts/collect_sector_data.py",
+    "scripts/dedupe_express.py",
+    "scripts/dedupe_table.py",
+    "scripts/diagnose_anchor_gap.py",
+    "scripts/diagnose_discipline_grid.py",
+    "scripts/diagnose_game_exclusions.py",
+    "scripts/diagnose_grid_rebase.py",
+    "scripts/diagnose_pick_pool.py",
+    "scripts/diagnose_rank_key.py",
+    "scripts/diagnose_unclassified.py",
+    "scripts/diagnose_washout.py",
+    "scripts/diagnose_washout_rate.py",
+    "scripts/fix_stk_limit_columns.py",
+    "scripts/generate_init_sql.py",
+    "scripts/kb_absorb_evidence.py",
+    "scripts/migrate_adj_factor_unique.py",
+    "scripts/migrate_stk_limit_date_index.py",
+    "scripts/profile_backtest.py",
+    "scripts/selfproof_data_gate.py",
+    "scripts/selfproof_replay_existing.py",
+    "scripts/selfproof_scale_trial.py",
+    "scripts/test_new_modules.py",
+    "scripts/verify_ab_rule_quality.py",
+    "scripts/verify_agent_refine_effect.py",
+    "scripts/verify_attribution_filter.py",
+    "scripts/verify_auto_evolution.py",
+    "scripts/verify_backtest_quality_gate.py",
+    "scripts/verify_baseline_gate.py",
+    "scripts/verify_baseline_portfolio.py",
+    "scripts/verify_baseline_sampling.py",
+    "scripts/verify_baseline_shadow.py",
+    "scripts/verify_buy_types.py",
+    "scripts/verify_collection_timing.py",
+    "scripts/verify_control_sampler.py",
+    "scripts/verify_cost_holding_grid.py",
+    "scripts/verify_cost_slippage.py",
+    "scripts/verify_data_gate_calendar.py",
+    "scripts/verify_effective_trade_day.py",
+    "scripts/verify_entry_guidance_bias.py",
+    "scripts/verify_evolution_evidence_wiring.py",
+    "scripts/verify_evolution_integration.py",
+    "scripts/verify_evolution_scope.py",
+    "scripts/verify_factor_portfolio.py",
+    "scripts/verify_failure_evidence.py",
+    "scripts/verify_forms.py",
+    "scripts/verify_gate_cost_cut.py",
+    "scripts/verify_gate_d_switch.py",
+    "scripts/verify_hac_and_gate_wiring.py",
+    "scripts/verify_label_usability.py",
+    "scripts/verify_llm_metering.py",
+    "scripts/verify_lowmom_scheme.py",
+    "scripts/verify_market_benchmark.py",
+    "scripts/verify_ours_baseline.py",
+    "scripts/verify_param_sweep.py",
+    "scripts/verify_pick_pool_layering.py",
+    "scripts/verify_pool_factor_filter.py",
+    "scripts/verify_pool_filter_oos.py",
+    "scripts/verify_regime_gate.py",
+    "scripts/verify_regime_split.py",
+    "scripts/verify_reversal_scheme.py",
+    "scripts/verify_rule_fdr.py",
+    "scripts/verify_scan_confirm.py",
+    "scripts/verify_scan_stop.py",
+    "scripts/verify_selfproof_api.py",
+    "scripts/verify_selfproof_isolation.py",
+    "scripts/verify_selfproof_parallel.py",
+    "scripts/verify_selfproof_replay.py",
+    "scripts/verify_selfproof_report.py",
+    "scripts/verify_sentiment.py",
+    "scripts/verify_shadow_live.py",
+    "scripts/verify_shadow_ui_contract.py",
+    "scripts/verify_size_baseline.py",
+    "scripts/verify_stats_and_ablation.py",
+    "scripts/verify_stop_anchor.py",
+    "scripts/verify_t_overlap_recheck.py",
+    "scripts/verify_target_price.py",
+    "scripts/verify_tavily_resilience.py",
+    "scripts/verify_torch_env.py",
+    "scripts/verify_turnover_replay.py",
+    "scripts/verify_vector_and_gate.py",
+    "scripts/verify_walk_forward.py",
+    "scripts/verify_washout.py",
+    "scripts/w4_bench.py"
+  ],
+  "form_types": [
+    {
+      "type": "A",
+      "name": "平台突破型",
+      "desc": "底部横盘 20~60 日后放量突破（核心形态）",
+      "thresholds": "平台波动<25% 且 缩量<80%均量；突破 close>平台高点*1.03 且 放量>20日均量*1.5"
+    },
+    {
+      "type": "B",
+      "name": "V型反转型",
+      "desc": "快速下跌后 V 型反转（无平台）",
+      "thresholds": "前 20 日快速下跌>25%（PRIOR_DROP=0.25）"
+    },
+    {
+      "type": "C",
+      "name": "中继加速型",
+      "desc": "第一波上涨后平台整理再加速",
+      "thresholds": "前一波上涨>50%（PRIOR_RISE=0.5）"
+    },
+    {
+      "type": "D",
+      "name": "直接拉升型",
+      "desc": "兜底形态，无明显平台/下跌/前涨，放量大阳拉升",
+      "thresholds": "10 日内涨幅>30%（DIRECT_RISE_10D=0.3）"
+    },
+    {
+      "type": "E",
+      "name": "连板型",
+      "desc": "连续涨停/一字板启动（难买入，每日推荐剔除）",
+      "thresholds": "涨停日占比>50%（LIMIT_UP_RATIO=0.5）"
+    },
+    {
+      "type": "U",
+      "name": "无法归类",
+      "desc": "未知形态，进样本库但不参与同形态归因/聚类",
+      "thresholds": "-"
+    }
+  ],
+  "rule_forms": [
+    "老鸭头(laoyatou)",
+    "仙人指路(xianren)",
+    "出水芙蓉(chushuifurong)",
+    "红三兵(hongsanbing)",
+    "多方炮(duofangpao)",
+    "早晨之星(zaochenzhixing)",
+    "金针探底(jinzhentandi)",
+    "双底/W底(shuangdi)",
+    "头肩底(toujianbe)",
+    "均线多头排列(duotoupailie)",
+    "缩量回踩(suolianghuicai)",
+    "塔形底(taxingdi)",
+    "三重底(sanchongdi)",
+    "圆弧底(yuanhudi)",
+    "放量突破(fangliangtupo)",
+    "量价齐升(liangjiaqisheng)",
+    "金山谷(jinshangu)",
+    "海底捞月(haidilaoyue)",
+    "倒锤头线(daochuizhui)",
+    "曙光初现(shuguang)",
+    "看涨吞没(kantunmo)",
+    "三阳开泰(sanyangguan)",
+    "上升三法(shangsanshi)"
+  ],
+  "change_anchors": [
+    {
+      "key": "neg_exclude_formula",
+      "file": "app/backtest/daily_scan.py",
+      "anchor_old": "final_prob = prob * (1.0 - _evolve_param(\"daily_lambda_exclude\", LAMBDA_EXCLUDE) * neg_sim)",
+      "desc": "负向抑制综合概率公式（负模式相似度压低）",
+      "how": "可改概率融合权重/引入 pos_sim/加动量因子"
+    },
+    {
+      "key": "rank_sort",
+      "file": "app/backtest/daily_scan.py",
+      "anchor_old": "candidates.sort(key=_rank_key, reverse=True)",
+      "desc": "每日推荐主排序（综合排序分=上涨概率为主、相似度加权，α=daily_rank_alpha）",
+      "how": "可改排序键/权重：如调高 daily_rank_alpha 更重形态相似度，调低更重上涨概率"
+    },
+    {
+      "key": "top_k",
+      "file": "app/backtest/daily_scan.py",
+      "anchor_old": "top_k = int(_evolve_param(\"daily_top_k\", DEFAULT_TOP_K) or DEFAULT_TOP_K)",
+      "desc": "榜单条数 TOP-K",
+      "how": "可改条数/按命中率动态"
+    },
+    {
+      "key": "breakout_pct",
+      "file": "app/backtest/form_classifier.py",
+      "anchor_old": "BREAKOUT_PCT = 1.03",
+      "desc": "A 形态有效突破阈值",
+      "how": "调高=更严格（减少假突破）/调低=更宽松"
+    },
+    {
+      "key": "success_gain",
+      "file": "app/backtest/outcome_tracker.py",
+      "anchor_old": "SUCCESS_GAIN = 3.0",
+      "desc": "回测'成功=启动后最高涨幅≥3 倍'",
+      "how": "已登记 outcome_success_gain 锚点补丁，可进化"
+    },
+    {
+      "key": "neutral_baseline",
+      "file": "app/backtest/threshold_analyzer.py",
+      "anchor_old": "NEUTRAL_BASELINE = 0.5",
+      "desc": "未命中条件的中性基线（防虚高）",
+      "how": "调高=更严格（未命中条件普遍不给高分）"
+    },
+    {
+      "key": "min_sample",
+      "file": "app/backtest/threshold_analyzer.py",
+      "anchor_old": "MIN_SAMPLE = 30",
+      "desc": "条件概率表最小样本量",
+      "how": "调高=更稳防偶然/调低=覆盖更多条件"
+    },
+    {
+      "key": "seal_ratio",
+      "file": "app/backtest/loader.py",
+      "anchor_old": "SEAL_RATIO = 0.997",
+      "desc": "涨停封板判定阈值",
+      "how": "越接近 1 越严格（更多涨停视为不可买）"
+    },
+    {
+      "key": "hit_threshold",
+      "file": "app/backtest/monitor.py",
+      "anchor_old": "HIT_RET_THRESHOLD = 0.05",
+      "desc": "T+5 命中阈值",
+      "how": "已登记 hit_threshold 热生效，可进化"
+    },
+    {
+      "key": "rule_lambda",
+      "file": "app/backtest/daily_scan.py",
+      "anchor_old": "lambda_neg=_evolve_param(\"daily_rule_lambda\", LAMBDA_NEG_RULE),",
+      "desc": "看跌规则负向抑制强度",
+      "how": "已登记 daily_rule_lambda 热生效，可进化"
+    }
+  ],
+  "performance_metrics": "win_rate(胜率) / hit_rate(T+5>0%) / accuracy(T+5>5%) / t20_continuation(T+20>0) / double_confirm(T+5>5% 且 T+20>0) / avg_t5_return / profit_loss_ratio(盈亏比) / cum_return(累计) / annual_return(年化) / max_drawdown(最大回撤) / sharpe(夏普) / exclude_effectiveness(负模式排除有效度)；TRADING_DAYS=252 / RISK_FREE=0.02",
+  "feature_layout": {
+    "total": "59+ 维（回测与每日推荐同源）",
+    "vector": {
+      "n": 33,
+      "desc": "形态向量（归一化 + 相似度匹配）",
+      "groups": "20 价格图形(pct_1..pct_20) + 8 技术(ma5_above_ma10 / ma10_above_ma20 / macd_hist / rsi_14 / kdj_k / boll_pos / atr_pct / adx) + 5 量能(volume_ratio / vol_ma_change / vol_surge_days / turnover_rate / vol_pct_20)"
+    },
+    "condition": {
+      "n": "~30",
+      "desc": "条件参数（原始值，分位统计，不归一化，供条件概率打分）",
+      "groups": "资金(net_amount_ratio / large_order_ratio / amount_ratio) + 基本(roe / gross_margin / profit_growth / pe_percentile / pb_percentile / revenue_growth / debt_ratio / ocf_ps / mainbz_concentration) + 筹码(holder_change / top10_ratio / pledge_ratio / bps每股净资产 / avg_hold_amount人均持股 / holder_concentration筹码集中度) + ST风险(st_risk_flag) + 事件(event_forecast业绩预告 / event_express快报 / event_dividend分红 / event_repurchase回购 / event_rewards股权激励 / event_holdertrade股东增减持 / event_block大宗折溢价) + 市场(market_env / wk_trend周动量 / mo_trend月动量 / is_ever_st历史ST)"
+    }
+  },
+  "key_constants": [
+    {
+      "name": "FEATURE_WINDOW",
+      "value": 20,
+      "file": "feature_extractor.py",
+      "desc": "特征窗口（前 20 交易日）"
+    },
+    {
+      "name": "MIN_LIST_TRADING_DAYS",
+      "value": 60,
+      "file": "loader.py",
+      "desc": "次新过滤（上市<60 交易日剔除）"
+    },
+    {
+      "name": "MIN_AVG_AMOUNT",
+      "value": "50000 千元(5000万)",
+      "file": "loader.py",
+      "desc": "流动性下限"
+    },
+    {
+      "name": "BREAKOUT_PCT",
+      "value": 1.03,
+      "file": "form_classifier.py",
+      "desc": "有效突破阈值"
+    },
+    {
+      "name": "BREAKOUT_VOL_RATIO",
+      "value": 1.5,
+      "file": "form_classifier.py",
+      "desc": "突破放量倍数"
+    },
+    {
+      "name": "PRIOR_DROP / PRIOR_RISE",
+      "value": "0.25 / 0.50",
+      "file": "form_classifier.py",
+      "desc": "V反转前跌 / 中继前涨"
+    },
+    {
+      "name": "LAMBDA_EXCLUDE",
+      "value": "daily_lambda_exclude(0.5)",
+      "file": "daily_scan.py",
+      "desc": "负向抑制强度（可进化）"
+    },
+    {
+      "name": "DEFAULT_TOP_K",
+      "value": "daily_top_k(30)",
+      "file": "daily_scan.py",
+      "desc": "榜单条数（可进化）"
+    },
+    {
+      "name": "LAMBDA_NEG_RULE",
+      "value": "daily_rule_lambda(0.3)",
+      "file": "daily_scan.py",
+      "desc": "看跌规则抑制（可进化）"
+    },
+    {
+      "name": "SUCCESS_GAIN",
+      "value": "outcome_success_gain(3.0)",
+      "file": "outcome_tracker.py",
+      "desc": "回测成功=3倍（可进化）"
+    },
+    {
+      "name": "HIT_RET_THRESHOLD",
+      "value": "hit_threshold(0.05)",
+      "file": "monitor.py",
+      "desc": "T+5 命中阈值（可进化）"
+    },
+    {
+      "name": "PLEDGE_RISK_RATIO",
+      "value": "risk_pledge_max(0.5)",
+      "file": "risk_filter.py",
+      "desc": "高质押上限（可进化）"
+    },
+    {
+      "name": "SEAL_RATIO",
+      "value": 0.997,
+      "file": "loader.py",
+      "desc": "封板判定（触及涨停价 99.7% 视为封死不可买）"
+    },
+    {
+      "name": "MAX_SUSPEND_RATIO",
+      "value": 0.2,
+      "file": "loader.py",
+      "desc": "停牌容忍（特征/结局窗口内停牌占比>20% 剔除）"
+    },
+    {
+      "name": "CANDIDATE_GAIN",
+      "value": 2.5,
+      "file": "surge_scanner.py",
+      "desc": "3倍段预标记候选（≥2.5 倍，防复权误差漏检）"
+    },
+    {
+      "name": "MAX_WINDOW",
+      "value": 90,
+      "file": "surge_scanner.py",
+      "desc": "启动段最大跨度（交易日）"
+    },
+    {
+      "name": "NEIGHBOR",
+      "value": 3,
+      "file": "surge_scanner.py",
+      "desc": "有效局部低点前后验证日数"
+    },
+    {
+      "name": "MIN_SAMPLE",
+      "value": 30,
+      "file": "threshold_analyzer.py",
+      "desc": "条件概率表最小样本量（防小样本偶然）"
+    },
+    {
+      "name": "UP_THRESHOLD",
+      "value": 0.05,
+      "file": "threshold_analyzer.py",
+      "desc": "条件表上涨判定（T+5 涨幅>5%）"
+    },
+    {
+      "name": "NEUTRAL_BASELINE",
+      "value": 0.5,
+      "file": "threshold_analyzer.py",
+      "desc": "未命中条件的中性基线（防虚高）"
+    },
+    {
+      "name": "NEG_HIGH_THRESHOLD",
+      "value": 0.75,
+      "file": "recommender.py",
+      "desc": "负模式相似度高风险分档（>0.75 高 / 0.6~0.75 中）"
+    }
+  ],
+  "knowledge_bases": [
+    {
+      "file": "data/decision_kb.json",
+      "desc": "决策层教训（最终榜单失败反思）",
+      "exists": true
+    },
+    {
+      "file": "data/reflect_kb.json",
+      "desc": "个股反思教训（T+5 失败）",
+      "exists": true
+    },
+    {
+      "file": "data/news_lesson_kb.json",
+      "desc": "消息面反思教训",
+      "exists": true
+    },
+    {
+      "file": "data/policy_impact_kb.json",
+      "desc": "政策板块实证（T+1/T+5/T+20）",
+      "exists": true
+    },
+    {
+      "file": "data/policy_intent_kb.json",
+      "desc": "政策意图库（自学校正）",
+      "exists": true
+    },
+    {
+      "file": "data/policy_history.json",
+      "desc": "历史政策→板块案例库（policy_agent 历史对标分析）",
+      "exists": false
+    },
+    {
+      "file": "data/attribution_kb.json",
+      "desc": "回测归因知识",
+      "exists": true
+    },
+    {
+      "file": "data/verify_kb.json",
+      "desc": "次日验证 + 环节归因",
+      "exists": true
+    },
+    {
+      "file": "data/policy_kb.sqlite",
+      "desc": "政策 RAG 索引",
+      "exists": true
+    },
+    {
+      "file": "data/evolution_events.db",
+      "desc": "全项目事件流（进化依据）",
+      "exists": true
+    },
+    {
+      "file": "data/monitor_state.json",
+      "desc": "推荐命中 + 月度漂移",
+      "exists": true
+    },
+    {
+      "file": "data/evolution_ledger.json",
+      "desc": "进化终身记账",
+      "exists": true
+    }
+  ],
+  "products": [
+    {
+      "file": "data/feature_normalizer.json",
+      "desc": "59维特征归一化参数（回测拟合，每日推荐固化使用）",
+      "exists": true
+    },
+    {
+      "file": "data/probability_table.json",
+      "desc": "条件概率表（上涨概率）",
+      "exists": true
+    },
+    {
+      "file": "data/condition_table.json",
+      "desc": "采样条件参数分位统计（条件打分）",
+      "exists": true
+    },
+    {
+      "file": "data/form_leaderboard.json",
+      "desc": "已验证看涨形态规则排行榜（规则信号）",
+      "exists": true
+    },
+    {
+      "file": "data/entry_guidance.json",
+      "desc": "各形态入场指引",
+      "exists": true
+    },
+    {
+      "file": "data/evolution_config.json",
+      "desc": "可进化参数表（进化大脑可改，热生效/锚点补丁）",
+      "exists": true
+    },
+    {
+      "file": "data/monitor_state.json",
+      "desc": "推荐命中与月度漂移监控",
+      "exists": true
+    },
+    {
+      "file": "data/verify_kb.json",
+      "desc": "次日自我验证与环节归因知识库",
+      "exists": true
+    },
+    {
+      "file": "data/code_writer_state.json",
+      "desc": "生成式代码进化历史/待确认提案",
+      "exists": true
+    },
+    {
+      "file": "data/evolution_map.json",
+      "desc": "本系统图谱快照",
+      "exists": true
+    },
+    {
+      "file": "data/daily_recommend/",
+      "desc": "每日推荐榜单目录（daily_YYYYMMDD_vN.json 规则版 + _agent_vN.json Agent 最终版）",
+      "exists": true
+    },
+    {
+      "file": "data/backtest_results/",
+      "desc": "回测结果目录（backtest_YYYYMMDD_HHMMSS.json + backtest_latest.json）",
+      "exists": true
+    }
+  ],
+  "run_sequence": [
+    {
+      "time": "12:05~13:35",
+      "task": "进化任务窗口（守护/影子/惰性/代码进化/审批/每周应用/统一学习）",
+      "note": "全部经 _evolution_idle_check，后台有 回测/扫描/采集/反思 时跳过不运行"
+    },
+    {
+      "time": "12:10",
+      "task": "次日自我验证（daily_verify，次日验证前天）",
+      "note": "T+1/T+5/T+20 回填（D+1 买入口径）+ 失效归因 + 环节归因（含回测侧 backtest_outcome/feature/pattern/condition/normalizer/product）→ verify_kb"
+    },
+    {
+      "time": "16:30",
+      "task": "数据采集（阶段1-4）+ 自动每日推荐扫描（daily_scan → TOP-K 落盘）",
+      "note": "后台忙则不触发；扫描完成后自动 Agent 精筛 → 最终榜单 daily_YYYYMMDD_agent_vN.json"
+    }
+  ]
+}
