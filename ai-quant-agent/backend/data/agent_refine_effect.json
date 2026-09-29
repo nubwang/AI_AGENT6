@@ -1,19 +1,19 @@
 {
- "generated_at": "2026-09-21 16:07:30",
+ "generated_at": "2026-09-29 09:23:58",
  "h": 5,
  "hac_lag": 4,
  "cost_rt": 0.005,
  "top_n": 30,
- "n_records": 2004,
- "n_days": 23,
- "market_base": -0.0014618906887631773,
+ "n_records": 2160,
+ "n_days": 28,
+ "market_base": -0.008668181478655907,
  "size": {
-  "rules_top": 27.782608695652176,
-  "kept": 2.6956521739130435,
-  "dropped": 25.08695652173913,
-  "added": 0.8260869565217391,
+  "rules_top": 27.928571428571427,
+  "kept": 2.6785714285714284,
+  "dropped": 25.25,
+  "added": 0.6785714285714286,
   "days_dropped_empty": 1,
-  "n_days": 23,
+  "n_days": 28,
   "n_days_agent_empty": 3,
   "empty_days": [
    "20260818",
@@ -22,33 +22,33 @@
   ]
  },
  "agent_only_traded": {
-  "n": 20,
-  "mean": -0.015211482350076477,
+  "n": 25,
+  "mean": 0.00360016640263306,
   "t": NaN,
   "t_hac": NaN
  },
  "agent_incl_cash": {
-  "n": 23,
-  "mean": -0.01322737595658824,
+  "n": 28,
+  "mean": 0.0032144342880652305,
   "t": NaN,
   "t_hac": NaN
  },
  "subsets": {
   "rules_top": {
-   "n": 22,
-   "mean": -0.026022495907669786,
+   "n": 27,
+   "mean": -0.009448152617857142,
    "t": NaN,
    "t_hac": NaN
   },
   "kept": {
-   "n": 17,
-   "mean": -0.007171828526252222,
+   "n": 22,
+   "mean": 0.012377851005503104,
    "t": NaN,
    "t_hac": NaN
   },
   "dropped": {
-   "n": 22,
-   "mean": -0.02984242290619624,
+   "n": 27,
+   "mean": -0.013204711445457188,
    "t": NaN,
    "t_hac": NaN
   },
@@ -59,26 +59,26 @@
    "t_hac": NaN
   },
   "agent_all": {
-   "n": 20,
-   "mean": -0.015211482350076477,
+   "n": 25,
+   "mean": 0.00360016640263306,
    "t": NaN,
    "t_hac": NaN
   }
  },
  "kept_minus_dropped": {
-  "n": 17,
-  "mean": 0.020874262884289337,
+  "n": 22,
+  "mean": 0.020413190054150068,
   "t": NaN,
   "t_hac": NaN
  },
  "agent_minus_rules": {
-  "n": 19,
-  "mean": 0.012137837008900218,
+  "n": 24,
+  "mean": 0.012810746706244486,
   "t": NaN,
   "t_hac": NaN
  },
  "verdict": "方向对，但**功效不足 ⇒ 不可判定**",
- "selection_effect": 0.01081101355759331,
- "cash_effect": 0.001984106393488236,
+ "selection_effect": 0.013048319020490202,
+ "cash_effect": -0.00038573211456782936,
  "kept_minus_dropped_sig": false
 }

@@ -1676,7 +1676,9 @@
       "date": "20260908",
       "score": 79.6,
       "reason": "低位超跌筹码集中，政策利好未兑现，消息面中性，符合成功画像，但利润增速为负，上调有限。",
-      "reflected": false
+      "reflected": true,
+      "t5_ret": -0.0209,
+      "hit": false
     },
     {
       "ts_code": "300939.SZ",
@@ -1684,7 +1686,9 @@
       "date": "20260908",
       "score": 75.8,
       "reason": "Agent 分析失败，按规则概率保留",
-      "reflected": false
+      "reflected": true,
+      "t5_ret": 0.1406,
+      "hit": true
     },
     {
       "ts_code": "300505.SZ",
@@ -1692,7 +1696,9 @@
       "date": "20260908",
       "score": 75.2,
       "reason": "Agent 分析失败，按规则概率保留",
-      "reflected": false
+      "reflected": true,
+      "t5_ret": -0.1734,
+      "hit": false
     },
     {
       "ts_code": "002821.SZ",
@@ -1700,7 +1706,9 @@
       "date": "20260908",
       "score": 74.9,
       "reason": "Agent 分析失败，按规则概率保留",
-      "reflected": false
+      "reflected": true,
+      "t5_ret": 0.0545,
+      "hit": true
     },
     {
       "ts_code": "300363.SZ",
@@ -1708,7 +1716,9 @@
       "date": "20260908",
       "score": 72.7,
       "reason": "Agent 分析失败，按规则概率保留",
-      "reflected": false
+      "reflected": true,
+      "t5_ret": 0.0105,
+      "hit": false
     },
     {
       "ts_code": "300607.SZ",
@@ -1716,7 +1726,9 @@
       "date": "20260908",
       "score": 71.8,
       "reason": "Agent 分析失败，按规则概率保留",
-      "reflected": false
+      "reflected": true,
+      "t5_ret": -0.1477,
+      "hit": false
     },
     {
       "ts_code": "300313.SZ",
@@ -1724,7 +1736,9 @@
       "date": "20260908",
       "score": 70.8,
       "reason": "Agent 分析失败，按规则概率保留",
-      "reflected": false
+      "reflected": true,
+      "t5_ret": -0.1061,
+      "hit": false
     },
     {
       "ts_code": "600770.SH",
@@ -1732,7 +1746,9 @@
       "date": "20260908",
       "score": 70.6,
       "reason": "Agent 分析失败，按规则概率保留",
-      "reflected": false
+      "reflected": true,
+      "t5_ret": 0.0193,
+      "hit": false
     },
     {
       "ts_code": "301257.SZ",
@@ -1740,7 +1756,9 @@
       "date": "20260908",
       "score": 70.0,
       "reason": "Agent 分析失败，按规则概率保留",
-      "reflected": false
+      "reflected": true,
+      "t5_ret": -0.0236,
+      "hit": false
     },
     {
       "ts_code": "301628.SZ",
@@ -1748,7 +1766,9 @@
       "date": "20260908",
       "score": 69.4,
       "reason": "Agent 分析失败，按规则概率保留",
-      "reflected": false
+      "reflected": true,
+      "t5_ret": -0.0306,
+      "hit": false
     },
     {
       "ts_code": "002859.SZ",
@@ -1756,7 +1776,9 @@
       "date": "20260908",
       "score": 69.2,
       "reason": "Agent 分析失败，按规则概率保留",
-      "reflected": false
+      "reflected": true,
+      "t5_ret": 0.1004,
+      "hit": true
     },
     {
       "ts_code": "600869.SH",
@@ -1764,7 +1786,9 @@
       "date": "20260908",
       "score": 67.9,
       "reason": "Agent 分析失败，按规则概率保留",
-      "reflected": false
+      "reflected": true,
+      "t5_ret": -0.1231,
+      "hit": false
     },
     {
       "ts_code": "300720.SZ",
@@ -1772,7 +1796,9 @@
       "date": "20260908",
       "score": 66.8,
       "reason": "Agent 分析失败，按规则概率保留",
-      "reflected": false
+      "reflected": true,
+      "t5_ret": -0.0387,
+      "hit": false
     },
     {
       "ts_code": "603211.SH",
@@ -1780,7 +1806,9 @@
       "date": "20260908",
       "score": 66.3,
       "reason": "Agent 分析失败，按规则概率保留",
-      "reflected": false
+      "reflected": true,
+      "t5_ret": -0.0411,
+      "hit": false
     },
     {
       "ts_code": "300404.SZ",
@@ -1788,7 +1816,9 @@
       "date": "20260908",
       "score": 66.0,
       "reason": "Agent 分析失败，按规则概率保留",
-      "reflected": false
+      "reflected": true,
+      "t5_ret": -0.007,
+      "hit": false
     },
     {
       "ts_code": "600714.SH",
@@ -1796,7 +1826,9 @@
       "date": "20260908",
       "score": 64.9,
       "reason": "Agent 分析失败，按规则概率保留",
-      "reflected": false
+      "reflected": true,
+      "t5_ret": -0.1491,
+      "hit": false
     },
     {
       "ts_code": "600540.SH",
@@ -1804,7 +1836,9 @@
       "date": "20260908",
       "score": 64.8,
       "reason": "Agent 分析失败，按规则概率保留",
-      "reflected": false
+      "reflected": true,
+      "t5_ret": -0.2691,
+      "hit": false
     },
     {
       "ts_code": "002457.SZ",
@@ -1812,7 +1846,9 @@
       "date": "20260908",
       "score": 64.5,
       "reason": "Agent 分析失败，按规则概率保留",
-      "reflected": false
+      "reflected": true,
+      "t5_ret": -0.0759,
+      "hit": false
     },
     {
       "ts_code": "301122.SZ",
@@ -1820,7 +1856,9 @@
       "date": "20260908",
       "score": 64.0,
       "reason": "Agent 分析失败，按规则概率保留",
-      "reflected": false
+      "reflected": true,
+      "t5_ret": 0.0337,
+      "hit": false
     },
     {
       "ts_code": "301526.SZ",
@@ -1828,7 +1866,9 @@
       "date": "20260908",
       "score": 64.0,
       "reason": "Agent 分析失败，按规则概率保留",
-      "reflected": false
+      "reflected": true,
+      "t5_ret": 0.1633,
+      "hit": true
     },
     {
       "ts_code": "603696.SH",
@@ -1836,7 +1876,9 @@
       "date": "20260908",
       "score": 63.1,
       "reason": "Agent 分析失败，按规则概率保留",
-      "reflected": false
+      "reflected": true,
+      "t5_ret": -0.1703,
+      "hit": false
     },
     {
       "ts_code": "300413.SZ",
@@ -1844,7 +1886,9 @@
       "date": "20260908",
       "score": 62.7,
       "reason": "Agent 分析失败，按规则概率保留",
-      "reflected": false
+      "reflected": true,
+      "t5_ret": -0.0835,
+      "hit": false
     },
     {
       "ts_code": "603150.SH",
@@ -1852,7 +1896,9 @@
       "date": "20260908",
       "score": 62.6,
       "reason": "Agent 分析失败，按规则概率保留",
-      "reflected": false
+      "reflected": true,
+      "t5_ret": -0.0225,
+      "hit": false
     },
     {
       "ts_code": "301310.SZ",
@@ -1860,7 +1906,9 @@
       "date": "20260908",
       "score": 62.3,
       "reason": "Agent 分析失败，按规则概率保留",
-      "reflected": false
+      "reflected": true,
+      "t5_ret": -0.1061,
+      "hit": false
     },
     {
       "ts_code": "301151.SZ",
@@ -1868,7 +1916,9 @@
       "date": "20260908",
       "score": 62.2,
       "reason": "Agent 分析失败，按规则概率保留",
-      "reflected": false
+      "reflected": true,
+      "t5_ret": -0.0704,
+      "hit": false
     },
     {
       "ts_code": "605580.SH",
@@ -1876,7 +1926,9 @@
       "date": "20260908",
       "score": 61.0,
       "reason": "Agent 分析失败，按规则概率保留",
-      "reflected": false
+      "reflected": true,
+      "t5_ret": -0.0408,
+      "hit": false
     },
     {
       "ts_code": "603991.SH",
@@ -1884,7 +1936,9 @@
       "date": "20260908",
       "score": 61.0,
       "reason": "Agent 分析失败，按规则概率保留",
-      "reflected": false
+      "reflected": true,
+      "t5_ret": 0.0101,
+      "hit": false
     },
     {
       "ts_code": "603269.SH",
@@ -1892,7 +1946,9 @@
       "date": "20260908",
       "score": 60.8,
       "reason": "Agent 分析失败，按规则概率保留",
-      "reflected": false
+      "reflected": true,
+      "t5_ret": -0.0146,
+      "hit": false
     },
     {
       "ts_code": "300741.SZ",
@@ -1900,7 +1956,9 @@
       "date": "20260908",
       "score": 60.5,
       "reason": "Agent 分析失败，按规则概率保留",
-      "reflected": false
+      "reflected": true,
+      "t5_ret": 0.1715,
+      "hit": true
     },
     {
       "ts_code": "301056.SZ",
@@ -1908,7 +1966,9 @@
       "date": "20260908",
       "score": 59.1,
       "reason": "Agent 分析失败，按规则概率保留",
-      "reflected": false
+      "reflected": true,
+      "t5_ret": -0.058,
+      "hit": false
     },
     {
       "ts_code": "002827.SZ",
@@ -1916,7 +1976,9 @@
       "date": "20260908",
       "score": 58.6,
       "reason": "Agent 分析失败，按规则概率保留",
-      "reflected": false
+      "reflected": true,
+      "t5_ret": -0.0194,
+      "hit": false
     },
     {
       "ts_code": "002821.SZ",
@@ -1924,7 +1986,9 @@
       "date": "20260909",
       "score": 74.9,
       "reason": "低风险形态，筹码集中，资金流入，政策利好明确，估值低，综合概率最高，确定性较强。",
-      "reflected": false
+      "reflected": true,
+      "t5_ret": 0.0932,
+      "hit": true
     },
     {
       "ts_code": "301628.SZ",
@@ -1932,7 +1996,9 @@
       "date": "20260909",
       "score": 74.4,
       "reason": "低PB高bps，筹码集中，政策利好电子元器件，但板块涨幅已高且利润增速负，微调加分后仍具吸引力。",
-      "reflected": false
+      "reflected": true,
+      "t5_ret": -0.0412,
+      "hit": false
     },
     {
       "ts_code": "600540.SH",
@@ -1940,7 +2006,9 @@
       "date": "20260909",
       "score": 64.8,
       "reason": "基本面强劲，利润增速高，筹码集中，PB低位，但无政策催化且量比高，维持原判。",
-      "reflected": false
+      "reflected": true,
+      "t5_ret": -0.1692,
+      "hit": false
     },
     {
       "ts_code": "300313.SZ",
@@ -1948,7 +2016,9 @@
       "date": "20260909",
       "score": 69.5,
       "reason": "基本面与筹码优，利润增速高，筹码集中，历史上涨率高，消息面中性，维持原概率。",
-      "reflected": false
+      "reflected": true,
+      "t5_ret": 0.0455,
+      "hit": false
     },
     {
       "ts_code": "001229.SZ",
@@ -1956,7 +2026,9 @@
       "date": "20260909",
       "score": 68.5,
       "reason": "筹码集中、PB低位符合成功画像，但利润增速大降，消息面中性，无实质驱动。",
-      "reflected": false
+      "reflected": true,
+      "t5_ret": -0.0912,
+      "hit": false
     },
     {
       "ts_code": "002687.SZ",
@@ -1964,7 +2036,9 @@
       "date": "20260909",
       "score": 67.0,
       "reason": "筹码集中且低位，但利润下滑、现金流差，消息面平淡，无实质驱动，谨慎参与。",
-      "reflected": false
+      "reflected": true,
+      "t5_ret": 0.0129,
+      "hit": false
     },
     {
       "ts_code": "002171.SZ",
@@ -1972,7 +2046,9 @@
       "date": "20260910",
       "score": 73.0,
       "reason": "中报净利增21%真实业绩催化，涨幅未过热筹码集中；但无政策催化、现金流负、应收偏高，小幅上调。",
-      "reflected": false
+      "reflected": true,
+      "t5_ret": -0.0504,
+      "hit": false
     },
     {
       "ts_code": "300739.SZ",
@@ -1980,7 +2056,9 @@
       "date": "20260911",
       "score": 71.8,
       "reason": "量化条件优，政策利好部分兑现，无减持隐患，但消息面存疑需防追高，维持原判。",
-      "reflected": false
+      "reflected": true,
+      "t5_ret": 0.1106,
+      "hit": true
     },
     {
       "ts_code": "301047.SZ",
@@ -1988,7 +2066,9 @@
       "date": "20260911",
       "score": 69.9,
       "reason": "低位回调无出货，筹码集中、每股净资产高，符合成功画像，但无政策催化，中性对待。",
-      "reflected": false
+      "reflected": true,
+      "t5_ret": 0.1464,
+      "hit": true
     },
     {
       "ts_code": "002409.SZ",
@@ -1996,7 +2076,9 @@
       "date": "20260911",
       "score": 69.2,
       "reason": "基本面筹码优，消息面中性无出货风险，但政策催化弱且已涨59.6%，防追高维持原判。",
-      "reflected": false
+      "reflected": true,
+      "t5_ret": 0.0693,
+      "hit": true
     },
     {
       "ts_code": "301053.SZ",
@@ -2004,7 +2086,9 @@
       "date": "20260911",
       "score": 65.3,
       "reason": "低位回调无出货，筹码集中、人均持股高符合画像，但无政策催化且近期跌16.4%，维持原判。",
-      "reflected": false
+      "reflected": true,
+      "t5_ret": -0.0079,
+      "hit": false
     },
     {
       "ts_code": "000722.SZ",
@@ -2012,7 +2096,9 @@
       "date": "20260911",
       "score": 70.4,
       "reason": "收购水电资产实质重组，涨幅温和无减持质押，基本面筹码符合成功画像，防追高。",
-      "reflected": false
+      "reflected": true,
+      "t5_ret": -0.0458,
+      "hit": false
     },
     {
       "ts_code": "301047.SZ",
@@ -2020,7 +2106,9 @@
       "date": "20260911",
       "score": 69.9,
       "reason": "低位无实质利好，但筹码集中、高bps、低负债，符合历史成功画像，按规则执行。",
-      "reflected": false
+      "reflected": true,
+      "t5_ret": 0.1464,
+      "hit": true
     },
     {
       "ts_code": "605376.SH",
@@ -2028,7 +2116,9 @@
       "date": "20260912",
       "score": 73.9,
       "reason": "低位回调非追高，MLCC涨价实质催化，筹码集中PB低，政策C级仅小幅上调。",
-      "reflected": false
+      "reflected": true,
+      "t5_ret": 0.0461,
+      "hit": false
     },
     {
       "ts_code": "300772.SZ",
@@ -2036,7 +2126,9 @@
       "date": "20260912",
       "score": 70.3,
       "reason": "Agent分析失败，按规则概率保留，确定性不足，降权处理。",
-      "reflected": false
+      "reflected": true,
+      "t5_ret": 0.0075,
+      "hit": false
     },
     {
       "ts_code": "301526.SZ",
@@ -2044,7 +2136,9 @@
       "date": "20260912",
       "score": 69.9,
       "reason": "低位超跌+PB分位13%+利润增速176%+筹码集中，无政策催化，防追高。",
-      "reflected": false
+      "reflected": true,
+      "t5_ret": -0.0252,
+      "hit": false
     },
     {
       "ts_code": "600354.SH",
@@ -2052,7 +2146,9 @@
       "date": "20260912",
       "score": 63.1,
       "reason": "PB分位6.8%低位，利润增速165%且ROE18.7%，筹码集中，无追高风险。",
-      "reflected": false
+      "reflected": true,
+      "t5_ret": 0.1396,
+      "hit": true
     },
     {
       "ts_code": "605376.SH",
@@ -2060,7 +2156,9 @@
       "date": "20260914",
       "score": 73.9,
       "reason": "低位无出货+业绩扭亏+小金属S级政策催化，筹码集中PB低；政策降级无订单，轻仓防追高。",
-      "reflected": false
+      "reflected": true,
+      "t5_ret": 0.0461,
+      "hit": false
     },
     {
       "ts_code": "301526.SZ",
@@ -2068,7 +2166,9 @@
       "date": "20260914",
       "score": 69.9,
       "reason": "低位+利润增速176%+筹码集中，符合成功画像；政策含脑补、消息中性，维持原判。",
-      "reflected": false
+      "reflected": true,
+      "t5_ret": -0.0252,
+      "hit": false
     },
     {
       "ts_code": "603127.SH",
@@ -2076,7 +2176,9 @@
       "date": "20260914",
       "score": 77.0,
       "reason": "低位跌7.9%无出货基础，筹码集中、利润增速1126%、PB分位3.6%符合成功画像；量比偏弱无政策催化，维持原判。",
-      "reflected": false
+      "reflected": true,
+      "t5_ret": 0.0898,
+      "hit": true
     },
     {
       "ts_code": "301047.SZ",
@@ -2084,7 +2186,9 @@
       "date": "20260914",
       "score": 67.0,
       "reason": "筹码集中、低负债、高毛利符合成功画像；无政策催化且近期涨幅1.31需防追高，维持原判。",
-      "reflected": false
+      "reflected": true,
+      "t5_ret": 0.3606,
+      "hit": true
     },
     {
       "ts_code": "002025.SZ",
@@ -2092,7 +2196,9 @@
       "date": "20260916",
       "score": 78.1,
       "reason": "Q2提速+AI算力催化，位置低无隐患，筹码集中，政策A级，确定性最高。",
-      "reflected": false
+      "reflected": true,
+      "t5_ret": -0.0247,
+      "hit": false
     },
     {
       "ts_code": "002522.SZ",
@@ -2100,7 +2206,9 @@
       "date": "20260916",
       "score": 70.7,
       "reason": "筹码集中、ROE正、利润增速48%，无减持质押，涨幅温和无追高风险。",
-      "reflected": false
+      "reflected": true,
+      "t5_ret": -0.0573,
+      "hit": false
     },
     {
       "ts_code": "300765.SZ",
@@ -2108,7 +2216,9 @@
       "date": "20260916",
       "score": 65.5,
       "reason": "高ROE高增速高集中度低PB，消息面中性，短期涨幅小需防追高。",
-      "reflected": false
+      "reflected": true,
+      "t5_ret": 0.0203,
+      "hit": false
     },
     {
       "ts_code": "300821.SZ",
@@ -2116,7 +2226,9 @@
       "date": "20260917",
       "score": 72.9,
       "reason": "H1净利增916%真实业绩催化，PB百分位3.5极低、处低位非出货；股权激励调整存隐患，轻仓。",
-      "reflected": false
+      "reflected": true,
+      "t5_ret": -0.0645,
+      "hit": false
     },
     {
       "ts_code": "300567.SZ",
@@ -2124,7 +2236,9 @@
       "date": "20260917",
       "score": 72.1,
       "reason": "筹码集中、PB低位、利润增速171%符合成功画像；消息面中性无催化，无追高风险，维持原判。",
-      "reflected": false
+      "reflected": true,
+      "t5_ret": -0.1141,
+      "hit": false
     },
     {
       "ts_code": "300684.SZ",
@@ -2132,7 +2246,9 @@
       "date": "20260917",
       "score": 78.7,
       "reason": "低位实质利好：液冷批量供货、石墨专利、回购，筹码集中PB低，轻仓防PE高追高。",
-      "reflected": false
+      "reflected": true,
+      "t5_ret": 0.1155,
+      "hit": true
     },
     {
       "ts_code": "301678.SZ",
@@ -2140,7 +2256,9 @@
       "date": "20260917",
       "score": 76.6,
       "reason": "筹码集中PB低，eSIM封测扩产实质利好，涨幅小位置低，无减持质押隐患。",
-      "reflected": false
+      "reflected": true,
+      "t5_ret": 0.0317,
+      "hit": false
     },
     {
       "ts_code": "300684.SZ",
@@ -2428,6 +2546,238 @@
       "date": "20260928",
       "score": 74.7,
       "reason": "资金条件命中、正分高风险低，但利润亏损、PB分位低；上涨为CRO板块联动非个股催化，政策利好但板块普跌，下调。",
+      "reflected": false
+    },
+    {
+      "ts_code": "300684.SZ",
+      "name": "中石科技",
+      "date": "20260929",
+      "score": 78.9,
+      "reason": "LLM 预算熔断（total 已用 10.0262/10.0000 元），按规则概率保留",
+      "reflected": false
+    },
+    {
+      "ts_code": "301234.SZ",
+      "name": "五洲医疗",
+      "date": "20260929",
+      "score": 76.9,
+      "reason": "LLM 预算熔断（total 已用 10.0262/10.0000 元），按规则概率保留",
+      "reflected": false
+    },
+    {
+      "ts_code": "603580.SH",
+      "name": "艾艾精工",
+      "date": "20260929",
+      "score": 75.2,
+      "reason": "LLM 预算熔断（total 已用 10.0262/10.0000 元），按规则概率保留",
+      "reflected": false
+    },
+    {
+      "ts_code": "002849.SZ",
+      "name": "威星智能",
+      "date": "20260929",
+      "score": 74.6,
+      "reason": "LLM 预算熔断（total 已用 10.0262/10.0000 元），按规则概率保留",
+      "reflected": false
+    },
+    {
+      "ts_code": "001326.SZ",
+      "name": "联域股份",
+      "date": "20260929",
+      "score": 74.3,
+      "reason": "LLM 预算熔断（total 已用 10.0262/10.0000 元），按规则概率保留",
+      "reflected": false
+    },
+    {
+      "ts_code": "301080.SZ",
+      "name": "百普赛斯",
+      "date": "20260929",
+      "score": 72.3,
+      "reason": "LLM 预算熔断（total 已用 10.0262/10.0000 元），按规则概率保留",
+      "reflected": false
+    },
+    {
+      "ts_code": "001216.SZ",
+      "name": "华瓷股份",
+      "date": "20260929",
+      "score": 71.0,
+      "reason": "LLM 预算熔断（total 已用 10.0262/10.0000 元），按规则概率保留",
+      "reflected": false
+    },
+    {
+      "ts_code": "003006.SZ",
+      "name": "百亚股份",
+      "date": "20260929",
+      "score": 70.3,
+      "reason": "LLM 预算熔断（total 已用 10.0262/10.0000 元），按规则概率保留",
+      "reflected": false
+    },
+    {
+      "ts_code": "301108.SZ",
+      "name": "洁雅股份",
+      "date": "20260929",
+      "score": 70.1,
+      "reason": "LLM 预算熔断（total 已用 10.0262/10.0000 元），按规则概率保留",
+      "reflected": false
+    },
+    {
+      "ts_code": "301047.SZ",
+      "name": "义翘神州",
+      "date": "20260929",
+      "score": 70.0,
+      "reason": "LLM 预算熔断（total 已用 10.0262/10.0000 元），按规则概率保留",
+      "reflected": false
+    },
+    {
+      "ts_code": "301008.SZ",
+      "name": "宏昌科技",
+      "date": "20260929",
+      "score": 69.9,
+      "reason": "LLM 预算熔断（total 已用 10.0262/10.0000 元），按规则概率保留",
+      "reflected": false
+    },
+    {
+      "ts_code": "301122.SZ",
+      "name": "采纳股份",
+      "date": "20260929",
+      "score": 69.5,
+      "reason": "LLM 预算熔断（total 已用 10.0262/10.0000 元），按规则概率保留",
+      "reflected": false
+    },
+    {
+      "ts_code": "300939.SZ",
+      "name": "秋田微",
+      "date": "20260929",
+      "score": 69.3,
+      "reason": "LLM 预算熔断（total 已用 10.0262/10.0000 元），按规则概率保留",
+      "reflected": false
+    },
+    {
+      "ts_code": "300647.SZ",
+      "name": "超频三",
+      "date": "20260929",
+      "score": 68.1,
+      "reason": "LLM 预算熔断（total 已用 10.0262/10.0000 元），按规则概率保留",
+      "reflected": false
+    },
+    {
+      "ts_code": "600641.SH",
+      "name": "先导基电",
+      "date": "20260929",
+      "score": 64.1,
+      "reason": "LLM 预算熔断（total 已用 10.0262/10.0000 元），按规则概率保留",
+      "reflected": false
+    },
+    {
+      "ts_code": "603001.SH",
+      "name": "奥康国际",
+      "date": "20260929",
+      "score": 63.5,
+      "reason": "LLM 预算熔断（total 已用 10.0262/10.0000 元），按规则概率保留",
+      "reflected": false
+    },
+    {
+      "ts_code": "605058.SH",
+      "name": "澳弘电子",
+      "date": "20260929",
+      "score": 63.0,
+      "reason": "LLM 预算熔断（total 已用 10.0262/10.0000 元），按规则概率保留",
+      "reflected": false
+    },
+    {
+      "ts_code": "300599.SZ",
+      "name": "雄塑科技",
+      "date": "20260929",
+      "score": 62.6,
+      "reason": "LLM 预算熔断（total 已用 10.0262/10.0000 元），按规则概率保留",
+      "reflected": false
+    },
+    {
+      "ts_code": "603978.SH",
+      "name": "深圳新星",
+      "date": "20260929",
+      "score": 60.9,
+      "reason": "LLM 预算熔断（total 已用 10.0262/10.0000 元），按规则概率保留",
+      "reflected": false
+    },
+    {
+      "ts_code": "002713.SZ",
+      "name": "东易日盛",
+      "date": "20260929",
+      "score": 59.3,
+      "reason": "LLM 预算熔断（total 已用 10.0262/10.0000 元），按规则概率保留",
+      "reflected": false
+    },
+    {
+      "ts_code": "600707.SH",
+      "name": "彩虹股份",
+      "date": "20260929",
+      "score": 57.1,
+      "reason": "LLM 预算熔断（total 已用 10.0262/10.0000 元），按规则概率保留",
+      "reflected": false
+    },
+    {
+      "ts_code": "300243.SZ",
+      "name": "瑞丰高材",
+      "date": "20260929",
+      "score": 56.9,
+      "reason": "LLM 预算熔断（total 已用 10.0262/10.0000 元），按规则概率保留",
+      "reflected": false
+    },
+    {
+      "ts_code": "603068.SH",
+      "name": "博通集成",
+      "date": "20260929",
+      "score": 55.1,
+      "reason": "LLM 预算熔断（total 已用 10.0262/10.0000 元），按规则概率保留",
+      "reflected": false
+    },
+    {
+      "ts_code": "603373.SH",
+      "name": "安邦护卫",
+      "date": "20260929",
+      "score": 54.0,
+      "reason": "LLM 预算熔断（total 已用 10.0262/10.0000 元），按规则概率保留",
+      "reflected": false
+    },
+    {
+      "ts_code": "300691.SZ",
+      "name": "联合光电",
+      "date": "20260929",
+      "score": 52.6,
+      "reason": "LLM 预算熔断（total 已用 10.0262/10.0000 元），按规则概率保留",
+      "reflected": false
+    },
+    {
+      "ts_code": "300314.SZ",
+      "name": "戴维医疗",
+      "date": "20260929",
+      "score": 48.9,
+      "reason": "LLM 预算熔断（total 已用 10.0262/10.0000 元），按规则概率保留",
+      "reflected": false
+    },
+    {
+      "ts_code": "601858.SH",
+      "name": "中国科传",
+      "date": "20260929",
+      "score": 43.4,
+      "reason": "LLM 预算熔断（total 已用 10.0262/10.0000 元），按规则概率保留",
+      "reflected": false
+    },
+    {
+      "ts_code": "002679.SZ",
+      "name": "福建金森",
+      "date": "20260929",
+      "score": 42.4,
+      "reason": "LLM 预算熔断（total 已用 10.0262/10.0000 元），按规则概率保留",
+      "reflected": false
+    },
+    {
+      "ts_code": "603248.SH",
+      "name": "锡华科技",
+      "date": "20260929",
+      "score": 39.3,
+      "reason": "LLM 预算熔断（total 已用 10.0262/10.0000 元），按规则概率保留",
       "reflected": false
     }
   ]

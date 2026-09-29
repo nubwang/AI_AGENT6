@@ -7,6 +7,30 @@
 设计原则（对齐 plans/03-Agent系统.md）：
   - 超时/重试/JSON 解析降级：失败不抛致命异常，返回 None/空，由上层 Agent 降级处理
   - JSON 输出：优先 response_format json_object，失败时从文本提取 ```json 块
+
+═══════════ 维护约定（新增 LLM 调用前必读，2026-09-29 事故立的规矩）═══════════
+
+事故：前端显示「失败Agent 精筛失败: 'list' object has no attribute 'get'」。
+根因：本模块返回的类型由**模型**决定（`dict` 或 `list`），而消费点直接
+`deepseek_chat(...).get(...)` —— 模型一旦输出 `[ {...} ]` 或直接输出数组就崩，
+且崩在 L3 统一决策（外层无 try）⇒ **整轮精筛 failed、当日榜单一条都不落盘**。
+
+规矩（三条，别走回头路）：
+  ① **新代码首选** [`deepseek_chat_obj()`](ai-quant-agent/backend/app/agents/llm_client.py:1) /
+     [`deepseek_chat_rows()`](ai-quant-agent/backend/app/agents/llm_client.py:1)：
+     返回值被**结构保证**为 dict / list[dict]，「忘记判形状」在语法上不可能发生；
+  ② 确需原始类型（如批量粗筛要区分"调用失败"与"空结果"）时用 `deepseek_chat()`，
+     但**取值前必须**处置形状：`as_dict(x)` / `as_rows(x)` / `isinstance(x, dict|list)`；
+     **只判 `x is None` 不算**（那正是事故写法）；
+  ③ 形状不符必须**可观测**：包装会打 WARNING（见 `_warn_shape`）；降级可以静默接受，
+     **原因不能静默**。
+
+两道门禁（改完 Agent/LLM 调用后都要跑）：
+  · `cd ai-quant-agent/backend && ./venv/bin/python scripts/verify_llm_shape_guard.py`
+    —— 机械扫描 `app/` 下所有 `deepseek_chat` 消费点，发现"取值前未处置形状"即失败
+    （带自检：裸用/只判 None 的样例必须被判违规）；
+  · `./venv/bin/python scripts/verify_llm_json_shape.py`
+    —— 行为级回归：伪造"数组返回"，验证 L1/L2/L3 + 消息面/政策 + 反思都能安全降级。
 """
 from __future__ import annotations
 
@@ -202,6 +226,107 @@ def _extract_json(text: str):
     return None
 
 
+# ── LLM 返回值规整（防"形状不符"把整条链路打崩）────────────────────
+# 事故（2026-09-29）：前端显示「Agent 精筛失败: 'list' object has no attribute 'get'」。
+#   根因不是模型故障，而是**契约假设**错了：`deepseek_chat()` 返回的是「模型实际输出的 JSON」，
+#   类型由模型决定（本函数自己的 docstring 就写着 "返回解析后的 JSON（dict/list）"）。
+#   prompt 里写着"输出 JSON 对象"，模型偶尔仍会输出 `[ {...} ]`（把对象包一层数组）
+#   或直接输出数组 ⇒ 消费方直接 `result.get(...)` 就崩成 `'list' object has no attribute 'get'`，
+#   且崩在 L3 统一决策（`decision_agent.decide`）这个**没被 try 包住**的位置 →
+#   整轮精筛报 failed、当日榜单一条都落不下去。
+# 口径：**只在消费侧规整，不改 `deepseek_chat` 的返回契约** ——
+#   `batch_refine`/`evolution_agent` 等确实需要"列表语义"的调用方依赖原始类型，
+#   在 LLM 层做归一化会把这些路径的语义吃掉。
+def as_dict(obj) -> dict:
+    """把 LLM 返回值规整成 dict（取不到对象语义时返回 `{}`，调用方按降级处理）。
+
+    处理三种真实见过的形状：
+      · `dict`                    → 原样返回；
+      · `[ {...} ]`（单元素数组）  → 返回该元素（最常见的"把对象包一层数组"）；
+      · 其他（多元素数组/标量/None）→ 返回 `{}`。
+
+    ★ **多元素数组不在这里折叠**：那是"列表语义"的返回（如批量粗筛的逐只结论），
+      必须由调用方按列表处理（见 [`as_rows()`](ai-quant-agent/backend/app/agents/llm_client.py:1)）；
+      强行折叠会把 N 条结论压成 1 条 —— 比崩溃更糟（静默丢数据）。
+    """
+    if isinstance(obj, dict):
+        return obj
+    if isinstance(obj, list) and len(obj) == 1 and isinstance(obj[0], dict):
+        return obj[0]
+    return {}
+
+
+def as_rows(obj) -> list[dict]:
+    """把 LLM 返回值规整成"行列表"（批量结论，list[dict]）。
+
+    处理三种真实见过的形状：
+      · `[ {...}, {...} ]` → 原样（丢掉非 dict 元素）；
+      · `{ "candidates": [ {...} ] }` / `{ "results": [...] }` → 取其中**第一个"由 dict 组成的列表"**；
+      · 其他 → `[]`。
+
+    ★ 为什么必须处理"对象里嵌列表"：`batch_refine` 原来只认 `isinstance(result, list)`，
+      模型一旦按 `{"candidates": [...]}` 返回，就被当成"解析异常" →
+      该批**只保留规则概率最高的 1 只**（静默丢掉整批候选）⇒ 榜单规模莫名缩水。
+    """
+    if isinstance(obj, list):
+        return [r for r in obj if isinstance(r, dict)]
+    if isinstance(obj, dict):
+        if "ts_code" in obj:          # 单条结论被当成对象返回
+            return [obj]
+        for v in obj.values():
+            rows = as_rows(v)
+            if rows:
+                return rows
+    return []
+
+
+def _warn_shape(raw, want: str) -> None:
+    """LLM 返回形状不符时 WARNING（**必须能一眼看见**，不要再靠猜）。
+
+    为什么必须留这条日志：2026-09-29 之前的表现是"静默降级" ——
+    精筛大面积退回规则概率、消息面兜底失效，日志里只有结果、没有原因，
+    排查方向全靠翻代码。降级可以静默接受，**原因不能静默**。
+    """
+    kind = type(raw).__name__
+    size = f"，长度 {len(raw)}" if isinstance(raw, (list, dict, str)) else ""
+    logger.warning(
+        f"[llm] 返回形状不符（期望 {want}，实得 {kind}{size}）→ 已按「无有效结果」降级"
+        "（模型没按 JSON 契约输出；若频繁出现应改 prompt 或收紧 response_format）"
+    )
+
+
+def deepseek_chat_obj(messages: list[dict], **kwargs) -> dict:
+    """调用 LLM 并**保证返回 dict**（形状不符 → `{}` + WARNING）。
+
+    ★ **新代码请优先用本函数**（确需"列表语义"时用
+    [`deepseek_chat_rows()`](ai-quant-agent/backend/app/agents/llm_client.py:1)，
+    仍需要原始类型时才用 `deepseek_chat()`）。
+    理由：它让"忘记判形状"在**语法上不可能** —— 只要用本函数，后续 `.get(...)`
+    永远安全。2026-09-29 的事故正是"消费点直接 `deepseek_chat(...).get(...)`"。
+    """
+    raw = deepseek_chat(messages, **kwargs)
+    d = as_dict(raw)
+    if raw is not None and not isinstance(raw, dict) and not d:
+        _warn_shape(raw, "JSON 对象(dict)")
+    return d
+
+
+def deepseek_chat_rows(messages: list[dict], **kwargs) -> list[dict]:
+    """调用 LLM 并**保证返回 list[dict]**（形状不符 → `[]` + WARNING）。
+
+    语义说明：`{}` 也返回 `[]`（调用方要求"行列表"，对象不是行列表）。
+    注意本函数**不区分**"调用失败(None)"与"模型返回空"—— 若调用方需要区别对待
+    （如批量粗筛：失败时整批保留、空结果时只保留头部），请用
+    `raw = deepseek_chat(...)` + [`as_rows()`](ai-quant-agent/backend/app/agents/llm_client.py:1)
+    自行判定。
+    """
+    raw = deepseek_chat(messages, **kwargs)
+    rows = as_rows(raw)
+    if raw is not None and not rows:
+        _warn_shape(raw, "JSON 数组(list[dict])")
+    return rows
+
+
 def _metering():
     """延迟导入 LLM 计量模块（plans/25 §四）。
 
@@ -240,9 +365,17 @@ def deepseek_chat(
         thinking: 思考模式开关。None → 取 `settings.deepseek_thinking`（默认 **False**）
         reasoning_effort: 思考强度 low/high/max（仅在 thinking=True 时有意义）
 
-    预算闸门（plans/25 §4.4）：超预算 → **阻断本次调用并返回 None**（与既有"LLM 失败即
-    降级"契约一致，不给主流程引入新的异常类型），同时由 `llm_metering.budget_blocked()`
-    暴露标志，供自证内核检测到之后优雅停止与断点续跑。
+    ★ 2026-09-29：**本函数已不再执行预算闸门**（用户要求"每日推荐不要有预算熔断、
+      不要设置上限"）。为什么必须从**这一层**摘除，而不是"按来源/run_id 放行"：
+        · `source` 在绝大多数调用点走默认值（`deepseek_chat([...])` 根本不传），无法据此分类；
+        · `run_id` 也**从未传播到任何 LLM 调用点**（实测 refine/decision/news/policy 全不传）
+          ⇒ "只拦带 run_id 的调用"等价于"永远不拦"。
+      历史上闸门之所以对自证回放生效，只是因为 day/total 两个额度**对所有调用一视同仁**。
+
+      摘除后：本函数**只做计量**（usage/费用照旧落盘，对账与预估不受影响）；
+      需要熔断语义的调用方**显式自查** —— 自证回放在每日收尾主动调
+      `llm_metering.ensure_budget(run_id=rid)`（见 app/backtest/selfproof.py::budget_blocked），
+      那条路径判据**更精确**：按"本任务自己花了多少"熔断，不再靠日/总额度顺带拦住。
 
     思考模式（plans/25 §14.3，官方文档 `/guides/thinking_mode`）：
       - 官方**默认开启**且 effort 默认 `high`；`reasoning_tokens` 计入 `completion_tokens`
@@ -254,14 +387,9 @@ def deepseek_chat(
     if not settings.deepseek_api_key:
         logger.warning("[llm] 未配置 DEEPSEEK_API_KEY")
         return None
+    # ★ 只取**计量**句柄：计量对**每一次**调用都必须进行（否则对账/预估失真）。
+    #   预算闸门不在此处 —— 已按用户要求摘除（见函数 docstring）。
     _mtr = _metering()
-    if _mtr is not None:
-        try:
-            if not _mtr.ensure_budget(run_id=run_id):
-                logger.error(f"[llm] 预算熔断，跳过调用（source={source}）: {_mtr.budget_blocked_reason()}")
-                return None
-        except Exception as exc:  # noqa: BLE001
-            logger.debug(f"[llm] 预算检查异常（忽略，不阻断）: {exc}")
     use_thinking = bool(settings.deepseek_thinking if thinking is None else thinking)
     effort = str(reasoning_effort or settings.deepseek_reasoning_effort or "low").strip().lower()
     payload = {

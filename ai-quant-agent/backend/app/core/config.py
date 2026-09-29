@@ -61,9 +61,17 @@ class Settings(BaseSettings):
     #   （≈1.6 分/次，其中 187 次带思维链），预算一打满 → 后续 `deepseek_chat` 直接返回 None
     #   → RefineAgent 大面积降级为"按规则概率保留"。要跑完整扫描建议 8~15 元/天，
     #   或用 `DEEPSEEK_THINKING=false`（实测约省 3.7×）/ 缩小候选数来降本。
-    llm_budget_per_task_cny: float = 5.0
-    llm_budget_per_day_cny: float = 10.0
-    llm_budget_total_cny: float = 50.0
+    #
+    # ★ 2026-09-29：默认全部改为 **0 = 不限**（用户要求"每日推荐不要有预算熔断、
+    #   不要设置上限"）。0 是"不限"的**一等语义**（见 llm_metering.check_budget 的 _cmp），
+    #   而不是"把上限调成一个很大的数"——后者会在账上留下一个假上限，且总有一天又撞上。
+    #   实测触发点：台账 spent.total=10.0262 ≥ limits.total=10.0 ⇒ **所有 LLM 调用被阻断**，
+    #   每日推荐因此大面积降级为"按规则概率保留"。
+    #   配套改动：闸门另按 run_id 收窄（llm_client._budget_gate）——每日推荐链路不传 run_id，
+    #   故既不设上限也不熔断；自证回放传 run_id，把下面的值填正数即恢复"超预算优雅停止"。
+    llm_budget_per_task_cny: float = 0.0
+    llm_budget_per_day_cny: float = 0.0
+    llm_budget_total_cny: float = 0.0
 
     # Tavily（消息面验证，多 Agent 精筛）
     tavily_api_key: str = ""
@@ -125,6 +133,12 @@ class Settings(BaseSettings):
     # L2 总量硬上限（防"每行业保底"在行业多时爆量）。
     # 该上限**只裁"每行业保底"**：全局 Top-N 与形态规则保送是硬承诺，不会被裁。
     agent_l2_max_total: int = 200
+    # ★ 小池自适应阈值（"智能判断"）：候选池 ≤ 该值时，不再做"每行业前 N / 全局 Top-N"激进裁剪。
+    #   为什么：候选只有百来条（行情清淡、确认启动少）时，裁掉的每一只都是**真实错失**，
+    #   而省下的成本有限 —— 此时应让每个行业的全部候选都进深度精筛，由 Tavily 消息面 +
+    #   LLM 逐只精筛去取舍（见 app/agents/__init__.py 的 run_agent_refine）。
+    #   0 = 关闭该自适应（恒按大池口径：每行业前 agent_l1_per_industry、全局 Top-N）。
+    agent_small_pool_threshold: int = 100
     agent_policy_max_sectors: int = 5   # 政策解读只对频次最高的 N 个行业做
 
     # 定时任务

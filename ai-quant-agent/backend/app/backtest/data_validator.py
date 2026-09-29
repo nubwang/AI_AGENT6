@@ -336,6 +336,69 @@ def _save_cache(report: dict) -> None:
         logger.debug(f"保存校验缓存失败: {exc}")
 
 
+# 缓存里"变化慢、代价大"的结构性事实（存在性/近似行数/覆盖率）可以复用，
+# 但 **max_date 是回测门禁的唯一判据** —— 当天 16:15 采集补齐后，若仍返回盘中写下的快照，
+# 门禁就会拿"daily 还停在昨天"去判『锚定表未对齐 / 落后 N 个交易日』⇒ **假拦截**。
+# 实测（2026-09-28 16:46）：缓存 daily=20260924，库里 daily=20260928（5557 行、锚定表已对齐），
+# 回测却因"锚定表未对齐：daily(20260924), adj_factor(20260928)…"被中止。
+# ★ 另有一处耦合让"有效交易日"修正救不回来：runner 的覆盖条件是 `effective != raw`，
+#   而它拿到的是**实时** raw（已=20260928），与实时 effective 相同 ⇒ 不覆盖 ⇒
+#   dates["daily"] 继续沿用**缓存里的** 20260924。实时修正救不了过期缓存，必须在源头刷新。
+# 核心表边界是索引上的 MIN/MAX（毫秒级），所以命中缓存时强制实时刷新边界，
+# 只改 min_date/max_date，不动行数/覆盖率（那些才是缓存的真正价值）。
+BOUNDARY_REFRESH_TIERS = ("core",)
+# ★ tier 分类与门禁锚定表**并不一致**：`daily_basic` 在 TABLE_SPECS 里是 important，
+#   却同时是 runner.GATE_ANCHOR_TABLES 的成员 ⇒ 只按 tier=="core" 刷新会漏掉它，
+#   门禁依旧拿它的过期 max_date 报"锚定表未对齐"（实测 daily_basic 仍停在 20260924）。
+#   因此刷新集合 = core 层 ∪ 门禁实际用到的表（此处显式列出，避免隐式耦合）。
+#   不做成"刷新全部 important"：那些表多为 end_date 且**无索引**，MIN/MAX 会退化成全表扫描。
+BOUNDARY_REFRESH_TABLES = ("daily_basic",)
+
+
+def boundary_refresh_targets(specs: list[TableSpec] | None = None) -> dict[str, str]:
+    """需要实时刷新边界的表 → 日期列（供刷新与"防漂移"校验共用）。"""
+    specs = specs or TABLE_SPECS
+    out = {s.table: s.date_col for s in specs
+           if (s.tier in BOUNDARY_REFRESH_TIERS or s.table in BOUNDARY_REFRESH_TABLES)
+           and s.date_col}
+    for t in BOUNDARY_REFRESH_TABLES:
+        if t not in out:
+            out[t] = "trade_date"
+    return out
+
+
+def _refresh_boundaries(report: dict, specs: list[TableSpec] | None = None) -> dict:
+    """命中缓存时用**实时**查询覆盖门禁相关表的边界，避免读到过期 `max_date`。
+
+    只覆盖 min_date/max_date；行数、覆盖率、状态沿用缓存（它们变化慢且查询昂贵）。
+    刷新动作不写回磁盘缓存（保持"结构性快照"语义）。
+    """
+    targets = boundary_refresh_targets(specs)
+    maps = [m for m in (report.get("tables"),
+                        (report.get("core") or {}).get("tables"))
+            if isinstance(m, dict)]
+    refreshed: list[str] = []
+    for table, date_col in targets.items():
+        hit = [m for m in maps if isinstance(m.get(table), dict)]
+        if not hit or not any(m[table].get("exists") for m in hit):
+            continue
+        old = str(hit[0][table].get("max_date") or "")
+        try:
+            mn, mx = _date_bounds(table, date_col)
+        except Exception:  # noqa: BLE001
+            continue
+        if not mn or not mx or old == mx:
+            continue
+        for m in hit:
+            m[table]["min_date"], m[table]["max_date"] = mn, mx
+        refreshed.append(f"{table}:{old or '(空)'}→{mx}")
+    if refreshed:
+        report["boundaries_refreshed_at"] = int(time.time())
+        report["boundaries_refreshed"] = refreshed
+        logger.info("数据校验缓存边界已实时刷新（防门禁读过期 max_date）：" + ", ".join(refreshed))
+    return report
+
+
 def run_data_validation(
     start_date: str = DEFAULT_START,
     full_check: bool = False,
@@ -362,13 +425,15 @@ def run_data_validation(
     t0 = time.time()
 
     # 命中缓存直接返回（数据采集低频，校验结果短期不变；自定义 specs 不缓存）
+    # ★ 但**边界（min/max_date）必须实时**：门禁只认核心表 max_date，
+    #   采集补齐后若仍返回旧快照 → 假拦截（见 _refresh_boundaries 注释）
     if not force and specs is TABLE_SPECS:
         cache = _load_cache()
         if cache and cache.get("start_date") == start_date and cache.get("full_check") == full_check:
             age = time.time() - cache.get("checked_at", 0)
             if 0 <= age < CACHE_TTL:
                 logger.info(f"数据校验命中缓存（{int(age)}s 前，overall={cache.get('overall')}）")
-                return cache
+                return _refresh_boundaries(cache)
 
     total_stocks = _total_stocks()
     results: list[TableCheckResult] = []

@@ -16,7 +16,7 @@ import json
 import os
 
 from app.core.logger import logger
-from app.agents.llm_client import deepseek_chat, tavily_search
+from app.agents.llm_client import deepseek_chat, tavily_search, as_dict
 from app.agents import prompts
 from app.agents import policy_learning
 from app.agents import evolution_config
@@ -200,14 +200,19 @@ class PolicyAgent:
                 f"[{n.get('title','')}] {n.get('content','')[:500]}" for n in news[:4]
             )
         # 2. 4 子 Agent 串行分析
-        elements = self.extract(policy_text)
-        mapping = self.industry_map(elements, policy_text)
-        grade = self.grade(elements, mapping)
-        benchmark = self.benchmark(elements)
+        # ★ 全部经 as_dict 规整（2026-09-29）：子 Agent 直接返回 deepseek_chat 的原始结果，
+        #   模型可能输出 `[ {...} ]`。下游有大量 `(grade or {}).get(...)` 之类的写法，
+        #   一旦拿到 list 就会抛 `'list' object has no attribute 'get'`；虽然本函数在调用点
+        #   被 try 包住（只会记"政策解读失败"），但那样等于**整块政策信号直接丢弃**。
+        #   规整成 {} 后语义清晰：该子 Agent 无结论，按"缺该项"继续拼装信号。
+        elements = as_dict(self.extract(policy_text))
+        mapping = as_dict(self.industry_map(elements, policy_text))
+        grade = as_dict(self.grade(elements, mapping))
+        benchmark = as_dict(self.benchmark(elements))
         # 3. 校验对齐（第 6 层：原文锚定 + 逻辑自洽 + 风险对齐，防幻觉）
-        validation = self.validate(policy_text, elements, grade, mapping)
+        validation = as_dict(self.validate(policy_text, elements, grade, mapping))
         # 4. 潜在意图研判（§19 政策自学层：理解官方书面潜在意思 + 实证参考）
-        deep = self.deep_intent_analysis(sector, policy_text, elements, grade)
+        deep = as_dict(self.deep_intent_analysis(sector, policy_text, elements, grade))
         # 政策兑现度：板块近期涨幅（政策利好是否已被市场反应 / 已涨过 = 政策"过期"）
         market_priced = {}
         try:
@@ -308,7 +313,9 @@ class PolicyAgent:
 
     def signal_to_text(self, sig: dict | None) -> str:
         """催化信号 → prompt 用文本。无信号返回'无明确政策催化信号'。"""
-        if not sig:
+        # 形状兜底：sig 不是 dict（上游误传数组/标量）时按"无信号"处理，
+        # 绝不让 `.get` 抛 AttributeError 打断 L2 逐只精筛循环。
+        if not sig or not isinstance(sig, dict):
             return "无明确政策催化信号"
         g = sig.get("grade") or {}
         e = sig.get("elements") or {}

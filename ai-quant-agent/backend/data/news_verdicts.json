@@ -10069,7 +10069,8 @@
       "smoke_risk": "无",
       "distribution_risk": "利好兑现出货",
       "reason": "股东计划减持3%，构成实质利空；近10日涨幅25%，利好兑现风险高，需警惕出货。",
-      "reflected": false
+      "reflected": true,
+      "t5_ret": -0.0408
     },
     {
       "ts_code": "002821.SZ",
@@ -10129,7 +10130,8 @@
       "smoke_risk": "利好伴随隐患",
       "distribution_risk": "利好兑现出货",
       "reason": "股价12日暴涨495%后一字跌停，利好（销售增长）已兑现，且伴随定增，主力出货风险高。",
-      "reflected": false
+      "reflected": true,
+      "t5_ret": -0.1061
     },
     {
       "ts_code": "301607.SZ",
@@ -10139,7 +10141,8 @@
       "smoke_risk": "无",
       "distribution_risk": "无",
       "reason": "公司发布定增募集说明书，属于再融资，摊薄股本，且提示行业政策及竞争风险，短期构成利空。",
-      "reflected": false
+      "reflected": true,
+      "t5_ret": 0.0512
     },
     {
       "ts_code": "601579.SH",
@@ -10189,7 +10192,8 @@
       "smoke_risk": "与主营无关",
       "distribution_risk": "利好兑现出货",
       "reason": "公司净利下滑27.8%，最新公告仅委托理财，无实质利好，且近10日涨幅25.1%，高位利好易出货。",
-      "reflected": false
+      "reflected": true,
+      "t5_ret": -0.1748
     },
     {
       "ts_code": "000712.SZ",
@@ -10229,7 +10233,8 @@
       "smoke_risk": "无",
       "distribution_risk": "利好兑现出货",
       "reason": "近10日涨幅31.4%，股价高位，股东减持及质押公告，利好出货风险高。",
-      "reflected": false
+      "reflected": true,
+      "t5_ret": -0.0225
     },
     {
       "ts_code": "605580.SH",
@@ -10239,7 +10244,8 @@
       "smoke_risk": "无",
       "distribution_risk": "利好兑现出货",
       "reason": "实际控制人之一减持时间届满，构成实质利空；近10日涨幅40.7%，股价高位，利好（碳排放交易）或已兑现，需防出货。",
-      "reflected": false
+      "reflected": true,
+      "t5_ret": -0.0408
     },
     {
       "ts_code": "300413.SZ",
@@ -10339,7 +10345,8 @@
       "smoke_risk": "无",
       "distribution_risk": "无",
       "reason": "公司明确表示自动衡器产品无AI布局，否认蹭热点，且近期股价下跌，无利好出货风险，但消息面偏空。",
-      "reflected": false
+      "reflected": true,
+      "t5_ret": -0.024
     },
     {
       "ts_code": "600714.SH",
@@ -10349,7 +10356,8 @@
       "smoke_risk": "利好伴随隐患",
       "distribution_risk": "利好兑现出货",
       "reason": "近10日涨幅30.9%，股价高位，市盈率556倍远超同业，半年度利润分配方案或为利好兑现，且营收下滑，存在出货风险。",
-      "reflected": false
+      "reflected": true,
+      "t5_ret": -0.1054
     },
     {
       "ts_code": "002457.SZ",
@@ -10429,7 +10437,8 @@
       "smoke_risk": "利好伴随隐患",
       "distribution_risk": "利好兑现出货",
       "reason": "控股股东减持1.58%，属实质利空；近期涨幅巨大，利好兑现出货风险高。",
-      "reflected": false
+      "reflected": true,
+      "t5_ret": -0.0363
     },
     {
       "ts_code": "300741.SZ",
@@ -10449,7 +10458,8 @@
       "smoke_risk": "无",
       "distribution_risk": "利好兑现出货",
       "reason": "年报显示营收利润下滑，主营产品收入同比大幅下降，基本面恶化，且近期涨幅大，利好兑现风险高。",
-      "reflected": false
+      "reflected": true,
+      "t5_ret": -0.0448
     },
     {
       "ts_code": "002365.SZ",
@@ -10469,7 +10479,8 @@
       "smoke_risk": "利好伴随隐患",
       "distribution_risk": "利好兑现出货",
       "reason": "计提资产减值准备是实质利空，且股价处于高位，近10日涨幅虽为负但年初至今涨幅大，利好出货风险高。",
-      "reflected": false
+      "reflected": true,
+      "t5_ret": -0.0259
     },
     {
       "ts_code": "301526.SZ",
@@ -10509,7 +10520,8 @@
       "smoke_risk": "利好伴随隐患",
       "distribution_risk": "利好兑现出货",
       "reason": "限售解禁增加流通盘，且近期涨幅大，利好（回购）或为出货掩护，业绩下滑。",
-      "reflected": false
+      "reflected": true,
+      "t5_ret": 0.2503
     },
     {
       "ts_code": "002171.SZ",
@@ -10589,7 +10601,8 @@
       "smoke_risk": "无",
       "distribution_risk": "利好兑现出货",
       "reason": "公司拟设香港子公司及摩洛哥合资公司，推进全球化，与主营相关，属真实业务扩张。但近期涨幅14.7%，需防利好兑现出货。",
-      "reflected": false
+      "reflected": true,
+      "t5_ret": -0.0864
     },
     {
       "ts_code": "300577.SZ",
@@ -10629,7 +10642,8 @@
       "smoke_risk": "无",
       "distribution_risk": "利好兑现出货",
       "reason": "中国铝业收购股权为真实产业整合，解决同业竞争，利好公司治理，但近期涨幅较大，需防利好兑现。",
-      "reflected": false
+      "reflected": true,
+      "t5_ret": -0.0501
     },
     {
       "ts_code": "600737.SH",
@@ -10659,7 +10673,8 @@
       "smoke_risk": "无",
       "distribution_risk": "利好兑现出货",
       "reason": "股价连续三日涨幅偏离超30%，属异常波动，公司仅发布异动公告，无实质利好，高位风险大，警惕利好出货。",
-      "reflected": false
+      "reflected": true,
+      "t5_ret": -0.0479
     },
     {
       "ts_code": "605580.SH",
@@ -10669,7 +10684,8 @@
       "smoke_risk": "无",
       "distribution_risk": "利好兑现出货",
       "reason": "实际控制人减持结果公告，且股价近10日涨幅37.1%，高位利好兑现，出货风险高。",
-      "reflected": false
+      "reflected": true,
+      "t5_ret": 0.0465
     },
     {
       "ts_code": "601595.SH",
@@ -10679,7 +10695,8 @@
       "smoke_risk": "无",
       "distribution_risk": "利好兑现出货",
       "reason": "半年报净利下滑71.62%，基本面恶化；近10日涨幅33.2%，股价高位，分红利好或成出货机会。",
-      "reflected": false
+      "reflected": true,
+      "t5_ret": 0.0436
     },
     {
       "ts_code": "603150.SH",
@@ -10689,7 +10706,8 @@
       "smoke_risk": "无",
       "distribution_risk": "利好兑现出货",
       "reason": "股东减持及股份质押公告构成实质利空，且近10日涨幅35.8%已高，利好兑现风险大，专利消息与主营相关但影响有限。",
-      "reflected": false
+      "reflected": true,
+      "t5_ret": -0.0457
     },
     {
       "ts_code": "002365.SZ",
@@ -10709,7 +10727,8 @@
       "smoke_risk": "无",
       "distribution_risk": "无",
       "reason": "公告为计提资产减值准备，属实质利空；无真实催化，仅半年报及关联交易调整等中性事项。",
-      "reflected": false
+      "reflected": true,
+      "t5_ret": 0.0119
     },
     {
       "ts_code": "301526.SZ",
@@ -10759,7 +10778,8 @@
       "smoke_risk": "无",
       "distribution_risk": "无",
       "reason": "中报净利增21%、Q2增37%，营收增39%，属真实业绩催化；近10日涨幅仅11.7%未过热，出货风险有限。",
-      "reflected": false
+      "reflected": true,
+      "t5_ret": -0.0504
     },
     {
       "ts_code": "300592.SZ",
@@ -10929,7 +10949,8 @@
       "smoke_risk": "利好伴随隐患",
       "distribution_risk": "利好兑现出货",
       "reason": "近10日涨幅35.8%已高位，公告仅异动、质押、减持结果，无实质利好，属利好出货/减持隐患。",
-      "reflected": false
+      "reflected": true,
+      "t5_ret": -0.0137
     },
     {
       "ts_code": "301176.SZ",
@@ -10949,7 +10970,8 @@
       "smoke_risk": "利好伴随隐患",
       "distribution_risk": "无",
       "reason": "定增受理属股本扩张实质利空，叠加5%以上大股东一致行动人减持计划，无真实催化，消息面偏空。",
-      "reflected": false
+      "reflected": true,
+      "t5_ret": 0.0441
     },
     {
       "ts_code": "600722.SH",
@@ -10969,7 +10991,8 @@
       "smoke_risk": "传闻低可信",
       "distribution_risk": "利好兑现出货",
       "reason": "英伟达供货传闻被公司澄清否认，中报净利同比下滑，近10日已涨19.1%，利好证伪叠加高位，出货风险大。",
-      "reflected": false
+      "reflected": true,
+      "t5_ret": 0.1136
     },
     {
       "ts_code": "300363.SZ",
@@ -10979,7 +11002,8 @@
       "smoke_risk": "利好伴随隐患",
       "distribution_risk": "无",
       "reason": "中报由盈转亏、海外项目爆雷，实控人质押触发风险评级，回购注销仅小幅利好，整体消息面偏空，非真实催化。",
-      "reflected": false
+      "reflected": true,
+      "t5_ret": 0.116
     },
     {
       "ts_code": "301047.SZ",
@@ -11039,7 +11063,8 @@
       "smoke_risk": "利好伴随隐患",
       "distribution_risk": "无",
       "reason": "无实质利好，Q3亏损、子公司安全事故、控股股东质押债权被公开竞价转让，均属负面，非催化。",
-      "reflected": false
+      "reflected": true,
+      "t5_ret": -0.0121
     },
     {
       "ts_code": "300223.SZ",
@@ -11059,7 +11084,8 @@
       "smoke_risk": "无",
       "distribution_risk": "利好兑现出货",
       "reason": "资产重组落地+中报预增318%-392%为真实业绩催化，非蹭热点；但近10日已涨13.9%，需防利好兑现。",
-      "reflected": false
+      "reflected": true,
+      "t5_ret": -0.0458
     },
     {
       "ts_code": "301053.SZ",
@@ -11089,7 +11115,8 @@
       "smoke_risk": "利好伴随隐患",
       "distribution_risk": "利好兑现出货",
       "reason": "近10日涨幅21%叠加多名高管及股东集中减持，Q2业绩公告为利好兑现，主力借机出货风险高。",
-      "reflected": false
+      "reflected": true,
+      "t5_ret": 0.0571
     },
     {
       "ts_code": "603162.SH",
@@ -11179,7 +11206,8 @@
       "smoke_risk": "利好伴随隐患",
       "distribution_risk": "无",
       "reason": "中报由盈转亏、海外项目爆雷，实控人质押触发风险评级，注销回购股份非实质利好，消息面偏空。",
-      "reflected": false
+      "reflected": true,
+      "t5_ret": 0.116
     },
     {
       "ts_code": "301047.SZ",
@@ -11259,7 +11287,8 @@
       "smoke_risk": "无",
       "distribution_risk": "无",
       "reason": "收购控股股东旗下4家水电公司，与主营高度协同，属真实资产重组催化；近10日涨幅13.9%尚属温和，出货风险可控。",
-      "reflected": false
+      "reflected": true,
+      "t5_ret": -0.0458
     },
     {
       "ts_code": "301053.SZ",
@@ -11359,7 +11388,8 @@
       "smoke_risk": "利好伴随隐患",
       "distribution_risk": "无",
       "reason": "中报净利仅544万且质押触发高风险评级，股东减持，无实质利好，属隐患暴露而非催化。",
-      "reflected": false
+      "reflected": true,
+      "t5_ret": -0.0116
     },
     {
       "ts_code": "600869.SH",
@@ -11409,7 +11439,8 @@
       "smoke_risk": "蹭热点",
       "distribution_risk": "利好兑现出货",
       "reason": "无实质利好，公司自曝半导体仅占营收18%且不涉HBM，前期3日涨超20%后北向净卖出，属澄清式利空与出货信号。",
-      "reflected": false
+      "reflected": true,
+      "t5_ret": 0.0508
     },
     {
       "ts_code": "300592.SZ",
@@ -11539,7 +11570,8 @@
       "smoke_risk": "蹭热点",
       "distribution_risk": "利好兑现出货",
       "reason": "公司多次澄清不涉及HBM，半导体收入占比仅18%，HBM炒作属伪题材；近10日涨幅-0.2%但前期已爆炒，利好证伪后回落风险大。",
-      "reflected": false
+      "reflected": true,
+      "t5_ret": 0.0508
     },
     {
       "ts_code": "600359.SH",
@@ -11549,7 +11581,8 @@
       "smoke_risk": "无",
       "distribution_risk": "利好兑现出货",
       "reason": "公司自认无未披露重大事项，近月涨55%属情绪炒作，公告实为风险提示，利好证伪，出货风险高。",
-      "reflected": false
+      "reflected": true,
+      "t5_ret": 0.0203
     },
     {
       "ts_code": "300592.SZ",
@@ -11559,7 +11592,8 @@
       "smoke_risk": "利好伴随隐患",
       "distribution_risk": "利好兑现出货",
       "reason": "一季报营收降16%、现金流转负，且存在大股东资金占用隐患，无实质利好，近10日已涨19%属高位风险",
-      "reflected": false
+      "reflected": true,
+      "t5_ret": 0.0145
     },
     {
       "ts_code": "000523.SZ",
@@ -11609,7 +11643,8 @@
       "smoke_risk": "无",
       "distribution_risk": "利好兑现出货",
       "reason": "近10日涨幅96%且连续6涨停，公司自认情绪过热，中报利好已被爆炒兑现，属典型利好出货信号。",
-      "reflected": false
+      "reflected": true,
+      "t5_ret": 0.1217
     },
     {
       "ts_code": "603127.SH",
@@ -11629,7 +11664,8 @@
       "smoke_risk": "利好伴随隐患",
       "distribution_risk": "利好兑现出货",
       "reason": "可转债赎回/回售属实质利空，叠加近10日涨幅11.7%，利好兑现出货风险高，无真实催化。",
-      "reflected": false
+      "reflected": true,
+      "t5_ret": 0.1229
     },
     {
       "ts_code": "603407.SH",
@@ -11669,7 +11705,8 @@
       "smoke_risk": "无",
       "distribution_risk": "利好兑现出货",
       "reason": "半年报净利下滑13.25%，募投项目暂缓，无实质利好；近10日涨21.8%后消息偏空，出货风险高。",
-      "reflected": false
+      "reflected": true,
+      "t5_ret": -0.0245
     },
     {
       "ts_code": "603629.SH",
@@ -11679,7 +11716,8 @@
       "smoke_risk": "利好伴随隐患",
       "distribution_risk": "无",
       "reason": "50亿定增是实质利空，专利属日常经营小利好，近10日跌12.6%无出货空间，整体偏空。",
-      "reflected": false
+      "reflected": true,
+      "t5_ret": 0.0717
     },
     {
       "ts_code": "300363.SZ",
@@ -11709,7 +11747,8 @@
       "smoke_risk": "无",
       "distribution_risk": "利好兑现出货",
       "reason": "16天11板累计涨202%，公司自认基本面未变并警示停牌核查，属典型利好兑现出货信号，非真实催化。",
-      "reflected": false
+      "reflected": true,
+      "t5_ret": 0.2016
     },
     {
       "ts_code": "600237.SH",
@@ -11739,7 +11778,8 @@
       "smoke_risk": "无",
       "distribution_risk": "无",
       "reason": "半年报净利降19.2%属实质利空，无真实利好催化；近10日涨9.7%后缺乏支撑，存回调风险。",
-      "reflected": false
+      "reflected": true,
+      "t5_ret": -0.0073
     },
     {
       "ts_code": "600359.SH",
@@ -11749,7 +11789,8 @@
       "smoke_risk": "蹭热点",
       "distribution_risk": "利好兑现出货",
       "reason": "股价累涨55%后2连板，公司自认情绪过热并提示回调，中报营收净利双降，利好缺失，属典型高位炒作出货风险。",
-      "reflected": false
+      "reflected": true,
+      "t5_ret": 0.0203
     },
     {
       "ts_code": "600869.SH",
@@ -11809,7 +11850,8 @@
       "smoke_risk": "无",
       "distribution_risk": "无",
       "reason": "上半年净利润同比降95.21%，为实质业绩利空，非利好；股价近10日跌5.7%属低位，无出货条件，但基本面恶化压制反弹。",
-      "reflected": false
+      "reflected": true,
+      "t5_ret": 0.0611
     },
     {
       "ts_code": "002025.SZ",
@@ -11819,7 +11861,8 @@
       "smoke_risk": "无",
       "distribution_risk": "无",
       "reason": "Q2业绩显著提速+AI算力相关，属真实基本面催化；近10日仅涨3%，位置不高，出货风险低。",
-      "reflected": false
+      "reflected": true,
+      "t5_ret": -0.0247
     },
     {
       "ts_code": "603156.SH",
@@ -11889,7 +11932,8 @@
       "smoke_risk": "传闻低可信",
       "distribution_risk": "利好兑现出货",
       "reason": "中报营收降20.87%、净利降85.69%、Q2亏损2.2亿，重组仅为潜在收购传闻，非实质催化，属烟雾弹。",
-      "reflected": false
+      "reflected": true,
+      "t5_ret": -0.0897
     },
     {
       "ts_code": "600206.SH",
@@ -11909,7 +11953,8 @@
       "smoke_risk": "无",
       "distribution_risk": "利好兑现出货",
       "reason": "无实质利好公告，仅半年报净利下滑19.2%，叠加近10日涨14.3%、年初至今涨42%，属高位无催化，出货风险偏高。",
-      "reflected": false
+      "reflected": true,
+      "t5_ret": 0.0251
     },
     {
       "ts_code": "300765.SZ",
@@ -11949,7 +11994,8 @@
       "smoke_risk": "利好伴随隐患",
       "distribution_risk": "无",
       "reason": "股东拟减持全部持股属实质利空，叠加年报净利仅0.99亿，无真实利好催化，减持压制股价。",
-      "reflected": false
+      "reflected": true,
+      "t5_ret": 0.0923
     },
     {
       "ts_code": "300314.SZ",
@@ -11969,7 +12015,8 @@
       "smoke_risk": "利好伴随隐患",
       "distribution_risk": "无",
       "reason": "H1净利增916%为真实业绩催化，近10日仅涨1%处低位，非利好出货；但需防股权激励调整伴随隐患。",
-      "reflected": false
+      "reflected": true,
+      "t5_ret": -0.0645
     },
     {
       "ts_code": "301080.SZ",
@@ -12039,7 +12086,8 @@
       "smoke_risk": "利好伴随隐患",
       "distribution_risk": "利好兑现出货",
       "reason": "核心消息为持股5%以上股东拟减持不超4.99%，属实质性利空；近10日涨幅8.3%叠加减持，出货风险明显。",
-      "reflected": false
+      "reflected": true,
+      "t5_ret": 0.136
     },
     {
       "ts_code": "002988.SZ",
@@ -12119,7 +12167,8 @@
       "smoke_risk": "无",
       "distribution_risk": "无",
       "reason": "液冷产品批量供货+石墨均热组件专利，属主营散热业务真实催化；近10日仅涨4.7%位置不高，出货风险有限。",
-      "reflected": false
+      "reflected": true,
+      "t5_ret": 0.1155
     },
     {
       "ts_code": "301678.SZ",
@@ -12129,7 +12178,8 @@
       "smoke_risk": "无",
       "distribution_risk": "无",
       "reason": "1.3亿扩产蚀刻引线框架及eSIM封测，与主营高度相关，属真实产能催化；近10日涨幅仅10.1%，位置不高，出货风险有限。",
-      "reflected": false
+      "reflected": true,
+      "t5_ret": 0.0317
     },
     {
       "ts_code": "601886.SH",
@@ -12189,7 +12239,8 @@
       "smoke_risk": "利好伴随隐患",
       "distribution_risk": "无",
       "reason": "控股股东协议转让10.3%股份，属大股东减持性质，实质利空；近10日涨幅6.1%位置不高，但减持压制股价。",
-      "reflected": false
+      "reflected": true,
+      "t5_ret": -0.1682
     },
     {
       "ts_code": "301008.SZ",
@@ -13689,6 +13740,596 @@
       "smoke_risk": "蹭热点",
       "distribution_risk": "利好兑现出货",
       "reason": "液冷/服务器滑轨概念驱动，但公司公告明确经营环境无重大变化，属涨幅后澄清，利好已被透支，警惕借题材出货。",
+      "reflected": false
+    },
+    {
+      "ts_code": "300684.SZ",
+      "name": "中石科技",
+      "date": "20260929",
+      "verdict": "存疑",
+      "smoke_risk": "无",
+      "distribution_risk": "利好兑现出货",
+      "reason": "中际旭创拟入股属AI散热主业真实协同，非蹭热点；但近10日已涨27.3%且9月28日高位跳水7.44%，利好兑现出货迹象明显。",
+      "reflected": false
+    },
+    {
+      "ts_code": "301234.SZ",
+      "name": "五洲医疗",
+      "date": "20260929",
+      "verdict": "存疑",
+      "smoke_risk": "利好伴随隐患",
+      "distribution_risk": "利好兑现出货",
+      "reason": "近10日已涨28.5%，消息面却以解禁、协议转让与利润下滑为主，缺乏实质业绩催化，更像利好兑现出货",
+      "reflected": false
+    },
+    {
+      "ts_code": "603580.SH",
+      "name": "艾艾精工",
+      "date": "20260929",
+      "verdict": "存疑",
+      "smoke_risk": "与主营无关",
+      "distribution_risk": "利好兑现出货",
+      "reason": "公司密集发布异常波动与风险提示，并明确澄清不涉及磷化铟概念，纯属市场蹭热点；近10日已涨26%，利好证伪后出货风险大。",
+      "reflected": false
+    },
+    {
+      "ts_code": "002849.SZ",
+      "name": "威星智能",
+      "date": "20260929",
+      "verdict": "利空",
+      "smoke_risk": "蹭热点",
+      "distribution_risk": "利好兑现出货",
+      "reason": "近10日已涨31.3%处高位，同期股东范慧群减持58万股构成实质利空；TEC概念被公司澄清与主营无关，中标1742万订单体量有限，利好兑现出货嫌疑大。",
+      "reflected": false
+    },
+    {
+      "ts_code": "001326.SZ",
+      "name": "联域股份",
+      "date": "20260929",
+      "verdict": "存疑",
+      "smoke_risk": "与主营无关",
+      "distribution_risk": "利好兑现出货",
+      "reason": "一季报净利增27.75%属真实业绩，但近10日已涨39.4%，利好大概率被提前兑现；新设健康设备公司跨界与LED主营无关，有蹭概念嫌疑。",
+      "reflected": false
+    },
+    {
+      "ts_code": "301080.SZ",
+      "name": "百普赛斯",
+      "date": "20260929",
+      "verdict": "存疑",
+      "smoke_risk": "蹭热点",
+      "distribution_risk": "利好兑现出货",
+      "reason": "近10日涨53.5%后出现券商买入评级、AI制药概念与融资盘报道，均为资金面/概念催化而非实质公告，典型利好兑现，追高易被套。",
+      "reflected": false
+    },
+    {
+      "ts_code": "001216.SZ",
+      "name": "华瓷股份",
+      "date": "20260929",
+      "verdict": "存疑",
+      "smoke_risk": "蹭热点",
+      "distribution_risk": "利好兑现出货",
+      "reason": "6连板近10日涨92.6%高位，公司澄清MLCC粉体、氧化锆、半导体陶瓷等传闻均与主营无关，叠加英国/欧盟反倾销加税风险，属炒作证伪+利好出货信号",
+      "reflected": false
+    },
+    {
+      "ts_code": "003006.SZ",
+      "name": "百亚股份",
+      "date": "20260929",
+      "verdict": "存疑",
+      "smoke_risk": "利好伴随隐患",
+      "distribution_risk": "利好兑现出货",
+      "reason": "回购+半年报属正面，但股东及董事刚减持、315点名余波未消；近10日涨23.6%，利好更像兑现，警惕借回购出货。",
+      "reflected": false
+    },
+    {
+      "ts_code": "301108.SZ",
+      "name": "洁雅股份",
+      "date": "20260929",
+      "verdict": "利空",
+      "smoke_risk": "无",
+      "distribution_risk": "利好兑现出货",
+      "reason": "股东明源基金及一致行动人拟减持不超4.99%，属实质利空；叠加近10日涨幅29.9%，高位减持公告易加剧兑现出货压力。",
+      "reflected": false
+    },
+    {
+      "ts_code": "301008.SZ",
+      "name": "宏昌科技",
+      "date": "20260929",
+      "verdict": "存疑",
+      "smoke_risk": "与主营无关",
+      "distribution_risk": "利好兑现出货",
+      "reason": "7.2亿现金跨界收购金刚石/半导体资产，与家电零部件主营无关，属题材催化；但近10日已涨42%，利好落地易成兑现出货点。",
+      "reflected": false
+    },
+    {
+      "ts_code": "301122.SZ",
+      "name": "采纳股份",
+      "date": "20260929",
+      "verdict": "存疑",
+      "smoke_risk": "利好伴随隐患",
+      "distribution_risk": "利好兑现出货",
+      "reason": "收购多肽资产为真实催化，但交易结构复杂且10日涨42.6%，利好或已兑现，主力借机出货风险高。",
+      "reflected": false
+    },
+    {
+      "ts_code": "300647.SZ",
+      "name": "超频三",
+      "date": "20260929",
+      "verdict": "存疑",
+      "smoke_risk": "蹭热点",
+      "distribution_risk": "利好兑现出货",
+      "reason": "AI液冷题材催化，但公司互动平台自认液冷尚处拓展初期、短期不贡献业绩，属概念先行；近10日已涨28.3%，利好兑现出货风险偏高。",
+      "reflected": false
+    },
+    {
+      "ts_code": "600641.SH",
+      "name": "先导基电",
+      "date": "20260929",
+      "verdict": "存疑",
+      "smoke_risk": "利好伴随隐患",
+      "distribution_risk": "利好兑现出货",
+      "reason": "近10日涨67.9%，公告仅股权激励、员工持股过户与关联投资，公司又公告否认存在未披露重大事项，缺乏真实催化，属利好兑现出货",
+      "reflected": false
+    },
+    {
+      "ts_code": "603001.SH",
+      "name": "奥康国际",
+      "date": "20260929",
+      "verdict": "存疑",
+      "smoke_risk": "与主营无关",
+      "distribution_risk": "利好兑现出货",
+      "reason": "停牌跨界收购存储资产与皮鞋主业无关，叠加实控人协议转让12%股份套现，近10日已涨26.9%，利好兑现出货风险高。",
+      "reflected": false
+    },
+    {
+      "ts_code": "605058.SH",
+      "name": "澳弘电子",
+      "date": "20260929",
+      "verdict": "存疑",
+      "smoke_risk": "蹭热点",
+      "distribution_risk": "涨停追高",
+      "reason": "仅板块PCB概念跟风连板，公司公告明示主营未变、无实质利好，属情绪炒作；10日涨62.7%+3连板，利好兑现出货风险极高。",
+      "reflected": false
+    },
+    {
+      "ts_code": "300599.SZ",
+      "name": "雄塑科技",
+      "date": "20260929",
+      "verdict": "利空",
+      "smoke_risk": "蹭热点",
+      "distribution_risk": "利好兑现出货",
+      "reason": "公司在互动平台明确否认涉及AI算力业务，属对市场炒作的澄清，近10日已涨33%，利好证伪叠加高位，出货风险大。",
+      "reflected": false
+    },
+    {
+      "ts_code": "603978.SH",
+      "name": "深圳新星",
+      "date": "20260929",
+      "verdict": "存疑",
+      "smoke_risk": "无",
+      "distribution_risk": "利好兑现出货",
+      "reason": "铝基新材料项目与主营铝材相关，属真实催化但落地周期长；近10日已涨32.6%，利好易被兑现出货，独董离任兼有隐患。",
+      "reflected": false
+    },
+    {
+      "ts_code": "002713.SZ",
+      "name": "东易日盛",
+      "date": "20260929",
+      "verdict": "存疑",
+      "smoke_risk": "利好伴随隐患",
+      "distribution_risk": "利好兑现出货",
+      "reason": "摘帽属真实事件但基本面极差：净资产为负、负债率172%，且摘帽两月财务负责人辞任，利好含隐患，缺乏业绩支撑，易成兑现出货。",
+      "reflected": false
+    },
+    {
+      "ts_code": "603373.SH",
+      "name": "安邦护卫",
+      "date": "20260929",
+      "verdict": "存疑",
+      "smoke_risk": "无",
+      "distribution_risk": "利好兑现出货",
+      "reason": "近期公告仅为半年度业绩说明会例行通知，经营快报属常规稳定增长，无实质新催化；10日已涨34.5%，利好易被兑现出货。",
+      "reflected": false
+    },
+    {
+      "ts_code": "601858.SH",
+      "name": "中国科传",
+      "date": "20260929",
+      "verdict": "中性",
+      "smoke_risk": "无",
+      "distribution_risk": "无",
+      "reason": "公告均为年度分红实施、董事会延期换届等常规事项，无实质业绩催化，属例行披露而非利好，分红除息本身还会压价",
+      "reflected": false
+    },
+    {
+      "ts_code": "002679.SZ",
+      "name": "福建金森",
+      "date": "20260929",
+      "verdict": "中性",
+      "smoke_risk": "无",
+      "distribution_risk": "高开低走风险",
+      "reason": "公告仅为半年报、股东会决议及股票异动公告，无实质业绩或订单催化；近10日涨10.8%叠加异动公告，属资金炒作而非利好驱动，追高易回落。",
+      "reflected": false
+    },
+    {
+      "ts_code": "603248.SH",
+      "name": "锡华科技",
+      "date": "20260929",
+      "verdict": "存疑",
+      "smoke_risk": "传闻低可信",
+      "distribution_risk": "利好兑现出货",
+      "reason": "公司公告主营未发生重大变化、仅股价异动，属澄清式公告非实质利好；近10日已涨38.3%，纯资金炒作，利好兑现出货风险高",
+      "reflected": false
+    },
+    {
+      "ts_code": "300684.SZ",
+      "name": "中石科技",
+      "date": "20260929",
+      "verdict": "存疑",
+      "smoke_risk": "无",
+      "distribution_risk": "利好兑现出货",
+      "reason": "AI散热/液冷与中际旭创拟入股为真实产业催化，但近10日已涨27.3%且9/28高位跳水7.44%，利好兑现出货特征明显",
+      "reflected": false
+    },
+    {
+      "ts_code": "301234.SZ",
+      "name": "五洲医疗",
+      "date": "20260929",
+      "verdict": "利空",
+      "smoke_risk": "利好伴随隐患",
+      "distribution_risk": "利好兑现出货",
+      "reason": "无实质利好，反有7月解禁4957万股占流通269%的巨大抛压，一季度净利降43%，近10日已涨28.5%，属高位隐患而非催化。",
+      "reflected": false
+    },
+    {
+      "ts_code": "603580.SH",
+      "name": "艾艾精工",
+      "date": "20260929",
+      "verdict": "利空",
+      "smoke_risk": "蹭热点",
+      "distribution_risk": "利好兑现出货",
+      "reason": "公司多次风险提示并澄清不涉及磷化铟，收购方无借壳计划，近10日已涨26%，利好证伪且高位出货风险大。",
+      "reflected": false
+    },
+    {
+      "ts_code": "002849.SZ",
+      "name": "威星智能",
+      "date": "20260929",
+      "verdict": "利空",
+      "smoke_risk": "与主营无关",
+      "distribution_risk": "利好兑现出货",
+      "reason": "股东减持落地利空，澄清未涉TEC打击炒作，中标金额小，近10日涨幅31.3%高位，利好兑现出货风险高。",
+      "reflected": false
+    },
+    {
+      "ts_code": "001326.SZ",
+      "name": "联域股份",
+      "date": "20260929",
+      "verdict": "存疑",
+      "smoke_risk": "与主营无关",
+      "distribution_risk": "利好兑现出货",
+      "reason": "一季报净利增27.75%属真实业绩，但近10日已涨39.4%、股价91元高位，利好已被兑现，主力借财报出货概率大；另成立健康设备公司跨界与LED主业无关。",
+      "reflected": false
+    },
+    {
+      "ts_code": "301080.SZ",
+      "name": "百普赛斯",
+      "date": "20260929",
+      "verdict": "存疑",
+      "smoke_risk": "蹭热点",
+      "distribution_risk": "利好兑现出货",
+      "reason": "近10日已涨53.5%，换手率16.8%，利好以券商买入评级和AI制药概念为主，非业绩公告，属高位利好兑现，主力借题材出货风险大。",
+      "reflected": false
+    },
+    {
+      "ts_code": "001216.SZ",
+      "name": "华瓷股份",
+      "date": "20260929",
+      "verdict": "利空",
+      "smoke_risk": "传闻低可信",
+      "distribution_risk": "利好兑现出货",
+      "reason": "公司澄清MLCC/氧化锆等传闻无实质支撑，英国反倾销复审提示加税风险；近10日涨92.6%后属典型利好出货。",
+      "reflected": false
+    },
+    {
+      "ts_code": "003006.SZ",
+      "name": "百亚股份",
+      "date": "20260929",
+      "verdict": "存疑",
+      "smoke_risk": "利好伴随隐患",
+      "distribution_risk": "利好兑现出货",
+      "reason": "回购+半年报+'质量回报双提升'属实质动作，但5%股东及董事刚减持、2025年3·15曝光关注函未消，且近10日已涨23.6%，利好兑现出货概率偏高",
+      "reflected": false
+    },
+    {
+      "ts_code": "301108.SZ",
+      "name": "洁雅股份",
+      "date": "20260929",
+      "verdict": "利空",
+      "smoke_risk": "无",
+      "distribution_risk": "利好兑现出货",
+      "reason": "股东明源基金及一致行动人拟减持不超4.99%，属实质利空；叠加近10日已涨29.9%，高位遇减持，出货压力大。",
+      "reflected": false
+    },
+    {
+      "ts_code": "301047.SZ",
+      "name": "义翘神州",
+      "date": "20260929",
+      "verdict": "存疑",
+      "smoke_risk": "蹭热点",
+      "distribution_risk": "利好兑现出货",
+      "reason": "近10日涨57.8%、8月来翻倍，利好主要是CXO概念与融资追涨，且近3日主力净流出2.13亿，利好兑现出货风险高。",
+      "reflected": false
+    },
+    {
+      "ts_code": "301008.SZ",
+      "name": "宏昌科技",
+      "date": "20260929",
+      "verdict": "存疑",
+      "smoke_risk": "与主营无关",
+      "distribution_risk": "利好兑现出货",
+      "reason": "7.2亿现金跨界收购金刚石材料公司，有对赌兜底属实质资本运作，但家电主业无关且近10日已涨42.1%，利好兑现出货风险高。",
+      "reflected": false
+    },
+    {
+      "ts_code": "301122.SZ",
+      "name": "采纳股份",
+      "date": "20260929",
+      "verdict": "存疑",
+      "smoke_risk": "利好伴随隐患",
+      "distribution_risk": "利好兑现出货",
+      "reason": "收购多肽资产属真实催化，但近10日已涨42.6%，利好或提前兑现，且交易结构复杂、先决条件多，主力借机出货风险高。",
+      "reflected": false
+    },
+    {
+      "ts_code": "300684.SZ",
+      "name": "中石科技",
+      "date": "20260929",
+      "verdict": "存疑",
+      "smoke_risk": "无",
+      "distribution_risk": "利好兑现出货",
+      "reason": "AI散热/液冷题材与主营相关，中际旭创拟入股属真实催化，但近10日涨27.3%后利好密集兑现，9/28高位跳水跌7.4%，呈出货特征",
+      "reflected": false
+    },
+    {
+      "ts_code": "301234.SZ",
+      "name": "五洲医疗",
+      "date": "20260929",
+      "verdict": "利空",
+      "smoke_risk": "利好伴随隐患",
+      "distribution_risk": "高开低走风险",
+      "reason": "近10日涨28.5%但无实质利好，反而有巨量解禁供给与业绩下滑，追高出货风险高。",
+      "reflected": false
+    },
+    {
+      "ts_code": "603580.SH",
+      "name": "艾艾精工",
+      "date": "20260929",
+      "verdict": "存疑",
+      "smoke_risk": "蹭热点",
+      "distribution_risk": "利好兑现出货",
+      "reason": "要约收购传闻炒作磷化铟概念，公司明确否认涉及该业务且主营未变，叠加10日涨26%频繁风险提示，属典型概念炒作与利好兑现出货信号。",
+      "reflected": false
+    },
+    {
+      "ts_code": "002849.SZ",
+      "name": "威星智能",
+      "date": "20260929",
+      "verdict": "利空",
+      "smoke_risk": "蹭热点",
+      "distribution_risk": "利好兑现出货",
+      "reason": "近10日大涨31.3%处高位，恰逢股东范慧群减持58万股并完成减持计划，属实质利空；中标1742万金额偏小，公司否认TEC概念，无真实催化。",
+      "reflected": false
+    },
+    {
+      "ts_code": "001326.SZ",
+      "name": "联域股份",
+      "date": "20260929",
+      "verdict": "存疑",
+      "smoke_risk": "与主营无关",
+      "distribution_risk": "利好兑现出货",
+      "reason": "一季报净利增27.75%属真实业绩，但净利率偏低；近10日已涨39.4%且当日再涨6.56%，利好兑现出货风险高，跨界健康设备有蹭概念嫌疑。",
+      "reflected": false
+    },
+    {
+      "ts_code": "301080.SZ",
+      "name": "百普赛斯",
+      "date": "20260929",
+      "verdict": "存疑",
+      "smoke_risk": "无",
+      "distribution_risk": "利好兑现出货",
+      "reason": "近10日已涨53.5%，AI制药与券商买入评级属利好，但高位利好易成兑现出货，融资盘激增放大波动。",
+      "reflected": false
+    },
+    {
+      "ts_code": "001216.SZ",
+      "name": "华瓷股份",
+      "date": "20260929",
+      "verdict": "存疑",
+      "smoke_risk": "蹭热点",
+      "distribution_risk": "利好兑现出货",
+      "reason": "6连板涨幅92.6%由MLCC粉体、氧化锆等传闻炒作驱动，公司已澄清与主营无关，属典型伪题材；叠加英国反倾销复审风险提示，高位利好兑现出货概率大。",
+      "reflected": false
+    },
+    {
+      "ts_code": "003006.SZ",
+      "name": "百亚股份",
+      "date": "20260929",
+      "verdict": "存疑",
+      "smoke_risk": "利好伴随隐患",
+      "distribution_risk": "利好兑现出货",
+      "reason": "回购、分红与'质量回报双提升'属常规稳价利好，但近10日已涨23.6%，涨幅偏大，利好易被兑现出货；3·15关注函阴影未消。",
+      "reflected": false
+    },
+    {
+      "ts_code": "301108.SZ",
+      "name": "洁雅股份",
+      "date": "20260929",
+      "verdict": "利空",
+      "smoke_risk": "利好伴随隐患",
+      "distribution_risk": "利好兑现出货",
+      "reason": "5%以上股东明源基金及一致行动人拟减持不超4.99%，叠加近10日已涨29.9%，属高位实质利空，减持压力与获利盘共振出货风险大。",
+      "reflected": false
+    },
+    {
+      "ts_code": "301008.SZ",
+      "name": "宏昌科技",
+      "date": "20260929",
+      "verdict": "存疑",
+      "smoke_risk": "与主营无关",
+      "distribution_risk": "利好兑现出货",
+      "reason": "跨界收购金刚石材料与家电主业无关，近10日涨幅42.1%后公告利好，警惕利好兑现出货。",
+      "reflected": false
+    },
+    {
+      "ts_code": "300939.SZ",
+      "name": "秋田微",
+      "date": "20260929",
+      "verdict": "存疑",
+      "smoke_risk": "利好伴随隐患",
+      "distribution_risk": "利好兑现出货",
+      "reason": "募投终止改投液晶光开关器件仅属资金腾挪，金额仅3535万非实质催化；叠加异动公告与特定股东减持迹象，近10日已涨36.4%，利好兑现成分大",
+      "reflected": false
+    },
+    {
+      "ts_code": "300647.SZ",
+      "name": "超频三",
+      "date": "20260929",
+      "verdict": "存疑",
+      "smoke_risk": "蹭热点",
+      "distribution_risk": "利好兑现出货",
+      "reason": "AI液冷题材带动上涨28.3%，但公司互动平台自认液冷业务仅处拓展初期、短期无重大业绩影响，属概念炒作，高位利好易兑现出货。",
+      "reflected": false
+    },
+    {
+      "ts_code": "600641.SH",
+      "name": "先导基电",
+      "date": "20260929",
+      "verdict": "存疑",
+      "smoke_risk": "无",
+      "distribution_risk": "利好兑现出货",
+      "reason": "近期公告仅激励调整与关联投资，无实质业绩催化；10日涨67.9%后称无未披露事项，利好兑现出货风险高",
+      "reflected": false
+    },
+    {
+      "ts_code": "603001.SH",
+      "name": "奥康国际",
+      "date": "20260929",
+      "verdict": "存疑",
+      "smoke_risk": "与主营无关",
+      "distribution_risk": "利好兑现出货",
+      "reason": "跨界存储并购与鞋业主营无关，且大股东拟转让12%股份存套现隐患；近10日涨26.9%，利好出货风险高。",
+      "reflected": false
+    },
+    {
+      "ts_code": "605058.SH",
+      "name": "澳弘电子",
+      "date": "20260929",
+      "verdict": "存疑",
+      "smoke_risk": "蹭热点",
+      "distribution_risk": "利好兑现出货",
+      "reason": "公司仅发异常波动公告，明言主营PCB未发生重大变化，无实质利好；10日涨62.7%＋3连板，属概念炒作后利好兑现，追高即接盘",
+      "reflected": false
+    },
+    {
+      "ts_code": "300599.SZ",
+      "name": "雄塑科技",
+      "date": "20260929",
+      "verdict": "利空",
+      "smoke_risk": "与主营无关",
+      "distribution_risk": "利好兑现出货",
+      "reason": "公司互动平台明确否认与AI算力相关业务，纯蹭AI概念被证伪，属假利好烟雾弹；近10日已涨33%，利好落空后出货风险高。",
+      "reflected": false
+    },
+    {
+      "ts_code": "603978.SH",
+      "name": "深圳新星",
+      "date": "20260929",
+      "verdict": "存疑",
+      "smoke_risk": "利好伴随隐患",
+      "distribution_risk": "利好兑现出货",
+      "reason": "铝基新材料项目与主营相关但属长期投资，短期难贡献业绩；近10日涨幅32.6%，利好易被兑现出货，叠加独董离任隐忧。",
+      "reflected": false
+    },
+    {
+      "ts_code": "002713.SZ",
+      "name": "东易日盛",
+      "date": "20260929",
+      "verdict": "存疑",
+      "smoke_risk": "利好伴随隐患",
+      "distribution_risk": "无",
+      "reason": "\"摘帽\"属真实事件但已兑现两月，公司净资产为负、负债率172%，财务负责人辞任叠加易主，利好成色不足，非新催化。",
+      "reflected": false
+    },
+    {
+      "ts_code": "600707.SH",
+      "name": "彩虹股份",
+      "date": "20260929",
+      "verdict": "存疑",
+      "smoke_risk": "蹭热点",
+      "distribution_risk": "利好兑现出货",
+      "reason": "仅玻璃基板概念板块联动，无公司层面实质公告，且融资净卖出2377万、近10日涨22%，属概念催化的高位出货风险",
+      "reflected": false
+    },
+    {
+      "ts_code": "603068.SH",
+      "name": "博通集成",
+      "date": "20260929",
+      "verdict": "存疑",
+      "smoke_risk": "无",
+      "distribution_risk": "利好兑现出货",
+      "reason": "中报净利5050万同比+162.6%为真实业绩催化，但3日累涨超20%、换手41%，公司已自查发风险提示，利好大概率被兑现出货。",
+      "reflected": false
+    },
+    {
+      "ts_code": "603373.SH",
+      "name": "安邦护卫",
+      "date": "20260929",
+      "verdict": "存疑",
+      "smoke_risk": "无",
+      "distribution_risk": "利好兑现出货",
+      "reason": "近期利好仅为业绩说明会公告与常规经营快报，无实质新催化；10日已涨34.5%，利好易被主力借机兑现出货。",
+      "reflected": false
+    },
+    {
+      "ts_code": "300691.SZ",
+      "name": "联合光电",
+      "date": "20260929",
+      "verdict": "存疑",
+      "smoke_risk": "无",
+      "distribution_risk": "利好兑现出货",
+      "reason": "近期无实质利好，仅交易异常波动公告及常规会议/半年报，10日涨40.7%属资金炒作，基本面净利润下滑，缺乏真实催化。",
+      "reflected": false
+    },
+    {
+      "ts_code": "601858.SH",
+      "name": "中国科传",
+      "date": "20260929",
+      "verdict": "中性",
+      "smoke_risk": "无",
+      "distribution_risk": "无",
+      "reason": "近期仅年度权益分派实施及董事会延期换届等常规公告，无实质业绩催化；10日涨幅9.7%属温和，非利好出货形态，股息率1.47%偏象征性。",
+      "reflected": false
+    },
+    {
+      "ts_code": "002679.SZ",
+      "name": "福建金森",
+      "date": "20260929",
+      "verdict": "中性",
+      "smoke_risk": "无",
+      "distribution_risk": "无",
+      "reason": "公告仅为半年报、股东大会决议及股票异常波动公告，均属例行披露，无实质利好催化；10日涨幅10.8%属温和，暂无明显出货信号。",
+      "reflected": false
+    },
+    {
+      "ts_code": "603248.SH",
+      "name": "锡华科技",
+      "date": "20260929",
+      "verdict": "存疑",
+      "smoke_risk": "无",
+      "distribution_risk": "涨停追高",
+      "reason": "仅有股价异动澄清公告，公司自述主营未变、无实质利好催化，近10日已涨38.3%叠加涨停，属资金博弈而非基本面驱动。",
       "reflected": false
     }
   ]

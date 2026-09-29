@@ -13,7 +13,7 @@ from __future__ import annotations
 from sqlalchemy import text
 
 from app.models import SessionLocal
-from app.agents.llm_client import deepseek_chat, tavily_search
+from app.agents.llm_client import deepseek_chat_obj, tavily_search
 from app.agents import prompts
 from app.agents import learning_runner
 from app.agents import evolution_config
@@ -81,15 +81,22 @@ class NewsAgent:
             quant=quant, news=news_txt[:3000],
             news_lessons=learning_runner.build_news_txt() or "无历史消息面教训",
         )
-        result = deepseek_chat([
+        # ★ 用 `deepseek_chat_obj()`：**保证拿到 dict**（形状不符 → {} + WARNING）。
+        #   2026-09-29 事故：原来直接 `deepseek_chat(...)` 且只判 `result is None`，
+        #   模型一旦返回数组，下面 `result["raw_news"] = news` / `result.get(...)` 就抛
+        #   `'list' object has no attribute 'get'`，被上层逐只 try 记成"消息面验证失败"
+        #   ⇒ **防烟雾弹/防利好出货的硬性兜底整层失效**（比崩更危险：静默失去避雷能力）。
+        #   用带契约的包装后，"忘记判形状"在语法上不可能再发生。
+        result = deepseek_chat_obj([
             {"role": "system", "content": prompts.NEWS_SYSTEM},
             {"role": "user", "content": user},
         ])
-        if result is None:
-            # LLM 失败：退回搜索摘要，标记存疑
+        if not result:
+            # 调用失败（None）或形状不符（已由包装 WARNING 记录原因）：
+            # 退回搜索摘要、标记存疑 —— 宁可"存疑"，也不要"看起来没问题"。
             return {
                 "verdict": "存疑",
-                "reason": "消息面判断失败，仅提供搜索摘要供参考",
+                "reason": "消息面判断失败（LLM 未返回有效对象），仅提供搜索摘要供参考",
                 "key_points": [n.get("title", "") for n in news[:3]],
                 "smoke_risk": "无", "distribution_risk": "无",
                 "confidence": "low", "raw_news": news,
@@ -105,7 +112,9 @@ class NewsAgent:
 
     def signal_to_text(self, sig: dict | None) -> str:
         """消息面信号 → prompt 用文本（含烟雾弹/出货风险标注）。"""
-        if not sig:
+        # 形状兜底：sig 不是 dict（如上游误传数组）时按"无信号"处理，
+        # 绝不让 `.get` 抛 AttributeError 打断逐只精筛循环。
+        if not sig or not isinstance(sig, dict):
             return "无消息面信号"
         pts = sig.get("key_points") or []
         risks = []

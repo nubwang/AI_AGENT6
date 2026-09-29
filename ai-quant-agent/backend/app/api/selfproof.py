@@ -90,7 +90,10 @@ def params():
         "universe": _p("selfproof_universe_sample", 0),
         "max_days": _p("selfproof_max_days", 250),
         "workers": _p("selfproof_workers", 1),
-        "budget_cny": _p("selfproof_budget_default_cny", 5.0),
+        # 0 = **不限**（用户要求"LLM 预算不要设置上限，预算无上限"）。
+        # 该字段**只用于前端预填展示，不参与任何熔断判定**（判定在 llm_metering.check_budget，
+        # 三闸门默认 0 = 不限；且闸门已从 deepseek_chat 摘除，每日推荐路径根本不受其约束）。
+        "budget_cny": _p("selfproof_budget_default_cny", 0.0),
         "deep_top_n": _p("selfproof_deep_top_n", 50),
         "regime_topk": _p("selfproof_regime_topk", 5),
         # main_metric 在策略层是个 dict（含 hit_window / immutable 等元信息）；
@@ -137,7 +140,7 @@ def _estimate(start: str, end: str, step: int, universe: int, max_days: int,
         "sample_enough": est_picks >= SAMPLE_FOR_VERDICT,
         "llm": bool(llm),
         "engine_note": ("规则档：零 API 费用（推荐先跑这个）" if not llm
-                        else "LLM 档：复刻每日推荐（受预算熔断保护，串行执行）"),
+                        else "LLM 档：复刻每日推荐（预算不设上限、不会熔断，串行执行）"),
     }
     if est_picks < SAMPLE_FOR_VERDICT:
         out["warning"] = (f"⚠️ 预计只有 {est_picks} 条推荐（门槛 {SAMPLE_FOR_VERDICT}）："

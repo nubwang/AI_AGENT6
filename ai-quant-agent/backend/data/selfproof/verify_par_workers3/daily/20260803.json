@@ -1,6 +1,6 @@
 {
   "date": "20260803",
-  "generated_at": "2026-09-22 14:38:03",
+  "generated_at": "2026-09-29 09:27:21",
   "total_scanned": 40,
   "confirmed_count": 3,
   "candidate_pool": 2,
@@ -10,9 +10,9 @@
       "ts_code": "600360.SH",
       "name": "华微电子",
       "form_type": "B",
-      "up_probability": 0.7063,
+      "up_probability": 0.6497,
       "rule_prob": 0.5857,
-      "positive_score": 0.9859,
+      "positive_score": 0.907,
       "negative_score": 0.3404,
       "similarity": 0.5443,
       "hit_conditions": [
@@ -21,12 +21,6 @@
           "threshold": -0.1559591235791899,
           "up_prob": 0.9069767441860465,
           "direction": "low"
-        },
-        {
-          "feature": "large_order_ratio",
-          "threshold": -0.0017963680524626811,
-          "up_prob": 0.8488372093023255,
-          "direction": "high"
         }
       ],
       "hit_rules": [],
@@ -74,7 +68,7 @@
         "avg_ret_t5": 0.1734,
         "count": 20
       },
-      "rank_score": 0.6577
+      "rank_score": 0.6181
     },
     {
       "rank": 2,
@@ -98,12 +92,6 @@
           "threshold": -0.1559591235791899,
           "up_prob": 0.9069767441860465,
           "direction": "low"
-        },
-        {
-          "feature": "net_amount_ratio",
-          "threshold": -0.01409015137652832,
-          "up_prob": 0.8488372093023255,
-          "direction": "high"
         }
       ],
       "hit_rules": [
@@ -162,7 +150,7 @@
       "rank_score": 0.5914
     }
   ],
-  "elapsed": 35.67,
+  "elapsed": 34.62,
   "as_of": "20260803",
   "universe": 40,
   "persist": false,
@@ -172,6 +160,6 @@
     "as_of": "20260803",
     "run_id": "verify_par_workers3",
     "llm": false,
-    "written_at": "2026-09-22 14:38:03"
+    "written_at": "2026-09-29 09:27:21"
   }
 }

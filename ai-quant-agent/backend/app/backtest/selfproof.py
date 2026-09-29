@@ -132,10 +132,22 @@ def data_gate_cached() -> dict:
         return {}
 
 
-def budget_blocked() -> bool:
-    """LLM 预算是否已熔断（LLM 档时用于优雅停止）。"""
+def budget_blocked(run_id: str = "") -> bool:
+    """本任务是否已超预算（LLM 档用于优雅停止）。
+
+    ★ 2026-09-29 改为**主动按 run_id 查闸门**，原因是一条实测出来的依赖断裂：
+      闸门已从 [`deepseek_chat()`](ai-quant-agent/backend/app/agents/llm_client.py:222)
+      摘除（用户要求"每日推荐不要有预算熔断"），而 `llm_metering.budget_blocked()`
+      只是"**闸门拦过一次**"的被动标志 ⇒ 摘除后它**永远不会为真**
+      ⇒ 自证回放会**静默失去**熔断能力（且没人会注意到）。
+      现改为显式 `ensure_budget(run_id=...)`：判据是**本任务(task)自己**花了多少，
+      比原先"靠日/总额度顺带拦住"更精确，也不再要求 run_id 传播到每个 LLM 调用点。
+      `run_id` 为空时退回旧的被动标志，保持向后兼容。
+    """
     try:
         from app.agents import llm_metering
+        if run_id:
+            return not llm_metering.ensure_budget(run_id=run_id)
         return bool(llm_metering.budget_blocked())
     except Exception:  # noqa: BLE001
         return False
@@ -145,8 +157,11 @@ def budget_blocked() -> bool:
 def resolve_workers(workers: int | None = None, llm: bool = False) -> int:
     """解析回放并行度（None → 读 evolution_config.selfproof_workers）。
 
-    **LLM 档强制串行**：预算熔断要求"跑到哪、花到哪"精确，并行预取会在熔断前
-    多花最多 2×workers 天的钱（见 plans/25 §4.4 硬闸门）。
+    **LLM 档强制串行**：预算自查是**按天收尾时**做的（见 `budget_blocked(run_id)`），
+    并行预取会在自查点之前多花最多 2×workers 天的钱 —— 所以**若**你给自证设了上限，
+    并行就会踩空（见 plans/25 §4.4 硬闸门）。
+    注：默认三闸门为 **0 = 不限**（用户要求"预算无上限"），串行仍保留 ——
+    另一个理由独立成立：实测并行本身尚未达标（多进程 0.91×、线程池慢一个数量级）。
     抽出来单独一个函数是为了**可被自证脚本直接断言**（不必真去调 LLM 花钱）。
     """
     if workers is None:
@@ -198,7 +213,9 @@ def run_replay(start: str, end: str = "", step: int | None = None,
         step: 步长（None → 读 evolution_config.selfproof_default_step，默认 1）
         universe: 抽样只数（None → 读 selfproof_universe_sample；0=全市场）
         max_days: 单次最多回放天数（None → 读 selfproof_max_days）
-        llm: 是否启用 LLM 精筛（**本阶段默认 False**；开启后受预算熔断保护）
+        llm: 是否启用 LLM 精筛（**本阶段默认 False**）。⚠️ 成本提示：**预算默认不设上限、
+            不会熔断**（用户口径），故 LLM 档不再有"跑爆预算自动停"的兜底 ——
+            要护栏就把 llm_metering 的三闸门填正数（见 selfproof_budget_default_cny 说明）。
         workers: 并行度（None → 读 selfproof_workers）。**按日并行**：每天是一次独立的
             全市场扫描，天然无依赖，且落盘/台账/进度都按日组织 → 不动下游任何契约。
             实测每只每天 80ms（plans/25 §15.1），全市场一年单线程 ≈31 小时，必须并行。
@@ -243,7 +260,7 @@ def run_replay(start: str, end: str = "", step: int | None = None,
         "universe": int(universe or 0), "max_days": int(max_days or 0),
         "llm": bool(llm), "top_k": top_k or 0, "universe_seed": int(universe_seed),
         "workers": int(workers),
-        "status": "running", "llm_metering_note": "规则档（未调 LLM）" if not llm else "LLM 档（受预算熔断）",
+        "status": "running", "llm_metering_note": "规则档（未调 LLM）" if not llm else "LLM 档（预算无上限）",
         "created_at": state.get("created_at") or time.strftime("%Y-%m-%d %H:%M:%S"),
     })
     save_state(rid, state)
@@ -309,7 +326,7 @@ def run_replay(start: str, end: str = "", step: int | None = None,
             if should_stop is not None and should_stop():
                 state["status"] = "stopped"
                 break
-            if llm and budget_blocked():
+            if llm and budget_blocked(rid):
                 paused_for_budget = True
                 state["status"] = "paused_budget"
                 logger.error(f"[selfproof] LLM 预算熔断 → 优雅停止（已完成 {len(done)} 天，可续跑）")

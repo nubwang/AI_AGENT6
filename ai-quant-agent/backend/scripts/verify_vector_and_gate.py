@@ -31,6 +31,16 @@ def check(name: str, cond: bool, detail: str = "") -> None:
 
 
 from app.backtest.runner import _check_data_gate, STRICT_DATA_GATE  # noqa: E402
+from app.backtest import runner as R  # noqa: E402
+
+# ★ 门禁单测必须与"当天真实库状态"解耦，否则会随库里有无半截日而**时绿时红**
+#   （2026-09-28 实测：stk_limit 半采 ⇒ D2「日期一致 → passed」失败，与代码无关）：
+#   ① 固定"最近交易日"，不拿系统当天去比（否则注入 20260918 会被判"落后 N 个交易日"）；
+#   ② 「有效交易日」探针打桩，注入的 dv 快照不该被真实库覆盖。
+R._latest_trade_date = lambda today="": "20260918"  # type: ignore[assignment]
+R.effective_latest_probe = lambda t, *a, **k: (  # type: ignore[assignment]
+    {"raw": "", "effective": "", "rows": {}, "min_rows": 5000})
+
 
 # ── D1~D3 数据门禁 ──
 print("[D1-D3] 数据门禁")

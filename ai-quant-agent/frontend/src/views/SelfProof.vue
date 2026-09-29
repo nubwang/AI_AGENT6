@@ -215,7 +215,8 @@ onUnmounted(stopPolling);
       <template #header>
         <b>模式 A · 从起始日一路自证</b>
         <span style="color: #909399; margin-left: 8px; font-size: 12px">
-          （规则档默认零 API 费用；LLM 档 = 完全复刻每日推荐，受预算熔断保护）
+          （规则档默认零 API 费用；LLM 档 =
+          完全复刻每日推荐，预算不设上限、不会熔断）
         </span>
       </template>
       <el-form :inline="true" label-width="86px">

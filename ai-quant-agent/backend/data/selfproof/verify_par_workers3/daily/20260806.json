@@ -1,83 +1,12 @@
 {
   "date": "20260806",
-  "generated_at": "2026-09-22 14:38:17",
+  "generated_at": "2026-09-29 09:27:34",
   "total_scanned": 40,
   "confirmed_count": 6,
   "candidate_pool": 3,
   "top_picks": [
     {
       "rank": 1,
-      "ts_code": "600629.SH",
-      "name": "华建集团",
-      "form_type": "D",
-      "up_probability": 0.6642,
-      "rule_prob": 0.5857,
-      "positive_score": 0.9771,
-      "negative_score": 0.4673,
-      "similarity": 0.6234,
-      "hit_conditions": [
-        {
-          "feature": "net_amount_ratio",
-          "threshold": -0.01409015137652832,
-          "up_prob": 0.8488372093023255,
-          "direction": "high"
-        },
-        {
-          "feature": "large_order_ratio",
-          "threshold": -0.0017963680524626811,
-          "up_prob": 0.8488372093023255,
-          "direction": "high"
-        }
-      ],
-      "hit_rules": [],
-      "condition_values": {
-        "net_amount_ratio": -0.0069,
-        "large_order_ratio": 0.0119,
-        "amount_ratio": 1.9533,
-        "roe": 0.078,
-        "gross_margin": 19.0043,
-        "profit_growth": -93.178,
-        "pe_percentile": 1152.9633,
-        "pb_percentile": 3.4028,
-        "revenue_growth": 0.0,
-        "debt_ratio": 0.6194,
-        "ocf_ps": -0.5558,
-        "mainbz_concentration": 1.0,
-        "holder_change": 0.2316,
-        "top10_ratio": 53.676,
-        "pledge_ratio": 0.0,
-        "bps": 5.4289,
-        "avg_hold_amount": 24.9366,
-        "holder_concentration": 0.0,
-        "st_risk_flag": 0.0,
-        "event_forecast": -1.0,
-        "event_express": 0.0,
-        "event_dividend": 1.0,
-        "event_repurchase": 1.0,
-        "event_rewards": 1.0,
-        "event_holdertrade": 0.0,
-        "event_block": null,
-        "market_env": -0.024,
-        "wk_trend": 0.1837,
-        "mo_trend": null,
-        "is_ever_st": 1.0
-      },
-      "risk_level": "低",
-      "confirmed_detail": {
-        "d10_rise": 0.321
-      },
-      "entry_advice": {
-        "strategy": "t1_open",
-        "desc": "T+1 开盘买入（次日竞价追入）",
-        "win_rate_t5": 0.9195,
-        "avg_ret_t20": 0.6754,
-        "avg_ret_t5": 0.2055,
-        "count": 87
-      },
-      "rank_score": 0.652
-    },
-    {
-      "rank": 2,
       "ts_code": "300209.SZ",
       "name": "行云科技",
       "form_type": "D",
@@ -103,18 +32,6 @@
           "feature": "profit_growth",
           "threshold": 99.29602000000015,
           "up_prob": 0.8765432098765432,
-          "direction": "high"
-        },
-        {
-          "feature": "net_amount_ratio",
-          "threshold": -0.01409015137652832,
-          "up_prob": 0.8488372093023255,
-          "direction": "high"
-        },
-        {
-          "feature": "large_order_ratio",
-          "threshold": -0.0017963680524626811,
-          "up_prob": 0.8488372093023255,
           "direction": "high"
         }
       ],
@@ -174,13 +91,13 @@
       "rank_score": 0.5995
     },
     {
-      "rank": 3,
+      "rank": 2,
       "ts_code": "600360.SH",
       "name": "华微电子",
       "form_type": "B",
-      "up_probability": 0.632,
+      "up_probability": 0.5814,
       "rule_prob": 0.6076,
-      "positive_score": 0.9859,
+      "positive_score": 0.907,
       "negative_score": 0.388,
       "similarity": 0.3176,
       "hit_conditions": [
@@ -189,12 +106,6 @@
           "threshold": -0.1559591235791899,
           "up_prob": 0.9069767441860465,
           "direction": "low"
-        },
-        {
-          "feature": "large_order_ratio",
-          "threshold": -0.0017963680524626811,
-          "up_prob": 0.8488372093023255,
-          "direction": "high"
         }
       ],
       "hit_rules": [
@@ -250,10 +161,68 @@
         "avg_ret_t5": 0.1734,
         "count": 20
       },
-      "rank_score": 0.5377
+      "rank_score": 0.5023
+    },
+    {
+      "rank": 3,
+      "ts_code": "600629.SH",
+      "name": "华建集团",
+      "form_type": "D",
+      "up_probability": 0.4079,
+      "rule_prob": 0.5857,
+      "positive_score": 0.6,
+      "negative_score": 0.4673,
+      "similarity": 0.6234,
+      "hit_conditions": [],
+      "hit_rules": [],
+      "condition_values": {
+        "net_amount_ratio": -0.0069,
+        "large_order_ratio": 0.0119,
+        "amount_ratio": 1.9533,
+        "roe": 0.078,
+        "gross_margin": 19.0043,
+        "profit_growth": -93.178,
+        "pe_percentile": 1152.9633,
+        "pb_percentile": 3.4028,
+        "revenue_growth": 0.0,
+        "debt_ratio": 0.6194,
+        "ocf_ps": -0.5558,
+        "mainbz_concentration": 1.0,
+        "holder_change": 0.2316,
+        "top10_ratio": 53.676,
+        "pledge_ratio": 0.0,
+        "bps": 5.4289,
+        "avg_hold_amount": 24.9366,
+        "holder_concentration": 0.0,
+        "st_risk_flag": 0.0,
+        "event_forecast": -1.0,
+        "event_express": 0.0,
+        "event_dividend": 1.0,
+        "event_repurchase": 1.0,
+        "event_rewards": 1.0,
+        "event_holdertrade": 0.0,
+        "event_block": null,
+        "market_env": -0.024,
+        "wk_trend": 0.1837,
+        "mo_trend": null,
+        "is_ever_st": 1.0
+      },
+      "risk_level": "低",
+      "confirmed_detail": {
+        "d10_rise": 0.321
+      },
+      "entry_advice": {
+        "strategy": "t1_open",
+        "desc": "T+1 开盘买入（次日竞价追入）",
+        "win_rate_t5": 0.9195,
+        "avg_ret_t20": 0.6754,
+        "avg_ret_t5": 0.2055,
+        "count": 87
+      },
+      "rank_score": 0.4725
     }
   ],
-  "elapsed": 13.85,
+  "elapsed": 13.48,
   "as_of": "20260806",
   "universe": 40,
   "persist": false,
@@ -263,6 +232,6 @@
     "as_of": "20260806",
     "run_id": "verify_par_workers3",
     "llm": false,
-    "written_at": "2026-09-22 14:38:17"
+    "written_at": "2026-09-29 09:27:34"
   }
 }

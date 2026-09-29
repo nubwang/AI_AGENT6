@@ -1,11 +1,11 @@
 {
   "date": "20190102",
-  "generated_at": "2026-09-22 13:45:49",
+  "generated_at": "2026-09-29 09:25:48",
   "total_scanned": 3,
   "confirmed_count": 0,
   "candidate_pool": 0,
   "top_picks": [],
-  "elapsed": 1.07,
+  "elapsed": 1.06,
   "as_of": "20190102",
   "universe": 3,
   "persist": false,
@@ -15,6 +15,6 @@
     "as_of": "20190102",
     "run_id": "verify_replay_smoke",
     "llm": false,
-    "written_at": "2026-09-22 13:45:49"
+    "written_at": "2026-09-29 09:25:48"
   }
 }

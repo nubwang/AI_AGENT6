@@ -11,8 +11,8 @@
   "workers": 1,
   "status": "done",
   "llm_metering_note": "规则档（未调 LLM）",
-  "created_at": "2026-09-22 14:36:30",
-  "updated_at": "2026-09-22 14:37:24",
+  "created_at": "2026-09-29 09:25:51",
+  "updated_at": "2026-09-29 09:26:43",
   "done": [
     "20260803",
     "20260804",
@@ -21,7 +21,7 @@
   ],
   "next_date": "20260806",
   "picks_total": 10,
-  "elapsed_sec": 53.8,
+  "elapsed_sec": 52.04,
   "dates_total": 4,
   "dates_left": 0
 }

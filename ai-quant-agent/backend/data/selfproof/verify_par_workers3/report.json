@@ -375,12 +375,12 @@
     "filled": false
   },
   "usage": {
-    "wall_sec": 52.9,
+    "wall_sec": 51.22,
     "llm_calls": 0,
     "cost_note": "规则档零 API 费用"
   },
-  "created_at": "2026-09-22 14:37:24",
-  "updated_at": "2026-09-22 14:38:17",
+  "created_at": "2026-09-29 09:26:43",
+  "updated_at": "2026-09-29 09:27:34",
   "schema_keys": [
     "run_id",
     "config",

@@ -1106,6 +1106,50 @@ async def stage1_basic() -> tuple:
 
 
 # ── 阶段2: 日频批量（持久化队列）────────────────────────────────
+# ★ "半截日自愈"原先**只覆盖 stage3**（`incremental_apis` 里 kind=="trade" 的
+#   adj_factor / weekly，见 stage3_stocks），而 **stage2 的按日表完全在覆盖之外**。
+#   后果（2026-09-28 实测，真实卡死回测）：`stk_limit` 最新日只有沪市 2361 行
+#   （000/001/002/003/200/201/300/301/302/920 整块缺失，正常日 5647 行 = 全市场），
+#   而 stage2 的增量判据是 `date <= MAX(trade_date)` ⇒ MAX 已是 20260928
+#   ⇒ 那些残缺日**永远不在重建集合里** ⇒ **残缺永不自愈**。
+#   这正是本文件 §11.34.5 记录过的失效模式（"把『存在』当『完整』"），只是当时漏了 stage2。
+#   故：对"自然基数 = 个股只数"的按日表逐日核对行数，把残缺日**强制重排**进队列。
+#   注意只列这几张：`suspend_d`（每日 10~20 只）、`index_daily`（指数，~1070）
+#   的自然基数与个股数不同，套 5000 会**误报**，故不进白名单。
+STAGE2_BASE_ROWS: dict[str, int] = {
+    "daily": 5000, "daily_basic": 5000, "moneyflow": 5000, "stk_limit": 5000,
+}
+# 只回看最近 N 个交易日（与 data_validator.EFF_DAYS 同口径），避免无限追补陈年残缺日
+STAGE2_HEAL_DAYS = 15
+
+
+def stage2_incomplete_days(api_names=None) -> dict:
+    """stage2 按日表里"最近 N 个交易日内的半截日" → {api: {date, ...}}。
+
+    独立成模块级函数便于验收脚本**打桩**验证（见 scripts/verify_stage2_halfday_selfheal.py）；
+    线上由 `stage2_daily()` 调用，命中即把该 (api, date) 强制重排进采集队列。
+    任何异常都返回已算出的部分（或空 dict）—— **绝不能因为检测失败而阻断采集**。
+    """
+    out: dict = {}
+    try:
+        from app.backtest.data_validator import effective_latest_date
+    except Exception:  # noqa: BLE001
+        return out
+    names = set(api_names) if api_names is not None else None
+    for name, min_rows in STAGE2_BASE_ROWS.items():
+        if names is not None and name not in names:
+            continue
+        try:
+            e = effective_latest_date(name, min_rows=min_rows,
+                                      date_col="trade_date", days=STAGE2_HEAL_DAYS)
+        except Exception:  # noqa: BLE001
+            continue
+        bad = {d for d, n in (e.get("rows") or {}).items() if int(n) < min_rows}
+        if bad:
+            out[name] = bad
+    return out
+
+
 async def stage2_daily() -> tuple:
     """构建阶段2任务并持久化. 返回 (total, done)"""
     async with alimiter("trade_cal"):
@@ -1129,6 +1173,14 @@ async def stage2_daily() -> tuple:
         ("index_dailybasic", "大盘指标", "trade_date"),
     ]
 
+    # ★ 半截日自愈（见 STAGE2_BASE_ROWS 注释）：必须在增量集合构建**之前**算出，
+    #   并在下面的跳过判据里作为"例外"放行 —— 否则残缺日永远进不了重建集合。
+    heal = await asyncio.to_thread(stage2_incomplete_days, [a[0] for a in apis])
+    if heal:
+        logger.warning(
+            "[data] stage2 检出半截日，强制重建这些日期的采集任务（自愈）："
+            + "；".join(f"{k}={sorted(v)}" for k, v in sorted(heal.items())))
+
     # 续采模式
     total, done = count_stage_tasks(2)
     if total > 0 and done < total:
@@ -1144,11 +1196,14 @@ async def stage2_daily() -> tuple:
             if md and md > max_existing:
                 max_existing = md
         for date in all_dates:
-            if date <= max_existing:
+            # ★ 例外：半截日**即使 <= max_existing 也必须重排**（否则残缺永不自愈）
+            need_heal = date in heal.get(name, ())
+            if date <= max_existing and not need_heal:
                 continue
             day_detail = f"{date[:4]}-{date[4:6]}-{date[6:]}"
+            suffix = " · ⚠半截日自愈" if need_heal else ""
             tasks.append((f"s2:{name}:{date}", name, json.dumps({param: date}),
-                          f"{day_detail} · {desc} (API{j+1}/{len(apis)})"))
+                          f"{day_detail} · {desc} (API{j+1}/{len(apis)}){suffix}"))
 
     total = rebuild_stage_tasks(2, tasks)
     return (total, 0)

@@ -184,6 +184,11 @@ def _norm(s: str) -> str:
 
 def _upsert_lesson(kb: dict, result: dict, ts_code: str, rec_date: str) -> dict:
     """把一条反思结果并入知识库（同错误类型+同教训去重合并 count++）。"""
+    # ★ 形状兜底（2026-09-29）：LLM 可能返回数组而非对象 ⇒ 原来 `result.get(...)` 抛
+    #   'list' object has no attribute 'get'，且本函数外层没有 try（会一路打断反思主流程）。
+    #   非 dict 当"空结论"处理，落一条"未总结"而非崩掉。
+    if not isinstance(result, dict):
+        result = {}
     error_type = str(result.get("error_type", "其他"))
     lesson = str(result.get("lesson", "")).strip()
     for r in kb.get("reflections", []):
@@ -261,7 +266,9 @@ def run_reflection(limit: int | None = None, progress_cb=None) -> dict:
         except Exception as exc:  # noqa: BLE001
             logger.warning(f"反思调用失败 {ts_code}@{rec_date}: {exc}")
             result = None
-        if result is None:
+        if not isinstance(result, dict):
+            # None（调用失败）或形状不符（LLM 返回数组/标量）都按"本次未反思"计入 skipped，
+            # 不当成有效教训写库（写进去只会污染"历史失败教训"、反过来误导精筛 Prompt）。
             skipped += 1
         else:
             entry = _upsert_lesson(kb, result, ts_code, rec_date)

@@ -13,7 +13,7 @@ from __future__ import annotations
 import json
 
 from app.core.logger import logger
-from app.agents.llm_client import deepseek_chat
+from app.agents.llm_client import deepseek_chat, as_dict
 from app.agents import prompts
 from app.agents import learning_runner
 
@@ -62,17 +62,28 @@ class DecisionAgent:
             candidates="\n".join(cand_lines)[:6000],
             reflect_kb=learning_runner.build_decision_txt() or "无历史决策教训",
         )
-        result = deepseek_chat([
+        raw = deepseek_chat([
             {"role": "system", "content": prompts.DECISION_SYSTEM},
             {"role": "user", "content": user},
         ])
-        if result is None or not result.get("final_ranks"):
-            logger.info("[decision_agent] LLM 决策失败，退回确定性排序")
+        # ★ 必须规整形状再取值（2026-09-29 事故）：LLM 有时把对象包成单元素数组，
+        #   或**直接把 final_ranks 数组当结果返回**。原来直接 `raw.get(...)` ⇒
+        #   `'list' object has no attribute 'get'` ⇒ 本函数是 L3 最后一环、外层没有 try，
+        #   于是整轮精筛 failed、当日榜单一条都落不下去。见 llm_client.as_dict 的说明。
+        result = as_dict(raw)
+        ranks_raw = result.get("final_ranks")
+        if not ranks_raw and isinstance(raw, list):
+            # 契约兜底：模型直接返回数组 ⇒ 就按"最终排序列表"解释（比整轮失败有用得多）
+            ranks_raw = raw
+        if not ranks_raw:
+            logger.info("[decision_agent] LLM 决策失败（未返回 final_ranks），退回确定性排序")
             return _deterministic_rank(selects, top_n)
 
         ranks = []
         seen = set()
-        for r in result.get("final_ranks", []):
+        for r in ranks_raw:
+            if not isinstance(r, dict):
+                continue
             code = str(r.get("ts_code", ""))
             if not code or code in seen:
                 continue

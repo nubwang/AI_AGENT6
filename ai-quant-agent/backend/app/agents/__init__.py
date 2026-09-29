@@ -19,7 +19,7 @@ from app.agents.candidate_profiler import dump_profiles, build_candidate_profile
 from app.agents.policy_agent import PolicyAgent
 from app.agents.news_agent import NewsAgent
 from app.agents.refine_agent import RefineAgent
-from app.agents.decision_agent import DecisionAgent, build_final_report
+from app.agents.decision_agent import DecisionAgent, build_final_report, _deterministic_rank
 from app.backtest.attribution import load_attribution_kb
 from app.backtest.threshold_analyzer import load_condition_table
 from app.agents.reflect_agent import build_reflect_txt
@@ -28,8 +28,10 @@ from app.agents.learning_runner import record_decision_picks
 # 三层漏斗规模参数（**默认值=历史口径**；运行时可被 settings/.env 覆盖，见 `_scale()`）
 MAX_POLICY_SECTORS = 5   # 政策解读只对出现频次最高的 N 个行业做（控制成本）
 BATCH_SIZE = 25          # 批量粗筛每批候选数
-PER_INDUSTRY = 10        # 批量粗筛每行业最多保留数
+PER_INDUSTRY = 10        # 批量粗筛每行业最多保留数（<=0 = 不截断）
 DEEP_TOP_N = 50          # 深度精筛全局 Top-N（按规则概率取前 N）
+# 小池自适应阈值：候选池 ≤ 该值时取消"每行业截断"与"全局 Top-N 截断"（智能判断，见 run_agent_refine）
+SMALL_POOL_THRESHOLD = 100
 
 
 def _scale(settings_name: str, default: int) -> int:
@@ -204,6 +206,24 @@ def run_agent_refine(
     floor_per_industry = _scale("agent_l2_per_industry_floor", 0)
     l2_max_total = _scale("agent_l2_max_total", 120) or 120
     max_policy_sectors = _scale("agent_policy_max_sectors", MAX_POLICY_SECTORS)
+    small_pool_threshold = _scale("agent_small_pool_threshold", SMALL_POOL_THRESHOLD)
+
+    # ── 1.5 小池自适应（"智能判断"）──
+    # 候选池本来就小（≤ 阈值；典型如行情清淡/确认启动少的交易日，全市场只筛出百来条）时，
+    # 再按"每行业前 N / 全局 Top-N"激进裁剪只会造成**真实错失**，省下的成本却有限。
+    # 此时改为：① L1 不做每行业截断（该行业候选全保留）② L2 不做全局 Top-N 截断（候选全量
+    # 进深度精筛）—— 把取舍交给更"聪明"的深度层（Tavily 消息面 + LLM 逐只精筛）。
+    # 阈值可调（.env: AGENT_SMALL_POOL_THRESHOLD）；设 0 = 关闭该自适应，恒按大池口径。
+    small_pool = small_pool_threshold > 0 and len(profiles) <= small_pool_threshold
+    if small_pool:
+        logger.info(
+            f"[agent_refine] 小池自适应生效：候选 {len(profiles)} ≤ {small_pool_threshold} → "
+            f"取消每行业截断（原每行业前 {per_industry}）与全局 Top-N 截断（原 {deep_top_n}），"
+            f"全部候选进深度精筛"
+        )
+        per_industry = 0             # 0 = 不截断（保留该行业全部粗筛候选）
+        floor_per_industry = 0       # 已全量进 L2，"每行业保底"无意义
+        deep_top_n = len(profiles)   # 放宽到全量（sub_profiles ⊆ profiles ⇒ 实际全保留）
 
     # ── 2. L1 批量粗筛（按行业分组统一调用 LLM，降成本）──
     _progress("批量粗筛", 0.2)
@@ -220,9 +240,10 @@ def run_agent_refine(
     if should_stop is not None and should_stop():
         return _cancelled_refine(t0, len(candidates), message="已按请求停止（批量粗筛阶段）",
                                 refined_count=len(sub_profiles))
+    per_ind_desc = "每行业不截断（小池自适应）" if per_industry <= 0 else f"每行业前 {per_industry}"
     logger.info(
         f"[agent_refine] 批量粗筛完成: {len(profiles)} → {len(sub_profiles)} 只"
-        f"（每行业前 {per_industry}）"
+        f"（{per_ind_desc}）"
     )
     _progress("批量粗筛", 0.3)
 
@@ -349,8 +370,17 @@ def run_agent_refine(
     # ── 6. L3 统一决策 Agent（全部 select）──
     _progress("统一决策", 0.95)
     decision_agent = DecisionAgent()
-    ranks = decision_agent.decide(items, top_n=None)  # None = 全部 select
-    final_picks = build_final_report(candidates, ranks, deep_profiles)
+    # ★ 2026-09-29 事故加固：L3 是最后一环，原来**没有 try** ⇒ 任何异常（如 LLM 返回形状异常
+    #   —— 实测报错「Agent 精筛失败: 'list' object has no attribute 'get'」、模型/网络抖动）
+    #   都会让**整轮精筛判 failed、当日榜单一条都不落盘**（前面 L1/L2 的几十次调用全白花）。
+    #   兜底成确定性排序（规则概率 × (1+score_adjust%)，与 LLM 失败时同口径）：
+    #   宁可"排名次优但有榜单"，也不要"整轮失败且无榜单"。
+    try:
+        ranks = decision_agent.decide(items, top_n=None)  # None = 全部 select
+        final_picks = build_final_report(candidates, ranks, deep_profiles)
+    except Exception as exc:  # noqa: BLE001
+        logger.exception(f"[agent_refine] 统一决策异常，退回确定性排序（榜单仍会产出）: {exc}")
+        final_picks = build_final_report(candidates, _deterministic_rank(items, None), deep_profiles)
     logger.info(f"[agent_refine] 最终榜单 {len(final_picks)} 条")
     # 记录决策榜单 → T+5 后反思决策质量（§20 统一学习能力）
     try:

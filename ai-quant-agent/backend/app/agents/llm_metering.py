@@ -120,9 +120,11 @@ DEFAULT_BUDGET = {
     "currency": "CNY",
     "enabled": True,
     "limits": {
-        "per_task_cny": float(getattr(settings, "llm_budget_per_task_cny", 5.0)),
-        "per_day_cny": float(getattr(settings, "llm_budget_per_day_cny", 10.0)),
-        "total_cny": float(getattr(settings, "llm_budget_total_cny", 50.0)),
+        # ★ 默认 0 = **不限**（用户要求：每日推荐不要预算熔断、不要设置上限）。
+        #   0 由 check_budget 的 _cmp 解释为"不限"，与"不填/None"等价。
+        "per_task_cny": float(getattr(settings, "llm_budget_per_task_cny", 0.0)),
+        "per_day_cny": float(getattr(settings, "llm_budget_per_day_cny", 0.0)),
+        "total_cny": float(getattr(settings, "llm_budget_total_cny", 0.0)),
     },
     "spent": {"total_cny": 0.0, "day": {}, "task": {}},
     "ledger": [],
@@ -500,7 +502,10 @@ def spend_snapshot(run_id: str = "") -> dict:
 
 
 def check_budget(run_id: str = "") -> dict:
-    """返回 `{ok, gate, limit, spent}`：ok=False 表示该闸门已破，需熔断。"""
+    """返回 `{ok, gate, limit, spent}`：ok=False 表示该闸门已破，需熔断。
+
+    `limit=None` 表示**不限**（对应台账里 limit<=0）：任何已花金额都不熔断。
+    """
     b = load_budget()
     if not bool(b.get("enabled", True)):
         return {"ok": True, "gate": "", "limit": None, "spent": None}
@@ -509,11 +514,20 @@ def check_budget(run_id: str = "") -> dict:
     day = time.strftime("%Y%m%d")
 
     def _cmp(gate: str, limit, used) -> dict:
-        if limit is None:
+        # ★ `limit` 为 None 或 **<= 0 表示"不限"**（0 = 不设上限）。
+        #   用户明确要求"每日推荐不要有预算熔断、不要设置上限"⇒ 三闸门默认值全部改为 0；
+        #   要恢复约束只需填正数（.env 或 set_limits）。
+        #   保留"0 = 不限"这个一等语义，比"把上限改成一个很大的数"更诚实：
+        #   后者会在账单上留下一个假的"上限"，且 quirk 是"总有一天又会撞上"。
+        try:
+            cap = float(limit) if limit is not None else 0.0
+        except (TypeError, ValueError):
+            cap = 0.0
+        if cap <= 0:
             return {"ok": True, "gate": gate, "limit": None, "spent": used}
-        if float(used) >= float(limit):
-            return {"ok": False, "gate": gate, "limit": float(limit), "spent": float(used)}
-        return {"ok": True, "gate": gate, "limit": float(limit), "spent": float(used)}
+        if float(used) >= cap:
+            return {"ok": False, "gate": gate, "limit": cap, "spent": float(used)}
+        return {"ok": True, "gate": gate, "limit": cap, "spent": float(used)}
 
     if run_id:
         r = _cmp("per_task", lim.get("per_task_cny"), (spent.get("task") or {}).get(run_id) or 0.0)
@@ -553,7 +567,8 @@ def _notify_block(r: dict) -> None:
     if _BLOCKED.get("notified") == sig:
         return
     _BLOCKED["notified"] = sig
-    hint = ("调大 llm_budget_per_day_cny（.env）或调用 set_limits(per_day_cny=…)；"
+    hint = ("若确实要设上限：llm_budget_per_day_cny（.env）或 set_limits(per_day_cny=…)；"
+            "**填 0 = 不限**（当前默认，每日推荐链路已不再受闸门约束）。"
             "降本可用 DEEPSEEK_THINKING=false（实测约省 3.7 倍）或缩小候选数/精筛数量")
     try:
         from app.agents import evolution_events

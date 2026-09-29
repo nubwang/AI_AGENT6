@@ -2573,9 +2573,13 @@
       "intent_txt": "官方措辞潜在意图信号：补贴(利好 力度0.66，直接补贴，盈利弹性)",
       "path_txt": "[{'industry': '农化制品', 'concept': '生物农药', 'logic': '政策明确支持生物源农药研发登记，并优先在果菜茶上推广，直接利好生物农药生产企业。'}, {'industry': '农化制品', 'concept': '有机肥', 'logic': '政策明确推广有机肥替代化肥，对有机肥生产销售给予税收优惠和财政补贴，直接利好有机肥企业。'}, {'industry': '农化制品', 'concept': '新型肥料', 'logic': '政策支持新型肥料（如缓释肥、水溶肥等）的生产和销售，并给予税收优惠，直接利好相关企业。'}, {'industry'",
       "policy_snippet": "[综合摘要] Recent policies support reducing pesticide and fertilizer use, promoting organic fertilizers, and implementing green pest control methods. The latest plan aims for zero growth in fertilizer and pesticide use by 2025.\n[生物源农药研发登记的四大利好政策! - 瑞旭观点- 农用化学品] 利好1：生物源农药列入全国农药产业发展十四五规划 · 利好2：加大生物源农药的政策扶持力度和专项资金支持 · 国家会优先推广生物源农药在果菜茶上的使用，\n[实施化肥、农药使用减量行动计划] 同时，要加大对推广有机肥替代化肥的. 支持力度，对生产和销售新型肥料、农药的企业在税收方. 面给予相应优惠，对使用新型肥料、农药的农业经营主体. 给予一定的财政补贴。\n[农业部关于印发《到2020年化肥使用量零增长行动方案》和《到2020年农药使用量零增长行动方案》的通知] （三）完善扶持政策",
-      "outcomes": {},
-      "verdict": "pending",
-      "backfilled_at": null
+      "outcomes": {
+        "1": -0.0043,
+        "5": -0.0152,
+        "20": null
+      },
+      "verdict": "中性",
+      "backfilled_at": "2026-09-29 15:50:17"
     },
     {
       "id": "1788938395_生物制药",
@@ -2621,9 +2625,13 @@
       "intent_txt": "",
       "path_txt": "[{'industry': '有色金属', 'concept': '小金属', 'logic': '政策明确加强锂、镍等资源勘查，推动再生金属产能突破，直接利好锂、镍、稀土、钨、锑、锡等小金属的勘查与开采企业。'}, {'industry': '有色金属', 'concept': '稀土永磁', 'logic': '稀土需求在新能源、新材料、AI等领域增长，政策支持稀土等战略金属，供给刚性收缩，价格预期上涨，直接利好稀土开采与永磁材料环节。'}, {'industry': '有色金属', 'concept': '锂矿', 'logic': '政策明确加强锂资源勘查，且锂需求在新能源车、储能等领",
       "policy_snippet": "[综合摘要] Small metals are benefiting from industry growth and supportive policies, with prices expected to rise significantly in 2026. Key drivers include increased demand for strategic metals in technology and infrastructure. Regulatory support and geopolitical factors further boost market confidence.\n[金银铜价格出现回调，小金属迎产业与政策双重利好共振，稀有金属ETF(159608)早盘冲高涨超2%|界面新闻] 最后，‌供需基本面分化‌：铜在供给受限（如智利、秘鲁矿产扰动）和AI基础设施、国防需求增长驱动下，金融属性与商品属性共振，而金银更多受美元利率和央行储备行为影响。\n\n小金属方面，稀有金属板块迎来产业与政策双重利好共振。产业端，供需缺口持续扩大，据国际能源署（IEA）2025 年 1",
-      "outcomes": {},
-      "verdict": "pending",
-      "backfilled_at": null
+      "outcomes": {
+        "1": -0.0043,
+        "5": -0.0152,
+        "20": null
+      },
+      "verdict": "中性",
+      "backfilled_at": "2026-09-29 15:50:19"
     },
     {
       "id": "1788944951_玻璃",
@@ -2633,9 +2641,13 @@
       "intent_txt": "官方措辞潜在意图信号：鼓励(利好 力度0.55，引导性支持)；加快(强利好 力度0.55，自上而下推动，落地快)",
       "path_txt": "[{'industry': '电力设备', 'concept': '光伏', 'logic': '政策明确支持光伏玻璃行业发展，作为光伏组件的重要辅材，需求将提升。'}, {'industry': '建筑材料', 'concept': '玻璃', 'logic': '政策支持工程玻璃和玻璃新材料，推动行业技术升级和高端化发展。'}, {'industry': '基础化工', 'concept': '光伏玻璃', 'logic': '光伏玻璃属于化工新材料，政策鼓励技术突破，利好相关企业。'}]",
       "policy_snippet": "[综合摘要] Recent policies support the development of photovoltaic glass and engineering glass, aiming for technological breakthroughs and market growth. The glass industry faces challenges like overcapacity and low prices, but new regulations aim to reduce excess capacity and boost market confidence.\n[重磅！2024年中国及31省市光伏玻璃行业政策汇总、解读及发展目标分析 支持光伏玻璃行业实现技术突破_前瞻趋势 - 前瞻产业研究院] ——国家层面光伏玻璃行业政策汇总\n\n自2009年以来，发改委、国务院、国家能源局、工信部等多部门都相继颁发了支持光伏及光伏玻璃发展的政策，内容涉及光伏玻璃产能置换方案、光伏玻璃发展技术路线等内容：\n\n图表2：截至2024年5月国家层面有关光伏玻璃行业的政策重点内容解",
-      "outcomes": {},
-      "verdict": "pending",
-      "backfilled_at": null
+      "outcomes": {
+        "1": -0.0043,
+        "5": -0.0152,
+        "20": null
+      },
+      "verdict": "中性",
+      "backfilled_at": "2026-09-29 15:50:19"
     },
     {
       "id": "1788944974_农药化肥",
@@ -2645,9 +2657,13 @@
       "intent_txt": "官方措辞潜在意图信号：鼓励(利好 力度0.55，引导性支持)；加快(强利好 力度0.55，自上而下推动，落地快)",
       "path_txt": "[{'industry': '农化制品', 'concept': '生物农药', 'logic': '政策明确支持生物农药研发与应用，推广生物农药替代化学农药，直接利好生物农药生产企业。'}, {'industry': '农化制品', 'concept': '微生物肥料', 'logic': '政策大力推广微生物肥料等绿色高效产品，支持微生物肥料创制与高效利用，直接利好微生物肥料企业。'}, {'industry': '农化制品', 'concept': '有机肥料', 'logic': '政策鼓励有机肥料生产，支持秸秆制糖联产黄腐酸等有机肥生产示范项目，直接利好有机肥料企业。'}, {'in",
       "policy_snippet": "[综合摘要] Recent policies support green pesticides and organic fertilizers, aim for 43% fertilizer efficiency by 2030, and promote sustainable agricultural practices.\n[重大利好！生物农药生物肥料获国家政策加持！ - 行业动态 - 上海万力华生物科技有限公司] 农业农村部、工业和信息化部、教育部高度重视高效生物农药和生物肥料产品研发与应用。一是加强政策引导。农业农村部印发《到2025年化肥减量化行动方案》、《到2025年化学农药减量化行动方案》，大力推广包括微生物肥料、生物农药在内的绿色高效产品，推广生物农药替代化学农药，推行绿色防控替代化学防控，加快绿色技术和投入品推广应用。工业和信息化部印发《加快非粮生物基材料创新发展三年行动方案》，鼓励非粮生物质糖化剩余物资源化利用生产高值高效有机肥技术攻关及应用示范。通过相关渠道支持实施秸秆制糖联产黄腐酸生产示范项目，推进有机肥高效稳定生产。二是强化科技支撑。农业农村部围绕农作物病虫害绿",
-      "outcomes": {},
-      "verdict": "pending",
-      "backfilled_at": null
+      "outcomes": {
+        "1": -0.0043,
+        "5": -0.0152,
+        "20": null
+      },
+      "verdict": "中性",
+      "backfilled_at": "2026-09-29 15:50:20"
     },
     {
       "id": "1788944992_新型电力",
@@ -2681,9 +2697,13 @@
       "intent_txt": "官方措辞潜在意图信号：重点支持(利好 力度0.80，方向明确但力度视细节)",
       "path_txt": "[{'industry': '计算机', 'concept': '人工智能', 'logic': '原文明确提及国家中小企业发展基金设立超1000亿元专精特新专项子基金，重点支持人工智能领域中小企业，单个项目最高5亿元股权投资，直接拓宽AI中小企业融资渠道。'}, {'industry': '医药生物', 'concept': '生物制造', 'logic': '原文明确将生物制造列为专项子基金重点支持领域，生物制造类中小企业可直接获得股权投资及知识产权质押融资绿色通道支持。'}, {'industry': '通信', 'concept': '量子信息', 'logic': '原文明确将量子信",
       "policy_snippet": "[综合摘要] In 2026, China released new policies to support small and medium-sized enterprises, focusing on digital and green transformations. Key measures include tax reductions and funding for innovation. These policies aim to boost high-quality development.\n[2026年中小企业迎来重大利好！国家发布最新支持政策及企业大事速览] Title: 2026年中小企业迎来重大利好！国家发布最新支持政策及企业大事速览\n位置： 首页 > 资讯 > 企服头条 > 2026年中小企业迎来重大利好！国家发布最新支持政策及企业大事速览. # 2026年中小企业迎来重大利好！国家发布最新支持政策及企业大事速览. 2026年1月8日，工业和信息化部联合财政部、中国人民银行正式发布《关于深化中小企业高质量发展若干措施的通知》（以下简称《通知》），标志着新一轮国家",
-      "outcomes": {},
-      "verdict": "pending",
-      "backfilled_at": null
+      "outcomes": {
+        "1": -0.0118,
+        "5": -0.0149,
+        "20": null
+      },
+      "verdict": "中性",
+      "backfilled_at": "2026-09-29 15:50:21"
     },
     {
       "id": "1789004737_玻璃",
@@ -2693,9 +2713,13 @@
       "intent_txt": "",
       "path_txt": "[{'industry': '建筑材料', 'concept': '浮法玻璃', 'logic': '政策释放房地产利好，提振浮法玻璃市场情绪，中下游集中补货，产销过百，部分原片企业价格止跌上涨，直接利好浮法玻璃行业。'}, {'industry': '建筑材料', 'concept': '光伏玻璃', 'logic': '政策支持光伏玻璃可持续发展，行业会议提倡产能减产30%，加速堵窑减产，产能调整预期直接利好光伏玻璃行业。'}, {'industry': '基础化工', 'concept': '纯碱', 'logic': '纯碱作为玻璃主要原料，受房地产政策利好、宏观经济恢复及基本面偏强驱",
       "policy_snippet": "[综合摘要] Recent policies favor glass industry growth, especially for photovoltaic glass, with potential capacity adjustments and support for sustainable development. Market sentiment is positive due to policy benefits, but overcapacity remains a concern. Industry experts predict moderate price fluctuations in the near future.\n[[PDF] 大宗商品研究所【纯碱玻璃10 月报】政策利好不断 - 银河期货] 月底会议释放房地产利好政策， 在价格处于低位的情况下， 浮法玻璃市场情绪得到提 振。中游贸易商、期现商以及下游集中补货，多个地区的玻璃产销持续过百，部分原片企业 的价格止跌并有所上涨。 尽管政策落地， 但下游资金的改善情况对玻璃需求的阶段性支撑力 度尚不明确， 下游深",
-      "outcomes": {},
-      "verdict": "pending",
-      "backfilled_at": null
+      "outcomes": {
+        "1": -0.0118,
+        "5": -0.0149,
+        "20": null
+      },
+      "verdict": "中性",
+      "backfilled_at": "2026-09-29 15:50:21"
     },
     {
       "id": "1789004754_农药化肥",
@@ -2705,9 +2729,13 @@
       "intent_txt": "官方措辞潜在意图信号：鼓励(利好 力度0.55，引导性支持)；加快(强利好 力度0.55，自上而下推动，落地快)",
       "path_txt": "[{'industry': '基础化工', 'concept': '生物农药', 'logic': '政策明确推广生物农药替代化学农药，生物农药科技创新平台和重点实验室布局直接推动生物农药研发、登记与产业化，基础化工中的农药子行业直接受益。'}, {'industry': '基础化工', 'concept': '生物肥料/微生物肥料', 'logic': '政策大力推广微生物肥料等绿色高效产品，资源节约型肥料教育部工程研究中心和生物肥料创制攻关直接利好肥料企业的生物肥料业务。'}, {'industry': '农林牧渔', 'concept': '绿色防控', 'logic': '政策推行绿色",
       "policy_snippet": "[综合摘要] Recent policies support green pesticides and fertilizers, aiming for reduced chemical use and increased efficiency by 2030. The government promotes organic and biological alternatives to traditional chemicals. Regulations enforce stricter controls on harmful agricultural inputs.\n[重大利好！生物农药生物肥料获国家政策加持！ - 行业动态 - 上海万力华生物科技有限公司] 农业农村部、工业和信息化部、教育部高度重视高效生物农药和生物肥料产品研发与应用。一是加强政策引导。农业农村部印发《到2025年化肥减量化行动方案》、《到2025年化学农药减量化行动方案》，大力推广包括微生物肥料、生物农药在内的绿色高效产品，推广生物农药替代化学农药，推行绿色防控替代化学防控，加快绿色技术和投入品推广应用。工业和信息",
-      "outcomes": {},
-      "verdict": "pending",
-      "backfilled_at": null
+      "outcomes": {
+        "1": -0.0118,
+        "5": -0.0149,
+        "20": null
+      },
+      "verdict": "中性",
+      "backfilled_at": "2026-09-29 15:50:21"
     },
     {
       "id": "1789004776_新型电力",
@@ -2753,9 +2781,13 @@
       "intent_txt": "官方措辞潜在意图信号：鼓励(利好 力度0.55，引导性支持)；试点(中性偏谨慎 力度0.48，局部试验，全面推广待验证)",
       "path_txt": "[{'industry': '基础化工', 'concept': '有机颜料', 'logic': '政策明确支持环境友好颜料、高性能有机颜料，环保政策趋严推动高性能有机颜料替代含铅铬等有毒无机颜料，直接利好有机颜料行业。'}, {'industry': '基础化工', 'concept': '涂料油墨', 'logic': '政策明确支持粉末涂料、水性涂料、光固化涂料、无溶剂涂料以及高固体含量涂料，低VOC涂料是未来发展方向，直接利好环保涂料行业。'}, {'industry': '基础化工', 'concept': '精细化工', 'logic': '政策鼓励环保型表面处理技术产品开发、生",
       "policy_snippet": "[综合摘要] Recent policies favor organic pigments and eco-friendly dyes, promoting sustainable development and reducing environmental impact. Export tax refund rates for dyes and pigments have been increased, boosting international trade. Government initiatives aim to reduce VOC emissions, favoring low-VOC products.\n[国内有机颜料市场迎来发展机遇 龙头企业有望受益] 环保政策趋严，环境友好颜料、涂料产品发展受到政策支持。2007 年，欧盟正式实施的法规，取代了欧盟之前的 40 多项有关化学品的指令和法规，其监管的重点之一便是染料、有机颜料、助剂、中间体及其下游产品，如玩具、纺织品等。我国相关部门也陆续颁布法规、行业标准，限制含有毒有害物质产品的使用。\n\n2020年3月4日，我国公布",
-      "outcomes": {},
-      "verdict": "pending",
-      "backfilled_at": null
+      "outcomes": {
+        "1": -0.0007,
+        "5": 0.0061,
+        "20": null
+      },
+      "verdict": "中性",
+      "backfilled_at": "2026-09-29 15:50:22"
     },
     {
       "id": "1789086990_化工原料",
@@ -2813,9 +2845,13 @@
       "intent_txt": "官方措辞潜在意图信号：鼓励(利好 力度0.55，引导性支持)；试点(中性偏谨慎 力度0.48，局部试验，全面推广待验证)",
       "path_txt": "[{'industry': '基础化工', 'concept': '有机颜料', 'logic': '政策明确支持环境友好颜料、高性能有机颜料、颜料包膜处理深加工，直接利好有机颜料行业。'}, {'industry': '基础化工', 'concept': '涂料油墨', 'logic': '政策明确支持粉末涂料、水性涂料、光固化涂料、无溶剂涂料以及高固体含量涂料，直接利好环保涂料行业。'}, {'industry': '基础化工', 'concept': '精细化工', 'logic': '政策鼓励腐植酸类精细化工产品开发、生产，直接利好精细化工子行业。'}, {'industry': '基",
       "policy_snippet": "[综合摘要] Recent policies favor organic dyes and coatings, promoting sustainable development and higher export tax rebates. The government supports high-quality organic pigment industries and encourages foreign investment in advanced processing. These policies aim to boost market competitiveness and environmental protection.\n[国内有机颜料市场迎来发展机遇龙头企业有望受益] 环保政策趋严，环境友好颜料、涂料产品发展受到政策支持。2007 年，欧盟正式实施的法规，取代了欧盟之前的 40 多项有关化学品的指令和法规，其监管的重点之一便是染料、有机颜料、助剂、中间体及其下游产品，如玩具、纺织品等。我国相关部门也陆续颁布法规、行业标准，限制含有毒有害物质产品的使用。\n\n2020年",
-      "outcomes": {},
-      "verdict": "pending",
-      "backfilled_at": null
+      "outcomes": {
+        "1": -0.0007,
+        "5": 0.0061,
+        "20": null
+      },
+      "verdict": "中性",
+      "backfilled_at": "2026-09-29 15:50:24"
     },
     {
       "id": "1789099103_化工原料",
@@ -2849,9 +2885,13 @@
       "intent_txt": "官方措辞潜在意图信号：补贴(利好 力度0.66，直接补贴，盈利弹性)",
       "path_txt": "[{'industry': '电力设备', 'concept': '特高压', 'logic': '政策明确提及特高压交直流输电通道建设，输电设备需求直接提升。'}, {'industry': '电力设备', 'concept': '智能电网', 'logic': '政策明确提及智能化配网改造、微电网系统建设，配电自动化、电网数字化智能化装备直接受益。'}, {'industry': '电力设备', 'concept': '储能', 'logic': '政策明确提及抽水蓄能、独立储能、用户侧新型储能，储能设备及系统集成需求直接释放。'}, {'industry': '公用事业', 'conce",
       "policy_snippet": "[综合摘要] Recent policies support the development of new energy and electric equipment sectors, boosting stock prices and investment opportunities. Key areas include renewable energy, smart grids, and energy storage. Expect continued growth in these fields.\n[重磅利好接连发布 中国西电、东方电气等多只电气设备股止“跌”转“涨” _ 东方财富网] 中信证券宏观与政策首席分析师杨帆等人在最新研报中解读称，《新型电力系统建设“十五五”规划》与《可再生能源“十五五”规划》《新型能源体系建设“十五五”规划》等形成配套，以“源网荷储”一体化协同为主线，推动电力行业从单一新增新能源装机转向全域统筹。《规划》围绕电源、电网、调节资源、负荷、市场等设置量化目标，力争2030年初步建成新型电力系统，非化石能源发电量占比升至50%。政策或将持续利好特高压、配网",
-      "outcomes": {},
-      "verdict": "pending",
-      "backfilled_at": null
+      "outcomes": {
+        "1": -0.0054,
+        "5": 0.0166,
+        "20": null
+      },
+      "verdict": "中性",
+      "backfilled_at": "2026-09-29 15:50:25"
     },
     {
       "id": "1789156644_小金属",
@@ -2861,9 +2901,13 @@
       "intent_txt": "",
       "path_txt": "[{'industry': '有色金属', 'concept': '小金属', 'logic': '政策端八部门《有色金属行业稳增长工作方案》加强锂、镍等资源勘查，新版《矿产资源法实施条例》对战略矿产实行总量配额开采，叠加钨、稀土常态化收储，直接改善小金属供需格局并提升战略溢价。'}, {'industry': '有色金属', 'concept': '稀土', 'logic': '稀土被列为战略小金属，国家常态化收储直接支撑价格，且供给刚性收缩、需求结构升级，行业进入价值重估阶段。'}, {'industry': '有色金属', 'concept': '钨', 'logic': '钨为战略小金",
       "policy_snippet": "[综合摘要] Small metals are benefiting from industry growth and supportive policies, with prices expected to rise significantly in 2026. Key metals like lithium and copper are seeing strong demand due to new technologies. Regulatory measures and strategic importance are driving market trends.\n[金银铜价格出现回调，小金属迎产业与政策双重利好共振，稀有金属ETF(159608)早盘冲高涨超2%|界面新闻] 最后，‌供需基本面分化‌：铜在供给受限（如智利、秘鲁矿产扰动）和AI基础设施、国防需求增长驱动下，金融属性与商品属性共振，而金银更多受美元利率和央行储备行为影响。\n\n小金属方面，稀有金属板块迎来产业与政策双重利好共振。产业端，供需缺口持续扩大，据国际能源署（IEA）2025 年 12 月发布的《全球关键矿",
-      "outcomes": {},
-      "verdict": "pending",
-      "backfilled_at": null
+      "outcomes": {
+        "1": -0.0054,
+        "5": 0.0166,
+        "20": null
+      },
+      "verdict": "中性",
+      "backfilled_at": "2026-09-29 15:50:25"
     },
     {
       "id": "1789156671_通信设备",
@@ -2897,9 +2941,13 @@
       "intent_txt": "",
       "path_txt": "[{'industry': '有色金属', 'concept': '小金属', 'logic': '政策明确加强锂、镍等资源勘查，推动再生金属产能突破，直接提升小金属资源供给保障能力；钨、稀土等核心战略小金属常态化收储直接支撑价格与行业估值。'}, {'industry': '有色金属', 'concept': '稀土永磁', 'logic': '稀土被列为常态化收储的核心战略小金属，供给端受总量配额开采管控，需求端新能源、新材料、人工智能等领域拉动，直接受益于政策溢价与供需缺口。'}, {'industry': '有色金属', 'concept': '钨', 'logic': '钨被明确纳入",
       "policy_snippet": "[综合摘要] Recent policies favor small metals, boosting demand and prices due to strategic importance and supply constraints. Investment in emerging industries supports growth. Analysts predict rising prices for strategic metals like lithium and cobalt.\n[金银铜价格出现回调，小金属迎产业与政策双重利好共振，稀有金属ETF(159608)早盘冲高涨超2%|界面新闻] 最后，‌供需基本面分化‌：铜在供给受限（如智利、秘鲁矿产扰动）和AI基础设施、国防需求增长驱动下，金融属性与商品属性共振，而金银更多受美元利率和央行储备行为影响。\n\n小金属方面，稀有金属板块迎来产业与政策双重利好共振。产业端，供需缺口持续扩大，据国际能源署（IEA）2025 年 12 月发布的《全球关键矿产展望》，能源转型驱动下，2040 年锂需求将较当前增长五倍，钴、稀土需求增长 ",
-      "outcomes": {},
-      "verdict": "pending",
-      "backfilled_at": null
+      "outcomes": {
+        "1": -0.0054,
+        "5": 0.0166,
+        "20": null
+      },
+      "verdict": "中性",
+      "backfilled_at": "2026-09-29 15:50:26"
     },
     {
       "id": "1789358643_玻璃",
@@ -2909,9 +2957,13 @@
       "intent_txt": "",
       "path_txt": "[{'industry': '建筑材料', 'concept': '光伏玻璃', 'logic': '政策明确鼓励玻璃行业向光伏玻璃转型，以支持可再生能源，光伏玻璃产能置换条件拟放宽，直接利好光伏玻璃生产企业。'}, {'industry': '建筑材料', 'concept': '建筑节能', 'logic': \"政策原文提及'建筑节能推广'，玻璃作为建筑节能关键材料，在建筑节能推广中直接受益。\"}, {'industry': '建筑材料', 'concept': '玻璃概念', 'logic': '政策推动玻璃行业优化，减少过剩产能，促进可持续发展，直接利好玻璃行业整体。'}]",
       "policy_snippet": "[综合摘要] Recent policies aim to optimize the glass industry by reducing excess capacity and promoting sustainable development. The government encourages the transition to photovoltaic glass to support renewable energy. Market demand remains weak due to sluggish real estate sector.\n[利好！工信部最新回应：拟放宽光伏玻璃产能置换条件（附专家会议纪要海量信息）_组件] Q&AQ 供需平衡表，大家以为22-23已经有很多产能出来，造成过剩，看您这个23年减少的?玻璃产能和需求是同步增长的。22-23需求增幅还是比较快，不会出现大家预期的这种供需失衡。21年可能有阶段性的需求放缓，但组件厂的订单出来，不会影响他们的走势。 Q 南玻4800吨新产能，21,22年出来的可能性大吗现在都说南玻没有存量产能去置换，他们有很多浮法",
-      "outcomes": {},
-      "verdict": "pending",
-      "backfilled_at": null
+      "outcomes": {
+        "1": -0.0054,
+        "5": 0.0166,
+        "20": null
+      },
+      "verdict": "中性",
+      "backfilled_at": "2026-09-29 15:50:26"
     },
     {
       "id": "1789358676_通信设备",
@@ -2945,9 +2997,13 @@
       "intent_txt": "官方措辞潜在意图信号：加快(强利好 力度0.53，自上而下推动，落地快)",
       "path_txt": "[{'industry': '电力设备', 'concept': '特高压', 'logic': '政策明确提及特高压建设、跨省跨区输电通道重点工程、电网主网架布局和结构完善，直接拉动特高压设备需求。'}, {'industry': '电力设备', 'concept': '储能', 'logic': '政策明确提及储能锂电池，在新能源并网和消纳需求提升背景下，储能锂电池市场直接受益。'}, {'industry': '电力设备', 'concept': '智能电网', 'logic': '政策明确提及提升电网安全和智能化水平、配电网改造、农村电网建设，直接推动智能电网设备投资。'}, {'in",
       "policy_snippet": "[综合摘要] The latest policies support the growth of the electric equipment industry through initiatives for renewable energy, grid modernization, and international market expansion. The government emphasizes quality supply and effective demand, focusing on green and smart technology integration. The policies aim to boost domestic and international markets for electric equipment.\n[【行业研究】2024年电力、电气设备制造行业回顾与2025年度信用风险展望|电气设备_新浪财经_新浪网] 政策支持方面，2021年3月15日，中央财经委员会第九次会议提出要“实施可再生能源替代行动，深化电力体制改革，构建以新能源为主体的新型",
-      "outcomes": {},
-      "verdict": "pending",
-      "backfilled_at": null
+      "outcomes": {
+        "1": -0.0054,
+        "5": 0.0166,
+        "20": null
+      },
+      "verdict": "中性",
+      "backfilled_at": "2026-09-29 15:50:26"
     },
     {
       "id": "1789377105_元器件",
@@ -3005,9 +3061,13 @@
       "intent_txt": "官方措辞潜在意图信号：万亿(量化资金利好 力度0.62，体量巨大，景气强)",
       "path_txt": "",
       "policy_snippet": "[综合摘要] Recent healthcare policies support innovation, AI, and telemedicine; Medicaid cuts may impact low-income access; new Medicare plans offer enhanced benefits.\n[10万亿大产业，政策利好来了！国民健康“十五五”规划出炉（附股）] 中信证券也表示，政策支持创新，打造生物医药新型支柱产业，创新驱动仍为医疗健康产业主线，关注创新药和器械在全球的持续拓展；同时政策还将促进AI医疗、基层医疗、健康管理、消费医疗、银发经济和生育等领域的发展。医疗健康产业政策改革进入密集期，持续关注政策驱动下的医疗健康产业投资机会。\n\n融资资金加仓这些概念股\n\n据证券时报·数据宝统计，截至7月10日，A股健康中国概念股中，共11股二季度以来获融资资金净买入额超过5000万元。迈瑞医疗、恒瑞医药融资净买入超过10亿元，分别为15.27亿元、11.68亿元；信立泰排名第三，净买入额4.38亿元；康弘药业、华润三九、复星医药随后，净买入额均在2亿元以上。\n",
-      "outcomes": {},
-      "verdict": "pending",
-      "backfilled_at": null
+      "outcomes": {
+        "1": -0.0041,
+        "5": 0.0115,
+        "20": null
+      },
+      "verdict": "中性",
+      "backfilled_at": "2026-09-29 15:50:27"
     },
     {
       "id": "1789494321_元器件",
@@ -3029,9 +3089,13 @@
       "intent_txt": "",
       "path_txt": "[{'industry': '食品饮料', 'concept': '饮料制造', 'logic': '政策原文明确提及第16号公告延续税收红利，降低饮料制造企业税负成本，直接利好软饮料、包装饮用水等饮料制造企业。'}, {'industry': '食品饮料', 'concept': '食品饮料消费', 'logic': '《提振消费专项行动方案》部署8方面30项重点任务，直接刺激食品饮料终端消费需求，行业作为消费刺激核心受益方向。'}, {'industry': '食品饮料', 'concept': '白酒', 'logic': '政策原文提及贵州茅台等权重股大涨，消费刺激政策直接提振白酒等高",
       "policy_snippet": "[综合摘要] Recent policies favor the soft drink industry, reducing tax burdens and boosting market growth. Key stocks like Guizhou Moutai and Anqi Yeast have seen significant gains. Regulatory support continues to benefit the sector.\n[政策持续赋能饮料行业再享税收利好] 此次第16号公告的出台，再度延续了这一政策红利，降低了饮料制造企业的税负成本，为高度依赖品牌建设与市场推广的饮料行业构成直接且重要的发展利好。\n[全球食品饮料论坛将至，政策利好持续发酵，这些股频获机构调研] 目前，国内多项消费刺激政策陆续落地，中共中央办公厅、国务院办公厅近期印发《提振消费专项行动方案》，部署了8方面30项重点任务。同时，作为食品饮料消费行业“风向标”之\n[食品饮料现产业+政策多重利好，贵州茅台、东鹏饮料、安琪酵母等权重股大涨 - 财闻网] 2026-09-09 21:28\n\n国家",
-      "outcomes": {},
-      "verdict": "pending",
-      "backfilled_at": null
+      "outcomes": {
+        "1": -0.0041,
+        "5": 0.0115,
+        "20": null
+      },
+      "verdict": "中性",
+      "backfilled_at": "2026-09-29 15:50:28"
     },
     {
       "id": "1789494431_化学制药",
@@ -3113,9 +3177,13 @@
       "intent_txt": "官方措辞潜在意图信号：万亿(量化资金利好 力度0.59，体量巨大，景气强)",
       "path_txt": "[{'industry': '医药生物', 'concept': '创新药', 'logic': '政策明确支持创新药和器械，打造生物医药新型支柱产业，创新驱动为医疗健康产业主线，直接利好创新药研发与生产企业。'}, {'industry': '医药生物', 'concept': '医疗器械', 'logic': '政策明确支持创新器械，且AI医疗、基层医疗建设将增加对高端及基层医疗器械的需求，直接利好器械板块。'}, {'industry': '医药生物', 'concept': 'AI医疗', 'logic': '政策明确促进AI医疗发展，AI在医疗影像、辅助诊断、健康管理等场景应用加速落",
       "policy_snippet": "[综合摘要] Latest healthcare policies support innovation, AI, and base-level medical services. The US signed a tax reduction bill favoring the healthcare sector, but cuts to Medicaid may impact jobs. China's \"14th Five-Year\" plan focuses on improving healthcare services and medical insurance.\n[10万亿大产业，政策利好来了！国民健康“十五五”规划出炉（附股）] 中信证券也表示，政策支持创新，打造生物医药新型支柱产业，创新驱动仍为医疗健康产业主线，关注创新药和器械在全球的持续拓展；同时政策还将促进AI医疗、基层医疗、健康管理、消费医疗、银发经济和生育等领域的发展。医疗健康产业政策改革进入密集期，持续关注政策驱动下的医疗健康产业投资机会。\n\n融资资金加仓这些概念股\n\n据证券时报·数据宝统计，截至7月10日，A",
-      "outcomes": {},
-      "verdict": "pending",
-      "backfilled_at": null
+      "outcomes": {
+        "1": 0.0094,
+        "5": 0.0033,
+        "20": null
+      },
+      "verdict": "中性",
+      "backfilled_at": "2026-09-29 15:50:30"
     },
     {
       "id": "1789636003_元器件",
@@ -3173,9 +3241,13 @@
       "intent_txt": "官方措辞潜在意图信号：补贴(利好 力度0.62，直接补贴，盈利弹性)；鼓励(利好 力度0.54，引导性支持)",
       "path_txt": "[{'industry': '建筑装饰', 'concept': '装配式装修、旧房改造、适老化改造', 'logic': '政策明确推广装配式装修技术，鼓励旧房装修、厨卫局部改造和居家适老化改造，直接为建筑装饰企业带来订单增量。'}, {'industry': '建筑材料', 'concept': '绿色建材、消费补贴', 'logic': '政策推广应用绿色建材，并对购买智能家居产品给予补贴，直接拉动绿色建材需求。'}, {'industry': '轻工制造', 'concept': '智能家居、家装消费品换新', 'logic': '政策鼓励智能家居产品消费，推动家装消费品换新，直接利好",
       "policy_snippet": "[综合摘要] Recent policies support green building materials and sustainable construction practices. The industry is also encouraged to adopt smart and modular technologies. Government initiatives aim to boost public building decoration and urban renewal projects.\n[中国装饰装修行业发展现状分析与投资前景预测报告（2025- ...] 推动家装消费品换新。鼓励有条件的地方支持居民开展旧房装修、厨卫等局部改造和适老化 改造，采取发放消费券（消费补贴）等方式，对购买智能家居产品给予补贴。 福建省 2025年5月 观研报告网 www.chinabaogao.com 福建省提振消费专项行动实施方案 在现有政策基础上，推动装修材料、卫生洁具等我省更多优势产品参与以旧换新活动，实现 以“两新”带“两优”。 江西省 2024年4月 江西省推动大规模设",
-      "outcomes": {},
-      "verdict": "pending",
-      "backfilled_at": null
+      "outcomes": {
+        "1": 0.0094,
+        "5": 0.0033,
+        "20": null
+      },
+      "verdict": "中性",
+      "backfilled_at": "2026-09-29 15:50:31"
     },
     {
       "id": "1789699264_元器件",
@@ -3233,9 +3305,13 @@
       "intent_txt": "官方措辞潜在意图信号：补贴(利好 力度0.62，直接补贴，盈利弹性)；大力发展(强利好 力度0.59，财政+税收+考核多重保障)；鼓励(利好 力度0.54，引导性支持)",
       "path_txt": "[{'industry': '建筑装饰', 'concept': '装配式建筑', 'logic': '政策明确要求大力发展装配式建筑，力争10年左右使装配式建筑占新建建筑比例达30%，直接利好装配式建筑产业链，包括设计、构件生产、施工等环节。'}, {'industry': '建筑装饰', 'concept': '全装修/成品住宅', 'logic': '政策要求商品住宅项目全部实行全装修，成品住宅比例目标明确，直接推动全装修/成品住宅市场扩容，利好具备全装修服务能力的建筑装饰企业。'}, {'industry': '建筑材料', 'concept': '绿色建材', 'logic': '政",
       "policy_snippet": "[综合摘要] Recent policies support full-package residential construction and encourage home renovation and green building materials. Many cities now require all new homes to come fully furnished. Government subsidies for home improvement and eco-friendly products are also increasing.\n[政策利好 家居装饰壁材行业发展空间广阔—新浪家居] # 政策利好 家居装饰壁材行业发展空间广阔\n\n2017-01-20 壁纸 新浪家居\n\n近年来，装配式建筑发展不断迎来政策利好，国家接连出台文件助力装配式建筑发展。9月27日，国务院办公厅印发《关于大力发展装配式建筑的指导意见》，更要力争用10年左右时间，使装配式建筑占新建建筑的比例达到30%。\n\n1  住建部总工程师陈宜明在国务院政策例行吹风会上表示，装配式建筑是建造方式的重大变革",
-      "outcomes": {},
-      "verdict": "pending",
-      "backfilled_at": null
+      "outcomes": {
+        "1": 0.0097,
+        "5": -0.0226,
+        "20": null
+      },
+      "verdict": "过乐观",
+      "backfilled_at": "2026-09-29 15:50:32"
     },
     {
       "id": "1789974409_化学制药",
@@ -3680,10 +3756,250 @@
       "outcomes": {},
       "verdict": "pending",
       "backfilled_at": null
+    },
+    {
+      "id": "1790644130_元器件",
+      "date": "20260929",
+      "sector": "元器件",
+      "grade": "未知",
+      "intent_txt": "官方措辞潜在意图信号：万亿(量化资金利好 力度0.59，体量巨大，景气强)；加快(强利好 力度0.53，自上而下推动，落地快)",
+      "path_txt": "",
+      "policy_snippet": "[综合摘要] The sources indicate that there are significant policy supports for the development of electronic components and related industries. The \"规划\" and \"行动方案\" documents emphasize the promotion of high-end development in electronic components and materials, including circuit, connection, mechatronics, sensor, and functional materials. There is also a focus on the innovation and application of intelligent sensors, the advancement of integrated circuit technology, and the enhancement of computing ",
+      "outcomes": {},
+      "verdict": "pending",
+      "backfilled_at": null
+    },
+    {
+      "id": "1790644134_医疗保健",
+      "date": "20260929",
+      "sector": "医疗保健",
+      "grade": "未知",
+      "intent_txt": "官方措辞潜在意图信号：万亿(量化资金利好 力度0.59，体量巨大，景气强)；鼓励(利好 力度0.54，引导性支持)",
+      "path_txt": "",
+      "policy_snippet": "[综合摘要] The sources indicate that there are several supportive policies for the healthcare sector. The \"十五五\"规划 (15-year health plan) aims to build a healthier China by 2035, focusing on innovation-driven medical and health industries, AI medical services, and the development of various healthcare fields. Additionally, there are policies to support the development of innovative drugs, including measures to ensure their availability and proper use. Furthermore, policies are in place to support soci",
+      "outcomes": {},
+      "verdict": "pending",
+      "backfilled_at": null
+    },
+    {
+      "id": "1790644137_塑料",
+      "date": "20260929",
+      "sector": "塑料",
+      "grade": "未知",
+      "intent_txt": "官方措辞潜在意图信号：鼓励(利好 力度0.54，引导性支持)；试点(中性偏谨慎 力度0.48，局部试验，全面推广待验证)",
+      "path_txt": "",
+      "policy_snippet": "[综合摘要] The sources indicate that there are recent policy benefits for biodegradable plastics. The Ministry of Commerce has issued guidelines to encourage the reporting and promotion of biodegradable plastics and other environmentally friendly alternatives. The National Development and Reform Commission, along with the Ministry of Ecology and Environment, has issued guidelines to further strengthen plastic pollution control, including supporting green packaging research and development, green log",
+      "outcomes": {},
+      "verdict": "pending",
+      "backfilled_at": null
+    },
+    {
+      "id": "1790644140_生物制药",
+      "date": "20260929",
+      "sector": "生物制药",
+      "grade": "未知",
+      "intent_txt": "官方措辞潜在意图信号：重点支持(利好 力度0.80，方向明确但力度视细节)；鼓励(利好 力度0.54，引导性支持)；加快(强利好 力度0.53，自上而下推动，落地快)；试点(中性偏谨慎 力度0.48，局部试验，全面推广待验证)",
+      "path_txt": "",
+      "policy_snippet": "[综合摘要] The sources indicate that various regions in China are implementing supportive policies for the biopharmaceutical industry. Guangzhou provides financial support for innovative drug research and development, clinical trials, and industry transformation. Guangdong province has also introduced policies to promote biopharmaceutical innovation and clinical trial development. Shanghai offers support for innovative drug registration holders and encourages the establishment of high-level incubati",
+      "outcomes": {},
+      "verdict": "pending",
+      "backfilled_at": null
+    },
+    {
+      "id": "1790644143_化工原料",
+      "date": "20260929",
+      "sector": "化工原料",
+      "grade": "未知",
+      "intent_txt": "官方措辞潜在意图信号：鼓励(利好 力度0.54，引导性支持)",
+      "path_txt": "",
+      "policy_snippet": "[综合摘要] The sources indicate that there are several policy supports and initiatives for the chemical industry, particularly focusing on high-quality development, innovation, and structural adjustments. The chemical industry is experiencing high export momentum, with sectors like chemical fibers, chemical raw materials, and rubber and plastic products showing significant year-on-year improvements. There are also policies to support the development of fine chemical industries, encouraging innovatio",
+      "outcomes": {},
+      "verdict": "pending",
+      "backfilled_at": null
+    },
+    {
+      "id": "1790646883_元器件",
+      "date": "20260929",
+      "sector": "元器件",
+      "grade": "C",
+      "intent_txt": "官方措辞潜在意图信号：万亿(量化资金利好 力度0.59，体量巨大，景气强)；加快(强利好 力度0.53，自上而下推动，落地快)",
+      "path_txt": "",
+      "policy_snippet": "[综合摘要] The sources indicate that there are significant policy supports for the development of electronic components and related industries. The \"规划\" and \"行动方案\" documents emphasize the promotion of high-end development in electronic components and materials, including circuit, connection, mechatronics, sensor, and functional materials. There is also a focus on the innovation and application of intelligent sensors, the advancement of integrated circuit technology, and the enhancement of computing ",
+      "outcomes": {},
+      "verdict": "pending",
+      "backfilled_at": null
+    },
+    {
+      "id": "1790646937_医疗保健",
+      "date": "20260929",
+      "sector": "医疗保健",
+      "grade": "S",
+      "intent_txt": "官方措辞潜在意图信号：万亿(量化资金利好 力度0.59，体量巨大，景气强)；鼓励(利好 力度0.54，引导性支持)",
+      "path_txt": "",
+      "policy_snippet": "[综合摘要] The sources indicate that there are several supportive policies for the healthcare sector. The \"十五五\"规划 (15-year health plan) aims to build a healthier China by 2035, focusing on innovation-driven medical and health industries, AI medical services, and the development of various healthcare fields. Additionally, there are policies to support the development of innovative drugs, including measures to ensure their availability and proper use. Furthermore, policies are in place to support soci",
+      "outcomes": {},
+      "verdict": "pending",
+      "backfilled_at": null
+    },
+    {
+      "id": "1790647017_塑料",
+      "date": "20260929",
+      "sector": "塑料",
+      "grade": "A",
+      "intent_txt": "官方措辞潜在意图信号：鼓励(利好 力度0.54，引导性支持)；试点(中性偏谨慎 力度0.48，局部试验，全面推广待验证)",
+      "path_txt": "",
+      "policy_snippet": "[综合摘要] The sources indicate that there are recent policy benefits for biodegradable plastics. The Ministry of Commerce has issued guidelines to encourage the reporting and promotion of biodegradable plastics and other environmentally friendly alternatives. The National Development and Reform Commission, along with the Ministry of Ecology and Environment, has issued guidelines to further strengthen plastic pollution control, including supporting green packaging research and development, green log",
+      "outcomes": {},
+      "verdict": "pending",
+      "backfilled_at": null
+    },
+    {
+      "id": "1790647064_电器仪表",
+      "date": "20260929",
+      "sector": "电器仪表",
+      "grade": "C",
+      "intent_txt": "官方措辞潜在意图信号：加快(强利好 力度0.53，自上而下推动，落地快)",
+      "path_txt": "",
+      "policy_snippet": "[综合摘要] The sources indicate that the instrument and meter industry is a focus area for policy support, emphasizing import substitution. The government has issued a series of regulations and policies to support domestic industries, including the State Council, Ministry of Industry and Information Technology, Ministry of Science and Technology, and the Market Supervision Administration, among others. Additionally, the sources mention the implementation of the \"two new\" policies to boost internal d",
+      "outcomes": {},
+      "verdict": "pending",
+      "backfilled_at": null
+    },
+    {
+      "id": "1790647151_电气设备",
+      "date": "20260929",
+      "sector": "电气设备",
+      "grade": "A",
+      "intent_txt": "官方措辞潜在意图信号：补贴(利好 力度0.62，直接补贴，盈利弹性)；加快(强利好 力度0.53，自上而下推动，落地快)；试点(中性偏谨慎 力度0.48，局部试验，全面推广待验证)",
+      "path_txt": "",
+      "policy_snippet": "[综合摘要] The sources indicate that the electric equipment industry is benefiting from multiple policy supports and market expansions. The \"Electric Power Equipment Industry Stable Growth Work Plan (2025-2026)\" outlines core principles and growth targets, emphasizing demand-driven, quality-oriented, and safe development. Policies focus on large-scale project construction, advanced manufacturing clusters, and new energy equipment, with special attention to special high-voltage projects. Additionally",
+      "outcomes": {},
+      "verdict": "pending",
+      "backfilled_at": null
+    },
+    {
+      "id": "1790649624_医疗保健",
+      "date": "20260929",
+      "sector": "医疗保健",
+      "grade": "A",
+      "intent_txt": "官方措辞潜在意图信号：万亿(量化资金利好 力度0.59，体量巨大，景气强)；鼓励(利好 力度0.54，引导性支持)",
+      "path_txt": "[{'industry': '医药生物', 'concept': '创新药', 'logic': '原文明确打造生物医药新型支柱产业、创新驱动为医疗健康产业主线，并强调创新药和器械全球持续拓展；创新药配备使用、药事会调整、临时采购绿色通道、医保支付优化等全链条政策直接利好创新药研发、生产与商业化。'}, {'industry': '医药生物', 'concept': '医疗器械', 'logic': '原文明确创新药和器械在全球的持续拓展，设备+IT+AI一体化战略、影像系统全球装机等方向直接受益。'}, {'industry': '医药生物', 'concept': 'AI医疗/智慧医疗',",
+      "policy_snippet": "[综合摘要] The sources indicate that there are several supportive policies for the healthcare sector. The \"十五五\"规划 (15-year health plan) aims to build a healthier China by 2035, focusing on innovation-driven medical and health industries, AI medical services, and the development of various healthcare fields. Additionally, there are policies to support the development of innovative drugs, including measures to ensure their availability and proper use. Furthermore, policies are in place to support soci",
+      "outcomes": {},
+      "verdict": "pending",
+      "backfilled_at": null
+    },
+    {
+      "id": "1790649657_生物制药",
+      "date": "20260929",
+      "sector": "生物制药",
+      "grade": "C",
+      "intent_txt": "官方措辞潜在意图信号：重点支持(利好 力度0.80，方向明确但力度视细节)；鼓励(利好 力度0.54，引导性支持)；加快(强利好 力度0.53，自上而下推动，落地快)；试点(中性偏谨慎 力度0.48，局部试验，全面推广待验证)",
+      "path_txt": "",
+      "policy_snippet": "[综合摘要] The sources indicate that various regions in China are implementing supportive policies for the biopharmaceutical industry. Guangzhou provides financial support for innovative drug research and development, clinical trials, and industry transformation. Guangdong province has also introduced policies to promote biopharmaceutical innovation and clinical trial development. Shanghai offers support for innovative drug registration holders and encourages the establishment of high-level incubati",
+      "outcomes": {},
+      "verdict": "pending",
+      "backfilled_at": null
+    },
+    {
+      "id": "1790649697_化工原料",
+      "date": "20260929",
+      "sector": "化工原料",
+      "grade": "C",
+      "intent_txt": "官方措辞潜在意图信号：鼓励(利好 力度0.54，引导性支持)",
+      "path_txt": "",
+      "policy_snippet": "[综合摘要] The sources indicate that there are several policy supports and initiatives for the chemical industry, particularly focusing on high-quality development, innovation, and structural adjustments. The chemical industry is experiencing high export momentum, with sectors like chemical fibers, chemical raw materials, and rubber and plastic products showing significant year-on-year improvements. There are also policies to support the development of fine chemical industries, encouraging innovatio",
+      "outcomes": {},
+      "verdict": "pending",
+      "backfilled_at": null
+    },
+    {
+      "id": "1790649769_元器件",
+      "date": "20260929",
+      "sector": "元器件",
+      "grade": "A",
+      "intent_txt": "官方措辞潜在意图信号：万亿(量化资金利好 力度0.59，体量巨大，景气强)；加快(强利好 力度0.53，自上而下推动，落地快)",
+      "path_txt": "",
+      "policy_snippet": "[综合摘要] The sources indicate that there are significant policy supports for the development of electronic components and related industries. The \"规划\" and \"行动方案\" documents emphasize the promotion of high-end development in electronic components and materials, including circuit, connection, mechatronics, sensor, and functional materials. There is also a focus on the innovation and application of intelligent sensors, the advancement of integrated circuit technology, and the enhancement of computing ",
+      "outcomes": {},
+      "verdict": "pending",
+      "backfilled_at": null
+    },
+    {
+      "id": "1790649853_塑料",
+      "date": "20260929",
+      "sector": "塑料",
+      "grade": "A",
+      "intent_txt": "官方措辞潜在意图信号：鼓励(利好 力度0.54，引导性支持)；试点(中性偏谨慎 力度0.48，局部试验，全面推广待验证)",
+      "path_txt": "",
+      "policy_snippet": "[综合摘要] The sources indicate that there are recent policy benefits for biodegradable plastics. The Ministry of Commerce has issued guidelines to encourage the reporting and promotion of biodegradable plastics and other environmentally friendly alternatives. The National Development and Reform Commission, along with the Ministry of Ecology and Environment, has issued guidelines to further strengthen plastic pollution control, including supporting green packaging research and development, green log",
+      "outcomes": {},
+      "verdict": "pending",
+      "backfilled_at": null
+    },
+    {
+      "id": "1790652419_元器件",
+      "date": "20260929",
+      "sector": "元器件",
+      "grade": "A",
+      "intent_txt": "官方措辞潜在意图信号：万亿(量化资金利好 力度0.59，体量巨大，景气强)；加快(强利好 力度0.53，自上而下推动，落地快)",
+      "path_txt": "",
+      "policy_snippet": "[综合摘要] The sources indicate that there are significant policy supports for the development of electronic components and related industries. The \"规划\" and \"行动方案\" documents emphasize the promotion of high-end development in electronic components and materials, including circuit, connection, mechatronics, sensor, and functional materials. There is also a focus on the innovation and application of intelligent sensors, the advancement of integrated circuit technology, and the enhancement of computing ",
+      "outcomes": {},
+      "verdict": "pending",
+      "backfilled_at": null
+    },
+    {
+      "id": "1790652470_塑料",
+      "date": "20260929",
+      "sector": "塑料",
+      "grade": "C",
+      "intent_txt": "官方措辞潜在意图信号：鼓励(利好 力度0.54，引导性支持)；试点(中性偏谨慎 力度0.48，局部试验，全面推广待验证)",
+      "path_txt": "",
+      "policy_snippet": "[综合摘要] The sources indicate that there are recent policy benefits for biodegradable plastics. The Ministry of Commerce has issued guidelines to encourage the reporting and promotion of biodegradable plastics and other environmentally friendly alternatives. The National Development and Reform Commission, along with the Ministry of Ecology and Environment, has issued guidelines to further strengthen plastic pollution control, including supporting green packaging research and development, green log",
+      "outcomes": {},
+      "verdict": "pending",
+      "backfilled_at": null
+    },
+    {
+      "id": "1790652521_半导体",
+      "date": "20260929",
+      "sector": "半导体",
+      "grade": "C",
+      "intent_txt": "",
+      "path_txt": "[{'industry': '机械设备', 'concept': '人形机器人', 'logic': '原文标题明确提及“人形机器人”和“创新发展”，直接指向人形机器人整机、机器人本体与自动化设备方向；具体零部件环节属产业链合理推演。'}]",
+      "policy_snippet": "[工信部印发《人形机器人创新发展指导意见》 - 未来半导体] 1. 首页\n2. 半导体",
+      "outcomes": {},
+      "verdict": "pending",
+      "backfilled_at": null
+    },
+    {
+      "id": "1790652593_医疗保健",
+      "date": "20260929",
+      "sector": "医疗保健",
+      "grade": "S",
+      "intent_txt": "官方措辞潜在意图信号：万亿(量化资金利好 力度0.59，体量巨大，景气强)；鼓励(利好 力度0.54，引导性支持)",
+      "path_txt": "",
+      "policy_snippet": "[综合摘要] The sources indicate that there are several supportive policies for the healthcare sector. The \"十五五\"规划 (15-year health plan) aims to build a healthier China by 2035, focusing on innovation-driven medical and health industries, AI medical services, and the development of various healthcare fields. Additionally, there are policies to support the development of innovative drugs, including measures to ensure their availability and proper use. Furthermore, policies are in place to support soci",
+      "outcomes": {},
+      "verdict": "pending",
+      "backfilled_at": null
+    },
+    {
+      "id": "1790652636_电器仪表",
+      "date": "20260929",
+      "sector": "电器仪表",
+      "grade": "C",
+      "intent_txt": "官方措辞潜在意图信号：加快(强利好 力度0.53，自上而下推动，落地快)",
+      "path_txt": "",
+      "policy_snippet": "[综合摘要] The sources indicate that the instrument and meter industry is a focus area for policy support, emphasizing import substitution. The government has issued a series of regulations and policies to support domestic industries, including the State Council, Ministry of Industry and Information Technology, Ministry of Science and Technology, and the Market Supervision Administration, among others. Additionally, the sources mention the implementation of the \"two new\" policies to boost internal d",
+      "outcomes": {},
+      "verdict": "pending",
+      "backfilled_at": null
     }
   ],
   "stats": {
-    "recorded": 284,
-    "backfilled": 68
+    "recorded": 304,
+    "backfilled": 87
   }
 }

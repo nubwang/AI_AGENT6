@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-23 17:49:48",
+  "generated_at": "2026-09-29 14:22:21",
   "goal": "唯一宪法：提高每日推荐股票之后的上涨概率（次日大涨 + 后续主升浪）",
   "daily_recommend_pipeline": [
     {
@@ -653,7 +653,7 @@
     },
     {
       "name": "bt_cond_min_edge",
-      "current": 0.05,
+      "current": 0.08,
       "min": 0.0,
       "max": 0.3,
       "step": 0.01,
@@ -1097,15 +1097,15 @@
     },
     {
       "name": "selfproof_budget_default_cny",
-      "current": 5.0,
-      "min": 0.5,
+      "current": 0.0,
+      "min": 0.0,
       "max": 1000.0,
       "step": 0.5,
       "tier": 1,
       "hot_reload": true,
       "file": "app/backtest/selfproof_policy.py",
       "anchor_old": "\"selfproof_budget_default_cny\"",
-      "desc": "自证任务默认预算上限（元）；默认对齐账户余额量级"
+      "desc": "自证任务**展示用**预估预算（元）；**0 = 不限**（默认）。熔断判定见 llm_metering 三闸门，同样 0 = 不限"
     },
     {
       "name": "selfproof_regime_topk",
@@ -1352,11 +1352,13 @@
     "scripts/diagnose_grid_rebase.py",
     "scripts/diagnose_pick_pool.py",
     "scripts/diagnose_rank_key.py",
+    "scripts/diagnose_stk_limit_gap.py",
     "scripts/diagnose_unclassified.py",
     "scripts/diagnose_washout.py",
     "scripts/diagnose_washout_rate.py",
     "scripts/fix_stk_limit_columns.py",
     "scripts/generate_init_sql.py",
+    "scripts/heal_halfday_tables.py",
     "scripts/kb_absorb_evidence.py",
     "scripts/migrate_adj_factor_unique.py",
     "scripts/migrate_stk_limit_date_index.py",
@@ -1392,9 +1394,12 @@
     "scripts/verify_gate_d_switch.py",
     "scripts/verify_hac_and_gate_wiring.py",
     "scripts/verify_label_usability.py",
+    "scripts/verify_llm_json_shape.py",
     "scripts/verify_llm_metering.py",
+    "scripts/verify_llm_shape_guard.py",
     "scripts/verify_lowmom_scheme.py",
     "scripts/verify_market_benchmark.py",
+    "scripts/verify_no_budget_block.py",
     "scripts/verify_ours_baseline.py",
     "scripts/verify_param_sweep.py",
     "scripts/verify_pick_pool_layering.py",
@@ -1415,6 +1420,7 @@
     "scripts/verify_shadow_live.py",
     "scripts/verify_shadow_ui_contract.py",
     "scripts/verify_size_baseline.py",
+    "scripts/verify_stage2_halfday_selfheal.py",
     "scripts/verify_stats_and_ablation.py",
     "scripts/verify_stop_anchor.py",
     "scripts/verify_t_overlap_recheck.py",

@@ -176,7 +176,10 @@ def backfill_news_reflection(limit: int | None = None) -> dict:
                                 {"role": "user", "content": user}])
         r["reflected"] = True
         r["t5_ret"] = round(t5, 4)
-        if result:
+        # ★ 形状兜底（2026-09-29）：只判 `if result` 不够 —— LLM 可能返回数组，
+        #   `result.get(...)` 会抛 'list' object has no attribute 'get'，把整轮反思批处理打断
+        #   （一条坏返回 ⇒ 后面所有案例都不再反思）。非 dict 一律当"无有效结论"跳过。
+        if isinstance(result, dict):
             upsert_lesson(NEWS_LESSON_FILE, "news", str(result.get("error_type", "")),
                           str(result.get("lesson", "")), str(result.get("fix", "")),
                           str(result.get("signal_hint", "")), f"{r.get('ts_code')}@{r.get('date')}")
@@ -240,7 +243,8 @@ def backfill_decision_reflection(limit: int | None = None) -> dict:
         )
         result = deepseek_chat([{"role": "system", "content": _DECISION_REFLECT_SYSTEM},
                                 {"role": "user", "content": user}])
-        if result:
+        # ★ 形状兜底（同 news 侧）：非 dict 直接跳过，避免一条坏返回打断整批决策反思。
+        if isinstance(result, dict):
             upsert_lesson(DECISION_KB_FILE, "decision", str(result.get("error_type", "")),
                           str(result.get("lesson", "")), str(result.get("fix", "")),
                           str(result.get("signal_hint", "")), f"{r.get('ts_code')}@{r.get('date')}")

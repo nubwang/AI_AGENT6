@@ -52,6 +52,12 @@ def _inject_synthetic() -> None:
         0 if (not a or not b or a >= b) else len([d for d in SYN_DAYS if a < d <= b]))
     R._next_trade_date = lambda a: next(  # type: ignore[assignment]
         (d for d in SYN_DAYS if d > a), "")
+    # ★「有效交易日」探针**必须一起打桩**：门禁会实时查库算有效交易日，不隔离的话
+    #   注入的 `dv` 快照会被真实库覆盖（2026-09-28 实测：stk_limit 半采 2361 行
+    #   ⇒ 有效交易日被改判成 20260923 ⇒ A1/A3/B1/D2/D3 五项假红，与代码无关）。
+    #   返回空 effective = "不动注入值"，正是本套用例想要的语义。
+    R.effective_latest_probe = lambda t, *a, **k: (  # type: ignore[assignment]
+        {"raw": "", "effective": "", "rows": {}, "min_rows": 5000})
 
 
 def _dv(daily: str, adj: str, basic: str, limit: str, overall: str = "warning") -> dict:

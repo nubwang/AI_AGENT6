@@ -1,91 +1,12 @@
 {
   "date": "20260804",
-  "generated_at": "2026-09-22 14:37:03",
+  "generated_at": "2026-09-29 09:26:23",
   "total_scanned": 40,
   "confirmed_count": 3,
   "candidate_pool": 2,
   "top_picks": [
     {
       "rank": 1,
-      "ts_code": "600360.SH",
-      "name": "华微电子",
-      "form_type": "B",
-      "up_probability": 0.6669,
-      "rule_prob": 0.6083,
-      "positive_score": 0.9859,
-      "negative_score": 0.4491,
-      "similarity": 0.5745,
-      "hit_conditions": [
-        {
-          "feature": "wk_trend",
-          "threshold": -0.1559591235791899,
-          "up_prob": 0.9069767441860465,
-          "direction": "low"
-        },
-        {
-          "feature": "large_order_ratio",
-          "threshold": -0.0017963680524626811,
-          "up_prob": 0.8488372093023255,
-          "direction": "high"
-        }
-      ],
-      "hit_rules": [
-        {
-          "key": "zaochenzhixing",
-          "name": "早晨之星",
-          "hit_rate_t1": 0.6083,
-          "form_type": "B",
-          "samples": 1537
-        }
-      ],
-      "condition_values": {
-        "net_amount_ratio": -0.027,
-        "large_order_ratio": 0.0001,
-        "amount_ratio": 0.3439,
-        "roe": 5.0803,
-        "gross_margin": 24.4741,
-        "profit_growth": 35.3241,
-        "pe_percentile": 52.3177,
-        "pb_percentile": 2.6178,
-        "revenue_growth": 2.3854,
-        "debt_ratio": 0.3399,
-        "ocf_ps": 0.2424,
-        "mainbz_concentration": 1.0,
-        "holder_change": null,
-        "top10_ratio": 25.0751,
-        "pledge_ratio": 11.16,
-        "bps": 3.5982,
-        "avg_hold_amount": null,
-        "holder_concentration": null,
-        "st_risk_flag": 0.0,
-        "event_forecast": 1.0,
-        "event_express": 0.0,
-        "event_dividend": 1.0,
-        "event_repurchase": 0.0,
-        "event_rewards": 1.0,
-        "event_holdertrade": 0.0,
-        "event_block": -0.004,
-        "market_env": -0.0374,
-        "wk_trend": -0.377,
-        "mo_trend": null,
-        "is_ever_st": 1.0
-      },
-      "risk_level": "低",
-      "confirmed_detail": {
-        "pre20_drop": 0.563
-      },
-      "entry_advice": {
-        "strategy": "t1_open",
-        "desc": "T+1 开盘买入（次日竞价追入）",
-        "win_rate_t5": 0.95,
-        "avg_ret_t20": 0.4811,
-        "avg_ret_t5": 0.1734,
-        "count": 20
-      },
-      "rank_score": 0.6392
-    },
-    {
-      "rank": 2,
       "ts_code": "301127.SZ",
       "name": "武汉天源",
       "form_type": "B",
@@ -106,12 +27,6 @@
           "threshold": -0.1559591235791899,
           "up_prob": 0.9069767441860465,
           "direction": "low"
-        },
-        {
-          "feature": "net_amount_ratio",
-          "threshold": -0.01409015137652832,
-          "up_prob": 0.8488372093023255,
-          "direction": "high"
         }
       ],
       "hit_rules": [
@@ -168,9 +83,82 @@
         "count": 20
       },
       "rank_score": 0.6334
+    },
+    {
+      "rank": 2,
+      "ts_code": "600360.SH",
+      "name": "华微电子",
+      "form_type": "B",
+      "up_probability": 0.6135,
+      "rule_prob": 0.6083,
+      "positive_score": 0.907,
+      "negative_score": 0.4491,
+      "similarity": 0.5745,
+      "hit_conditions": [
+        {
+          "feature": "wk_trend",
+          "threshold": -0.1559591235791899,
+          "up_prob": 0.9069767441860465,
+          "direction": "low"
+        }
+      ],
+      "hit_rules": [
+        {
+          "key": "zaochenzhixing",
+          "name": "早晨之星",
+          "hit_rate_t1": 0.6083,
+          "form_type": "B",
+          "samples": 1537
+        }
+      ],
+      "condition_values": {
+        "net_amount_ratio": -0.027,
+        "large_order_ratio": 0.0001,
+        "amount_ratio": 0.3439,
+        "roe": 5.0803,
+        "gross_margin": 24.4741,
+        "profit_growth": 35.3241,
+        "pe_percentile": 52.3177,
+        "pb_percentile": 2.6178,
+        "revenue_growth": 2.3854,
+        "debt_ratio": 0.3399,
+        "ocf_ps": 0.2424,
+        "mainbz_concentration": 1.0,
+        "holder_change": null,
+        "top10_ratio": 25.0751,
+        "pledge_ratio": 11.16,
+        "bps": 3.5982,
+        "avg_hold_amount": null,
+        "holder_concentration": null,
+        "st_risk_flag": 0.0,
+        "event_forecast": 1.0,
+        "event_express": 0.0,
+        "event_dividend": 1.0,
+        "event_repurchase": 0.0,
+        "event_rewards": 1.0,
+        "event_holdertrade": 0.0,
+        "event_block": -0.004,
+        "market_env": -0.0374,
+        "wk_trend": -0.377,
+        "mo_trend": null,
+        "is_ever_st": 1.0
+      },
+      "risk_level": "低",
+      "confirmed_detail": {
+        "pre20_drop": 0.563
+      },
+      "entry_advice": {
+        "strategy": "t1_open",
+        "desc": "T+1 开盘买入（次日竞价追入）",
+        "win_rate_t5": 0.95,
+        "avg_ret_t20": 0.4811,
+        "avg_ret_t5": 0.1734,
+        "count": 20
+      },
+      "rank_score": 0.6018
     }
   ],
-  "elapsed": 10.2,
+  "elapsed": 10.0,
   "as_of": "20260804",
   "universe": 40,
   "persist": false,
@@ -180,6 +168,6 @@
     "as_of": "20260804",
     "run_id": "verify_par_serial",
     "llm": false,
-    "written_at": "2026-09-22 14:37:03"
+    "written_at": "2026-09-29 09:26:23"
   }
 }

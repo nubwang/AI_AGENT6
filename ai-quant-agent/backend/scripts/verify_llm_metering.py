@@ -5,7 +5,11 @@
   ② 缺字段兜底：usage 未给缓存拆分时，保守按"全部未命中"（高估不低估）
   ③ usage 落盘：`llm_usage.jsonl` 一行一次，含 token 明细 + 费用 + source/run_id
   ④ 预算三闸门：单任务 / 单日 / 累计 任一破裂 → `ensure_budget()` False + 熔断标志
-  ⑤ **LLM 路径熔断**：超预算时 `deepseek_chat()` 直接返回 None，**不发 HTTP 请求（不烧钱）**
+  ⑤ **闸门与 LLM 路径已解耦**（2026-09-29 用户要求"每日推荐不要有预算熔断、不要设置上限"）：
+     超预算时 `ensure_budget()` **仍返回 False**（能力保留，供自证内核等**显式**自查），
+     但 `deepseek_chat()` **不再拦截、照常发请求并返回结果** ——
+     否则每日推荐会被整体降级为"按规则概率保留"（这正是要修的那个现象）。
+     注：原断言是"熔断时不发 HTTP 请求（不烧钱）"，它约束的正是本次要求移除的行为，故已改写。
   ⑥ 正常路径计量：请求成功 → 解析 JSON 正常返回 + usage 落盘 + 台账累加（互不影响）
   ⑦ 费用预估器：有价 → 低/中/高三档且 low<mid<high；无价 → priced=False + 明确 warning
   ⑧ 汇总：`summary()` 按天/按来源聚合，并给出平均单次 token 与费用
@@ -156,22 +160,33 @@ def main() -> int:
         ck(M.ensure_budget("t_tot") is False and M.check_budget("t_tot")["gate"] == "total",
            "累计闸门破裂 → total")
 
-        # ── ⑤ LLM 路径熔断：不发请求 ──
-        print("\n⑤ LLM 路径熔断（关键：不能偷偷烧钱）")
+        # ── ⑤ 闸门与 LLM 路径**已解耦** ──
+        print("\n⑤ 闸门仍在，但**不再挂在 LLM 路径上**（每日推荐因此不会被降级）")
         reset_budget(50.0, 30.0, 0.001)
         M.clear_budget_block()
         M.add_spend(0.002, run_id="t_blk", source="unit")
 
-        def _post_should_not_run(*a, **k):
-            calls["n"] += 1
-            raise AssertionError("预算熔断时仍发出了 HTTP 请求（会烧钱）")
+        # (a) 闸门**自身**照常判定：能力保留，供需要它的调用方显式自查
+        #     （自证回放：app/backtest/selfproof.py::budget_blocked(run_id)）
+        ck(M.ensure_budget("t_blk") is False,
+           "超预算 ⇒ ensure_budget 仍返回 False（闸门能力保留）")
+        ck(M.budget_blocked() is True, "熔断标志对外可见（供显式自查者读原因）")
 
-        LC.requests.post = _post_should_not_run
-        out = LC.deepseek_chat([{"role": "user", "content": "hi"}], source="unit/blocked",
+        # (b) LLM 路径**不再被预算阻断** —— 每日推荐正是靠这一点才能跑完
+        def _post_records(*a, **k):
+            calls["n"] += 1
+            return FakeResp({"choices": [{"message": {"content": "{\"ok\": 1}"}}],
+                             "usage": {"prompt_tokens": 100, "completion_tokens": 10,
+                                       "total_tokens": 110,
+                                       "prompt_cache_hit_tokens": 0,
+                                       "prompt_cache_miss_tokens": 100}})
+
+        LC.requests.post = _post_records
+        out = LC.deepseek_chat([{"role": "user", "content": "hi"}], source="unit/over_budget",
                                run_id="t_blk")
-        ck(out is None, "超预算 → deepseek_chat 返回 None")
-        ck(calls["n"] == 0, "超预算 → 完全没有发出 HTTP 请求")
-        ck(M.budget_blocked() is True, "熔断标志对外可见（供自证内核优雅停止）")
+        ck(out == {"ok": 1}, "超预算 ⇒ deepseek_chat **照常返回结果**（不再降级为 None）",
+           f"实得 {out}")
+        ck(calls["n"] == 1, "超预算 ⇒ 确实发出了 HTTP 请求（闸门已从该路径摘除）")
 
         # ── ⑥ 正常路径：解析返回值 + 计量 ──
         print("\n⑥ 正常路径（熔断解除后）")
@@ -358,7 +373,7 @@ def main() -> int:
     if FAILS:
         print(f"❌ {len(FAILS)} 项未通过：\n  - " + "\n  - ".join(FAILS))
         return 1
-    print("✅ 全部通过：费用计算 / usage 落盘 / 三闸门熔断 / LLM 路径阻断 / 预估器 / 汇总")
+    print("✅ 全部通过：费用计算 / usage 落盘 / 三闸门判定 / 闸门与LLM路径解耦 / 预估器 / 汇总")
     return 0
 
 

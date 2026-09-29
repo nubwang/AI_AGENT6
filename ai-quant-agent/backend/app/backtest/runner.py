@@ -171,13 +171,31 @@ def _count_rows_on(table: str, date_col: str, date_str: str) -> int:
         db.close()
 
 
-def _check_data_gate(dv: dict, today: str = "", latest_td: str | None = None) -> dict:
+def effective_latest_probe(table: str) -> dict:
+    """「有效交易日」探针：默认查**真实库**（可注入，见 scripts/verify_*.py）。
+
+    ★ 独立成函数是为了**可注入**。原因：`_check_data_gate` 的入参 `dv` 是调用方给的
+      **快照**，可它又需要实时查库才能算「有效交易日」⇒ **两个数据源混用**。
+      后果（2026-09-28 实测）：单测注入的打桩 `dv` 被真实库里 `stk_limit` 的半截日
+      （2361 行 / 下限 5000）覆盖 ⇒ 门禁单测 5 项变红，**与代码无关**，
+      纯粹是"绿不绿取决于当天库里有没有半残表"。
+      需要隔离时替换本函数即可（`runner.` 与 `data_validator.` 两处属性皆可打桩）。
+    """
+    from app.backtest.data_validator import effective_latest_date
+    return effective_latest_date(table)
+
+
+def _check_data_gate(dv: dict, today: str = "", latest_td: str | None = None,
+                     end_date: str = "") -> dict:
     """数据门禁：核心表日期**按交易日**校验 + 日期格式校验 + 一致性校验。
 
     Args:
         dv: data_validator 的结果（含 tables[].max_date）
         today: 判定基准日（YYYYMMDD，空=取系统当天）—— 便于测试与重放
         latest_td: 测试注入：直接指定"最近交易日"（None=查 trade_cal）
+        end_date: 回测窗口末端（YYYYMMDD，空=以最新为准）。
+            ★ 有它就以「≤ end_date 的最近交易日」为判定基准 —— **历史区间回测不该被
+            "今天的数据没采完"拦住**（研究窗口与当日采集本来无关）。
 
     Returns:
         {"blocked", "reasons", "warnings", "dates", "anchor", "latest_trade_date", "gate"}
@@ -207,6 +225,20 @@ def _check_data_gate(dv: dict, today: str = "", latest_td: str | None = None) ->
     if not lt:
         warnings.append("trade_cal 查不到最近交易日 → 日期门禁降级为『仅格式+一致性』校验")
 
+    # ★ 判定基准（base）= **回测窗口末端优先**。
+    #   原实现一律用系统当天 ⇒ 跑一段 2019 年的历史回测，也会因"今天的采集没跑完"被拦
+    #   （这是用户反馈"太严格"里**正当**的那部分：研究窗口与当日采集本来无关）。
+    #   给了 end_date 就用「≤ end_date 的最近交易日」，并**以 lt 为上限** ——
+    #   窗口末端若落在未来，不能拿日历里的未来交易日去比。
+    base, base_label = lt, "最近交易日"
+    if end_date and _DATE_RE.match(end_date):
+        w = _latest_trade_date(end_date)
+        if w:
+            base = min(w, lt) if lt else w
+            base_label = f"回测窗口末端 {end_date} 的最近交易日"
+    # "最新口径"：只有走线上链路（无历史窗口）时，"锚定表领先最新交易日"才算来源异常
+    live_basis = bool(base and lt and base == lt)
+
     def _lag_td(a: str, b: str) -> int:
         return _count_trade_days(a, b)
 
@@ -216,11 +248,10 @@ def _check_data_gate(dv: dict, today: str = "", latest_td: str | None = None) ->
     #   默认开启（这是**修正**）；可用可进化参数 `data_gate_use_effective` 回退为旧行为。
     eff_info: dict[str, dict] = {}
     if _bp("data_gate_use_effective", GATE_USE_EFFECTIVE):
-        from app.backtest.data_validator import effective_latest_date
         for t in GATE_CORE_TABLES:
             if not _DATE_RE.match(dates.get(t, "")):
                 continue
-            e = effective_latest_date(t)
+            e = effective_latest_probe(t)
             eff_info[t] = e
             if e["effective"] and e["effective"] != e["raw"]:
                 n_raw = e["rows"].get(e["raw"], 0)
@@ -240,33 +271,77 @@ def _check_data_gate(dv: dict, today: str = "", latest_td: str | None = None) ->
                 f"（回测会用到不完整数据，特征/结局窗口错位）"
             )
         anchor = min(anchor_dates)
-        # ② 锚定表 vs 最近交易日：按交易日算落后
-        if lt:
-            lag = _lag_td(anchor, lt)
+        # ★ 锚定表里有哪些表是**因"最新日没写完"而回退**到有效交易日的。
+        #   这类"落后"的成因是"当天采集尚未完成"，**不是数据缺失** ——
+        #   按 plans/24 §11.34.5 的本意，此时应把 as-of 回退到该完整交易日并**放行**
+        #   （这正是「有效交易日」机制想解决的事，但原实现回退后仍按 lt 比 ⇒ 照样拦死）。
+        rolled_back = [
+            t for t in GATE_ANCHOR_TABLES
+            if (eff_info.get(t) or {}).get("effective")
+            and eff_info[t]["effective"] != eff_info[t].get("raw")
+        ]
+        # ② 锚定表 vs 判定基准：按交易日算落后
+        if base:
+            lag = _lag_td(anchor, base)
             max_lag = int(_bp("data_gate_max_lag_td", GATE_MAX_LAG_TD))
-            if anchor > lt:
-                ahead = _lag_td(lt, anchor)
-                if ahead > 0:
+            if anchor > base:
+                ahead = _lag_td(base, anchor)
+                if ahead > 0 and live_basis:
                     reasons.append(
-                        f"锚定表日期 {anchor} 领先最近交易日 {lt} 共 {ahead} 个交易日"
+                        f"锚定表日期 {anchor} 领先最近交易日 {base} 共 {ahead} 个交易日"
                         f"（数据来源异常，需人工确认）"
                     )
+                elif ahead > 0:
+                    warnings.append(
+                        f"锚定表日期 {anchor} 已覆盖到{base_label} {base} 之后"
+                        f"（多 {ahead} 个交易日）→ 数据覆盖充足，放行"
+                    )
             elif lag > max_lag:
-                reasons.append(
-                    f"锚定表落后 {lag} 个交易日（数据 {anchor}，最近交易日 {lt}；"
-                    f"已按交易日口径计算，周末/节假日不计入）→ 请先补齐/重采数据"
-                )
+                if rolled_back:
+                    warnings.append(
+                        f"锚定表日期 {anchor} 落后{base_label} {base} 共 {lag} 个交易日，"
+                        f"但成因是**最新交易日数据未写完**（{'、'.join(rolled_back)} 的最新日行数"
+                        f"低于自然基数下限）⇒ as-of 自动回退到完整交易日 {anchor}，**不阻断回测**。"
+                        f"回测结论仅代表 ≤{anchor} 的样本；补齐当日数据前请勿用于实盘。"
+                    )
+                else:
+                    reasons.append(
+                        f"锚定表落后 {lag} 个交易日（数据 {anchor}，{base_label} {base}；"
+                        f"已按交易日口径计算，周末/节假日不计入）→ 请先补齐/重采数据"
+                    )
             else:
-                warnings.append(f"锚定表日期 {anchor} = 最近交易日（按交易日口径校验通过）")
+                warnings.append(f"锚定表日期 {anchor} = {base_label}（按交易日口径校验通过）")
         # ③ stk_limit 允许领先（次日涨跌停价），不允许落后锚定表
         sl = dates.get("stk_limit", "")
         if _DATE_RE.match(sl):
             ahead_allow = int(_bp("data_gate_allow_ahead_td", GATE_ALLOW_AHEAD_TD))
-            if sl < anchor:
+            # ★ 必须区分两种**病因完全不同**的"落后"，否则会**永久卡死回测**、且报错把人
+            #   引向"补最新数据"（那儿根本没有可补的东西）：
+            #   (a) **真落后**：raw max_date 本身就旧 ⇒ 补采即可 ⇒ 仍然阻断；
+            #   (b) **覆盖率缺口**（新=raw 那天行数不达标，有效交易日被回退 ⇒ 看着像"落后"）：
+            #       实测 20260928 仅 2361 行，缺口是**整个深市/创业板/北交所**
+            #       （沪市 600/601/603/605/688/900 全在，000/001/002/003/300/301/302/920 全无）
+            #       = 沪市股票数恰好 2361 ⇒ 采集分片只跑了 SSE。
+            #       这是**项目早已记录的已知限制**：sentiment.py 明写"stk_limit 覆盖率实测仅
+            #       42.5%…仅用于个股级校验"，且本函数 ④ 从 2026-09-20 起就把它定为 warning。
+            #       ⇒ 与 ④ 同口径：记 warning，**不阻断**（否则线上结构性缺口头一次出现就
+            #         把回测全卡死，事实也正是如此）。
+            sl_raw = str((tables.get("stk_limit") or {}).get("max_date") or "")
+            if sl_raw and sl_raw != sl:
+                _e = eff_info.get("stk_limit") or {}
+                _n = (_e.get("rows") or {}).get(sl_raw, "?")
+                warnings.append(
+                    f"stk_limit 最新日 {sl_raw} 仅 {_n} 行（低于自然基数下限 "
+                    f"{_e.get('min_rows', '?')}）⇒ 有效交易日回退为 {sl}；"
+                    f"成因是**采集不完整**（非日期落后），属已知限制（见 sentiment.py），不阻断回测；"
+                    f"但『涨停不可买』过滤对缺失个股不生效，绩效会**偏乐观**"
+                )
+            elif sl < anchor:
                 lag = _lag_td(sl, anchor)
                 if lag > 0:
                     reasons.append(
                         f"stk_limit（{sl}）落后锚定表（{anchor}）{lag} 个交易日"
+                        f"（真落后：最新日无数据 → 请补齐/重采）"
                     )
             else:
                 # 允许的最晚日期 = anchor 之后的第 ahead_allow 个交易日
@@ -284,15 +359,19 @@ def _check_data_gate(dv: dict, today: str = "", latest_td: str | None = None) ->
     # ④ 覆盖率抽查（warning，不阻塞）：日期对上了 ≠ 数据完整。
     # 实测（2026-09-20）：stk_limit 最新交易日只有 2361 行，而 daily 同日有 5565 只（09-17 是 5644 行）
     # → "日期最新"却"只采了一部分"，会影响『涨停不可买』过滤（loader.load_limit_prices）。
-    if _DATE_RE.match(dates.get("stk_limit", "")) and anchor_dates:
-        sl_d = dates["stk_limit"]
-        n_limit = _count_rows_on("stk_limit", "trade_date", sl_d)
-        n_daily = _count_rows_on("daily", "trade_date", sl_d)
-        if n_daily and n_limit < 0.6 * n_daily:
-            warnings.append(
-                f"stk_limit 在 {sl_d} 仅 {n_limit} 行（daily 同日 {n_daily} 只）→ 涨跌停价数据不完整，"
-                f"建议重采该日 stk_limit（影响『涨停不可买』过滤准确性）"
-            )
+    # ★ 抽查必须看**最新日（raw）**而不是"有效交易日"：有效交易日恰恰是被回退过的那个，
+    #   拿它去数行数会"用完整日证明数据完整"，把真正的问题盖掉。
+    if anchor_dates:
+        sl_d = str((tables.get("stk_limit") or {}).get("max_date")
+                   or dates.get("stk_limit", ""))
+        if _DATE_RE.match(sl_d):
+            n_limit = _count_rows_on("stk_limit", "trade_date", sl_d)
+            n_daily = _count_rows_on("daily", "trade_date", sl_d)
+            if n_daily and n_limit < 0.6 * n_daily:
+                warnings.append(
+                    f"stk_limit 在 {sl_d} 仅 {n_limit} 行（daily 同日 {n_daily} 只）→ 涨跌停价数据不完整，"
+                    f"建议重采该日 stk_limit（影响『涨停不可买』过滤准确性）"
+                )
     # ⑤ 总状态：overall=error 记为 warning（门禁自身已完成结构性校验，不再被历史缓存一票否决）
     if str((dv or {}).get("overall") or "") == "error":
         warnings.append("data_validator overall=error（详见 data_validation.issues；门禁按结构校验放行）")
@@ -435,7 +514,7 @@ def run_backtest(cfg: BacktestConfig | None = None, progress_cb=None) -> Backtes
         result.data_validation = {"overall": "error", "issues": [{"level": "error", "message": str(exc)}]}
 
     # ── 1.6 数据门禁（plans/23 T7/W3）：核心表日期不一致 → 拒绝启动 ──
-    gate = _check_data_gate(result.data_validation)
+    gate = _check_data_gate(result.data_validation, end_date=cfg.end_date or "")
     result.data_validation["gate"] = gate
     if gate["blocked"]:
         logger.error(f"数据门禁未通过：{gate['reasons']}")
